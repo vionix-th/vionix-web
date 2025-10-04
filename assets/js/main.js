@@ -234,4 +234,58 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * UseBasin contact form handler
+   */
+  document.querySelectorAll('form[data-basin-form]').forEach((form) => {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const loading = form.querySelector('.loading');
+      const error = form.querySelector('.error-message');
+      const success = form.querySelector('.sent-message');
+
+      if (loading) loading.classList.add('d-block');
+      if (error) {
+        error.classList.remove('d-block');
+        error.textContent = '';
+      }
+      if (success) success.classList.remove('d-block');
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method || 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          let message = 'Submission failed. Please try again later.';
+          try {
+            const data = await response.json();
+            if (data && data.error) {
+              message = data.error;
+            }
+          } catch (parseError) {
+            /* ignore parse errors */
+          }
+          throw new Error(message);
+        }
+
+        if (success) success.classList.add('d-block');
+        form.reset();
+      } catch (submissionError) {
+        if (error) {
+          error.textContent = submissionError.message;
+          error.classList.add('d-block');
+        }
+      } finally {
+        if (loading) loading.classList.remove('d-block');
+      }
+    });
+  });
+
+
 })();
