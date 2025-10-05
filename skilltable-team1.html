@@ -67,7 +67,7 @@
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#services">Services</a></li>
             <li class="dropdown">
-              <a href="#"><span>Team</span> <i class="bi bi-chevron-down"></i></a>
+              <a href="#"><span>Team</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="index.html#team">Meet Our Team</a></li>
                 <li><a href="skilltable-team1.html" class="active">Stefan's Profile</a></li>
@@ -355,68 +355,6 @@
         font-size: 0.9rem;
       }
 
-      .navmenu .dropdown ul {
-        display: block;
-        position: absolute;
-        left: 14px;
-        top: calc(100% + 30px);
-        margin: 0;
-        padding: 10px 0;
-        z-index: 99;
-        opacity: 0;
-        visibility: hidden;
-        background: #fff;
-        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-        transition: 0.3s;
-        border-radius: 4px;
-      }
-
-      .navmenu .dropdown ul li {
-        min-width: 200px;
-      }
-
-      .navmenu .dropdown ul a {
-        padding: 10px 20px;
-        font-size: 15px;
-        text-transform: none;
-        font-weight: 500;
-        color: var(--default-color);
-      }
-
-      .navmenu .dropdown ul a:hover,
-      .navmenu .dropdown ul .active:hover,
-      .navmenu .dropdown ul li:hover > a {
-        color: var(--primary-color);
-      }
-
-      .navmenu .dropdown:hover > ul {
-        opacity: 1;
-        top: 100%;
-        visibility: visible;
-      }
-
-      .navmenu .dropdown .dropdown ul {
-        top: 0;
-        left: calc(100% - 30px);
-        visibility: hidden;
-      }
-
-      .navmenu .dropdown .dropdown:hover > ul {
-        opacity: 1;
-        top: 0;
-        left: 100%;
-        visibility: visible;
-      }
-
-      @media (max-width: 1366px) {
-        .navmenu .dropdown .dropdown ul {
-          left: -90%;
-        }
-
-        .navmenu .dropdown .dropdown:hover > ul {
-          left: -100%;
-        }
-      }
     </style>
 
   </main>
