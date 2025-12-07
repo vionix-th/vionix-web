@@ -1180,6 +1180,10 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services .section-title {
+  padding-bottom: 32px;
+}
+
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
