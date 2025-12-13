@@ -12,11 +12,30 @@
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
+  let scrolledActive = false;
+  let scrollTransitionLock = false;
+  const ENTER_THRESHOLD = 150; // past this, collapse topbar
+  const EXIT_THRESHOLD = 20;   // only restore when very near the top
+  const TOPBAR_TRANSITION_MS = 550; // match CSS transition to avoid mid-animation re-eval
+
   function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    const body = document.body;
+    const header = document.querySelector('#header');
+    if (!header || (!header.classList.contains('scroll-up-sticky') && !header.classList.contains('sticky-top') && !header.classList.contains('fixed-top'))) return;
+    if (scrollTransitionLock) return;
+
+    const y = window.scrollY;
+    const shouldBeScrolled = scrolledActive ? y > EXIT_THRESHOLD : y > ENTER_THRESHOLD;
+    if (shouldBeScrolled === scrolledActive) return;
+
+    scrolledActive = shouldBeScrolled;
+    body.classList.toggle('scrolled', scrolledActive);
+
+    // Avoid flip-flop while the topbar height transition runs
+    scrollTransitionLock = true;
+    setTimeout(() => {
+      scrollTransitionLock = false;
+    }, TOPBAR_TRANSITION_MS);
   }
 
   document.addEventListener('scroll', toggleScrolled);
