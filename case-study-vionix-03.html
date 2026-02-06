@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Case Study | Vionix Consulting</title>
+  <meta name="description" content="Case study from Vionix Consulting.">
+  <link href="assets/img/favicon.png" rel="icon"><link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><link href="assets/vendor/aos/aos.css" rel="stylesheet"><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="case-study-details-page">
+<header id="header" class="header sticky-top"><div class="topbar d-flex align-items-center"><div class="container d-flex justify-content-center justify-content-md-between"><div class="contact-info d-flex align-items-center"><i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@vionix.cloud">info@vionix.cloud</a></i><i class="bi bi-phone d-flex align-items-center ms-4"><span>on request</span></i></div><div class="social-links d-none d-md-flex align-items-center"><a href="https://github.com/vionix-th" class="github"><i class="bi bi-github"></i></a></div></div></div><div class="branding d-flex align-items-center"><div class="container position-relative d-flex align-items-center justify-content-between"><a href="index.html" class="logo d-flex align-items-center"><h1 class="sitename">Vionix Consulting</h1></a><nav id="navmenu" class="navmenu"><ul><li><a href="index.html#hero">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Services</a></li><li><a href="case-studies.html" class="active">Case Studies</a></li><li><a href="index.html#team">Team</a></li><li><a href="index.html#contact">Contact</a></li></ul><i class="mobile-nav-toggle d-xl-none bi bi-list"></i></nav></div></div></header>
+
+<main class="main">
+<div class="page-title" data-aos="fade"><div class="container d-lg-flex justify-content-between align-items-center"><h1 class="mb-2 mb-lg-0">Case Study</h1><nav class="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><a href="case-studies.html">Case Studies</a></li><li class="current">Zero-Failure Rollout</li></ol></nav></div></div>
+
+<section class="section"><div class="container" data-aos="fade-up"><div class="case-study-wrap"><a class="back-link" href="case-studies.html"><i class="bi bi-arrow-left"></i> Back to all case studies</a>
+<h2>Restoring Trust in Critical Compliance: A Zero-Failure Inventory Rollout</h2>
+
+<h3>Client Snapshot</h3>
+<p><strong>Client:</strong> A Major Fashion Retailer in Germany (Anonymised)<br><strong>Scale:</strong> ~80 retail locations, 3-6 staff per store<br><strong>Context:</strong> Annual inventory audits required for insurance and regulatory compliance.</p>
+
+<h3>The Challenge</h3>
+<p>The client relied on a bespoke legacy application (built in CA-Visual Objects) to manage annual store inventories. This system had become a severe liability.</p>
+<ul>
+<li><strong>Instability:</strong> The application frequently crashed during data processing and failed to transmit data correctly to headquarters.</li>
+<li><strong>Compliance Risk:</strong> Inaccurate stock data created significant exposure regarding tax regulations and insurance valuations.</li>
+<li><strong>Loss of Confidence:</strong> Years of technical failures had eroded staff trust. The inventory process was viewed as high-risk and stressful.</li>
+</ul>
+
+<h3>Constraints &amp; Complexity</h3>
+<ul>
+<li><strong>Zero Trust Environment:</strong> The primary constraint was psychological rather than technical. The client had "zero confidence" in software solutions due to past trauma.</li>
+<li><strong>Connectivity:</strong> Stores required fully functional offline capabilities to ensure business continuity regardless of network status.</li>
+<li><strong>Auditability:</strong> Digital records had to be backed by immediate, physical paper trails for local verification.</li>
+</ul>
+
+<h3>Approach</h3>
+<p>Vionix moved from analysis to deployment in approximately one month, focusing on stability and data integrity.</p>
+<p><strong>1. Re-platforming to C# &amp; SQL</strong><br>We moved away from the unstable CA-Visual Objects architecture. The new solution was developed in <strong>C#</strong>, replacing file-system dependency with <strong>Microsoft SQL Server Express</strong>. This introduced transactional integrity, ensuring data was safely stored locally before any transmission attempts.</p>
+<p><strong>2. Local-First Architecture</strong><br>To eliminate network dependency, we engineered the system to cache all necessary stock and validation data locally on store machines. This ensured the application remained responsive and stable even in offline modes.</p>
+<p><strong>3. Hardware &amp; Reporting Integration</strong><br>We integrated directly with handheld scanners for rapid data entry. Crucially, we implemented <strong>List &amp; Label</strong> to generate precise, physical printouts on-site. This gave store managers an immediate "hard copy" verification of their digital submission.</p>
+<p><strong>4. The "Trust" Rollout (Hyper-care)</strong><br>To bridge the trust gap, Vionix consultants physically accompanied the client teams during the initial night-shift inventories. We traveled across Germany to support the first five locations personally.</p>
+
+<h3>What Was Delivered</h3>
+<ul>
+<li><strong>Custom C# Inventory Application:</strong> A resilient desktop client with offline capabilities.</li>
+<li><strong>Local Data Store:</strong> MS SQL Server Express instance for robust caching.</li>
+<li><strong>Centralised Sync Engine:</strong> A new, fault-tolerant connector for transmitting data to HQ.</li>
+<li><strong>Staff Training:</strong> Comprehensive onboarding for team leads and staff.</li>
+</ul>
+
+<h3>Results</h3>
+<ul>
+<li><strong>0% Failure Rate:</strong> Across all 80 stores, the error and crash rate dropped to zero.</li>
+<li><strong>Immediate Trust Restoration:</strong> The software performed so reliably during the first five pilot locations that the client cancelled the requirement for on-site Vionix support for the remaining 75 stores.</li>
+<li><strong>Regulatory Compliance:</strong> Data transmission to headquarters was 100% complete and accurate, satisfying insurance and government audit requirements.</li>
+</ul>
+
+<h3>Why It Worked</h3>
+<p><strong>Presence as a Feature.</strong><br>While the technical shift to C# and SQL Server solved the stability issues, the project success was defined by the rollout strategy. By physically attending the night shifts, we absorbed the client anxiety and demonstrated accountability. We proved the system worked in the field, not just in the lab, allowing the client to regain independence almost immediately.</p>
+
+<h3>How We Worked</h3>
+<p><strong>Collaboration &amp; Training</strong><br>We worked directly with the executive management and team leads to design the workflow. Vionix handled the full lifecycle, from legacy analysis and interviews to end-user training, ensuring the technology matched the operational reality of the store staff.</p>
+</div></div></section>
+
+<section class="section light-background"><div class="container"><div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3"><div><h3 class="mb-2">Discuss a similar challenge</h3><p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p></div><a class="btn btn-primary" href="index.html#contact">Contact Vionix</a></div></div></section>
+</main>
+
+<style>.case-study-wrap { background: #fff; border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%); border-radius: 14px; padding: 1.6rem; box-shadow: 0 16px 30px rgba(0, 0, 0, 0.05); } .back-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-bottom: 1rem; font-weight: 500; } .case-study-wrap h2 { font-size: 1.7rem; margin-bottom: 1.3rem; line-height: 1.35; } .case-study-wrap h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.65rem; } .case-study-wrap p, .case-study-wrap li { color: #444; line-height: 1.65; } .case-study-wrap ul { margin-bottom: 0.8rem; } .cta-box { background: #fff; border: 1px solid color-mix(in srgb, var(--default-color), transparent 86%); border-radius: 14px; padding: 1.25rem; box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05); }</style>
+
+<footer id="footer" class="footer"><div class="footer-newsletter"><div class="container"><div class="row justify-content-center text-center"><div class="col-lg-6"><h4>Join Our Newsletter</h4><p>Subscribe to our newsletter and receive the latest news about our services!</p><form action="https://cloud.us16.list-manage.com/subscribe/post?u=c97b64fda811c9f15f137f86e&amp;id=f7d9d95611&amp;f_id=00352be1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_self" novalidate><div class="newsletter-form"><input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Your Email" required><input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Subscribe"></div><div aria-hidden="true" class="mc-field-hide"><input type="text" name="b_c97b64fda811c9f15f137f86e_f7d9d95611" tabindex="-1" value=""></div></form></div></div></div></div><div class="container footer-top"><div class="row gy-4"><div class="col-lg-4 col-md-6 footer-about"><a href="index.html" class="d-flex align-items-center"><span class="sitename">Vionix Consulting</span></a><div class="footer-contact pt-3"><p>Soi Sukhumvit 72<br>Sam Rong Nua, Mueang Samut Prakan<br>Samut Prakan 10270<br>Thailand</p><p><a href="https://vionix.cloud">vionix.cloud</a></p><p class="mt-3"><strong>Phone:</strong> <span>on request</span></p><p><strong>Email:</strong> <span>info@vionix.cloud</span></p></div></div><div class="col-lg-2 col-md-3 footer-links"><h4>Useful Links</h4><ul><li><i class="bi bi-chevron-right"></i> <a href="index.html#hero">Home</a></li><li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About</a></li><li><i class="bi bi-chevron-right"></i> <a href="case-studies.html">Case Studies</a></li><li><i class="bi bi-chevron-right"></i> <a href="index.html#contact">Contact</a></li></ul></div><div class="col-lg-2 col-md-3 footer-links"><h4>Our Services</h4><ul><li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Database &amp; Reporting Performance</a></li><li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Legacy Core Stabilisation</a></li><li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Modernisation &amp; Team Enablement</a></li><li><i class="bi bi-chevron-right"></i> <a href="index.html#services">AI-Assisted Workflows</a></li></ul></div><div class="col-lg-4 col-md-12"><h4>Follow Us</h4><div class="social-links d-flex"><a href="https://github.com/vionix-th" class="github"><i class="bi bi-github"></i></a></div></div></div></div><div class="container copyright text-center mt-4"><p>© <span>Copyright</span> <strong class="px-1 sitename">Vionix Consulting</strong> <span>All Rights Reserved</span></p><div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div></div></footer>
+
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a><div id="preloader"><div></div><div></div><div></div><div></div></div>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="assets/vendor/aos/aos.js"></script><script src="assets/vendor/glightbox/js/glightbox.min.js"></script><script src="assets/vendor/waypoints/noframework.waypoints.js"></script><script src="assets/vendor/purecounter/purecounter_vanilla.js"></script><script src="assets/vendor/swiper/swiper-bundle.min.js"></script><script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script><script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script><script src="assets/js/main.js"></script>
+</body>
+
+</html>
