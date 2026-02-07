@@ -18,3 +18,24 @@
 
 ## Language Scope
 - Deliver content in English only and skip any multilingual implementation unless the user explicitly requests a translation.
+
+## Taxonomy Consistency Rules
+- Canonical service pillars must be used verbatim across the site:
+  - `Database & Reporting Performance`
+  - `Legacy Core Stabilisation`
+  - `Incremental System Modernisation`
+  - `Efficient Team & Workflow Enablement`
+- Do not introduce alternate pillar names or shortened variants in headings, filters, footer service lists, or CTA references.
+- Use the same icon mapping for each pillar everywhere:
+  - `Database & Reporting Performance` -> `bi-code-square`
+  - `Legacy Core Stabilisation` -> `bi-arrow-repeat`
+  - `Incremental System Modernisation` -> `bi-robot`
+  - `Efficient Team & Workflow Enablement` -> `bi-mortarboard`
+- Homepage pillar cards in `index.html` must deep-link to matching `service-details.html` anchors:
+  - `#database-performance`
+  - `#legacy-core`
+  - `#modernisation-team`
+  - `#workflow-enablement`
+- `case-studies.html` must expose five filter buttons: `All Studies` plus four pillar filters (`.filter-database`, `.filter-legacy`, `.filter-modernisation`, `.filter-enablement`).
+- Case-study chips should stay single-word for scannability: `Database`, `Legacy`, `Modernisation`, `Enablement`.
+- Each case-study page title (`case-study-vionix-XX.html` `<title>`) must be unique and match the page-specific case headline; avoid generic or reused titles.
