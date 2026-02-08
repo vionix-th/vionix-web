@@ -114,14 +114,23 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') return false;
+
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
       once: true,
       mirror: false
     });
+    AOS.refresh();
+    return true;
   }
-  window.addEventListener('load', aosInit);
+  window.addEventListener('load', () => {
+    if (!aosInit()) {
+      // If vendor scripts load late, retry once after initial load.
+      setTimeout(aosInit, 150);
+    }
+  });
 
   /**
    * Initiate glightbox
@@ -238,8 +247,15 @@
 
   function navmenuScrollspy() {
     navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
+      if (!navmenulink.hash || navmenulink.hash === '#') return;
+
+      let section;
+      try {
+        section = document.querySelector(navmenulink.hash);
+      } catch (error) {
+        return;
+      }
+
       if (!section) return;
       let position = window.scrollY + 200;
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {

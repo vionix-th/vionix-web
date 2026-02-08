@@ -65,8 +65,14 @@
           <ul>
             <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
+            <li class="dropdown">
+              <a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#featured-services">Services</a></li>
+                <li><a href="#engagement-formats">Engagements</a></li>
+                <li><a href="service-details.html">Service Details</a></li>
+              </ul>
+            </li>
             <li class="dropdown">
               <a href="#"><span>Team</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
@@ -75,6 +81,7 @@
                 <li><a href="skilltable-team2.html">Ruthairat's Profile</a></li>
               </ul>
             </li>
+            <li><a href="case-studies.html">Case Studies</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -105,15 +112,19 @@
       </div>
     </section>
 
-    <!-- Featured Services Section -->
+    <!-- Services Section -->
     <section id="featured-services" class="featured-services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p><span>What</span> <span class="description-title">We Improve</span></p>
+      </div>
       <div class="container">
         <div class="row gy-4">
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-code-square icon"></i></div>
               <h4><a href="service-details.html#database-performance" class="stretched-link">Database &amp; Reporting Performance</a></h4>
-              <p>Fix slow queries, reports, and batch jobs in your core systems.</p>
+              <p>Shorten runtimes, stabilize batch windows, and remove reporting bottlenecks.</p>
             </div>
           </div>
 
@@ -121,7 +132,7 @@
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-arrow-repeat icon"></i></div>
               <h4><a href="service-details.html#legacy-core" class="stretched-link">Legacy Core Stabilisation</a></h4>
-              <p>Stabilise and simplify fragile, business‑critical modules and services.</p>
+              <p>Reduce regression risk and unblock release flow in fragile core modules.</p>
             </div>
           </div>
 
@@ -129,7 +140,7 @@
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-robot icon"></i></div>
               <h4><a href="service-details.html#modernisation-team" class="stretched-link">Incremental System Modernisation</a></h4>
-              <p>Plan and execute incremental changes without risky big‑bang rewrites.</p>
+              <p>Move high-risk flows to safer seams with measurable stability gains.</p>
             </div>
           </div>
 
@@ -137,7 +148,7 @@
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-mortarboard icon"></i></div>
               <h4><a href="service-details.html#workflow-enablement" class="stretched-link">Efficient Team &amp; Workflow Enablement</a></h4>
-              <p>Strengthen code reviews, releases, and practices so systems stay healthy.</p>
+              <p>Increase release predictability with practical review and handover routines.</p>
             </div>
           </div>
         </div>
@@ -148,7 +159,7 @@
     <section id="about" class="about section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p><span>About</span> <span class="description-title">Vionix Consulting</span></p>
+        <p><span>How</span> <span class="description-title">We Work</span></p>
       </div>
       <div class="container">
         <div class="row gy-3">
@@ -157,159 +168,254 @@
           </div>
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="about-content ps-0 ps-lg-3">
-              <h3>Stabilising and modernising critical software</h3>
+              <h3>Operator model with explicit boundaries</h3>
               <p class="fst-italic">
-                Vionix Consulting is led by a software architect based in Bangkok, focused on making core systems faster, more stable, and easier to change for teams in Europe and Asia.
+                Vionix runs short, constraint-led diagnostic engagements that establish baselines, prove a safe improvement path, and transfer operational ownership back to your team.
               </p>
               <ul>
                 <li>
                   <i class="bi bi-check-circle"></i>
                   <div>
-                    <h4>Systems-first diagnostics</h4>
-                    <p>Map real data flows, dependencies, and pain points before recommending changes.</p>
+                    <h4>Baseline before opinions</h4>
+                    <p>Measure runtime, batch window pressure, locks, deadlocks, regression frequency, and dependency hotspots before planning changes.</p>
                   </div>
                 </li>
                 <li>
                   <i class="bi bi-check-circle"></i>
                   <div>
-                    <h4>Legacy-friendly modernisation</h4>
-                    <p>Favour incremental system evolution and clear boundaries over risky big‑bang rewrites.</p>
+                    <h4>Proof over persuasion</h4>
+                    <p>Prototype 2-3 critical flows early to validate feasibility and expose hidden constraints before larger implementation effort.</p>
                   </div>
                 </li>
                 <li>
                   <i class="bi bi-check-circle"></i>
                   <div>
-                    <h4>Team &amp; quality enablement</h4>
-                    <p>Align reviews, branching, and basic automation so improvements stick, delivery becomes more efficient, and behaviour stays predictable.</p>
+                    <h4>De-risk delivery and handover</h4>
+                    <p>Use parallel validation, explicit rollback paths, and practical guardrails, then transfer ownership via walkthroughs, templates, checks, and training.</p>
                   </div>
                 </li>
               </ul>
+              <p class="mb-3"><strong>Week 1 outcome:</strong> a concise brief (baseline + bottlenecks), a prioritised plan, and one validated first-slice recommendation with risk controls.</p>
+            </div>
+          </div>
+          <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <div class="fit-card h-100">
+                  <h4>Good fit</h4>
+                  <ul class="fit-list">
+                    <li><i class="bi bi-check2-circle me-2"></i>Slow reporting, overloaded databases, and lock-heavy data paths.</li>
+                    <li><i class="bi bi-check2-circle me-2"></i>Fragile revenue modules with high regression risk and unclear ownership.</li>
+                    <li><i class="bi bi-check2-circle me-2"></i>Delivery blocked by dependency sprawl, release pressure, or offline constraints.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="fit-card h-100">
+                  <h4>Not a fit</h4>
+                  <ul class="fit-list">
+                    <li><i class="bi bi-x-circle me-2"></i>Generic staff augmentation with no explicit system outcome.</li>
+                    <li><i class="bi bi-x-circle me-2"></i>Greenfield MVP builds that do not require production continuity controls.</li>
+                    <li><i class="bi bi-x-circle me-2"></i>Rewrite-everything mandates or cosmetic refactors without operational goals.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-  <section id="services" class="services section">
+    <!-- Engagements Section -->
+  <section id="engagement-formats" class="services section">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Services</h2>
-      <p><span>Making critical systems faster, safer, and easier to change</span></p>
+      <h2>Engagements</h2>
+      <p><span>How</span> <span class="description-title">We Engage</span></p>
     </div>
     <div class="container" data-aos="fade-up" data-aos-delay="100">
       <div class="row justify-content-center mb-4 mb-lg-5">
         <div class="col-lg-10 col-xl-9">
           <p class="mb-0">
-            Vionix Consulting partners with product and engineering teams to examine their most critical systems, surface the real constraints, and deliver focused improvements so performance, reliability, and change-readiness improve together—without resorting to risky rewrites.
+            Choose the engagement that matches current risk and delivery pressure. Each option produces concrete outputs and a clear next decision.
           </p>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row gy-5">
-          <div class="col-lg-6">
-            <a class="service-item d-block text-decoration-none text-reset" href="service-details.html#database-performance" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon mb-4"><i class="bi bi-code-square"></i></div>
-              <h4 class="mb-4">Database &amp; Reporting Performance</h4>
-              <ul class="service-list">
-                <li><i class="bi bi-check2-circle me-2"></i>Reduce report and dashboard runtimes from minutes to seconds.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Shorten nightly or monthly jobs so they complete before business hours.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Tune indexes and queries for your actual workload, not guesses.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Simplify data flows to avoid unnecessary joins and round-trips.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Add basic monitoring around key reports and jobs to catch regressions early.</li>
+          <div class="col-lg-4">
+            <div class="engagement-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon mb-4"><i class="bi bi-search"></i></div>
+              <h4 class="mb-4"><a class="engagement-title-link" href="service-details.html#database-performance">1-Week Assessment</a></h4>
+              <ul class="engagement-list">
+                <li><i class="bi bi-check2-circle me-2"></i>Baseline runtime, batch window pressure, lock contention, and failure modes.</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Map constraints, dependencies, and the highest-risk execution seams.</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Deliver a prioritised backlog and one validated first-slice recommendation.</li>
               </ul>
-            </a>
+              <div class="engagement-meta">
+                <p><strong>Best for:</strong> Teams under immediate performance or reliability pressure with unclear technical constraints.</p>
+                <p><strong>Typical output:</strong> Baseline brief, constraints map, prioritised backlog, and one validated first-slice plan.</p>
+                <p><strong>Outcome window:</strong> Decision-ready scope and risk controls within one week.</p>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6">
-            <a class="service-item d-block text-decoration-none text-reset" href="service-details.html#legacy-core" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon mb-4"><i class="bi bi-arrow-repeat"></i></div>
-              <h4 class="mb-4">Legacy Core Stabilisation</h4>
-              <ul class="service-list">
-                <li><i class="bi bi-check2-circle me-2"></i>Untangle complex modules that currently block releases.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Reduce regression risk by introducing clearer internal boundaries.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Add tests and verification steps around critical behaviours.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Document behaviour so new engineers can work safely and effectively.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Prepare legacy code for gradual replacement instead of big-bang rewrites.</li>
+          <div class="col-lg-4">
+            <div class="engagement-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon mb-4"><i class="bi bi-kanban"></i></div>
+              <h4 class="mb-4"><a class="engagement-title-link" href="service-details.html#modernisation-team">Implementation Sprint (2-4 Weeks)</a></h4>
+              <ul class="engagement-list">
+                <li><i class="bi bi-check2-circle me-2"></i>Implement the first high-impact slice with measurable improvement targets.</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Add guardrails, rollback paths, and production-safe rollout sequencing.</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Leave a clear rollout plan for the next slices and ownership handover.</li>
               </ul>
-            </a>
+              <div class="engagement-meta">
+                <p><strong>Best for:</strong> High-risk modules where Caesar needs measurable progress without service disruption.</p>
+                <p><strong>Typical output:</strong> Implemented first slice, guardrails, rollback strategy, and sequenced rollout plan.</p>
+                <p><strong>Outcome window:</strong> Measurable reliability or runtime gains in 2-4 weeks.</p>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6">
-            <a class="service-item d-block text-decoration-none text-reset" href="service-details.html#modernisation-team" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon mb-4"><i class="bi bi-robot"></i></div>
-              <h4 class="mb-4">Incremental System Modernisation</h4>
-              <ul class="service-list">
-                <li><i class="bi bi-check2-circle me-2"></i>Define realistic target architecture slices and migration paths.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Phase migration paths so delivery continues without high-risk cutovers.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Sequence dependencies so each release leaves the system in a stronger state.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Reduce coupling to enable safer, faster iteration in legacy-heavy environments.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Protect business continuity while modernisation work is in progress.</li>
+          <div class="col-lg-4">
+            <div class="engagement-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon mb-4"><i class="bi bi-people"></i></div>
+              <h4 class="mb-4"><a class="engagement-title-link" href="service-details.html#workflow-enablement">Enablement / Clinics</a></h4>
+              <ul class="engagement-list">
+                <li><i class="bi bi-check2-circle me-2"></i>Harden review and release workflow with practical templates and checkpoints.</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Raise onboarding speed and handover quality for high-change modules.</li>
+                <li><i class="bi bi-check2-circle me-2"></i>Increase release predictability through repeatable ownership routines.</li>
               </ul>
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="service-item d-block text-decoration-none text-reset" href="service-details.html#workflow-enablement" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon mb-4"><i class="bi bi-mortarboard"></i></div>
-              <h4 class="mb-4">Efficient Team &amp; Workflow Enablement</h4>
-              <ul class="service-list">
-                <li><i class="bi bi-check2-circle me-2"></i>Strengthen code review, release, and handover practices across teams.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Introduce lightweight quality guardrails that teams actually maintain.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Run practical architecture and code clinics using live project context.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Improve onboarding by making critical workflows explicit and repeatable.</li>
-                <li><i class="bi bi-check2-circle me-2"></i>Raise delivery predictability by aligning process with system constraints.</li>
-              </ul>
-            </a>
+              <div class="engagement-meta">
+                <p><strong>Best for:</strong> Teams with inconsistent reviews, release friction, or fragile ownership handoffs.</p>
+                <p><strong>Typical output:</strong> Review/release playbooks, onboarding templates, and repeatable ownership routines.</p>
+                <p><strong>Outcome window:</strong> Noticeable delivery predictability improvements within the first month.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <style>
-      .service-item {
+      #about .fit-card {
         padding: 2rem;
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
         height: 100%;
-        transition: transform 0.3s ease;
       }
-      
-      .service-item:hover {
-        transform: translateY(-5px);
+
+      #engagement-formats .engagement-card {
+        position: relative;
+        padding: 1.85rem 1.6rem 1.6rem 1.6rem;
+        background: linear-gradient(180deg,
+            color-mix(in srgb, var(--accent-color), transparent 95%) 0%,
+            #fff 38%);
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 84%);
+        border-radius: 14px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+        height: 100%;
+        transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        overflow: hidden;
       }
-      
-      .service-item .icon {
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        margin-bottom: 1.5rem;
+
+      #engagement-formats .engagement-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), white 35%));
       }
-      
-      .service-item h4 {
+
+      #engagement-formats .engagement-card:hover {
+        transform: translateY(-6px);
+        border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.12);
+      }
+
+      #engagement-formats .engagement-card .icon {
+        width: 58px;
+        height: 58px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: color-mix(in srgb, var(--accent-color), transparent 88%);
+        border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+        color: var(--accent-color);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      #engagement-formats .engagement-card .icon i {
+        color: inherit;
+        line-height: 1;
+      }
+
+      #engagement-formats .engagement-card h4,
+      #about .fit-card h4 {
         color: var(--secondary-color);
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1.25rem;
+        line-height: 1.25;
+        margin-bottom: 1rem !important;
       }
-      
-      .service-list {
+
+      #engagement-formats .engagement-title-link {
+        color: var(--heading-color);
+      }
+
+      #engagement-formats .engagement-title-link:hover {
+        color: var(--accent-color);
+      }
+
+      #engagement-formats .engagement-list,
+      #about .fit-list {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-      
-      .service-list li {
+
+      #engagement-formats .engagement-list li,
+      #about .fit-list li {
         padding: 0.75rem 0;
-        color: #444;
+        color: color-mix(in srgb, var(--default-color), transparent 10%);
         font-size: 0.95rem;
         display: flex;
         align-items: center;
       }
-      
-      .service-list li i {
-        color: var(--primary-color);
+
+      #engagement-formats .engagement-list li i,
+      #about .fit-list li i {
+        color: var(--accent-color);
         font-size: 1.1rem;
       }
-      
-      .service-list li:not(:last-child) {
+
+      #engagement-formats .engagement-list li:not(:last-child),
+      #about .fit-list li:not(:last-child) {
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      #engagement-formats .engagement-meta {
+        margin-top: 1.1rem;
+        padding-top: 0.9rem;
+        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+        font-size: 0.9rem;
+        color: color-mix(in srgb, var(--default-color), transparent 15%);
+      }
+
+      #engagement-formats .engagement-meta p {
+        margin: 0 0 0.5rem 0;
+        line-height: 1.45;
+      }
+
+      #engagement-formats .engagement-meta strong {
+        color: var(--heading-color);
+      }
+
+      #engagement-formats .engagement-meta p:last-child {
+        margin-bottom: 0;
       }
     </style>
 
@@ -722,10 +828,10 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Database &amp; Reporting Performance</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Legacy Core Stabilisation</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Incremental System Modernisation</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Efficient Team &amp; Workflow Enablement</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#database-performance">Database &amp; Reporting Performance</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#legacy-core">Legacy Core Stabilisation</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#modernisation-team">Incremental System Modernisation</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#workflow-enablement">Efficient Team &amp; Workflow Enablement</a></li>
           </ul>
         </div>
 
