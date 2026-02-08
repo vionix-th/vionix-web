@@ -75,17 +75,18 @@
     </div>
 
     <section id="case-study-hub" class="portfolio section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Case Studies</h2>
-        <p><span>Real-world engagements in critical system performance, stabilisation, modernisation, and enablement</span></p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center mb-5">
-          <div class="col-lg-10 col-xl-9">
-            <p class="mb-0">
-              Explore full project stories, including constraints, technical decisions, and outcomes. Start with the cards below and open any study for complete context.
-            </p>
+      <div class="case-studies-hero-title" data-aos="fade-up">
+        <div class="container section-title case-studies-hero-title-content">
+          <h2>Case Studies</h2>
+          <p><span>Real-world engagements in critical system performance, stabilisation, modernisation, and enablement</span></p>
+        </div>
+        <div class="container case-studies-hero-intro" data-aos="fade-up" data-aos-delay="100">
+          <div class="row justify-content-center mb-0">
+            <div class="col-lg-10 col-xl-9">
+              <p class="mb-0">
+                Explore full project stories, including constraints, technical decisions, and outcomes. Start with the cards below and open any study for complete context.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -282,6 +283,48 @@
   </main>
 
   <style>
+    #case-study-hub {
+      padding-top: 0;
+    }
+
+    .case-studies-hero-title {
+      position: relative;
+      padding: 4.75rem 0 3.5rem;
+      overflow: hidden;
+      background: url("assets/img/case-study-bg.png") center center;
+      background-size: cover;
+      margin-bottom: 2.75rem;
+    }
+
+    .case-studies-hero-title::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: color-mix(in srgb, var(--background-color), transparent 30%);
+      z-index: 0;
+    }
+
+    .case-studies-hero-title h2,
+    .case-studies-hero-title p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-studies-hero-title-content {
+      padding-bottom: 1.35rem;
+      margin-bottom: 0;
+    }
+
+    .case-studies-hero-intro {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 1.1rem;
+    }
+
+    .case-studies-hero-intro p {
+      line-height: 1.75;
+    }
+
     .case-grid-shell {
       padding: 0;
     }
@@ -294,10 +337,14 @@
       margin-top: 0;
     }
 
+    #case-study-hub .portfolio-filters {
+      margin-bottom: 2rem;
+    }
+
     .case-card {
       background: #fff;
       border-radius: 10px;
-      padding: 1.5rem 1.45rem;
+      padding: 1.65rem 1.55rem;
       border: 1px solid color-mix(in srgb, var(--default-color), transparent 84%);
       box-shadow: none;
       transition: background-color 0.22s ease, border-color 0.22s ease;
@@ -313,7 +360,7 @@
     .case-divider {
       height: 1px;
       width: 100%;
-      margin: 0 0 1rem 0;
+      margin: 0 0 1.1rem 0;
       background: color-mix(in srgb, var(--default-color), transparent 88%);
     }
 
@@ -341,8 +388,8 @@
 
     .case-card p {
       font-size: 0.92rem;
-      margin-bottom: 0.85rem;
-      line-height: 1.55;
+      margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
     .case-outcome {
@@ -365,7 +412,7 @@
 
     .case-card-head .case-tags {
       margin-top: 0.45rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
     }
 
     .case-tags span {
@@ -400,6 +447,28 @@
       border-radius: 14px;
       padding: 1.25rem;
       box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
+    }
+
+    #case-study-hub+.section {
+      padding-top: 3.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .case-studies-hero-title {
+        padding: 3.75rem 0 2.75rem;
+      }
+
+      .case-studies-hero-title-content {
+        padding-bottom: 1rem;
+      }
+
+      .case-studies-hero-intro {
+        padding-bottom: 0.75rem;
+      }
+
+      #case-study-hub .portfolio-filters {
+        margin-bottom: 1.5rem;
+      }
     }
   </style>
 
