@@ -4,7 +4,17 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Case Study: When the Webshop Was Ready—But the Back-End Wasn't | Vionix Consulting</title>
-  <meta name="description" content="From spaghetti to strategy: rebuilding a spectrum analyzer software stack for cross-platform reliability and maintainability.">
+  <meta name="description" content="How Vionix designed a DMZ integration layer and REST API to connect a ready webshop to a live rental ERP and launch on schedule.">
+  <link rel="canonical" href="https://vionix.cloud/case-study-vionix-07.html">
+  <meta property="og:site_name" content="Vionix Consulting">
+  <meta property="og:title" content="Case Study: When the Webshop Was Ready—But the Back-End Wasn't | Vionix Consulting">
+  <meta property="og:description" content="How Vionix designed a DMZ integration layer and REST API to connect a ready webshop to a live rental ERP and launch on schedule.">
+  <meta property="og:url" content="https://vionix.cloud/case-study-vionix-07.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://vionix.cloud/assets/img/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Case Study: When the Webshop Was Ready—But the Back-End Wasn't | Vionix Consulting">
+  <meta name="twitter:description" content="How Vionix designed a DMZ integration layer and REST API to connect a ready webshop to a live rental ERP and launch on schedule.">
   <link href="assets/img/favicon.png" rel="icon"><link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -43,7 +53,7 @@
 <h1>When the Webshop Was Ready—But the Back-End Wasn't</h1>
 
 <h3>Snapshot</h3>
-<p><strong>Client:</strong> One of Germany's largest aerial work platform rental providers<br><strong>Fleet Scale:</strong> 1,000+ machines across nationwide locations<br><strong>Core System:</strong> InterSystems Cach&eacute; database managing rental inventory, maintenance schedules, and customer orders<br><strong>Challenge Duration:</strong> 3 months (architecture, implementation, and go-live)</p>
+<p><strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br><strong>Client:</strong> One of Germany's largest aerial work platform rental providers<br><strong>Fleet Scale:</strong> 1,000+ machines across nationwide locations<br><strong>Core System:</strong> InterSystems Cach&eacute; database managing rental inventory, maintenance schedules, and customer orders<br><strong>Challenge Duration:</strong> 3 months (architecture, implementation, and go-live)</p>
 
 <h3>The Challenge</h3>
 <p>A major German rental company had commissioned a third-party web developer to build an online booking platform for aerial work platforms. The project was well underway&mdash;design was polished, user flows were functional, and a launch date had been agreed. But no one had planned how the webshop would connect to the live rental management system. The web developer had built the storefront in isolation, with no visibility into the company's existing IT infrastructure, database architecture, or API requirements. When the rental company contacted Vionix to &quot;connect the two systems,&quot; it became clear that integration hadn't just been deferred&mdash;it hadn't been scoped at all.</p>
@@ -82,7 +92,7 @@
 <p><strong>Domain Logic Centralised in the API:</strong> By embedding complex availability rules (maintenance, distance, substitutions) in the backend API rather than the webshop, Vionix ensured that rental logic remained consistent across all future sales channels.</p>
 <p><strong>Data Quality as a Side Effect:</strong> The integration testing process revealed operational data errors that had silently accumulated over time, turning the API project into an unplanned data cleansing initiative.</p>
 
-<h3>How We Worked</h3>
+<h3>How Vionix Worked</h3>
 <p>Vionix operated as a technical mediator between the web development firm and the rental company's internal IT, translating business requirements into infrastructure decisions. After architecting and implementing the integration layer, Vionix transferred all assets and operational knowledge to the client's team, enabling them to maintain and evolve the system independently.</p>
 
 </div></div></section>

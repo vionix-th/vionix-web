@@ -4,7 +4,17 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Case Study: From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It | Vionix Consulting</title>
-  <meta name="description" content="From spaghetti to strategy: rebuilding a spectrum analyzer software stack for cross-platform reliability and maintainability.">
+  <meta name="description" content="How Vionix stabilised a 30-year ERP by introducing version control, isolated dev environments, and incremental modernization without a rewrite.">
+  <link rel="canonical" href="https://vionix.cloud/case-study-vionix-09.html">
+  <meta property="og:site_name" content="Vionix Consulting">
+  <meta property="og:title" content="Case Study: From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It | Vionix Consulting">
+  <meta property="og:description" content="How Vionix stabilised a 30-year ERP by introducing version control, isolated dev environments, and incremental modernization without a rewrite.">
+  <meta property="og:url" content="https://vionix.cloud/case-study-vionix-09.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://vionix.cloud/assets/img/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Case Study: From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It | Vionix Consulting">
+  <meta name="twitter:description" content="How Vionix stabilised a 30-year ERP by introducing version control, isolated dev environments, and incremental modernization without a rewrite.">
   <link href="assets/img/favicon.png" rel="icon"><link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -44,6 +54,7 @@
 
 <h3>Snapshot</h3>
 <p>A mid-sized German ERP software manufacturer with a 30-year-old codebase (Visual Basic 6, .NET 3.5, InterSystems Cach&eacute;) operating without version control, automated testing, or individual development environments. All developers worked simultaneously in a shared source directory on a single terminal server&mdash;management believed this prevented IP theft. Service cases exceeded 20 per day; deployments were trial-and-error exercises; Windows updates routinely broke the development environment.</p>
+<p><strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)</p>
 
 <h3>The Challenge</h3>
 <p>The product worked&mdash;customers valued its features&mdash;but instability was driving everyone to breaking point. Developers shouted across the office hunting for whoever &quot;broke&quot; the system. Regression was constant but untraceable. The gap between development and release branches spanned thousands of unexplained lines of code. Customer deployments had no scripted installers; technicians fought through errors on-site until the system booted. Post-deployment service spikes lasted weeks.</p>
@@ -59,7 +70,7 @@
 <p><strong>1. Map the Mess</strong><br>Documented the current state: which systems existed, how they interacted, what dependencies were present. This became the foundation for all subsequent work.</p>
 <p><strong>2. Introduce Version Control (Git)</strong><br>Placed Visual Basic, C#, and Cach&eacute; components under Git. Automated daily exports from the Cach&eacute; server to create snapshots of backend changes. This ended the &quot;manhunt&quot; culture and made regression traceable for the first time.</p>
 <p><strong>3. Separate the Branches</strong><br>Enforced strict separation: Unstable Development, Testing, Release. Developers stopped manually copying code line-by-line into a &quot;release branch&quot; whose divergence from development no one could explain.</p>
-<p><strong>4. Build Individual Development Environments</strong><br>Ended the shared terminal server model. Each developer received a local workstation with their own environment. Pull requests and merging replaced chaotic simultaneous edits to shared directories. This required intensive negotiation with management, who feared IP theft&mdash;we demonstrated that copy-paste made terminal servers irrelevant for that purpose.</p>
+<p><strong>4. Build Individual Development Environments</strong><br>Ended the shared terminal server model. Each developer received a local workstation with their own environment. Pull requests and merging replaced chaotic simultaneous edits to shared directories. This required intensive negotiation with management, who feared IP theft&mdash;Vionix demonstrated that copy-paste made terminal servers irrelevant for that purpose.</p>
 <p><strong>5. Automate and Stabilize Installations</strong><br>Bundled all components (including legacy ActiveX dependencies) into a single scripted installer. Created a comprehensive manifest file for the VB6 application and automated its generation, making the system self-healing when dependencies changed. Configured legacy components to run reliably on modern Windows.</p>
 <p><strong>6. Train and Adapt Gradually</strong><br>Conducted recurring training sessions: Git workflows, SOLID principles, software architecture, abstraction techniques. Used real projects as examples (e.g., extracting a reusable CSV export class rather than reimplementing it per customer). Gave developers time between changes to adapt.</p>
 <p><strong>7. Restructure Team Dynamics</strong><br>Created mixed teams: technically proficient developers built abstractions (objects, reusable modules); legacy developers consumed them in their imperative code. This approach preserved existing skills while introducing modern patterns, built trust, and transformed isolated work into collaboration.</p>
@@ -82,12 +93,12 @@
 <p><strong>Service Case Nature:</strong> While total volume didn't immediately drop, the character shifted&mdash;user errors could be definitively identified, and regression-driven cases became resolvable quickly.</p>
 
 <h3>Why It Worked</h3>
-<p><strong>We didn't fight the legacy&mdash;we stabilized it first.</strong> Version control and environment isolation created accountability and psychological safety before asking anyone to change how they coded.</p>
-<p><strong>Political resistance was addressed with economic logic.</strong> The terminal server argument collapsed once we demonstrated that copy-paste made it irrelevant for IP protection. The Sales Director's resistance was bypassed by delivering results that management and customers valued.</p>
-<p><strong>We met developers where they were.</strong> Rather than forcing OOP adoption, we let technically proficient team members create abstractions while legacy developers consumed them imperatively. This built trust through demonstrated value, not ideology.</p>
+<p><strong>Vionix didn't fight the legacy&mdash;Vionix stabilized it first.</strong> Version control and environment isolation created accountability and psychological safety before asking anyone to change how they coded.</p>
+<p><strong>Political resistance was addressed with economic logic.</strong> The terminal server argument collapsed once Vionix demonstrated that copy-paste made it irrelevant for IP protection. The Sales Director's resistance was bypassed by delivering results that management and customers valued.</p>
+<p><strong>Vionix met developers where they were.</strong> Rather than forcing OOP adoption, Vionix let technically proficient team members create abstractions while legacy developers consumed them imperatively. This built trust through demonstrated value, not ideology.</p>
 <p><strong>Automation removed fragility.</strong> The self-healing manifest and scripted installer eliminated the Windows update panic cycle, freeing cognitive space for improvement.</p>
 
-<h3>How We Worked</h3>
+<h3>How Vionix Worked</h3>
 <p>This was a two-year engagement with a single Vionix consultant embedded in an advisory and active restructuring role. Changes were implemented gradually with training periods in between, allowing the team to internalize each shift before the next. The engagement concluded amicably when the company was acquired by a larger corporation capable of sustaining the systems independently.</p>
 
 </div></div></section>

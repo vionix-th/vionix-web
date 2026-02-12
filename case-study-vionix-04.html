@@ -4,7 +4,17 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Case Study: Making Inventory Visible: How a Monitoring Layer Stabilised 80-Store Data Collection | Vionix Consulting</title>
-  <meta name="description" content="Case study from Vionix Consulting.">
+  <meta name="description" content="How Vionix added monitoring, dashboards, and fallback retrieval paths to make overnight store data reliable across 80+ locations.">
+  <link rel="canonical" href="https://vionix.cloud/case-study-vionix-04.html">
+  <meta property="og:site_name" content="Vionix Consulting">
+  <meta property="og:title" content="Case Study: Making Inventory Visible: How a Monitoring Layer Stabilised 80-Store Data Collection | Vionix Consulting">
+  <meta property="og:description" content="How Vionix added monitoring, dashboards, and fallback retrieval paths to make overnight store data reliable across 80+ locations.">
+  <meta property="og:url" content="https://vionix.cloud/case-study-vionix-04.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://vionix.cloud/assets/img/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Case Study: Making Inventory Visible: How a Monitoring Layer Stabilised 80-Store Data Collection | Vionix Consulting">
+  <meta name="twitter:description" content="How Vionix added monitoring, dashboards, and fallback retrieval paths to make overnight store data reliable across 80+ locations.">
   <link href="assets/img/favicon.png" rel="icon"><link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -43,7 +53,7 @@
 <h1>Making Inventory Visible: How a Monitoring Layer Stabilised 80-Store Data Collection</h1>
 
 <h3>Snapshot</h3>
-<p><strong>Client:</strong> Major German fashion retailer with 80+ outlets<br><strong>Trigger:</strong> Daily inventory and sales data from stores frequently failed to arrive at headquarters, disrupting stock planning and replenishment<br><strong>Engagement Type:</strong> Infrastructure rollout support + custom monitoring solution<br><strong>Timeline:</strong> Multi-phase (VPN deployment -&gt; monitoring implementation -&gt; failover capability)</p>
+<p><strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br><strong>Client:</strong> Major German fashion retailer with 80+ outlets<br><strong>Trigger:</strong> Daily inventory and sales data from stores frequently failed to arrive at headquarters, disrupting stock planning and replenishment<br><strong>Engagement Type:</strong> Infrastructure rollout support + custom monitoring solution<br><strong>Timeline:</strong> Multi-phase (VPN deployment -&gt; monitoring implementation -&gt; failover capability)</p>
 
 <h3>The Challenge</h3>
 <p>The client daily operations depended on reliable overnight transmission of inventory levels and sales figures from each store point-of-sale (POS) system to the central warehouse. In practice, <strong>data frequently did not arrive</strong>.</p>
@@ -117,7 +127,7 @@
 <p><strong>2. Gave the client self-service tools</strong><br>The manual retrieval capability meant headquarters was not helpless between sync windows. Operators could fix problems and recover data the same day.</p>
 <p><strong>3. Layered redundancy at the transport level</strong><br>ISDN and analog fallback ensured that even total DSL failure did not mean data loss, critical for a distributed retail operation with no on-site IT staff.</p>
 
-<h3>How We Worked</h3>
+<h3>How Vionix Worked</h3>
 <ul>
 <li><strong>Partner coordination</strong>: Worked alongside Deutsche Telekom to execute the nationwide rollout, with Vionix handling on-site configuration and Telekom managing network infrastructure</li>
 <li><strong>Incremental delivery</strong>: Deployed VPN first, then added monitoring and failover capabilities once the gap became clear</li>
