@@ -16,6 +16,7 @@ Scope:
 - Do not publish real client names or identifying details.
 - Avoid “fingerprints” (unique counts, niche combinations) that enable inference.
 - Prefer ranges/abstractions over precise numbers when needed.
+- Treat client-identifying details in Markdown sources as potentially internal/private; do not publish.
 
 ### Accuracy / No invention
 - Do not fabricate claims, metrics, clients, timelines, or credentials.
@@ -50,6 +51,7 @@ Scope:
 - Business content comes from Markdown sources (plans, competency profiles, resumes, testimonials, etc.).
 - Manually rewrite Markdown into high-quality, semantic HTML that fits the BizLand template.
 - Do not build tooling to auto-convert Markdown.
+- If a Markdown source contains client-identifying details (e.g., a real company name), derive an anonymized public label in HTML only if Caesar provides it; otherwise use `<!-- MISSING: ... -->`.
 
 ---
 
