@@ -363,7 +363,6 @@
   }
 
   function ensureGtagLoaded() {
-    if (!isAnalyticsEnabled()) return false;
     if (isLocalPreview()) return false;
     if (window.__vionixGa4Loaded) return true;
     window.__vionixGa4Loaded = true;
@@ -378,7 +377,47 @@
     document.head.appendChild(script);
 
     window.gtag('js', new Date());
-    window.gtag('config', GA4_MEASUREMENT_ID);
+    return true;
+  }
+
+  function initGa4(consent) {
+    if (isLocalPreview()) return false;
+    ensureGtagLoaded();
+    if (typeof window.gtag !== 'function') return false;
+
+    const analyticsStorage = consent === CONSENT_GRANTED ? CONSENT_GRANTED : CONSENT_DENIED;
+
+    // Consent Mode: load the Google tag, but keep analytics storage denied until the user grants consent.
+    // This is required for Google's tag diagnostics to detect the tag on initial load.
+    window.gtag('consent', 'default', {
+      analytics_storage: analyticsStorage,
+      ad_storage: CONSENT_DENIED,
+      ad_user_data: CONSENT_DENIED,
+      ad_personalization: CONSENT_DENIED
+    });
+
+    window.gtag('config', GA4_MEASUREMENT_ID, {
+      send_page_view: analyticsStorage === CONSENT_GRANTED
+    });
+
+    return true;
+  }
+
+  function applyAnalyticsConsentUpdate(consent) {
+    if (isLocalPreview()) return false;
+    ensureGtagLoaded();
+    if (typeof window.gtag !== 'function') return false;
+
+    if (consent === CONSENT_GRANTED) {
+      window.gtag('consent', 'update', { analytics_storage: CONSENT_GRANTED });
+      window.gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname + window.location.search + window.location.hash
+      });
+    } else {
+      window.gtag('consent', 'update', { analytics_storage: CONSENT_DENIED });
+    }
     return true;
   }
 
@@ -471,12 +510,12 @@
     banner.innerHTML = `
       <div class="vionix-consent-card bg-dark text-white rounded-3 shadow-lg p-3 p-md-4">
         <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3">
-          <div class="me-md-3">
-            <div class="vionix-consent-title mb-1">Analytics consent</div>
-            <div class="vionix-consent-text small">
-              Vionix uses Google Analytics to understand site usage and improve pages. No analytics is loaded until consent is granted.
+            <div class="me-md-3">
+              <div class="vionix-consent-title mb-1">Analytics consent</div>
+              <div class="vionix-consent-text small">
+              Vionix uses Google Analytics to understand site usage and improve pages. Analytics storage stays disabled unless consent is granted.
+              </div>
             </div>
-          </div>
           <div class="d-flex flex-column flex-sm-row gap-2">
             <button type="button" class="btn btn-outline-light btn-sm" data-consent-action="deny">Decline</button>
             <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept">Accept</button>
@@ -491,10 +530,11 @@
       const action = actionEl.getAttribute('data-consent-action');
       if (action === 'accept') {
         setAnalyticsConsent(CONSENT_GRANTED);
-        ensureGtagLoaded();
+        applyAnalyticsConsentUpdate(CONSENT_GRANTED);
         removeConsentBanner();
       } else if (action === 'deny') {
         setAnalyticsConsent(CONSENT_DENIED);
+        applyAnalyticsConsentUpdate(CONSENT_DENIED);
         removeConsentBanner();
       }
     });
@@ -503,6 +543,7 @@
   }
 
   function openCookieSettings() {
+    applyAnalyticsConsentUpdate(CONSENT_DENIED);
     try {
       window.localStorage.removeItem(ANALYTICS_CONSENT_KEY);
     } catch (error) {
@@ -544,9 +585,8 @@
 
   function initAnalyticsAndTracking() {
     const consent = getAnalyticsConsent();
-    if (consent === CONSENT_GRANTED) {
-      ensureGtagLoaded();
-    } else {
+    initGa4(consent);
+    if (consent !== CONSENT_GRANTED && consent !== CONSENT_DENIED) {
       showConsentBanner();
     }
 
