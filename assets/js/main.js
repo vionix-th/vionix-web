@@ -310,6 +310,7 @@
         }
 
         if (success) success.classList.add('d-block');
+        trackFormSubmitEvent('form_submit', form);
         form.reset();
       } catch (submissionError) {
         if (error) {
@@ -322,5 +323,252 @@
     });
   });
 
+  /**
+   * Google Analytics 4 (consent-gated)
+   *
+   * Requirements:
+   * - Do not load GA until consent is granted.
+   * - Track CTA clicks and form submits after consent.
+   */
+  const GA4_MEASUREMENT_ID = 'G-THRH69PMFC';
+  const ANALYTICS_CONSENT_KEY = 'vionix_analytics_consent_v1';
+  const CONSENT_GRANTED = 'granted';
+  const CONSENT_DENIED = 'denied';
+
+  function isLocalPreview() {
+    const host = window.location.hostname;
+    return host === 'localhost' || host === '127.0.0.1' || host === '';
+  }
+
+  function getAnalyticsConsent() {
+    try {
+      const value = window.localStorage.getItem(ANALYTICS_CONSENT_KEY);
+      if (value === CONSENT_GRANTED || value === CONSENT_DENIED) return value;
+      return null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function setAnalyticsConsent(value) {
+    try {
+      window.localStorage.setItem(ANALYTICS_CONSENT_KEY, value);
+    } catch (error) {
+      // ignore storage failures (private mode / disabled storage)
+    }
+  }
+
+  function isAnalyticsEnabled() {
+    return getAnalyticsConsent() === CONSENT_GRANTED;
+  }
+
+  function ensureGtagLoaded() {
+    if (!isAnalyticsEnabled()) return false;
+    if (isLocalPreview()) return false;
+    if (window.__vionixGa4Loaded) return true;
+    window.__vionixGa4Loaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = window.gtag || gtag;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA4_MEASUREMENT_ID)}`;
+    document.head.appendChild(script);
+
+    window.gtag('js', new Date());
+    window.gtag('config', GA4_MEASUREMENT_ID);
+    return true;
+  }
+
+  function trackEvent(name, params) {
+    if (!isAnalyticsEnabled()) return false;
+    ensureGtagLoaded();
+    if (typeof window.gtag !== 'function') return false;
+    try {
+      window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, params || {}));
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function safeTrimText(value) {
+    if (!value) return '';
+    return String(value).replace(/\s+/g, ' ').trim().slice(0, 120);
+  }
+
+  function closestSectionId(el) {
+    const section = el && el.closest ? el.closest('section[id]') : null;
+    return section ? section.getAttribute('id') : '';
+  }
+
+  function isCtaElement(el) {
+    if (!el) return false;
+    if (el.hasAttribute && el.hasAttribute('data-ga-cta')) return true;
+    if (el.matches && (el.matches('a.btn') || el.matches('button.btn'))) return true;
+    if (el.classList && (el.classList.contains('btn-get-started') || el.classList.contains('btn-watch-video'))) return true;
+    if (el.tagName === 'A') {
+      const href = el.getAttribute('href') || '';
+      if (href.includes('cal.com/vionix-consulting/schedule-a-call')) return true;
+      if (href === '#contact' || href.endsWith('#contact') || href.includes('index.html#contact')) return true;
+    }
+    return false;
+  }
+
+  function trackCtaClickEvent(el) {
+    if (!el) return;
+    const href = el.tagName === 'A' ? (el.getAttribute('href') || '') : '';
+    trackEvent('cta_click', {
+      cta_text: safeTrimText(el.textContent),
+      cta_href: href,
+      cta_id: el.id || '',
+      cta_section: closestSectionId(el),
+      cta_classes: el.className ? String(el.className).slice(0, 160) : ''
+    });
+  }
+
+  function trackFormSubmitEvent(eventName, form) {
+    if (!form) return;
+    trackEvent(eventName, {
+      form_id: form.id || '',
+      form_name: form.getAttribute('name') || '',
+      form_action: form.getAttribute('action') || '',
+      form_method: (form.getAttribute('method') || 'get').toLowerCase(),
+      form_section: closestSectionId(form)
+    });
+  }
+
+  function ensureConsentStyles() {
+    if (document.getElementById('vionix-consent-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'vionix-consent-styles';
+    style.textContent = `
+      .vionix-consent-banner { z-index: 1080; }
+      .vionix-consent-banner .vionix-consent-card { max-width: 980px; margin: 0 auto; }
+      .vionix-consent-banner .vionix-consent-title { font-weight: 600; }
+      .vionix-consent-banner .vionix-consent-text { opacity: 0.95; }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function removeConsentBanner() {
+    const existing = document.getElementById('vionix-consent-banner');
+    if (existing) existing.remove();
+  }
+
+  function showConsentBanner(options) {
+    const force = options && options.force === true;
+    if (!force && getAnalyticsConsent() !== null) return;
+
+    ensureConsentStyles();
+    removeConsentBanner();
+
+    const banner = document.createElement('div');
+    banner.id = 'vionix-consent-banner';
+    banner.className = 'vionix-consent-banner position-fixed start-0 end-0 bottom-0 p-3';
+    banner.innerHTML = `
+      <div class="vionix-consent-card bg-dark text-white rounded-3 shadow-lg p-3 p-md-4">
+        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3">
+          <div class="me-md-3">
+            <div class="vionix-consent-title mb-1">Analytics consent</div>
+            <div class="vionix-consent-text small">
+              Vionix uses Google Analytics to understand site usage and improve pages. No analytics is loaded until consent is granted.
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-sm-row gap-2">
+            <button type="button" class="btn btn-outline-light btn-sm" data-consent-action="deny">Decline</button>
+            <button type="button" class="btn btn-primary btn-sm" data-consent-action="accept">Accept</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    banner.addEventListener('click', (event) => {
+      const actionEl = event.target && event.target.closest ? event.target.closest('[data-consent-action]') : null;
+      if (!actionEl) return;
+      const action = actionEl.getAttribute('data-consent-action');
+      if (action === 'accept') {
+        setAnalyticsConsent(CONSENT_GRANTED);
+        ensureGtagLoaded();
+        removeConsentBanner();
+      } else if (action === 'deny') {
+        setAnalyticsConsent(CONSENT_DENIED);
+        removeConsentBanner();
+      }
+    });
+
+    document.body.appendChild(banner);
+  }
+
+  function openCookieSettings() {
+    try {
+      window.localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+    } catch (error) {
+      // ignore
+    }
+    showConsentBanner({ force: true });
+  }
+
+  function insertCookieSettingsLink() {
+    const footer = document.getElementById('footer');
+    if (!footer) return false;
+    if (footer.querySelector('[data-cookie-settings-link]')) return true;
+
+    let usefulLinksBlock = null;
+    footer.querySelectorAll('.footer-links').forEach((block) => {
+      if (usefulLinksBlock) return;
+      const title = block.querySelector('h4');
+      if (!title) return;
+      if (safeTrimText(title.textContent).toLowerCase() === 'useful links') {
+        usefulLinksBlock = block;
+      }
+    });
+    if (!usefulLinksBlock) return false;
+
+    const list = usefulLinksBlock.querySelector('ul');
+    if (!list) return false;
+
+    const li = document.createElement('li');
+    li.innerHTML = `<i class="bi bi-chevron-right"></i> <a href="#" data-cookie-settings-link>Cookie settings</a>`;
+    list.appendChild(li);
+
+    const link = li.querySelector('[data-cookie-settings-link]');
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      openCookieSettings();
+    });
+    return true;
+  }
+
+  function initAnalyticsAndTracking() {
+    const consent = getAnalyticsConsent();
+    if (consent === CONSENT_GRANTED) {
+      ensureGtagLoaded();
+    } else {
+      showConsentBanner();
+    }
+
+    insertCookieSettingsLink();
+
+    document.addEventListener('click', (event) => {
+      if (!isAnalyticsEnabled()) return;
+      const target = event.target && event.target.closest ? event.target.closest('a,button') : null;
+      if (!target) return;
+      if (!isCtaElement(target)) return;
+      trackCtaClickEvent(target);
+    }, { capture: true });
+
+    document.addEventListener('submit', (event) => {
+      if (!isAnalyticsEnabled()) return;
+      const form = event.target;
+      if (!form || form.tagName !== 'FORM') return;
+      if (form.hasAttribute('data-basin-form')) return; // Basin uses AJAX; track on success instead.
+      trackFormSubmitEvent('form_submit', form);
+    }, { capture: true });
+  }
+
+  window.addEventListener('load', initAnalyticsAndTracking);
 
 })();
