@@ -603,11 +603,20 @@ h6 {
   color: var(--accent-color);
 }
 
-.footer .footer-about a {
+.footer .footer-about > a {
   color: var(--heading-color);
   font-size: 24px;
   font-weight: 600;
   font-family: var(--heading-font);
+}
+
+.footer .footer-contact a {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.footer .footer-contact a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 .footer .footer-contact p {
