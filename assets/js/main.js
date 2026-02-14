@@ -372,7 +372,13 @@
         form.reset();
       } catch (submissionError) {
         if (error) {
-          error.textContent = submissionError.message;
+          let message = 'Submission failed. Please try again later.';
+          if (submissionError instanceof Error && submissionError.message) {
+            message = submissionError.message;
+          } else if (typeof submissionError === 'string' && submissionError.trim()) {
+            message = submissionError.trim();
+          }
+          error.textContent = message;
           error.classList.add('d-block');
         }
       } finally {

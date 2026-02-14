@@ -832,7 +832,7 @@
           <div class="col-lg-7">
             <form action="https://usebasin.com/f/d9d4dce0cabf" method="post" class="php-email-form basin-form"
               data-aos="fade-up" data-aos-delay="200" data-basin-form>
-              <div class="row gy-4">
+              <div class="row gy-4 contact-form-fields">
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
                   <input type="text" name="name" id="name-field" class="form-control" required>
@@ -853,12 +853,18 @@
                   <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
                 </div>
 
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-end contact-form-submit">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
-
                   <button type="submit">Send Message</button>
+                </div>
+              </div>
+
+              <div class="form-disclaimer-wrap" role="note" aria-label="Contact form privacy and response time">
+                <div class="form-disclaimer">
+                  <i class="bi bi-shield-check" aria-hidden="true"></i>
+                  <p>We use this information only to respond to your inquiry (no spam). Typical response time: 1-2 business days.</p>
                 </div>
               </div>
             </form>
