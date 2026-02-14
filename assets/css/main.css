@@ -87,6 +87,14 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.cta-box {
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 86%);
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
