@@ -633,6 +633,13 @@ h6 {
   margin-bottom: 0;
 }
 
+.footer .copyright .anonymization-note {
+  margin-top: 6px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
 .footer .credits {
   margin-top: 6px;
   font-size: 13px;
