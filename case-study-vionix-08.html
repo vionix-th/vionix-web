@@ -54,7 +54,7 @@
 
 <h3>Snapshot</h3>
 <p>A mid-sized construction equipment dealer and rental provider operated approximately 74 field technicians servicing heavy machinery at remote job sites across Germany. Their custom-built Windows desktop application&mdash;intended for on-site order capture and service documentation&mdash;had become fundamentally unreliable due to an architectural experiment that mixed C# UI code generation, Node.js business logic, and pervasive race conditions.</p>
-<p><strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br><strong>Client:</strong> Rhine Equipment Services<sup>1</sup> (German construction equipment dealer and service provider)</p>
+<p><strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br><strong>Client:</strong> <span class="anonymized-client-label">Rhine Equipment Services</span> (German construction equipment dealer and service provider)</p>
 
 <h3>The Challenge</h3>
 <p>The original developer had eschewed standard frameworks in favor of a code-generation approach copied verbatim from an MSDN example. UI forms were stored as XML in a database, dynamically compiled into DLLs at runtime, and bound to Node.js callback handlers. The design ignored Node.js's asynchronous execution model entirely, creating race conditions throughout the stack. Communication between the GUI and backend occurred over raw sockets with string-encoded parameters&mdash;no type safety, no protocol validation.</p>

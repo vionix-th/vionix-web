@@ -702,6 +702,13 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
+.anonymized-client-label::after {
+  content: "1";
+  font-size: 0.72em;
+  vertical-align: super;
+  margin-left: 0.06em;
+}
+
 .footer .credits {
   margin-top: 6px;
   font-size: 13px;
