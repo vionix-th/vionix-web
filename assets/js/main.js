@@ -18,6 +18,63 @@
   const EXIT_THRESHOLD = 20;   // only restore when very near the top
   const TOPBAR_TRANSITION_MS = 550; // match CSS transition to avoid mid-animation re-eval
 
+  function buildCollapsedLink(sourceLink, iconClass, fallbackText) {
+    if (!sourceLink) return null;
+
+    const collapsedLink = document.createElement('a');
+    collapsedLink.className = 'header-collapsed-link';
+    collapsedLink.href = sourceLink.href;
+    collapsedLink.textContent = '';
+
+    if (sourceLink.target) collapsedLink.target = sourceLink.target;
+    if (sourceLink.rel) collapsedLink.rel = sourceLink.rel;
+
+    const icon = document.createElement('i');
+    icon.className = iconClass;
+    icon.setAttribute('aria-hidden', 'true');
+    collapsedLink.appendChild(icon);
+
+    const text = document.createElement('span');
+    text.textContent = sourceLink.textContent.trim() || fallbackText;
+    collapsedLink.appendChild(text);
+
+    return collapsedLink;
+  }
+
+  function initCollapsedTopbarLinks() {
+    document.querySelectorAll('#header').forEach((header) => {
+      const brandingContainer = header.querySelector('.branding .container');
+      const logo = brandingContainer ? brandingContainer.querySelector('.logo') : null;
+      if (!brandingContainer || !logo) return;
+
+      let brandStack = brandingContainer.querySelector('.header-brand-stack');
+      if (!brandStack) {
+        brandStack = document.createElement('div');
+        brandStack.className = 'header-brand-stack d-flex flex-column';
+        logo.parentNode.insertBefore(brandStack, logo);
+        brandStack.appendChild(logo);
+      }
+
+      if (brandStack.querySelector('.header-collapsed-links')) return;
+
+      const topbarEmail = header.querySelector('.topbar .bi-envelope a');
+      const topbarCta = header.querySelector('.topbar .bi-calendar4-week a');
+      if (!topbarEmail && !topbarCta) return;
+
+      const linksWrap = document.createElement('div');
+      linksWrap.className = 'header-collapsed-links';
+
+      const collapsedCta = buildCollapsedLink(topbarCta, 'bi bi-calendar4-week', 'Schedule a Call');
+      const collapsedEmail = buildCollapsedLink(topbarEmail, 'bi bi-envelope', 'info@vionix.cloud');
+
+      if (collapsedEmail) linksWrap.appendChild(collapsedEmail);
+      if (collapsedCta) linksWrap.appendChild(collapsedCta);
+      if (linksWrap.children.length === 0) return;
+
+      brandStack.appendChild(linksWrap);
+    });
+  }
+
   function toggleScrolled() {
     const body = document.body;
     const header = document.querySelector('#header');
@@ -39,6 +96,7 @@
   }
 
   document.addEventListener('scroll', toggleScrolled);
+  window.addEventListener('load', initCollapsedTopbarLinks);
   window.addEventListener('load', toggleScrolled);
 
   /**
