@@ -983,74 +983,6 @@ section,
   color: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-.hero .hero-proof-row {
-  margin-top: 48px;
-}
-
-.hero .hero-proof-swiper {
-  width: min(100%, 920px);
-  margin: 0 auto;
-}
-
-.hero .hero-proof-slide {
-  display: block;
-  color: var(--heading-color);
-  font-size: 18px;
-  line-height: 1.3;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hero .hero-proof-slide:hover {
-  color: var(--default-color);
-}
-
-.hero .hero-proof-slide .quote-icon-left,
-.hero .hero-proof-slide .quote-icon-right {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 20px;
-  line-height: 0;
-}
-
-.hero .hero-proof-slide .quote-icon-left {
-  display: inline-block;
-  position: relative;
-  left: -2px;
-}
-
-.hero .hero-proof-slide .quote-icon-right {
-  display: inline-block;
-  position: relative;
-  right: -2px;
-  top: 6px;
-  transform: scale(-1, -1);
-}
-
-.hero .hero-proof-swiper .swiper-wrapper {
-  height: auto;
-}
-
-.hero .hero-proof-pagination {
-  position: static;
-  margin-top: 8px;
-  text-align: center;
-}
-
-.hero .hero-proof-pagination .swiper-pagination-bullet {
-  width: 6px;
-  height: 6px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 50%);
-  opacity: 0.45;
-}
-
-.hero .hero-proof-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-  opacity: 1;
-}
-
 .hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
@@ -1087,14 +1019,6 @@ section,
     font-size: 12px;
   }
 
-  .hero .hero-proof-slide {
-    font-size: 16px;
-  }
-
-  .hero .hero-proof-pagination {
-    margin-top: 6px;
-  }
-
 }
 
 @keyframes up-down {
@@ -1104,6 +1028,87 @@ section,
 
   100% {
     transform: translateY(-10px);
+  }
+}
+
+/*--------------------------------------------------------------
+# Proof Slide Section
+--------------------------------------------------------------*/
+.proof-slide {
+  padding-top: 28px;
+  padding-bottom: 0;
+}
+
+.proof-slide .section-title {
+  padding-bottom: 18px;
+}
+
+.proof-slide .section-title p {
+  display: none;
+}
+
+.proof-slide .proof-slide-swiper {
+  overflow: hidden;
+}
+
+.proof-slide .proof-slide-card {
+  display: block;
+  height: 100%;
+  padding: 8px 2px;
+  color: var(--heading-color);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.32;
+  text-align: center;
+}
+
+.proof-slide .proof-slide-card:hover {
+  color: var(--heading-color);
+}
+
+.proof-slide .proof-slide-card .quote-icon-left,
+.proof-slide .proof-slide-card .quote-icon-right {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-size: 24px;
+  line-height: 0;
+}
+
+.proof-slide .proof-slide-card .quote-icon-left {
+  display: inline-block;
+  position: relative;
+  left: -4px;
+}
+
+.proof-slide .proof-slide-card .quote-icon-right {
+  display: inline-block;
+  position: relative;
+  right: -4px;
+  top: 8px;
+  transform: scale(-1, -1);
+}
+
+.proof-slide .proof-slide-pagination {
+  position: static;
+  margin-top: 16px;
+}
+
+.proof-slide .proof-slide-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  opacity: 0.45;
+  background-color: color-mix(in srgb, var(--default-color), transparent 45%);
+}
+
+.proof-slide .proof-slide-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: var(--accent-color);
+}
+
+@media (max-width: 640px) {
+  .proof-slide .proof-slide-card {
+    padding: 6px 2px;
+    font-size: 16px;
   }
 }
 
