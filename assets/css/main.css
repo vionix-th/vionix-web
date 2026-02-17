@@ -541,11 +541,20 @@ h6 {
 
 .footer .footer-top-band {
   background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
-  padding: 50px 0;
+  padding: 56px 0 48px;
 }
 
 .footer .footer-top {
   padding-top: 0;
+}
+
+.footer .footer-group h4 {
+  margin-bottom: 14px;
+}
+
+.footer .footer-links ul {
+  margin: 0;
+  padding: 0;
 }
 
 
