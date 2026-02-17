@@ -1036,7 +1036,7 @@ section,
 --------------------------------------------------------------*/
 .proof-slide {
   padding-top: 28px;
-  padding-bottom: 0;
+  padding-bottom: 28px;
 }
 
 .proof-slide .section-title {
