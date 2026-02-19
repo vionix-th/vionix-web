@@ -341,7 +341,7 @@
     </section>
 
     <!-- Engagements Section -->
-    <section id="engagement-formats" class="services section">
+    <section id="engagement-formats" class="services section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>Engagements</h2>
         <p><span>How</span> <span class="description-title">We Engage</span></p>
@@ -434,6 +434,21 @@
     </section>
 
     <style>
+      :root {
+        --homepage-section-space: clamp(44px, 6vw, 60px);
+      }
+
+      #featured-services,
+      #proof-slide,
+      #about,
+      #engagement-formats,
+      #testimonials,
+      #team,
+      #contact {
+        padding-top: var(--homepage-section-space);
+        padding-bottom: calc(var(--homepage-section-space) / 2);
+      }
+
       #about .fit-card {
         padding: 2rem;
         background: #fff;
