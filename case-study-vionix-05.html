@@ -18,28 +18,25 @@
   <link href="assets/img/favicon.png" rel="icon"><link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><link href="assets/vendor/aos/aos.css" rel="stylesheet"><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-THRH69PMFC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("consent", "default", {
-      analytics_storage: "denied",
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied"
-    });
-    gtag("config", "G-THRH69PMFC", { send_page_view: false });
-  </script>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><link href="assets/vendor/aos/aos.css" rel="stylesheet"><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet">  
+
 
 </head>
 <body class="case-study-details-page">
-<header id="header" class="header sticky-top"><div class="topbar d-flex align-items-center"><div class="container d-flex justify-content-center justify-content-md-between"><div class="contact-info d-flex align-items-center"><i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@vionix.cloud">info@vionix.cloud</a></i><i class="bi bi-calendar4-week d-flex align-items-center ms-4"><a href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank" rel="noopener noreferrer">Schedule a Call</a></i></div><div class="social-links d-none d-md-flex align-items-center"><a href="https://github.com/vionix-th" class="github"><i class="bi bi-github"></i></a></div></div></div><div class="branding d-flex align-items-center"><div class="container position-relative d-flex align-items-center justify-content-between"><a href="index.html" class="logo d-flex align-items-center"><span class="sitename">Vionix Consulting</span></a>        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li class="dropdown"><a href="index.html#featured-services"><span>Services</span> <i
-                  class="bi bi-chevron-down toggle-dropdown"></i></a>
+<header id="header" class="header sticky-top"><div class="topbar d-flex align-items-center"><div class="container d-flex justify-content-center justify-content-md-between"><div class="contact-info d-flex align-items-center">
+          <div class="contact-item d-flex align-items-center">
+            <i class="bi bi-envelope d-flex align-items-center" aria-hidden="true"></i>
+            <a class="topbar-email-link" href="mailto:info@vionix.cloud">info@vionix.cloud</a>
+          </div>
+          <div class="contact-item d-flex align-items-center ms-4">
+            <i class="bi bi-calendar4-week d-flex align-items-center" aria-hidden="true"></i>
+            <a class="topbar-cta-link" href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank"
+              rel="noopener noreferrer">Schedule a Call</a>
+          </div>
+        </div><div class="social-links d-none d-md-flex align-items-center"><a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i class="bi bi-github"
+              aria-hidden="true"></i></a></div></div></div><div class="branding d-flex align-items-center"><div class="container position-relative d-flex align-items-center justify-content-between"><a href="index.html" class="logo d-flex align-items-center"><span class="sitename">Vionix Consulting</span></a>        <nav id="navmenu" class="navmenu">
+          <ul id="navmenu-list">
+            <li class="dropdown"><a href="index.html#featured-services"><span>Services</span></a><button class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Services submenu" aria-expanded="false"></button>
               <ul>
                 <li><a href="index.html#featured-services">Services Overview</a></li>
                 <li><a href="index.html#about">How We Work</a></li>
@@ -48,7 +45,7 @@
               </ul>
             </li>            
             <li class="dropdown">
-              <a href="index.html#team"><span>Team</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <a href="index.html#team"><span>Team</span></a><button class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Team submenu" aria-expanded="false"></button>
               <ul>
                 <li><a href="index.html#team">Team Overview</a></li>
                 <li><a href="skilltable-team1.html">Stefan's Profile</a></li>
@@ -58,7 +55,7 @@
             <li><a href="case-studies.html">Case Studies</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"></button>
         </nav></div></div></header>
 
 <main class="main">
@@ -173,7 +170,8 @@
               <div class="col-12 col-lg-4 footer-group footer-social">
                 <h4>Follow Us</h4>
                 <div class="social-links d-flex">
-                  <a href="https://github.com/vionix-th" class="github"><i class="bi bi-github"></i></a>
+                  <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i class="bi bi-github"
+              aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
