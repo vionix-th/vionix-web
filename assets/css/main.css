@@ -944,10 +944,12 @@ section,
   width: 60%;
   max-width: 760px;
   text-align: justify;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .hero .hero-intro-narrow p+p {
-  margin-top: 18px;
+  margin-top: 24px;
 }
 
 .hero .hero-intro-narrow p:first-child {
@@ -979,7 +981,7 @@ section,
   background: var(--accent-color);
   display: inline-block;
   padding: 9px 16px;
-  margin-right: 0px;
+  margin-right: 4px;
   border-radius: 999px;
   font-weight: 600;
   font-size: 16px;
