@@ -429,23 +429,32 @@
    * Google Analytics 4 (consent-gated)
    *
    * Requirements:
-   * - Do not load GA until consent is granted.
+   * - Load the Google tag and consent defaults in <head> on every page.
    * - Track CTA clicks and form submits after consent.
    */
   const GA4_MEASUREMENT_ID = 'G-THRH69PMFC';
   const ANALYTICS_CONSENT_KEY = 'vionix_analytics_consent_v1';
   const CONSENT_GRANTED = 'granted';
   const CONSENT_DENIED = 'denied';
+  let runtimeAnalyticsConsent = null;
 
   function isLocalPreview() {
+    return false
+    
     const host = window.location.hostname;
     return host === 'localhost' || host === '127.0.0.1' || host === '';
   }
 
   function getAnalyticsConsent() {
+    if (runtimeAnalyticsConsent === CONSENT_GRANTED || runtimeAnalyticsConsent === CONSENT_DENIED) {
+      return runtimeAnalyticsConsent;
+    }
     try {
       const value = window.localStorage.getItem(ANALYTICS_CONSENT_KEY);
-      if (value === CONSENT_GRANTED || value === CONSENT_DENIED) return value;
+      if (value === CONSENT_GRANTED || value === CONSENT_DENIED) {
+        runtimeAnalyticsConsent = value;
+        return value;
+      }
       return null;
     } catch (error) {
       return null;
@@ -453,6 +462,7 @@
   }
 
   function setAnalyticsConsent(value) {
+    runtimeAnalyticsConsent = value;
     try {
       window.localStorage.setItem(ANALYTICS_CONSENT_KEY, value);
     } catch (error) {
@@ -464,59 +474,17 @@
     return getAnalyticsConsent() === CONSENT_GRANTED;
   }
 
-  function ensureGtagLoaded() {
-    if (isLocalPreview()) return false;
-    if (window.__vionixGa4Loaded) return true;
-    window.__vionixGa4Loaded = true;
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = window.gtag || gtag;
-
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA4_MEASUREMENT_ID)}`;
-    document.head.appendChild(script);
-
-    window.gtag('js', new Date());
-    return true;
-  }
-
-  function initGa4(consent) {
-    if (isLocalPreview()) return false;
-    ensureGtagLoaded();
-    if (typeof window.gtag !== 'function') return false;
-
-    const analyticsStorage = consent === CONSENT_GRANTED ? CONSENT_GRANTED : CONSENT_DENIED;
-
-    // Consent Mode: load the Google tag, but keep analytics storage denied until the user grants consent.
-    // This is required for Google's tag diagnostics to detect the tag on initial load.
-    window.gtag('consent', 'default', {
-      analytics_storage: analyticsStorage,
-      ad_storage: CONSENT_DENIED,
-      ad_user_data: CONSENT_DENIED,
-      ad_personalization: CONSENT_DENIED
-    });
-
-    window.gtag('config', GA4_MEASUREMENT_ID, {
-      send_page_view: analyticsStorage === CONSENT_GRANTED
-    });
-
-    return true;
+  function hasGtag() {
+    return typeof window.gtag === 'function';
   }
 
   function applyAnalyticsConsentUpdate(consent) {
     if (isLocalPreview()) return false;
-    ensureGtagLoaded();
-    if (typeof window.gtag !== 'function') return false;
+    if (!hasGtag()) return false;
 
     if (consent === CONSENT_GRANTED) {
       window.gtag('consent', 'update', { analytics_storage: CONSENT_GRANTED });
-      window.gtag('event', 'page_view', {
-        page_title: document.title,
-        page_location: window.location.href,
-        page_path: window.location.pathname + window.location.search + window.location.hash
-      });
+      window.gtag('config', GA4_MEASUREMENT_ID, { send_page_view: true });
     } else {
       window.gtag('consent', 'update', { analytics_storage: CONSENT_DENIED });
     }
@@ -525,8 +493,7 @@
 
   function trackEvent(name, params) {
     if (!isAnalyticsEnabled()) return false;
-    ensureGtagLoaded();
-    if (typeof window.gtag !== 'function') return false;
+    if (!hasGtag()) return false;
     try {
       window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, params || {}));
       return true;
@@ -645,6 +612,7 @@
   }
 
   function openCookieSettings() {
+    runtimeAnalyticsConsent = null;
     applyAnalyticsConsentUpdate(CONSENT_DENIED);
     try {
       window.localStorage.removeItem(ANALYTICS_CONSENT_KEY);
@@ -687,7 +655,10 @@
 
   function initAnalyticsAndTracking() {
     const consent = getAnalyticsConsent();
-    initGa4(consent);
+    runtimeAnalyticsConsent = consent;
+    if (consent === CONSENT_GRANTED) {
+      applyAnalyticsConsentUpdate(CONSENT_GRANTED);
+    }
     if (consent !== CONSENT_GRANTED && consent !== CONSENT_DENIED) {
       showConsentBanner();
     }
@@ -711,6 +682,10 @@
     }, { capture: true });
   }
 
-  window.addEventListener('load', initAnalyticsAndTracking);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnalyticsAndTracking);
+  } else {
+    initAnalyticsAndTracking();
+  }
 
 })();
