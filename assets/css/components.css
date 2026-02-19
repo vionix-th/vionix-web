@@ -1,0 +1,31 @@
+/*--------------------------------------------------------------
+# Vionix Shared Components
+--------------------------------------------------------------*/
+:root {
+  --vx-card-bg: #fff;
+  --vx-card-border: 1px solid color-mix(in srgb, var(--default-color), transparent 84%);
+  --vx-card-radius: 12px;
+  --vx-card-shadow: 0 16px 30px rgba(0, 0, 0, 0.06);
+}
+
+:where(.vx-card-surface, .case-card, .case-study-wrap, .service-detail-card, .bio-section .service-item) {
+  background: var(--vx-card-bg);
+  border: var(--vx-card-border);
+  border-radius: var(--vx-card-radius);
+  box-shadow: var(--vx-card-shadow);
+}
+
+:where(.vx-inline-list, .case-tags) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+:where(.vx-tag-pill, .case-tags span) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36rem;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 999px;
+}

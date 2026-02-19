@@ -15,57 +15,138 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Case Study: When Real-Time Became Possible Again | Vionix Consulting">
   <meta name="twitter:description" content="How Vionix replaced a failing nightly BI ETL pipeline with indexed SQL Views and restored real-time reporting performance at scale.">
-  <link href="assets/img/favicon.png" rel="icon"><link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="assets/img/favicon.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"><link href="assets/vendor/aos/aos.css" rel="stylesheet"><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"><link href="assets/css/main.css" rel="stylesheet">  
-
-
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  
+  <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/components.css" rel="stylesheet">
+<link href="assets/css/case-study-details.css" rel="stylesheet">
 </head>
 <body class="case-study-details-page">
-<header id="header" class="header sticky-top"><div class="topbar d-flex align-items-center"><div class="container d-flex justify-content-center justify-content-md-between"><div class="contact-info d-flex align-items-center">
+<header id="header" class="header sticky-top">
+<div class="topbar d-flex align-items-center">
+<div class="container d-flex justify-content-center justify-content-md-between">
+<div class="contact-info d-flex align-items-center">
           <div class="contact-item d-flex align-items-center">
-            <i class="bi bi-envelope d-flex align-items-center" aria-hidden="true"></i>
+            <i class="bi bi-envelope d-flex align-items-center" aria-hidden="true">
+</i>
             <a class="topbar-email-link" href="mailto:info@vionix.cloud">info@vionix.cloud</a>
           </div>
           <div class="contact-item d-flex align-items-center ms-4">
-            <i class="bi bi-calendar4-week d-flex align-items-center" aria-hidden="true"></i>
+            <i class="bi bi-calendar4-week d-flex align-items-center" aria-hidden="true">
+</i>
             <a class="topbar-cta-link" href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank"
               rel="noopener noreferrer">Schedule a Call</a>
           </div>
-        </div><div class="social-links d-none d-md-flex align-items-center"><a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i class="bi bi-github"
-              aria-hidden="true"></i></a></div></div></div><div class="branding d-flex align-items-center"><div class="container position-relative d-flex align-items-center justify-content-between"><a href="index.html" class="logo d-flex align-items-center"><span class="sitename">Vionix Consulting</span></a>        <nav id="navmenu" class="navmenu">
+        </div>
+<div class="social-links d-none d-md-flex align-items-center">
+<a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub">
+<i class="bi bi-github"
+              aria-hidden="true">
+</i>
+</a>
+</div>
+</div>
+</div>
+<div class="branding d-flex align-items-center">
+<div class="container position-relative d-flex align-items-center justify-content-between">
+<a href="index.html" class="logo d-flex align-items-center">
+<span class="sitename">Vionix Consulting</span>
+</a>        <nav id="navmenu" class="navmenu">
           <ul id="navmenu-list">
-            <li class="dropdown"><a href="index.html#featured-services"><span>Services</span></a><button class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Services submenu" aria-expanded="false"></button>
+            <li class="dropdown">
+<a href="index.html#featured-services">
+<span>Services</span>
+</a>
+<button class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Services submenu" aria-expanded="false">
+</button>
               <ul>
-                <li><a href="index.html#featured-services">Services Overview</a></li>
-                <li><a href="index.html#about">How We Work</a></li>
-                <li><a href="index.html#engagement-formats">Engagements</a></li>                
-                <li><a href="service-details.html">Service Details</a></li>
+                <li>
+<a href="index.html#featured-services">Services Overview</a>
+</li>
+                <li>
+<a href="index.html#about">How We Work</a>
+</li>
+                <li>
+<a href="index.html#engagement-formats">Engagements</a>
+</li>                
+                <li>
+<a href="service-details.html">Service Details</a>
+</li>
               </ul>
             </li>            
             <li class="dropdown">
-              <a href="index.html#team"><span>Team</span></a><button class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Team submenu" aria-expanded="false"></button>
+              <a href="index.html#team">
+<span>Team</span>
+</a>
+<button class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Team submenu" aria-expanded="false">
+</button>
               <ul>
-                <li><a href="index.html#team">Team Overview</a></li>
-                <li><a href="skilltable-team1.html">Stefan's Profile</a></li>
-                <li><a href="skilltable-team2.html">Ruthairat's Profile</a></li>
+                <li>
+<a href="index.html#team">Team Overview</a>
+</li>
+                <li>
+<a href="skilltable-team1.html">Stefan's Profile</a>
+</li>
+                <li>
+<a href="skilltable-team2.html">Ruthairat's Profile</a>
+</li>
               </ul>
             </li>
-            <li><a href="case-studies.html">Case Studies</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li>
+<a href="case-studies.html">Case Studies</a>
+</li>
+            <li>
+<a href="index.html#contact">Contact</a>
+</li>
           </ul>
-          <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list"></button>
-        </nav></div></div></header>
+          <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu-list">
+</button>
+        </nav>
+</div>
+</div>
+</header>
 
 <main class="main">
-<div class="page-title" data-aos="fade"><div class="container d-lg-flex justify-content-between align-items-center"><h2 class="mb-2 mb-lg-0">Case Study</h2><nav class="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><a href="case-studies.html">Case Studies</a></li><li class="current">When Real-Time Became Possible Again</li></ol></nav></div></div>
-<section class="section"><div class="container" data-aos="fade-up"><div class="case-study-wrap"><a class="back-link" href="case-studies.html"><i class="bi bi-arrow-left"></i> Back to all case studies</a>
+<div class="page-title" data-aos="fade">
+<div class="container d-lg-flex justify-content-between align-items-center">
+<h2 class="mb-2 mb-lg-0">Case Study</h2>
+<nav class="breadcrumbs">
+<ol>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="case-studies.html">Case Studies</a>
+</li>
+<li class="current">When Real-Time Became Possible Again</li>
+</ol>
+</nav>
+</div>
+</div>
+<section class="section">
+<div class="container" data-aos="fade-up">
+<div class="case-study-wrap">
+<a class="back-link" href="case-studies.html">
+<i class="bi bi-arrow-left">
+</i> Back to all case studies</a>
 
 <h1>When Real-Time Became Possible Again</h1>
 
 <h3>Snapshot</h3>
-<p><strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br><strong>Client:</strong> <span class="anonymized-client-label">Ironbridge ERP</span> (German ERP provider for machinery trade and rental)<br><strong>Challenge:</strong> In-house Business Intelligence system with nightly batch processes couldn't scale&mdash;larger customers exceeded the overnight window, resulting in incomplete data and lost trust<br><strong>Duration:</strong> 3 months<br><strong>Approach:</strong> Replaced complex ETL architecture with optimized SQL Views, proper indexing, and runtime calculations on the source database</p>
+<p>
+<strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br>
+<strong>Client:</strong> <span class="anonymized-client-label">Ironbridge ERP</span> (German ERP provider for machinery trade and rental)<br>
+<strong>Challenge:</strong> In-house Business Intelligence system with nightly batch processes couldn't scale&mdash;larger customers exceeded the overnight window, resulting in incomplete data and lost trust<br>
+<strong>Duration:</strong> 3 months<br>
+<strong>Approach:</strong> Replaced complex ETL architecture with optimized SQL Views, proper indexing, and runtime calculations on the source database</p>
 
 <h3>The Challenge</h3>
 <p>A German ERP provider had built a specialized Business Intelligence system for their machinery-sector clients. Every night, a custom-built transformation process would extract data from the ERP database, restructure it, calculate derived metrics, and load it into a separate SQL Server dedicated to BI reporting. The front-end&mdash;a functional UI using List &amp; Label for report generation&mdash;was well-accepted by customers.</p>
@@ -78,21 +159,39 @@
 <p>Finally, any solution that directly queried the live ERP database had to prove it wouldn't disrupt daily operations&mdash;database locks or slow queries that impacted business users were unacceptable.</p>
 
 <h3>Approach</h3>
-<p><strong>1. Rapid Discovery and Hypothesis Testing (10 Days)</strong><br>Vionix audited the existing transformation logic and examined the SQL queries the BI system executed against the secondary database. Within days, the pattern was clear: missing indexes caused full table scans, and the &quot;complex&quot; transformations were straightforward JOINs and aggregations. The nightly ETL existed solely because the team believed real-time was impossible&mdash;not because it actually was.</p>
-<p><strong>2. Proof of Concept with SQL Views</strong><br>Vionix built a prototype that replicated 2-3 of the most commonly used BI reports using SQL Views on the source ERP database. The views abstracted the data preparation layer&mdash;implementing proper JOINs, adding calculated fields (inventory levels, average sales prices), and leveraging stored procedures where complexity warranted. Vionix used SQL Server's query optimizer and execution plans to identify exactly which indexes were missing, then added them to the live tables.</p>
-<p><strong>3. Performance Validation in Parallel</strong><br>Vionix ran both systems side-by-side: the legacy nightly ETL and the new real-time Views. This allowed direct data comparison to ensure accuracy and provided a safety net. Load testing under production-like conditions (tens of millions of records for the largest customers) confirmed negligible impact on ERP INSERT/UPDATE operations. Exclusive locks were minimal; daily business workflows remained unaffected.</p>
-<p><strong>4. Developer Buy-In Through Collaboration</strong><br>The original developers initially resisted&mdash;their transformation system was being dismantled. Vionix reframed the conversation: rather than assigning blame, Vionix positioned them as essential partners in the migration. Once they saw the prototype's simplicity (updating a SELECT statement in a View versus debugging thousands of lines of brittle transformation code), enthusiasm replaced resistance. The new approach was objectively easier to maintain.</p>
-<p><strong>5. Full Migration and Knowledge Transfer</strong><br>Over the remaining weeks, Vionix systematically migrated all BI data structures to the View-based architecture. Vionix ensured feature completeness, then conducted structured training sessions&mdash;presentations, tutorials, and walkthroughs with the development team. They took notes, asked questions, and received the materials as references. Code comments served as inline documentation; no separate manuals were requested or required.</p>
-<p><strong>6. Rollback Safety and Gradual Confidence Building</strong><br>The financial risk was contained to consulting hours; the old system remained operational throughout. If the real-time approach had failed, the client could have reverted. It didn't. By the time the migration completed, the team's confidence in the new architecture was absolute.</p>
+<p>
+<strong>1. Rapid Discovery and Hypothesis Testing (10 Days)</strong>
+<br>Vionix audited the existing transformation logic and examined the SQL queries the BI system executed against the secondary database. Within days, the pattern was clear: missing indexes caused full table scans, and the &quot;complex&quot; transformations were straightforward JOINs and aggregations. The nightly ETL existed solely because the team believed real-time was impossible&mdash;not because it actually was.</p>
+<p>
+<strong>2. Proof of Concept with SQL Views</strong>
+<br>Vionix built a prototype that replicated 2-3 of the most commonly used BI reports using SQL Views on the source ERP database. The views abstracted the data preparation layer&mdash;implementing proper JOINs, adding calculated fields (inventory levels, average sales prices), and leveraging stored procedures where complexity warranted. Vionix used SQL Server's query optimizer and execution plans to identify exactly which indexes were missing, then added them to the live tables.</p>
+<p>
+<strong>3. Performance Validation in Parallel</strong>
+<br>Vionix ran both systems side-by-side: the legacy nightly ETL and the new real-time Views. This allowed direct data comparison to ensure accuracy and provided a safety net. Load testing under production-like conditions (tens of millions of records for the largest customers) confirmed negligible impact on ERP INSERT/UPDATE operations. Exclusive locks were minimal; daily business workflows remained unaffected.</p>
+<p>
+<strong>4. Developer Buy-In Through Collaboration</strong>
+<br>The original developers initially resisted&mdash;their transformation system was being dismantled. Vionix reframed the conversation: rather than assigning blame, Vionix positioned them as essential partners in the migration. Once they saw the prototype's simplicity (updating a SELECT statement in a View versus debugging thousands of lines of brittle transformation code), enthusiasm replaced resistance. The new approach was objectively easier to maintain.</p>
+<p>
+<strong>5. Full Migration and Knowledge Transfer</strong>
+<br>Over the remaining weeks, Vionix systematically migrated all BI data structures to the View-based architecture. Vionix ensured feature completeness, then conducted structured training sessions&mdash;presentations, tutorials, and walkthroughs with the development team. They took notes, asked questions, and received the materials as references. Code comments served as inline documentation; no separate manuals were requested or required.</p>
+<p>
+<strong>6. Rollback Safety and Gradual Confidence Building</strong>
+<br>The financial risk was contained to consulting hours; the old system remained operational throughout. If the real-time approach had failed, the client could have reverted. It didn't. By the time the migration completed, the team's confidence in the new architecture was absolute.</p>
 
 <h3>What Was Delivered</h3>
 <ul>
-<li><strong>Optimized SQL Views</strong> on the source ERP database, replacing the entire secondary BI database and nightly ETL pipeline</li>
-<li><strong>Strategic indexes</strong> on ERP tables to eliminate table scans and enable sub-second query performance</li>
-<li><strong>Calculated fields and aggregations</strong> implemented via Views and stored procedures, computed at query time rather than pre-materialized</li>
-<li><strong>Parallel validation environment</strong> demonstrating data consistency and performance under production load</li>
-<li><strong>Training materials and live sessions</strong> equipping the internal team to maintain and extend the system independently</li>
-<li><strong>A scalable architecture</strong> that grows naturally with customer data volume, eliminating the nightly time-window ceiling</li>
+<li>
+<strong>Optimized SQL Views</strong> on the source ERP database, replacing the entire secondary BI database and nightly ETL pipeline</li>
+<li>
+<strong>Strategic indexes</strong> on ERP tables to eliminate table scans and enable sub-second query performance</li>
+<li>
+<strong>Calculated fields and aggregations</strong> implemented via Views and stored procedures, computed at query time rather than pre-materialized</li>
+<li>
+<strong>Parallel validation environment</strong> demonstrating data consistency and performance under production load</li>
+<li>
+<strong>Training materials and live sessions</strong> equipping the internal team to maintain and extend the system independently</li>
+<li>
+<strong>A scalable architecture</strong> that grows naturally with customer data volume, eliminating the nightly time-window ceiling</li>
 </ul>
 
 <h3>Results</h3>
@@ -102,22 +201,42 @@
 <p>By project end, the original developers had become advocates. Maintaining a SELECT statement in a View was objectively simpler than debugging a fragile transformation pipeline. The enthusiasm wasn't diplomatic politeness&mdash;it was genuine relief.</p>
 
 <h3>Why It Worked</h3>
-<p><strong>Questioning Legacy Assumptions</strong><br>The entire ETL architecture existed because someone once believed real-time was impossible. No one revisited that assumption as SQL Server capabilities evolved. Vionix audited the premise, not just the implementation.</p>
-<p><strong>Leveraging Native Database Capabilities</strong><br>Modern relational databases are designed for exactly this workload: indexed lookups, JOINs, and runtime aggregations. The transformation logic wasn't complex enough to justify an external process&mdash;it belonged in the database layer.</p>
-<p><strong>Minimizing Architectural Complexity</strong><br>Every additional system (secondary database, transformation pipeline, nightly scheduler) is a maintenance burden and failure point. The View-based approach collapsed three moving parts into one, drastically improving maintainability.</p>
-<p><strong>Proof Over Persuasion</strong><br>Vionix didn't argue that real-time would work; Vionix demonstrated it. The prototype with 2-3 reports, backed by execution plans and parallel validation, made the case irrefutable.</p>
-<p><strong>Managing the Human System</strong><br>Technical correctness isn't enough when egos are involved. Vionix involved the original developers as collaborators, let them experience the simplicity firsthand, and celebrated their institutional knowledge. The solution succeeded because people accepted it, not just because it was technically sound.</p>
+<p>
+<strong>Questioning Legacy Assumptions</strong>
+<br>The entire ETL architecture existed because someone once believed real-time was impossible. No one revisited that assumption as SQL Server capabilities evolved. Vionix audited the premise, not just the implementation.</p>
+<p>
+<strong>Leveraging Native Database Capabilities</strong>
+<br>Modern relational databases are designed for exactly this workload: indexed lookups, JOINs, and runtime aggregations. The transformation logic wasn't complex enough to justify an external process&mdash;it belonged in the database layer.</p>
+<p>
+<strong>Minimizing Architectural Complexity</strong>
+<br>Every additional system (secondary database, transformation pipeline, nightly scheduler) is a maintenance burden and failure point. The View-based approach collapsed three moving parts into one, drastically improving maintainability.</p>
+<p>
+<strong>Proof Over Persuasion</strong>
+<br>Vionix didn't argue that real-time would work; Vionix demonstrated it. The prototype with 2-3 reports, backed by execution plans and parallel validation, made the case irrefutable.</p>
+<p>
+<strong>Managing the Human System</strong>
+<br>Technical correctness isn't enough when egos are involved. Vionix involved the original developers as collaborators, let them experience the simplicity firsthand, and celebrated their institutional knowledge. The solution succeeded because people accepted it, not just because it was technically sound.</p>
 
 <h3>How Vionix Worked</h3>
 <p>Vionix operated as embedded technical advisors over three months. The discovery phase (10 days) established feasibility; the remaining time focused on systematic migration, validation, and knowledge transfer.</p>
 <p>Training was structured but practical: live sessions with the development team, presentation materials for reference, and inline code documentation. Vionix didn't impose heavy process&mdash;just enough rigor to ensure the team could sustain the system independently.</p>
 <p>The engagement was billed hourly, reflecting the iterative nature of the work. Vionix identified the solution early but took time to validate thoroughly, migrate carefully, and build genuine internal capability. By handover, the client's team owned the architecture&mdash;not just the code, but the reasoning behind it.</p>
 
-</div></div></section>
-<section class="section light-background"><div class="container"><div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3"><div><h3 class="mb-2">Discuss a similar challenge</h3><p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p></div><a class="btn btn-primary" href="index.html#contact">Contact Vionix</a></div></div></section>
+</div>
+</div>
+</section>
+<section class="section light-background">
+<div class="container">
+<div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+<div>
+<h3 class="mb-2">Discuss a similar challenge</h3>
+<p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p>
+</div>
+<a class="btn btn-primary" href="index.html#contact">Contact Vionix</a>
+</div>
+</div>
+</section>
 </main>
-
-<style>.case-study-wrap { background: #fff; border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%); border-radius: 14px; padding: 1.6rem; box-shadow: 0 16px 30px rgba(0, 0, 0, 0.05); } .back-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-bottom: 1rem; font-weight: 500; } .case-study-wrap h1 { font-size: 1.7rem; margin-bottom: 1.3rem; line-height: 1.35; } .case-study-wrap h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.65rem; } .case-study-wrap p, .case-study-wrap li { color: #444; line-height: 1.65; }  .case-study-wrap ul { margin-bottom: 0.8rem; }</style>
 
 <footer id="footer" class="footer">
     <div class="footer-top-band">
@@ -129,8 +248,12 @@
             </a>
             <div class="footer-contact pt-3">
               <p>Soi Sukhumvit 72<br>Sam Rong Nua, Mueang Samut Prakan<br>Samut Prakan 10270<br>Thailand</p>
-              <p class="mt-3"><strong>Phone:</strong> <a href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank" rel="noopener noreferrer">Schedule a Call</a></p>
-              <p><strong>Email:</strong> <a href="mailto:info@vionix.cloud">info@vionix.cloud</a></p>
+              <p class="mt-3">
+<strong>Phone:</strong> <a href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank" rel="noopener noreferrer">Schedule a Call</a>
+</p>
+              <p>
+<strong>Email:</strong> <a href="mailto:info@vionix.cloud">info@vionix.cloud</a>
+</p>
             </div>
           </div>
 
@@ -139,28 +262,55 @@
               <div class="col-6 col-lg-4 footer-group footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <a href="index.html#hero">Home</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="case-studies.html">Case Studies</a></li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="index.html#hero">Home</a>
+</li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="index.html#about">About</a>
+</li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="index.html#contact">Contact</a>
+</li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="case-studies.html">Case Studies</a>
+</li>
                 </ul>
               </div>
 
               <div class="col-6 col-lg-4 footer-group footer-links">
                 <h4>Our Services</h4>
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#database-performance">Database &amp; Reporting Performance</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#legacy-core">Legacy Core Stabilisation</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#modernisation-team">Incremental System Modernisation</a></li>
-                  <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#workflow-enablement">Efficient Team &amp; Workflow Enablement</a></li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="service-details.html#database-performance">Database &amp; Reporting Performance</a>
+</li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="service-details.html#legacy-core">Legacy Core Stabilisation</a>
+</li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="service-details.html#modernisation-team">Incremental System Modernisation</a>
+</li>
+                  <li>
+<i class="bi bi-chevron-right">
+</i> <a href="service-details.html#workflow-enablement">Efficient Team &amp; Workflow Enablement</a>
+</li>
                 </ul>
               </div>
 
               <div class="col-12 col-lg-4 footer-group footer-social">
                 <h4>Follow Us</h4>
                 <div class="social-links d-flex">
-                  <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i class="bi bi-github"
-              aria-hidden="true"></i></a>
+                  <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub">
+<i class="bi bi-github"
+              aria-hidden="true">
+</i>
+</a>
                 </div>
               </div>
             </div>
@@ -169,15 +319,44 @@
       </div>
     </div>
 
-
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Vionix Consulting</strong> <span>All Rights Reserved</span></p>
-      <p class="anonymization-note footer-anonymization-note mb-0"><sup>1</sup> Client names are anonymized pseudonyms used to protect client privacy. Industry context and technical outcomes remain factual.</p>
-      <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Vionix Consulting</strong> <span>All Rights Reserved</span>
+</p>
+      <p class="anonymization-note footer-anonymization-note mb-0">
+<sup>1</sup> Client names are anonymized pseudonyms used to protect client privacy. Industry context and technical outcomes remain factual.</p>
+      <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+</div>
     </div>
 
   </footer>
 
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a><div id="preloader"><div></div><div></div><div></div><div></div></div><script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="assets/vendor/aos/aos.js"></script><script src="assets/vendor/glightbox/js/glightbox.min.js"></script><script src="assets/vendor/waypoints/noframework.waypoints.js"></script><script src="assets/vendor/purecounter/purecounter_vanilla.js"></script><script src="assets/vendor/swiper/swiper-bundle.min.js"></script><script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script><script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script><script src="assets/js/main.js"></script>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+<i class="bi bi-arrow-up-short">
+</i>
+</a>
+<div id="preloader">
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+</div>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js">
+</script>
+<script src="assets/vendor/aos/aos.js">
+</script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js">
+</script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js">
+</script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js">
+</script>
+<script src="assets/js/nav.js">
+</script>
+<script src="assets/js/main.js">
+</script>
 </body>
 </html>

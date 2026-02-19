@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+# Vionix Service Details
+--------------------------------------------------------------*/
+.service-detail-card {
+  --vx-card-border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  --vx-card-radius: 12px;
+  --vx-card-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  height: 100%;
+}
+
+.service-detail-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-details ul.service-detail-list {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin: 0;
+}
+
+.service-details ul.service-detail-list li {
+  margin-bottom: 0.85rem;
+  color: #444;
+  line-height: 1.5;
+  display: list-item;
+  align-items: initial;
+}

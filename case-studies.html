@@ -29,11 +29,10 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <link href="assets/css/main.css" rel="stylesheet">  
-
-
+  
+  <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/components.css" rel="stylesheet">
+<link href="assets/css/case-studies.css" rel="stylesheet">
 </head>
 
 <body class="case-studies-page">
@@ -346,193 +345,7 @@
 
   </main>
 
-  <style>
-    #case-study-hub {
-      padding-top: 0;
-    }
-
-    .case-studies-hero-title {
-      position: relative;
-      padding: 4.75rem 0 3.5rem;
-      overflow: hidden;
-      background: url("assets/img/case-study-bg.png") center center;
-      background-size: cover;
-      margin-bottom: 2.75rem;
-    }
-
-    .case-studies-hero-title::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: color-mix(in srgb, var(--background-color), transparent 30%);
-      z-index: 0;
-    }
-
-    .case-studies-hero-title h2,
-    .case-studies-hero-title p {
-      position: relative;
-      z-index: 1;
-    }
-
-    .case-studies-hero-title-content {
-      padding-bottom: 1.35rem;
-      margin-bottom: 0;
-    }
-
-    .case-studies-hero-intro {
-      position: relative;
-      z-index: 1;
-      padding-bottom: 1.1rem;
-    }
-
-    .case-studies-hero-intro p {
-      line-height: 1.75;
-    }
-
-    .case-grid-shell {
-      padding: 0;
-    }
-
-    .case-grid .isotope-item {
-      display: flex;
-    }
-
-    .case-grid {
-      margin-top: 0;
-    }
-
-    #case-study-hub .portfolio-filters {
-      margin-bottom: 2rem;
-    }
-
-    .case-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1.65rem 1.55rem;
-      border: 1px solid color-mix(in srgb, var(--default-color), transparent 84%);
-      box-shadow: none;
-      transition: background-color 0.22s ease, border-color 0.22s ease;
-    }
-
-    .case-card-link:hover,
-    .case-card-link:focus-visible {
-      background: color-mix(in srgb, var(--accent-color), transparent 95%);
-      border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
-      outline: none;
-    }
-
-    .case-divider {
-      height: 1px;
-      width: 100%;
-      margin: 0 0 1.1rem 0;
-      background: color-mix(in srgb, var(--default-color), transparent 88%);
-    }
-
-    .case-card-head h3 {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.55rem;
-      font-size: 1.08rem;
-      margin-bottom: 0.4rem;
-      line-height: 1.4;
-    }
-
-    .case-title-icon {
-      color: var(--accent-color);
-      font-size: 1.1rem;
-      margin-top: 0.15rem;
-      flex: 0 0 auto;
-    }
-
-    .case-context {
-      font-size: 0.9rem;
-      color: color-mix(in srgb, var(--default-color), transparent 35%);
-      margin-bottom: 0.35rem;
-    }
-
-    .case-card p {
-      font-size: 0.92rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .case-outcome {
-      padding: 0.72rem 0.82rem;
-      background: color-mix(in srgb, var(--accent-color), transparent 88%);
-      border-radius: 8px;
-      border-left: 3px solid var(--accent-color);
-    }
-
-    .case-card p:not(.case-outcome) {
-      padding: 0 0.82rem;
-      padding-left: calc(0.82rem + 3px);
-    }
-
-    .case-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .case-card-head .case-tags {
-      margin-top: 0.45rem;
-      margin-bottom: 1rem;
-    }
-
-    .case-tags span {
-      font-size: 0.75rem;
-      padding: 0.28rem 0.58rem;
-      border-radius: 999px;
-      background: color-mix(in srgb, var(--default-color), transparent 91%);
-      border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-      color: color-mix(in srgb, var(--default-color), transparent 20%);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.36rem;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .case-tag-primary {
-      background: color-mix(in srgb, var(--accent-color), transparent 91%);
-      border-color: color-mix(in srgb, var(--accent-color), transparent 72%);
-      color: var(--accent-color);
-      font-weight: 600;
-    }
-
-    .case-tag-primary i {
-      font-size: 0.85rem;
-    }
-
-    .portfolio-filters li i {
-      font-size: 0.85rem;
-      margin-right: 0.4rem;
-    }
-
-    #case-study-hub+.section {
-      padding-top: 3.25rem;
-    }
-
-    @media (max-width: 768px) {
-      .case-studies-hero-title {
-        padding: 3.75rem 0 2.75rem;
-      }
-
-      .case-studies-hero-title-content {
-        padding-bottom: 1rem;
-      }
-
-      .case-studies-hero-intro {
-        padding-bottom: 0.75rem;
-      }
-
-      #case-study-hub .portfolio-filters {
-        margin-bottom: 1.5rem;
-      }
-    }
-  </style>
-
-  <footer id="footer" class="footer">
+<footer id="footer" class="footer">
     <div class="footer-top-band">
       <div class="container footer-top">
         <div class="row gy-4">
@@ -605,11 +418,11 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/nav.js"></script><script src="assets/js/main.js"></script>
 
 </body>
 
