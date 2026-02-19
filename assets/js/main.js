@@ -57,8 +57,8 @@
 
       if (brandStack.querySelector('.header-collapsed-links')) return;
 
-      const topbarEmail = header.querySelector('.topbar .bi-envelope a');
-      const topbarCta = header.querySelector('.topbar .bi-calendar4-week a');
+      const topbarEmail = header.querySelector('.topbar .topbar-email-link');
+      const topbarCta = header.querySelector('.topbar .topbar-cta-link');
       if (!topbarEmail && !topbarCta) return;
 
       const linksWrap = document.createElement('div');
@@ -103,14 +103,39 @@
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const desktopNavMediaQuery = window.matchMedia('(min-width: 1200px)');
 
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+  function syncDropdownToggleMode() {
+    const isDesktop = desktopNavMediaQuery.matches;
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach((toggleBtn) => {
+      const dropdownItem = toggleBtn.closest('.dropdown');
+      const submenu = dropdownItem ? dropdownItem.querySelector(':scope > ul') : null;
+
+      if (isDesktop) {
+        toggleBtn.setAttribute('tabindex', '-1');
+        toggleBtn.setAttribute('aria-hidden', 'true');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        if (dropdownItem) dropdownItem.classList.remove('active');
+        if (submenu) submenu.classList.remove('dropdown-active');
+        return;
+      }
+
+      toggleBtn.removeAttribute('tabindex');
+      toggleBtn.removeAttribute('aria-hidden');
+    });
+  }
+
+  function mobileNavToggle() {
+    const body = document.querySelector('body');
+    body.classList.toggle('mobile-nav-active');
+    const expanded = body.classList.contains('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
+    mobileNavToggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    mobileNavToggleBtn.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
   }
   if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
   }
 
   /**
@@ -119,7 +144,7 @@
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+        mobileNavToggle();
       }
     });
 
@@ -130,9 +155,18 @@
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
+      if (desktopNavMediaQuery.matches) {
+        return;
+      }
       e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      const dropdownItem = this.closest('.dropdown');
+      if (!dropdownItem) return;
+      const submenu = dropdownItem.querySelector(':scope > ul');
+      if (!submenu) return;
+      dropdownItem.classList.toggle('active');
+      submenu.classList.toggle('dropdown-active');
+      const expanded = dropdownItem.classList.contains('active');
+      this.setAttribute('aria-expanded', expanded ? 'true' : 'false');
       e.stopImmediatePropagation();
     });
   });
@@ -157,13 +191,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -237,6 +273,8 @@
   }
 
   window.addEventListener("load", initSwiper);
+  window.addEventListener('load', syncDropdownToggleMode);
+  desktopNavMediaQuery.addEventListener('change', syncDropdownToggleMode);
 
   /**
    * Init isotope layout and filters
