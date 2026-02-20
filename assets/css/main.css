@@ -2091,6 +2091,68 @@ section,
   }
 }
 
+/*--------------------------------------------------------------
+# Cookie Consent
+--------------------------------------------------------------*/
+.vionix-cookie-consent-banner {
+  z-index: 1080;
+}
+
+.vionix-cookie-consent-banner .vionix-cookie-consent-card {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.vionix-cookie-consent-banner .vionix-cookie-consent-card--compact {
+  max-width: 620px;
+}
+
+.vionix-cookie-consent-banner .vionix-cookie-consent-title {
+  font-weight: 600;
+}
+
+.vionix-cookie-consent-banner .vionix-cookie-consent-text {
+  opacity: 0.95;
+}
+
+.vionix-cookie-consent-banner .vionix-cookie-consent-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vionix-cookie-consent-banner .vionix-cookie-consent-row:first-of-type {
+  border-top: 0;
+}
+
+.vionix-cookie-consent-banner .vionix-cookie-consent-actions .btn {
+  min-width: 140px;
+}
+
+.vionix-cookie-consent-banner .form-check-input[disabled] {
+  opacity: 0.45;
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}
+
+@media (max-width: 575px) {
+  .vionix-cookie-consent-banner {
+    padding: 0.75rem !important;
+  }
+
+  .vionix-cookie-consent-banner .vionix-cookie-consent-card {
+    max-height: 48vh;
+    overflow-y: auto;
+  }
+
+  .vionix-cookie-consent-banner .vionix-cookie-consent-card--settings {
+    max-height: 78vh;
+  }
+
+  .vionix-cookie-consent-banner .vionix-cookie-consent-actions .btn {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
@@ -2260,4 +2322,3 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-

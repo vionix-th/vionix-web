@@ -264,12 +264,9 @@
    * Cookie preferences with category-level controls
    */
   const COOKIE_PREFERENCES_KEY = 'vionix_cookie_preferences_v2';
-  const LEGACY_COOKIE_CONSENT_KEY = 'vionix_cookie_consent_v1';
-  const LEGACY_COOKIE_CONSENT_ACCEPTED = 'accepted';
-  const LEGACY_COOKIE_CONSENT_DECLINED = 'declined';
   const GA_MEASUREMENT_ID = 'G-THRH69PMFC';
   const GA_SCRIPT_ID = 'vionix-ga4-script';
-  const DEFAULT_COOKIE_PREFERENCES = {
+  const ACCEPT_ALL_COOKIE_PREFERENCES = {
     required: true,
     optional_features: true,
     analytics: true
@@ -294,22 +291,6 @@
       if (rawPreferences) {
         return sanitizeCookiePreferences(JSON.parse(rawPreferences));
       }
-
-      const legacyValue = window.localStorage.getItem(LEGACY_COOKIE_CONSENT_KEY);
-      if (legacyValue === LEGACY_COOKIE_CONSENT_ACCEPTED) {
-        return {
-          required: true,
-          optional_features: true,
-          analytics: true
-        };
-      }
-      if (legacyValue === LEGACY_COOKIE_CONSENT_DECLINED) {
-        return {
-          required: true,
-          optional_features: false,
-          analytics: false
-        };
-      }
       return null;
     } catch (error) {
       return null;
@@ -320,7 +301,6 @@
     const normalized = sanitizeCookiePreferences(preferences);
     try {
       window.localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(normalized));
-      window.localStorage.removeItem(LEGACY_COOKIE_CONSENT_KEY);
     } catch (error) {
       // ignore storage failures
     }
@@ -405,24 +385,84 @@
     }
   }
 
-  function ensureCookieConsentStyles() {
-    if (document.getElementById('vionix-cookie-consent-styles')) return;
-    const style = document.createElement('style');
-    style.id = 'vionix-cookie-consent-styles';
-    style.textContent = `
-      .vionix-cookie-consent-banner { z-index: 1080; }
-      .vionix-cookie-consent-banner .vionix-cookie-consent-card { max-width: 980px; margin: 0 auto; }
-      .vionix-cookie-consent-banner .vionix-cookie-consent-title { font-weight: 600; }
-      .vionix-cookie-consent-banner .vionix-cookie-consent-text { opacity: 0.95; }
-      .vionix-cookie-consent-banner .vionix-cookie-consent-row { border-top: 1px solid rgba(255, 255, 255, 0.12); }
-      .vionix-cookie-consent-banner .vionix-cookie-consent-row:first-of-type { border-top: 0; }
-      .vionix-cookie-consent-banner .form-check-input[disabled] {
-        opacity: 0.45;
-        filter: grayscale(100%);
-        cursor: not-allowed;
-      }
+  function getCookieConsentBannerContent(view, preferences) {
+    if (view === 'settings') {
+      return `
+        <div class="vionix-cookie-consent-card vionix-cookie-consent-card--settings bg-dark text-white rounded-3 shadow-lg p-3 p-md-4" role="region" aria-label="Cookie settings">
+          <div class="vionix-cookie-consent-title mb-2">Cookie settings</div>
+          <div class="vionix-cookie-consent-text small mb-3">
+            Required services are always active. Choose optional features and analytics preferences below.
+          </div>
+          <div class="vionix-cookie-consent-row py-2">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <div class="fw-semibold small mb-1">Required services</div>
+                <div class="small opacity-75">Core site operation, contact flow, and essential resources (always on).</div>
+              </div>
+              <div class="form-check form-switch m-0">
+                <input class="form-check-input" type="checkbox" checked disabled aria-label="Required services always active">
+              </div>
+            </div>
+          </div>
+          <div class="vionix-cookie-consent-row py-2">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <div class="fw-semibold small mb-1">Optional features</div>
+                <div class="small opacity-75">Non-essential embedded features (for example, map embed).</div>
+              </div>
+              <div class="form-check form-switch m-0">
+                <input class="form-check-input" type="checkbox" id="vionix-consent-optional-features" ${preferences.optional_features ? 'checked' : ''} aria-label="Enable optional features">
+              </div>
+            </div>
+          </div>
+          <div class="vionix-cookie-consent-row py-2">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <div class="fw-semibold small mb-1">Analytics</div>
+                <div class="small opacity-75">Anonymous usage analytics to measure traffic and improve content.</div>
+              </div>
+              <div class="form-check form-switch m-0">
+                <input class="form-check-input" type="checkbox" id="vionix-consent-analytics" ${preferences.analytics ? 'checked' : ''} aria-label="Enable analytics">
+              </div>
+            </div>
+          </div>
+          <div class="vionix-cookie-consent-actions d-flex flex-wrap justify-content-end gap-2 pt-3">
+            <button type="button" class="btn btn-outline-light btn-sm" data-cookie-consent-action="required-only">Use required only</button>
+            <button type="button" class="btn btn-primary btn-sm" data-cookie-consent-action="save-settings">Save settings</button>
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="vionix-cookie-consent-card vionix-cookie-consent-card--compact bg-dark text-white rounded-3 shadow-lg p-3" role="region" aria-label="Cookie consent">
+        <div class="vionix-cookie-consent-title mb-2">Cookie consent</div>
+        <div class="vionix-cookie-consent-text small mb-3">
+          We use cookies for optional features and anonymous analytics.
+        </div>
+        <div class="vionix-cookie-consent-actions d-flex flex-wrap justify-content-start gap-2">
+          <button type="button" class="btn btn-outline-light btn-sm" data-cookie-consent-action="accept-all">Accept all</button>
+          <button type="button" class="btn btn-outline-light btn-sm" data-cookie-consent-action="choose-settings">Choose settings</button>
+        </div>
+      </div>
     `;
-    document.head.appendChild(style);
+  }
+
+  function renderCookieConsentBanner(banner, view, preferences) {
+    banner.dataset.view = view;
+    banner.innerHTML = getCookieConsentBannerContent(view, preferences);
+  }
+
+  function readCookieConsentTogglePreferences(banner, fallbackPreferences) {
+    const optionalFeaturesToggle = banner.querySelector('#vionix-consent-optional-features');
+    const analyticsToggle = banner.querySelector('#vionix-consent-analytics');
+    if (!optionalFeaturesToggle || !analyticsToggle) return sanitizeCookiePreferences(fallbackPreferences);
+
+    return sanitizeCookiePreferences({
+      required: true,
+      optional_features: optionalFeaturesToggle.checked,
+      analytics: analyticsToggle.checked
+    });
   }
 
   function removeCookieConsentBanner() {
@@ -432,76 +472,47 @@
 
   function showCookieConsentBanner(options) {
     const force = options && options.force === true;
+    const initialView = options && options.view === 'settings' ? 'settings' : 'compact';
     const storedPreferences = getStoredCookiePreferences();
-    const initialPreferences = storedPreferences || DEFAULT_COOKIE_PREFERENCES;
+    const settingsDefaultPreferences = sanitizeCookiePreferences(storedPreferences || ACCEPT_ALL_COOKIE_PREFERENCES);
     if (!force && storedPreferences !== null) return;
-
-    ensureCookieConsentStyles();
     removeCookieConsentBanner();
 
     const banner = document.createElement('div');
     banner.id = 'vionix-cookie-consent-banner';
     banner.className = 'vionix-cookie-consent-banner position-fixed start-0 end-0 bottom-0 p-3';
-    banner.innerHTML = `
-      <div class="vionix-cookie-consent-card bg-dark text-white rounded-3 shadow-lg p-3 p-md-4">
-        <div class="vionix-cookie-consent-title mb-2">Privacy preferences</div>
-        <div class="vionix-cookie-consent-text small mb-3">
-          Required services are always active. Optional features and analytics can be disabled here.
-        </div>
-        <div class="vionix-cookie-consent-row py-2">
-          <div class="d-flex align-items-start justify-content-between gap-3">
-            <div>
-              <div class="fw-semibold small mb-1">Required services</div>
-              <div class="small opacity-75">Core site operation, contact flow, and essential resources (always on).</div>
-            </div>
-            <div class="form-check form-switch m-0">
-              <input class="form-check-input" type="checkbox" checked disabled aria-label="Required services always active">
-            </div>
-          </div>
-        </div>
-        <div class="vionix-cookie-consent-row py-2">
-          <div class="d-flex align-items-start justify-content-between gap-3">
-            <div>
-              <div class="fw-semibold small mb-1">Optional features</div>
-              <div class="small opacity-75">Non-essential embedded features (for example, map embed).</div>
-            </div>
-            <div class="form-check form-switch m-0">
-              <input class="form-check-input" type="checkbox" id="vionix-consent-optional-features" ${initialPreferences.optional_features ? 'checked' : ''} aria-label="Enable optional features">
-            </div>
-          </div>
-        </div>
-        <div class="vionix-cookie-consent-row py-2">
-          <div class="d-flex align-items-start justify-content-between gap-3">
-            <div>
-              <div class="fw-semibold small mb-1">Analytics</div>
-              <div class="small opacity-75">Anonymous usage analytics to measure traffic and improve content.</div>
-            </div>
-            <div class="form-check form-switch m-0">
-              <input class="form-check-input" type="checkbox" id="vionix-consent-analytics" ${initialPreferences.analytics ? 'checked' : ''} aria-label="Enable analytics">
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-end pt-3">
-          <button type="button" class="btn btn-primary btn-sm" data-cookie-consent-action="save">Save preferences</button>
-        </div>
-      </div>
-    `;
+    renderCookieConsentBanner(banner, initialView, settingsDefaultPreferences);
 
     banner.addEventListener('click', (event) => {
       const actionEl = event.target && event.target.closest ? event.target.closest('[data-cookie-consent-action]') : null;
       if (!actionEl) return;
       const action = actionEl.getAttribute('data-cookie-consent-action');
-      if (action !== 'save') return;
+      if (action === 'choose-settings') {
+        const currentPreferences = readCookieConsentTogglePreferences(banner, settingsDefaultPreferences);
+        renderCookieConsentBanner(banner, 'settings', currentPreferences);
+        return;
+      }
 
-      const optionalFeaturesToggle = banner.querySelector('#vionix-consent-optional-features');
-      const analyticsToggle = banner.querySelector('#vionix-consent-analytics');
-      const preferences = persistCookiePreferences({
-        required: true,
-        optional_features: Boolean(optionalFeaturesToggle && optionalFeaturesToggle.checked),
-        analytics: Boolean(analyticsToggle && analyticsToggle.checked)
-      });
-      applyCookiePreferences(preferences);
-      removeCookieConsentBanner();
+      if (action === 'accept-all') {
+        const preferences = persistCookiePreferences(ACCEPT_ALL_COOKIE_PREFERENCES);
+        applyCookiePreferences(preferences);
+        removeCookieConsentBanner();
+        return;
+      }
+
+      if (action === 'required-only') {
+        const preferences = persistCookiePreferences(PRECONSENT_COOKIE_PREFERENCES);
+        applyCookiePreferences(preferences);
+        removeCookieConsentBanner();
+        return;
+      }
+
+      if (action === 'save-settings') {
+        const selectedPreferences = readCookieConsentTogglePreferences(banner, settingsDefaultPreferences);
+        const preferences = persistCookiePreferences(selectedPreferences);
+        applyCookiePreferences(preferences);
+        removeCookieConsentBanner();
+      }
     });
 
     document.body.appendChild(banner);
@@ -533,7 +544,7 @@
     const link = li.querySelector('[data-cookie-settings-link]');
     link.addEventListener('click', (event) => {
       event.preventDefault();
-      showCookieConsentBanner({ force: true });
+      showCookieConsentBanner({ force: true, view: 'settings' });
     });
     return true;
   }
