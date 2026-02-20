@@ -261,68 +261,69 @@
   });
 
   /**
-   * Cookie consent preferences with strict basic GA4 loading
+   * Cookie preferences with category-level controls
    */
-  const COOKIE_CONSENT_KEY = 'vionix_cookie_consent_v1';
-  const COOKIE_CONSENT_ACCEPTED = 'accepted';
-  const COOKIE_CONSENT_DECLINED = 'declined';
+  const COOKIE_PREFERENCES_KEY = 'vionix_cookie_preferences_v2';
+  const LEGACY_COOKIE_CONSENT_KEY = 'vionix_cookie_consent_v1';
+  const LEGACY_COOKIE_CONSENT_ACCEPTED = 'accepted';
+  const LEGACY_COOKIE_CONSENT_DECLINED = 'declined';
   const GA_MEASUREMENT_ID = 'G-THRH69PMFC';
   const GA_SCRIPT_ID = 'vionix-ga4-script';
+  const DEFAULT_COOKIE_PREFERENCES = {
+    required: true,
+    optional_features: false,
+    analytics: false
+  };
 
-  function getCookieConsent() {
+  function sanitizeCookiePreferences(raw) {
+    return {
+      required: true,
+      optional_features: Boolean(raw && raw.optional_features),
+      analytics: Boolean(raw && raw.analytics)
+    };
+  }
+
+  function getStoredCookiePreferences() {
     try {
-      const value = window.localStorage.getItem(COOKIE_CONSENT_KEY);
-      if (value === COOKIE_CONSENT_ACCEPTED || value === COOKIE_CONSENT_DECLINED) return value;
+      const rawPreferences = window.localStorage.getItem(COOKIE_PREFERENCES_KEY);
+      if (rawPreferences) {
+        return sanitizeCookiePreferences(JSON.parse(rawPreferences));
+      }
+
+      const legacyValue = window.localStorage.getItem(LEGACY_COOKIE_CONSENT_KEY);
+      if (legacyValue === LEGACY_COOKIE_CONSENT_ACCEPTED) {
+        return {
+          required: true,
+          optional_features: true,
+          analytics: true
+        };
+      }
+      if (legacyValue === LEGACY_COOKIE_CONSENT_DECLINED) {
+        return {
+          required: true,
+          optional_features: false,
+          analytics: false
+        };
+      }
       return null;
     } catch (error) {
       return null;
     }
   }
 
-  function setCookieConsent(value) {
+  function persistCookiePreferences(preferences) {
+    const normalized = sanitizeCookiePreferences(preferences);
     try {
-      window.localStorage.setItem(COOKIE_CONSENT_KEY, value);
+      window.localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(normalized));
+      window.localStorage.removeItem(LEGACY_COOKIE_CONSENT_KEY);
     } catch (error) {
       // ignore storage failures
     }
-  }
-
-  function clearCookieConsent() {
-    try {
-      window.localStorage.removeItem(COOKIE_CONSENT_KEY);
-    } catch (error) {
-      // ignore storage failures
-    }
+    return normalized;
   }
 
   function disableAnalytics() {
     window[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
-  }
-
-  function ensureGtagStub() {
-    window.dataLayer = window.dataLayer || [];
-    if (typeof window.gtag !== 'function') {
-      window.gtag = function gtag() {
-        window.dataLayer.push(arguments);
-      };
-    }
-  }
-
-  function loadAnalyticsScript(callback) {
-    const existing = document.getElementById(GA_SCRIPT_ID);
-    if (existing) {
-      if (typeof callback === 'function') callback();
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.id = GA_SCRIPT_ID;
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    script.onload = () => {
-      if (typeof callback === 'function') callback();
-    };
-    document.head.appendChild(script);
   }
 
   function enableAnalytics() {
@@ -340,23 +341,61 @@
     } catch (error) {
       window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
     }
-    ensureGtagStub();
-    loadAnalyticsScript(() => {
+
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+    }
+
+    const existing = document.getElementById(GA_SCRIPT_ID);
+    if (existing) {
       window.gtag('js', new Date());
-      window.gtag('config', GA_MEASUREMENT_ID, {
-        anonymize_ip: true
-      });
+      window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
       window.__vionixGaConfigured = true;
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.id = GA_SCRIPT_ID;
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.onload = () => {
+      window.gtag('js', new Date());
+      window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+      window.__vionixGaConfigured = true;
+    };
+    document.head.appendChild(script);
+  }
+
+  function applyOptionalFeatures(enabled) {
+    document.querySelectorAll('[data-optional-feature="map-embed"]').forEach((iframe) => {
+      const consentSrc = iframe.getAttribute('data-consent-src');
+      if (!consentSrc) return;
+      iframe.classList.toggle('d-none', !enabled);
+
+      if (enabled) {
+        if (!iframe.getAttribute('src')) {
+          iframe.setAttribute('src', consentSrc);
+        }
+      } else if (iframe.getAttribute('src')) {
+        iframe.removeAttribute('src');
+      }
+    });
+
+    document.querySelectorAll('[data-optional-placeholder="map-embed"]').forEach((placeholder) => {
+      placeholder.classList.toggle('d-none', enabled);
     });
   }
 
-  function syncAnalyticsWithConsent() {
-    const consent = getCookieConsent();
-    if (consent === COOKIE_CONSENT_ACCEPTED) {
+  function applyCookiePreferences(preferences) {
+    const normalized = sanitizeCookiePreferences(preferences);
+    applyOptionalFeatures(normalized.optional_features);
+
+    if (normalized.analytics) {
       enableAnalytics();
-      return;
-    }
-    if (window.__vionixGaConfigured === true) {
+    } else if (window.__vionixGaConfigured === true) {
       disableAnalytics();
     }
   }
@@ -370,6 +409,9 @@
       .vionix-cookie-consent-banner .vionix-cookie-consent-card { max-width: 980px; margin: 0 auto; }
       .vionix-cookie-consent-banner .vionix-cookie-consent-title { font-weight: 600; }
       .vionix-cookie-consent-banner .vionix-cookie-consent-text { opacity: 0.95; }
+      .vionix-cookie-consent-banner .vionix-cookie-consent-row { border-top: 1px solid rgba(255, 255, 255, 0.12); }
+      .vionix-cookie-consent-banner .vionix-cookie-consent-row:first-of-type { border-top: 0; }
+      .vionix-cookie-consent-banner .form-check-input[disabled] { opacity: 0.95; }
     `;
     document.head.appendChild(style);
   }
@@ -381,7 +423,9 @@
 
   function showCookieConsentBanner(options) {
     const force = options && options.force === true;
-    if (!force && getCookieConsent() !== null) return;
+    const storedPreferences = getStoredCookiePreferences();
+    const initialPreferences = storedPreferences || DEFAULT_COOKIE_PREFERENCES;
+    if (!force && storedPreferences !== null) return;
 
     ensureCookieConsentStyles();
     removeCookieConsentBanner();
@@ -391,17 +435,45 @@
     banner.className = 'vionix-cookie-consent-banner position-fixed start-0 end-0 bottom-0 p-3';
     banner.innerHTML = `
       <div class="vionix-cookie-consent-card bg-dark text-white rounded-3 shadow-lg p-3 p-md-4">
-        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3">
-          <div class="me-md-3">
-            <div class="vionix-cookie-consent-title mb-1">Cookie preferences</div>
-            <div class="vionix-cookie-consent-text small">
-              Vionix stores limited preferences in this browser. Caesar can update this choice any time in Cookie settings.
+        <div class="vionix-cookie-consent-title mb-2">Privacy preferences</div>
+        <div class="vionix-cookie-consent-text small mb-3">
+          Required services are always active. Optional features and analytics are disabled until Caesar enables them.
+        </div>
+        <div class="vionix-cookie-consent-row py-2">
+          <div class="d-flex align-items-start justify-content-between gap-3">
+            <div>
+              <div class="fw-semibold small mb-1">Required services</div>
+              <div class="small opacity-75">Core site operation, contact flow, and essential resources (always on).</div>
+            </div>
+            <div class="form-check form-switch m-0">
+              <input class="form-check-input" type="checkbox" checked disabled aria-label="Required services always active">
             </div>
           </div>
-          <div class="d-flex flex-column flex-sm-row gap-2">
-            <button type="button" class="btn btn-outline-light btn-sm" data-cookie-consent-action="decline">Decline</button>
-            <button type="button" class="btn btn-primary btn-sm" data-cookie-consent-action="accept">Accept</button>
+        </div>
+        <div class="vionix-cookie-consent-row py-2">
+          <div class="d-flex align-items-start justify-content-between gap-3">
+            <div>
+              <div class="fw-semibold small mb-1">Optional features</div>
+              <div class="small opacity-75">Non-essential embedded features (for example, map embed).</div>
+            </div>
+            <div class="form-check form-switch m-0">
+              <input class="form-check-input" type="checkbox" id="vionix-consent-optional-features" ${initialPreferences.optional_features ? 'checked' : ''} aria-label="Enable optional features">
+            </div>
           </div>
+        </div>
+        <div class="vionix-cookie-consent-row py-2">
+          <div class="d-flex align-items-start justify-content-between gap-3">
+            <div>
+              <div class="fw-semibold small mb-1">Analytics</div>
+              <div class="small opacity-75">Anonymous usage analytics to measure traffic and improve content.</div>
+            </div>
+            <div class="form-check form-switch m-0">
+              <input class="form-check-input" type="checkbox" id="vionix-consent-analytics" ${initialPreferences.analytics ? 'checked' : ''} aria-label="Enable analytics">
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end pt-3">
+          <button type="button" class="btn btn-primary btn-sm" data-cookie-consent-action="save">Save preferences</button>
         </div>
       </div>
     `;
@@ -410,13 +482,16 @@
       const actionEl = event.target && event.target.closest ? event.target.closest('[data-cookie-consent-action]') : null;
       if (!actionEl) return;
       const action = actionEl.getAttribute('data-cookie-consent-action');
-      if (action === 'accept') {
-        setCookieConsent(COOKIE_CONSENT_ACCEPTED);
-        syncAnalyticsWithConsent();
-      } else if (action === 'decline') {
-        setCookieConsent(COOKIE_CONSENT_DECLINED);
-        syncAnalyticsWithConsent();
-      }
+      if (action !== 'save') return;
+
+      const optionalFeaturesToggle = banner.querySelector('#vionix-consent-optional-features');
+      const analyticsToggle = banner.querySelector('#vionix-consent-analytics');
+      const preferences = persistCookiePreferences({
+        required: true,
+        optional_features: Boolean(optionalFeaturesToggle && optionalFeaturesToggle.checked),
+        analytics: Boolean(analyticsToggle && analyticsToggle.checked)
+      });
+      applyCookiePreferences(preferences);
       removeCookieConsentBanner();
     });
 
@@ -449,15 +524,14 @@
     const link = li.querySelector('[data-cookie-settings-link]');
     link.addEventListener('click', (event) => {
       event.preventDefault();
-      clearCookieConsent();
-      disableAnalytics();
       showCookieConsentBanner({ force: true });
     });
     return true;
   }
 
   function initCookieConsent() {
-    syncAnalyticsWithConsent();
+    const storedPreferences = getStoredCookiePreferences();
+    applyCookiePreferences(storedPreferences || DEFAULT_COOKIE_PREFERENCES);
     insertCookieSettingsLink();
     showCookieConsentBanner();
   }
