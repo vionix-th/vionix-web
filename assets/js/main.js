@@ -411,7 +411,11 @@
       .vionix-cookie-consent-banner .vionix-cookie-consent-text { opacity: 0.95; }
       .vionix-cookie-consent-banner .vionix-cookie-consent-row { border-top: 1px solid rgba(255, 255, 255, 0.12); }
       .vionix-cookie-consent-banner .vionix-cookie-consent-row:first-of-type { border-top: 0; }
-      .vionix-cookie-consent-banner .form-check-input[disabled] { opacity: 0.95; }
+      .vionix-cookie-consent-banner .form-check-input[disabled] {
+        opacity: 0.45;
+        filter: grayscale(100%);
+        cursor: not-allowed;
+      }
     `;
     document.head.appendChild(style);
   }
@@ -437,7 +441,7 @@
       <div class="vionix-cookie-consent-card bg-dark text-white rounded-3 shadow-lg p-3 p-md-4">
         <div class="vionix-cookie-consent-title mb-2">Privacy preferences</div>
         <div class="vionix-cookie-consent-text small mb-3">
-          Required services are always active. Optional features and analytics are disabled until Caesar enables them.
+          Required services are always active. Optional features and analytics can be disabled here.
         </div>
         <div class="vionix-cookie-consent-row py-2">
           <div class="d-flex align-items-start justify-content-between gap-3">
