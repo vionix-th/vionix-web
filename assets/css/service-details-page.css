@@ -1,16 +1,26 @@
 /*--------------------------------------------------------------
 # Vionix Service Details
 --------------------------------------------------------------*/
+#service-details {
+  padding-top: 2rem;
+  padding-bottom: 2.25rem;
+}
+
+#service-details > .container > .row > .col-lg-10 > .service-details.section {
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+}
+
 .service-detail-card {
   --vx-card-border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   --vx-card-radius: 12px;
   --vx-card-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-  padding: 2rem;
+  padding: 1.6rem;
   height: 100%;
 }
 
 .service-detail-section-title {
-  padding-bottom: 1.1rem;
+  padding-bottom: 0.75rem;
 }
 
 .service-details .service-detail-section-title h2 {
@@ -33,7 +43,7 @@
 
 .service-detail-section-intro {
   max-width: 900px;
-  margin: 0 auto 0.4rem auto;
+  margin: 0 auto 0.1rem auto;
   text-align: center;
   color: var(--vx-text-body);
 }
@@ -67,8 +77,26 @@
   align-items: initial;
 }
 
+#service-details .cta-box {
+  margin-top: 0.8rem !important;
+}
+
 @media (max-width: 768px) {
+  #service-details {
+    padding-top: 1.35rem;
+    padding-bottom: 1.6rem;
+  }
+
+  #service-details > .container > .row > .col-lg-10 > .service-details.section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .service-detail-section-intro {
     text-align: left;
+  }
+
+  .service-detail-card {
+    padding: 1.3rem;
   }
 }
