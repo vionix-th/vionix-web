@@ -327,11 +327,19 @@
 
   function enableAnalytics() {
     if (window.__vionixGaConfigured === true) {
-      window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+      try {
+        delete window[`ga-disable-${GA_MEASUREMENT_ID}`];
+      } catch (error) {
+        window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+      }
       return;
     }
 
-    window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+    try {
+      delete window[`ga-disable-${GA_MEASUREMENT_ID}`];
+    } catch (error) {
+      window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+    }
     ensureGtagStub();
     loadAnalyticsScript(() => {
       window.gtag('js', new Date());
@@ -348,7 +356,9 @@
       enableAnalytics();
       return;
     }
-    disableAnalytics();
+    if (window.__vionixGaConfigured === true) {
+      disableAnalytics();
+    }
   }
 
   function ensureCookieConsentStyles() {
