@@ -271,6 +271,11 @@
   const GA_SCRIPT_ID = 'vionix-ga4-script';
   const DEFAULT_COOKIE_PREFERENCES = {
     required: true,
+    optional_features: true,
+    analytics: true
+  };
+  const PRECONSENT_COOKIE_PREFERENCES = {
+    required: true,
     optional_features: false,
     analytics: false
   };
@@ -535,7 +540,7 @@
 
   function initCookieConsent() {
     const storedPreferences = getStoredCookiePreferences();
-    applyCookiePreferences(storedPreferences || DEFAULT_COOKIE_PREFERENCES);
+    applyCookiePreferences(storedPreferences || PRECONSENT_COOKIE_PREFERENCES);
     insertCookieSettingsLink();
     showCookieConsentBanner();
   }
