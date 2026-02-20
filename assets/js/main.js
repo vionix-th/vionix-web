@@ -261,12 +261,13 @@
   });
 
   /**
-   * Cookie consent preferences with GA4 consent mode integration
+   * Cookie consent preferences with strict basic GA4 loading
    */
   const COOKIE_CONSENT_KEY = 'vionix_cookie_consent_v1';
   const COOKIE_CONSENT_ACCEPTED = 'accepted';
   const COOKIE_CONSENT_DECLINED = 'declined';
   const GA_MEASUREMENT_ID = 'G-THRH69PMFC';
+  const GA_SCRIPT_ID = 'vionix-ga4-script';
 
   function getCookieConsent() {
     try {
@@ -294,35 +295,60 @@
     }
   }
 
-  function hasGtag() {
-    return typeof window.gtag === 'function';
+  function disableAnalytics() {
+    window[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
   }
 
-  function updateAnalyticsConsent(granted) {
-    if (!hasGtag()) return;
-    window.gtag('consent', 'update', {
-      analytics_storage: granted ? 'granted' : 'denied',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied'
+  function ensureGtagStub() {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+    }
+  }
+
+  function loadAnalyticsScript(callback) {
+    const existing = document.getElementById(GA_SCRIPT_ID);
+    if (existing) {
+      if (typeof callback === 'function') callback();
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.id = GA_SCRIPT_ID;
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.onload = () => {
+      if (typeof callback === 'function') callback();
+    };
+    document.head.appendChild(script);
+  }
+
+  function enableAnalytics() {
+    if (window.__vionixGaConfigured === true) {
+      window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+      return;
+    }
+
+    window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+    ensureGtagStub();
+    loadAnalyticsScript(() => {
+      window.gtag('js', new Date());
+      window.gtag('config', GA_MEASUREMENT_ID, {
+        anonymize_ip: true
+      });
+      window.__vionixGaConfigured = true;
     });
-  }
-
-  function configureAnalyticsIfNeeded() {
-    if (!hasGtag()) return;
-    if (window.__vionixGaConfigured === true) return;
-    window.gtag('config', GA_MEASUREMENT_ID);
-    window.__vionixGaConfigured = true;
   }
 
   function syncAnalyticsWithConsent() {
     const consent = getCookieConsent();
     if (consent === COOKIE_CONSENT_ACCEPTED) {
-      updateAnalyticsConsent(true);
-      configureAnalyticsIfNeeded();
+      enableAnalytics();
       return;
     }
-    updateAnalyticsConsent(false);
+    disableAnalytics();
   }
 
   function ensureCookieConsentStyles() {
@@ -414,7 +440,7 @@
     link.addEventListener('click', (event) => {
       event.preventDefault();
       clearCookieConsent();
-      updateAnalyticsConsent(false);
+      disableAnalytics();
       showCookieConsentBanner({ force: true });
     });
     return true;
