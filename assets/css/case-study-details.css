@@ -35,7 +35,7 @@
 
 .case-study-wrap p,
 .case-study-wrap li {
-  color: #444;
+  color: var(--vx-text-body);
   line-height: 1.65;
 }
 

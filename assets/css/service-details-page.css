@@ -9,10 +9,48 @@
   height: 100%;
 }
 
+.service-detail-section-title {
+  padding-bottom: 1.1rem;
+}
+
+.service-details .service-detail-section-title h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.service-details .service-detail-section-title p {
+  margin: 10px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+}
+
+.service-details .service-detail-section-title p .description-title {
+  color: var(--accent-color);
+}
+
+.service-detail-section-intro {
+  max-width: 900px;
+  margin: 0 auto 0.4rem auto;
+  text-align: center;
+  color: var(--vx-text-body);
+}
+
 .service-detail-card h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1rem;
+}
+
+.service-card-title-icon {
+  color: var(--vx-icon-accent);
+  font-size: 1.05rem;
+  line-height: 1;
 }
 
 .service-details ul.service-detail-list {
@@ -23,8 +61,14 @@
 
 .service-details ul.service-detail-list li {
   margin-bottom: 0.85rem;
-  color: #444;
+  color: var(--vx-text-body);
   line-height: 1.5;
   display: list-item;
   align-items: initial;
+}
+
+@media (max-width: 768px) {
+  .service-detail-section-intro {
+    text-align: left;
+  }
 }

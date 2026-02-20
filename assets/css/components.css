@@ -2,10 +2,14 @@
 # Vionix Shared Components
 --------------------------------------------------------------*/
 :root {
-  --vx-card-bg: #fff;
+  --vx-card-bg: var(--surface-color);
   --vx-card-border: 1px solid color-mix(in srgb, var(--default-color), transparent 84%);
   --vx-card-radius: 12px;
   --vx-card-shadow: 0 16px 30px rgba(0, 0, 0, 0.06);
+  --vx-text-strong: var(--heading-color);
+  --vx-text-body: color-mix(in srgb, var(--default-color), transparent 8%);
+  --vx-divider: color-mix(in srgb, var(--default-color), transparent 86%);
+  --vx-icon-accent: var(--accent-color);
 }
 
 :where(.vx-card-surface, .case-card, .case-study-wrap, .service-detail-card, .bio-section .service-item) {
