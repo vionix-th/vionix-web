@@ -261,11 +261,12 @@
   });
 
   /**
-   * Cookie consent preferences (no analytics coupling)
+   * Cookie consent preferences with GA4 consent mode integration
    */
   const COOKIE_CONSENT_KEY = 'vionix_cookie_consent_v1';
   const COOKIE_CONSENT_ACCEPTED = 'accepted';
   const COOKIE_CONSENT_DECLINED = 'declined';
+  const GA_MEASUREMENT_ID = 'G-THRH69PMFC';
 
   function getCookieConsent() {
     try {
@@ -291,6 +292,37 @@
     } catch (error) {
       // ignore storage failures
     }
+  }
+
+  function hasGtag() {
+    return typeof window.gtag === 'function';
+  }
+
+  function updateAnalyticsConsent(granted) {
+    if (!hasGtag()) return;
+    window.gtag('consent', 'update', {
+      analytics_storage: granted ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  }
+
+  function configureAnalyticsIfNeeded() {
+    if (!hasGtag()) return;
+    if (window.__vionixGaConfigured === true) return;
+    window.gtag('config', GA_MEASUREMENT_ID);
+    window.__vionixGaConfigured = true;
+  }
+
+  function syncAnalyticsWithConsent() {
+    const consent = getCookieConsent();
+    if (consent === COOKIE_CONSENT_ACCEPTED) {
+      updateAnalyticsConsent(true);
+      configureAnalyticsIfNeeded();
+      return;
+    }
+    updateAnalyticsConsent(false);
   }
 
   function ensureCookieConsentStyles() {
@@ -344,8 +376,10 @@
       const action = actionEl.getAttribute('data-cookie-consent-action');
       if (action === 'accept') {
         setCookieConsent(COOKIE_CONSENT_ACCEPTED);
+        syncAnalyticsWithConsent();
       } else if (action === 'decline') {
         setCookieConsent(COOKIE_CONSENT_DECLINED);
+        syncAnalyticsWithConsent();
       }
       removeCookieConsentBanner();
     });
@@ -380,12 +414,14 @@
     link.addEventListener('click', (event) => {
       event.preventDefault();
       clearCookieConsent();
+      updateAnalyticsConsent(false);
       showCookieConsentBanner({ force: true });
     });
     return true;
   }
 
   function initCookieConsent() {
+    syncAnalyticsWithConsent();
     insertCookieSettingsLink();
     showCookieConsentBanner();
   }
