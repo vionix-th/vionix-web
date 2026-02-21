@@ -438,11 +438,12 @@
       <div class="vionix-cookie-consent-card vionix-cookie-consent-card--compact bg-dark text-white rounded-3 shadow-lg p-3" role="region" aria-label="Cookie consent">
         <div class="vionix-cookie-consent-title mb-2">Cookie consent</div>
         <div class="vionix-cookie-consent-text small mb-3">
-          We use cookies for optional features and anonymous analytics.
+          We use required services only by default. You can accept optional features and anonymous analytics, or keep required only.
         </div>
-        <div class="vionix-cookie-consent-actions d-flex flex-wrap justify-content-start gap-2">
-          <button type="button" class="btn btn-outline-light btn-sm" data-cookie-consent-action="accept-all">Accept all</button>
-          <button type="button" class="btn btn-outline-light btn-sm" data-cookie-consent-action="choose-settings">Choose settings</button>
+        <div class="vionix-cookie-consent-actions d-flex flex-wrap align-items-center gap-2">
+          <button type="button" class="btn btn-primary btn-sm" data-cookie-consent-action="accept-all">Accept all</button>
+          <button type="button" class="btn btn-light btn-sm" data-cookie-consent-action="required-only">Use required only</button>
+          <button type="button" class="btn btn-outline-light btn-sm ms-auto" data-cookie-consent-action="choose-settings">Choose settings</button>
         </div>
       </div>
     `;
@@ -474,7 +475,7 @@
     const force = options && options.force === true;
     const initialView = options && options.view === 'settings' ? 'settings' : 'compact';
     const storedPreferences = getStoredCookiePreferences();
-    const settingsDefaultPreferences = sanitizeCookiePreferences(storedPreferences || ACCEPT_ALL_COOKIE_PREFERENCES);
+    const settingsDefaultPreferences = sanitizeCookiePreferences(storedPreferences || PRECONSENT_COOKIE_PREFERENCES);
     if (!force && storedPreferences !== null) return;
     removeCookieConsentBanner();
 
