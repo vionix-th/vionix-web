@@ -10,6 +10,30 @@ fail() {
   exit 1
 }
 
+has_rg() {
+  command -v rg >/dev/null 2>&1
+}
+
+has_match() {
+  local pattern="$1"
+  local file="$2"
+  if has_rg; then
+    rg -q "$pattern" "$file"
+  else
+    grep -Eq "$pattern" "$file"
+  fi
+}
+
+first_line() {
+  local pattern="$1"
+  local file="$2"
+  if has_rg; then
+    rg -n "$pattern" "$file" | head -n1 | cut -d: -f1 || true
+  else
+    awk -v pat="$pattern" 'match($0, pat) { print NR; exit }' "$file"
+  fi
+}
+
 # No hand-maintained root HTML sources should remain.
 if find "$ROOT" -maxdepth 1 -type f -name "*.html" | grep -q .; then
   fail "Legacy root-level HTML files detected. Source pages must live in src/pages only."
@@ -26,16 +50,16 @@ for required in CNAME robots.txt sitemap.xml; do
 done
 
 for html in "$DIST"/*.html; do
-  nav_line=$(rg -n "assets/js/nav.js" "$html" | head -n1 | cut -d: -f1 || true)
-  main_line=$(rg -n "assets/js/main.js" "$html" | head -n1 | cut -d: -f1 || true)
-  main_css_line=$(rg -n "assets/css/main.css" "$html" | head -n1 | cut -d: -f1 || true)
+  nav_line=$(first_line "assets/js/nav.js" "$html")
+  main_line=$(first_line "assets/js/main.js" "$html")
+  main_css_line=$(first_line "assets/css/main.css" "$html")
 
   [[ -n "$nav_line" ]] || fail "$(basename "$html") missing assets/js/nav.js include"
   [[ -n "$main_line" ]] || fail "$(basename "$html") missing assets/js/main.js include"
   [[ -n "$main_css_line" ]] || fail "$(basename "$html") missing assets/css/main.css include"
   [[ "$nav_line" -lt "$main_line" ]] || fail "$(basename "$html") must load nav.js before main.js"
 
-  if rg -q '<link href="[^/"][^"]?" rel="stylesheet">' "$html"; then
+  if has_match '<link href="[^/"][^"]?" rel="stylesheet">' "$html"; then
     fail "$(basename "$html") contains malformed stylesheet href values"
   fi
 done
