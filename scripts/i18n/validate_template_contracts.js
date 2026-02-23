@@ -9,7 +9,19 @@ const migratedPages = [
   "service-details",
   "case-studies",
   "skilltable-team1",
-  "skilltable-team2"
+  "skilltable-team2",
+  "case-study-vionix-01",
+  "case-study-vionix-02",
+  "case-study-vionix-03",
+  "case-study-vionix-04",
+  "case-study-vionix-05",
+  "case-study-vionix-06",
+  "case-study-vionix-07",
+  "case-study-vionix-08",
+  "case-study-vionix-09",
+  "case-study-vionix-10",
+  "case-study-vionix-11",
+  "case-study-vionix-12"
 ];
 
 let failures = 0;

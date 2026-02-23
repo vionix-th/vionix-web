@@ -48,6 +48,21 @@
           </li>
           <li><a href="{{ localeHref('case-studies.html') }}">{{ localeData.nav.caseStudies }}</a></li>
           <li><a href="{{ localeHref('index.html#contact') }}">{{ localeData.nav.contact }}</a></li>
+          <li class="dropdown">
+            <a href="#"><span>{{ localeCode | upper }}</span></a><button
+              class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle language submenu"
+              aria-expanded="false"></button>
+            <ul>
+              {% for option in availableLocales %}
+              <li>
+                <a href="{{ option.href }}"
+                  {% if option.isCurrent %}aria-current="page"{% else %}data-locale-switch="{{ option.code }}"{% endif %}>
+                  {{ option.label }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
         </ul>
         <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu"
           aria-expanded="false" aria-controls="navmenu-list"></button>

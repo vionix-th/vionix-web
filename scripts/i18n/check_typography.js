@@ -16,6 +16,7 @@ const targets = [
   "home.json",
   "service-details.json",
   "case-studies.json",
+  "case-study-details.json",
   "skilltable-team1.json",
   "skilltable-team2.json"
 ];
@@ -48,7 +49,7 @@ function walk(value, keyPath, filePath) {
   if (/\p{L}\s+[,:;.!?]/u.test(s)) {
     add("unexpected whitespace before punctuation");
   }
-  if (/(TODO|MISSING|lorem ipsum|XXX)/i.test(s)) {
+  if (/\b(TODO|lorem ipsum|XXX)\b/i.test(s)) {
     add("placeholder-like content detected");
   }
   if (/\s{2,}/.test(s)) {

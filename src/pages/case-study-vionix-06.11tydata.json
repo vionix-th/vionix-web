@@ -10,5 +10,7 @@
   "currentPage": "case-study-vionix-06",
   "styleCssExtra": [
     "assets/css/case-study-details.css"
-  ]
+  ],
+  "pageApprovalKey": "case-study-vionix-06",
+  "pageContentKey": "case-study-vionix-06"
 }

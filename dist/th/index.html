@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <base href="/">
+  <script src="assets/js/locale-router.js"></script>
   
   
   
@@ -136,6 +137,35 @@
           </li>
           <li><a href="/th/case-studies.html">กรณีศึกษา</a></li>
           <li><a href="/th/index.html#contact">ติดต่อ</a></li>
+          <li class="dropdown">
+            <a href="#"><span>TH</span></a><button
+              class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle language submenu"
+              aria-expanded="false"></button>
+            <ul>
+              
+              <li>
+                <a href="/index.html"
+                  data-locale-switch="en">
+                  EN
+                </a>
+              </li>
+              
+              <li>
+                <a href="/de/index.html"
+                  data-locale-switch="de">
+                  DE
+                </a>
+              </li>
+              
+              <li>
+                <a href="/th/index.html"
+                  aria-current="page">
+                  TH
+                </a>
+              </li>
+              
+            </ul>
+          </li>
         </ul>
         <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu"
           aria-expanded="false" aria-controls="navmenu-list"></button>

@@ -2,6 +2,7 @@ const pageDefaults = require("../data/en/page-defaults.json");
 const i18n = require("../i18n/locales.json");
 const approval = require("../i18n/approval.json");
 const servicePillars = require("../data/taxonomy/service-pillars.json");
+const detailRegistry = require("../data/case-studies/details-registry.json");
 
 const enSite = require("../data/en/site.json");
 const enNav = require("../data/en/nav.json");
@@ -9,6 +10,7 @@ const enFooter = require("../data/en/footer.json");
 const enHome = require("../data/en/home.json");
 const enServiceDetails = require("../data/en/service-details.json");
 const enCaseStudies = require("../data/en/case-studies.json");
+const enCaseStudyDetails = require("../data/en/case-study-details.json");
 const enSkillTeam1 = require("../data/en/skilltable-team1.json");
 const enSkillTeam2 = require("../data/en/skilltable-team2.json");
 const enPageMeta = require("../data/en/page-meta.json");
@@ -19,6 +21,7 @@ const deFooter = require("../data/de/footer.json");
 const deHome = require("../data/de/home.json");
 const deServiceDetails = require("../data/de/service-details.json");
 const deCaseStudies = require("../data/de/case-studies.json");
+const deCaseStudyDetails = require("../data/de/case-study-details.json");
 const deSkillTeam1 = require("../data/de/skilltable-team1.json");
 const deSkillTeam2 = require("../data/de/skilltable-team2.json");
 const dePageMeta = require("../data/de/page-meta.json");
@@ -29,6 +32,7 @@ const thFooter = require("../data/th/footer.json");
 const thHome = require("../data/th/home.json");
 const thServiceDetails = require("../data/th/service-details.json");
 const thCaseStudies = require("../data/th/case-studies.json");
+const thCaseStudyDetails = require("../data/th/case-study-details.json");
 const thSkillTeam1 = require("../data/th/skilltable-team1.json");
 const thSkillTeam2 = require("../data/th/skilltable-team2.json");
 const thPageMeta = require("../data/th/page-meta.json");
@@ -45,6 +49,7 @@ const localeBundles = {
       "skilltable-team1": enSkillTeam1,
       "skilltable-team2": enSkillTeam2
     },
+    detailPages: enCaseStudyDetails,
     meta: enPageMeta
   },
   de: {
@@ -58,6 +63,7 @@ const localeBundles = {
       "skilltable-team1": deSkillTeam1,
       "skilltable-team2": deSkillTeam2
     },
+    detailPages: deCaseStudyDetails,
     meta: dePageMeta
   },
   th: {
@@ -71,6 +77,7 @@ const localeBundles = {
       "skilltable-team1": thSkillTeam1,
       "skilltable-team2": thSkillTeam2
     },
+    detailPages: thCaseStudyDetails,
     meta: thPageMeta
   }
 };
@@ -172,6 +179,13 @@ module.exports = {
       if (!pageContentKey) return {};
       const bundle = localeBundles[data.localeCode] || localeBundles[defaultLocale];
       return bundle.pages[pageContentKey] || {};
+    },
+    detailContent: (data) => {
+      const pageContentKey = data.pageContentKey;
+      if (!pageContentKey || !detailRegistry[pageContentKey]) return {};
+      const bundle = localeBundles[data.localeCode] || localeBundles[defaultLocale];
+      const defaultBundle = localeBundles[defaultLocale];
+      return bundle.detailPages[pageContentKey] || defaultBundle.detailPages[pageContentKey] || {};
     },
     availableLocales: (data) => {
       const pageKey = data.pageApprovalKey || data.currentPage || data.page.fileSlug;

@@ -33,5 +33,89 @@
     "metaKeywords": "software engineering, technical skills, professional competencies",
     "ogType": "website",
     "structuredData": ""
+  },
+  "case-study-vionix-01": {
+    "pageTitle": "Case Study: When 4-Hour Reports Block Your Entire HQ: Rebuilding Trust Through Database Discipline | Vionix Consulting",
+    "metaDescription": "How Vionix cut 4-hour distribution reports to minutes via indexing, SQL views, and safer reporting—restoring HQ stability in three weeks.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-02": {
+    "pageTitle": "Case Study: When the Whole Business Runs Through a Cash Desk: Solving Chronic POS Failures in 80+ Fashion Stores | Vionix Consulting",
+    "metaDescription": "How Vionix reduced chronic POS failures across 80+ stores by redesigning dust-hardened hardware and introducing ventilation and cleaning cycles.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-03": {
+    "pageTitle": "Case Study: Restoring Trust in Critical Compliance: Zero-Failure Inventory Rollout for Compliance Audits | Vionix Consulting",
+    "metaDescription": "How Vionix delivered an offline-first inventory system with audit-ready paper trails and a zero-failure rollout across 80 stores.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-04": {
+    "pageTitle": "Case Study: Making Inventory Visible: How a Monitoring Layer Stabilised 80-Store Data Collection | Vionix Consulting",
+    "metaDescription": "How Vionix added monitoring, dashboards, and fallback retrieval paths to make overnight store data reliable across 80+ locations.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-05": {
+    "pageTitle": "Case Study: From Research Scripts to Agency-Ready Software: Industrialising a Forest Inventory Method | Vionix Consulting",
+    "metaDescription": "How Vionix turned research scripts into a deployable Windows desktop app with usable workflows and handover-ready code for agency demos.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-06": {
+    "pageTitle": "Case Study: From Spaghetti to Strategy: Rebuilding a Spectrum Analyzer Software Stack | Vionix Consulting",
+    "metaDescription": "How Vionix rebuilt unstable spectrum-analyzer software into a maintainable, cross-platform Qt/C++ stack and enabled sustainable internal development.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-07": {
+    "pageTitle": "Case Study: When the Webshop Was Ready—But the Back-End Wasn't | Vionix Consulting",
+    "metaDescription": "How Vionix designed a DMZ integration layer and REST API to connect a ready webshop to a live rental ERP and launch on schedule.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-08": {
+    "pageTitle": "Case Study: When Offline Isn't Optional: Rebuilding a Field Service System That Actually Works in Construction Pits | Vionix Consulting",
+    "metaDescription": "How Vionix replaced a failing field-service system with a typed C# stack and reliable offline synchronization for technicians in harsh conditions.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-09": {
+    "pageTitle": "Case Study: From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It | Vionix Consulting",
+    "metaDescription": "How Vionix stabilised a 30-year ERP by introducing version control, isolated dev environments, and incremental modernization without a rewrite.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-10": {
+    "pageTitle": "Case Study: When Real-Time Became Possible Again | Vionix Consulting",
+    "metaDescription": "How Vionix replaced a failing nightly BI ETL pipeline with indexed SQL Views and restored real-time reporting performance at scale.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-11": {
+    "pageTitle": "Case Study: Bridging the Gap: Digitalising Goods Receipt on Legacy Hardware | Vionix Consulting",
+    "metaDescription": "How Vionix delivered a Windows CE goods-receipt app and SOAP middleware to eliminate paper workflows and run for years without software incidents.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
+  },
+  "case-study-vionix-12": {
+    "pageTitle": "Case Study: Turning a Black-Box Legacy System into a Company-Wide Delivery and Support Operating System | Vionix Consulting",
+    "metaDescription": "How Vionix migrated a legacy project and service operating model to Jira Cloud with a pilot, rollout, and full handover to the client team.",
+    "metaKeywords": "",
+    "ogType": "article",
+    "structuredData": ""
   }
 }

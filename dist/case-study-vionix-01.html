@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <base href="/">
+  <script src="assets/js/locale-router.js"></script>
   
   
   
@@ -122,6 +123,28 @@
           </li>
           <li><a href="/case-studies.html">Case Studies</a></li>
           <li><a href="/index.html#contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#"><span>EN</span></a><button
+              class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle language submenu"
+              aria-expanded="false"></button>
+            <ul>
+              
+              <li>
+                <a href="/case-study-vionix-01.html"
+                  aria-current="page">
+                  EN
+                </a>
+              </li>
+              
+              <li>
+                <a href="/de/case-study-vionix-01.html"
+                  data-locale-switch="de">
+                  DE
+                </a>
+              </li>
+              
+            </ul>
+          </li>
         </ul>
         <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu"
           aria-expanded="false" aria-controls="navmenu-list"></button>
@@ -132,164 +155,226 @@
 
   
 <main class="main">
-    <div class="page-title" data-aos="fade">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h2 class="mb-2 mb-lg-0">Case Study</h2>
-        <nav class="breadcrumbs">
-          <ol>
-            <li>
-<a href="index.html">Home</a>
-</li>
-            <li>
-<a href="case-studies.html">Case Studies</a>
-</li>
-            <li class="current">Database Discipline</li>
-          </ol>
-        </nav>
+  <div class="page-title" data-aos="fade">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h2 class="mb-2 mb-lg-0">Case Studies</h2>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/case-studies.html">Case Studies</a></li>
+          <li class="current">Database Discipline</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container" data-aos="fade-up">
+      <div class="case-study-wrap">
+        <a class="back-link" href="/case-studies.html"><i class="bi bi-arrow-left"></i> Back to all case studies</a>
+
+        <h1>When 4-Hour Reports Block Your Entire HQ: Rebuilding Trust Through Database Discipline</h1>
+
+        
+        <h3>Snapshot</h3>
+        
+        
+        <p>Delivery model: Principal-led engagement (Stefan, Founder &amp; Principal Consultant) Client: Nordlicht Retail (German fashion retailer)</p>
+        
+        
+        
+        <p>A Major German fashion retailer with 80+ outlets was paralysed by a legacy POS reporting system. Daily distribution planning required reports that took 4 hours to run, locked the entire headquarters IT infrastructure, and crashed regularly. The engagement restored operational stability in 3 weeks and rebuilt the relationship between IT and Sales leadership.</p>
+        
+        
+        
+        <h3>The Challenge</h3>
+        
+        
+        <p>Every morning, the Head of Sales needed distribution reports to allocate stock across 80 retail outlets. The process was a daily crisis:</p>
+        
+        
+        
+        <ul>
+          
+          <li>4-hour runtime for key reports, with frequent crashes before completion</li>
+          
+          <li>Exclusive database locks froze all HQ systems during execution</li>
+          
+          <li>Dual-database chaos: MySQL and MSSQL with no coherent schema design</li>
+          
+          <li>Legacy codebase: Hand-written reporting software in CA-Visual Objects, a niche language with limited maintainability</li>
+          
+          <li>Constant complaints: IT had lost credibility with the business. Sales viewed the technical team as incompetent</li>
+          
+        </ul>
+        
+        
+        
+        <p>The system had become a bottleneck for the entire retail operation, with no one in IT able to communicate effectively with Sales about what was technically feasible.</p>
+        
+        
+        
+        <h3>Constraints</h3>
+        
+        
+        <ul>
+          
+          <li>No budget for replacement: The POS system itself could not be rewritten</li>
+          
+          <li>Dual-database architecture: Had to work within the existing MySQL/MSSQL split</li>
+          
+          <li>Operational pressure: Reports were mission-critical. Downtime during fixes was unacceptable</li>
+          
+          <li>Trust deficit: Any solution had to deliver immediate, visible improvement to regain business confidence</li>
+          
+        </ul>
+        
+        
+        
+        <h3>Approach</h3>
+        
+        
+        <p>1. Query Plan Forensics Analysed execution plans for every statement in the reporting software. Identified missing indexes, Cartesian joins, and full table scans on transactional tables with millions of rows.</p>
+        
+        
+        
+        <p>2. Strategic Indexing Added indexes on frequently joined columns and filter predicates. Prioritised the queries causing the longest locks.</p>
+        
+        
+        
+        <p>3. View-Based Abstraction Encapsulated common join patterns (for example sales transactions + stock movements + outlet metadata) into database views. This eliminated redundant query logic and ensured consistency.</p>
+        
+        
+        
+        <p>4. Stored Procedures for Calculated Fields Moved complex calculations (inventory deltas, regional aggregations) into stored procedures feeding the views, reducing the computational burden on the reporting layer.</p>
+        
+        
+        
+        <p>5. Replaced Lock-Heavy Tooling Retired the CA-Visual Objects hand-written software. Implemented List &amp; Label, a commercial reporting tool, to query the new views without exclusive locks.</p>
+        
+        
+        
+        <p>6. Transactional Calculation Architecture Stopped relying on snapshot data (which required locks to ensure consistency). Instead, summed all sales, returns, and stock movements transactionally, then correlated with annual physical inventory counts. This approach:</p>
+        
+        
+        
+        <ul>
+          
+          <li>Eliminated the need for long-running locks</li>
+          
+          <li>Made manual corrections (for example inventory adjustments) immediately visible across the system</li>
+          
+          <li>Drastically reduced faulty records from stale snapshots</li>
+          
+        </ul>
+        
+        
+        
+        <p>7. User Education on &quot;Data Correctness&quot; Worked with Sales to reframe expectations: A report showing 5 items in stock vs. 4 or 6 is operationally equivalent if a sale could occur moments after generation. The goal is decision-grade accuracy, not real-time perfection. This shift defused complaints about minor discrepancies and focused attention on actionable insights.</p>
+        
+        
+        
+        <h3>What Was Delivered</h3>
+        
+        
+        <ul>
+          
+          <li>Indexed database schema with views consolidating 80% of reporting queries</li>
+          
+          <li>List &amp; Label-based reporting suite replacing legacy CA-Visual Objects code</li>
+          
+          <li>Transactional calculation engine (stored procedures) for inventory reconciliation</li>
+          
+          <li>Documentation on the new data model and query patterns for future maintainers</li>
+          
+          <li>Training session for Sales on interpreting report data and understanding timing constraints</li>
+          
+        </ul>
+        
+        
+        
+        <h3>Results</h3>
+        
+        
+        <ul>
+          
+          <li>Runtime reduction: 4 hours -&gt; 30 minutes for critical distribution reports</li>
+          
+          <li>Zero system locks: HQ IT infrastructure no longer frozen during report generation</li>
+          
+          <li>Eliminated daily crashes: Reports ran reliably every morning</li>
+          
+          <li>Immediate data propagation: Manual corrections (for example inventory adjustments) reflected instantly, not after overnight batch jobs</li>
+          
+          <li>Restored credibility: Became the only IT staff member trusted by the Head of Sales, ending the perception of technical incompetence</li>
+          
+        </ul>
+        
+        
+        
+        <h3>Why It Worked</h3>
+        
+        
+        <p>Technical pragmatism over perfectionism Rather than demanding a full system rewrite, the solution worked within existing constraints (dual databases, legacy POS). Strategic indexing and view consolidation delivered 87.5% improvement without touching the core application.</p>
+        
+        
+        
+        <p>Reframing &quot;correctness&quot; as a business concept The educational component was as critical as the technical fix. By aligning Sales expectations with database realities (eventual consistency, timing windows), complaints shifted from &quot;the data is wrong&quot; to &quot;this helps me make decisions.&quot;</p>
+        
+        
+        
+        <p>Transaction-based truth Moving from snapshot locking to transactional summation solved both performance and accuracy problems simultaneously. This architectural choice eliminated the root cause (exclusive locks) rather than optimising around it.</p>
+        
+        
+        
+        <p>Human-centric delivery Success was measured not just by query speed, but by whether IT could have a productive conversation with Sales. The trust rebuild was the ultimate outcome.</p>
+        
+        
+        
+        <h3>How Vionix Worked</h3>
+        
+        
+        <p>The engagement was structured as a 3-week intensive intervention:</p>
+        
+        
+        
+        <ul>
+          
+          <li>Week 1: Query plan analysis, index implementation, and view design</li>
+          
+          <li>Week 2: Stored procedure development, List &amp; Label integration, and testing</li>
+          
+          <li>Week 3: User training, monitoring, and handover to internal IT</li>
+          
+        </ul>
+        
+        
+        
+        <p>Daily stand-ups with the Head of Sales ensured alignment on priorities and immediate feedback on improvements. The work was performed alongside the existing system (no downtime), with the new reporting suite running in parallel until validation was complete.</p>
+        
+        
+        
+        <p>Post-delivery, internal IT retained ownership of the database schema and reporting tool, with documentation enabling future modifications without external dependency.</p>
+        
+        
+        
       </div>
     </div>
+  </section>
 
-    <section class="section">
-      <div class="container" data-aos="fade-up">
-        <div class="case-study-wrap">
-          <a class="back-link" href="case-studies.html">
-<i class="bi bi-arrow-left">
-</i> Back to all case studies</a>
-
-          <h1>When 4-Hour Reports Block Your Entire HQ: Rebuilding Trust Through Database Discipline</h1>
-
-          <h3>Snapshot</h3>
-          <p>
-<strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br>
-<strong>Client:</strong> <span class="anonymized-client-label">Nordlicht Retail</span> (German fashion retailer)</p>
-          <p>A Major German fashion retailer with 80+ outlets was paralysed by a legacy POS reporting system. Daily distribution planning required reports that took 4 hours to run, locked the entire headquarters IT infrastructure, and crashed regularly. The engagement restored operational stability in 3 weeks and rebuilt the relationship between IT and Sales leadership.</p>
-
-          <h3>The Challenge</h3>
-          <p>Every morning, the Head of Sales needed distribution reports to allocate stock across 80 retail outlets. The process was a daily crisis:</p>
-          <ul>
-            <li>
-<strong>4-hour runtime</strong> for key reports, with frequent crashes before completion</li>
-            <li>
-<strong>Exclusive database locks</strong> froze all HQ systems during execution</li>
-            <li>
-<strong>Dual-database chaos</strong>: MySQL and MSSQL with no coherent schema design</li>
-            <li>
-<strong>Legacy codebase</strong>: Hand-written reporting software in CA-Visual Objects, a niche language with limited maintainability</li>
-            <li>
-<strong>Constant complaints</strong>: IT had lost credibility with the business. Sales viewed the technical team as incompetent</li>
-          </ul>
-          <p>The system had become a bottleneck for the entire retail operation, with no one in IT able to communicate effectively with Sales about what was technically feasible.</p>
-
-          <h3>Constraints</h3>
-          <ul>
-            <li>
-<strong>No budget for replacement</strong>: The POS system itself could not be rewritten</li>
-            <li>
-<strong>Dual-database architecture</strong>: Had to work within the existing MySQL/MSSQL split</li>
-            <li>
-<strong>Operational pressure</strong>: Reports were mission-critical. Downtime during fixes was unacceptable</li>
-            <li>
-<strong>Trust deficit</strong>: Any solution had to deliver immediate, visible improvement to regain business confidence</li>
-          </ul>
-
-          <h3>Approach</h3>
-          <p>
-<strong>1. Query Plan Forensics</strong>
-<br>Analysed execution plans for every statement in the reporting software. Identified missing indexes, Cartesian joins, and full table scans on transactional tables with millions of rows.</p>
-          <p>
-<strong>2. Strategic Indexing</strong>
-<br>Added indexes on frequently joined columns and filter predicates. Prioritised the queries causing the longest locks.</p>
-          <p>
-<strong>3. View-Based Abstraction</strong>
-<br>Encapsulated common join patterns (e.g., sales transactions + stock movements + outlet metadata) into database views. This eliminated redundant query logic and ensured consistency.</p>
-          <p>
-<strong>4. Stored Procedures for Calculated Fields</strong>
-<br>Moved complex calculations (inventory deltas, regional aggregations) into stored procedures feeding the views, reducing the computational burden on the reporting layer.</p>
-          <p>
-<strong>5. Replaced Lock-Heavy Tooling</strong>
-<br>Retired the CA-Visual Objects hand-written software. Implemented <strong>List &amp; Label</strong>, a commercial reporting tool, to query the new views without exclusive locks.</p>
-          <p>
-<strong>6. Transactional Calculation Architecture</strong>
-<br>Stopped relying on snapshot data (which required locks to ensure consistency). Instead, summed all sales, returns, and stock movements transactionally, then correlated with annual physical inventory counts. This approach:</p>
-          <ul>
-            <li>Eliminated the need for long-running locks</li>
-            <li>Made manual corrections (e.g., inventory adjustments) immediately visible across the system</li>
-            <li>Drastically reduced faulty records from stale snapshots</li>
-          </ul>
-          <p>
-<strong>7. User Education on "Data Correctness"</strong>
-<br>Worked with Sales to reframe expectations: A report showing 5 items in stock vs. 4 or 6 is operationally equivalent if a sale could occur moments after generation. The goal is decision-grade accuracy, not real-time perfection. This shift defused complaints about minor discrepancies and focused attention on actionable insights.</p>
-
-          <h3>What Was Delivered</h3>
-          <ul>
-            <li>
-<strong>Indexed database schema</strong> with views consolidating 80% of reporting queries</li>
-            <li>
-<strong>List &amp; Label-based reporting suite</strong> replacing legacy CA-Visual Objects code</li>
-            <li>
-<strong>Transactional calculation engine</strong> (stored procedures) for inventory reconciliation</li>
-            <li>
-<strong>Documentation</strong> on the new data model and query patterns for future maintainers</li>
-            <li>
-<strong>Training session</strong> for Sales on interpreting report data and understanding timing constraints</li>
-          </ul>
-
-          <h3>Results</h3>
-          <ul>
-            <li>
-<strong>Runtime reduction</strong>: 4 hours -&gt; 30 minutes for critical distribution reports</li>
-            <li>
-<strong>Zero system locks</strong>: HQ IT infrastructure no longer frozen during report generation</li>
-            <li>
-<strong>Eliminated daily crashes</strong>: Reports ran reliably every morning</li>
-            <li>
-<strong>Immediate data propagation</strong>: Manual corrections (e.g., inventory adjustments) reflected instantly, not after overnight batch jobs</li>
-            <li>
-<strong>Restored credibility</strong>: Became the only IT staff member trusted by the Head of Sales, ending the perception of technical incompetence</li>
-          </ul>
-
-          <h3>Why It Worked</h3>
-          <p>
-<strong>Technical pragmatism over perfectionism</strong>
-<br>Rather than demanding a full system rewrite, the solution worked within existing constraints (dual databases, legacy POS). Strategic indexing and view consolidation delivered 87.5% improvement without touching the core application.</p>
-          <p>
-<strong>Reframing "correctness" as a business concept</strong>
-<br>The educational component was as critical as the technical fix. By aligning Sales expectations with database realities (eventual consistency, timing windows), complaints shifted from "the data is wrong" to "this helps me make decisions."</p>
-          <p>
-<strong>Transaction-based truth</strong>
-<br>Moving from snapshot locking to transactional summation solved both performance and accuracy problems simultaneously. This architectural choice eliminated the root cause (exclusive locks) rather than optimising around it.</p>
-          <p>
-<strong>Human-centric delivery</strong>
-<br>Success was measured not just by query speed, but by whether IT could have a productive conversation with Sales. The trust rebuild was the ultimate outcome.</p>
-
-          <h3>How Vionix Worked</h3>
-          <p>The engagement was structured as a <strong>3-week intensive intervention</strong>:</p>
-          <ul>
-            <li>
-<strong>Week 1</strong>: Query plan analysis, index implementation, and view design</li>
-            <li>
-<strong>Week 2</strong>: Stored procedure development, List &amp; Label integration, and testing</li>
-            <li>
-<strong>Week 3</strong>: User training, monitoring, and handover to internal IT</li>
-          </ul>
-          <p>Daily stand-ups with the Head of Sales ensured alignment on priorities and immediate feedback on improvements. The work was performed alongside the existing system (no downtime), with the new reporting suite running in parallel until validation was complete.</p>
-          <p>Post-delivery, internal IT retained ownership of the database schema and reporting tool, with documentation enabling future modifications without external dependency.</p>
-
-</div>
-</div>
-</section>
-<section class="section light-background">
-      <div class="container">
-        <div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
-          <div>
-            <h3 class="mb-2">Discuss a similar challenge</h3>
-            <p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p>
-          </div>
-          <a class="btn btn-primary" href="index.html#contact">Contact Vionix</a>
+  <section class="section light-background">
+    <div class="container">
+      <div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+        <div>
+          <h3 class="mb-2">Discuss a similar challenge</h3>
+          <p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p>
         </div>
+        <a class="btn btn-primary" href="/index. html#contact">Contact Vionix</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
+
 
   <footer id="footer" class="footer">
   <div class="footer-top-band">

@@ -58,6 +58,7 @@ const schemaFiles = [
   "home.json",
   "service-details.json",
   "case-studies.json",
+  "case-study-details.json",
   "skilltable-team1.json",
   "skilltable-team2.json"
 ];
