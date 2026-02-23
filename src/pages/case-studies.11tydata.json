@@ -5,20 +5,7 @@
   "metaKeywords": "case studies, software consulting, database performance, legacy stabilisation, modernisation",
   "canonicalUrl": "https://vionix.cloud/case-studies.html",
   "ogType": "website",
-  "ogImage": "https://vionix.cloud/assets/img/logo.png",
-  "twitterCard": "summary",
   "structuredData": "",
-  "vendorCss": [
-    "assets/vendor/bootstrap/css/bootstrap.min.css",
-    "assets/vendor/bootstrap-icons/bootstrap-icons.css",
-    "assets/vendor/aos/aos.css",
-    "assets/vendor/glightbox/css/glightbox.min.css"
-  ],
-  "styleCss": [
-    "assets/css/main.css",
-    "assets/css/components.css",
-    "assets/css/case-studies.css"
-  ],
   "vendorScripts": [
     "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
     "assets/vendor/aos/aos.js",
@@ -29,5 +16,8 @@
     "assets/vendor/isotope-layout/isotope.pkgd.min.js"
   ],
   "permalink": "/case-studies.html",
-  "currentPage": "case-studies"
+  "currentPage": "case-studies",
+  "styleCssExtra": [
+    "assets/css/case-studies.css"
+  ]
 }

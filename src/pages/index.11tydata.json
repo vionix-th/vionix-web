@@ -5,21 +5,7 @@
   "metaKeywords": "software architecture, code review, refactoring, AI integration, LLM, modernization, consulting, training, Bangkok, Thailand",
   "canonicalUrl": "https://vionix.cloud/",
   "ogType": "website",
-  "ogImage": "https://vionix.cloud/assets/img/logo.png",
-  "twitterCard": "summary",
   "structuredData": "{\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"Organization\",\n      \"name\": \"Vionix Consulting\",\n      \"url\": \"https://vionix.cloud\",\n      \"logo\": \"https://vionix.cloud/assets/img/logo.png\",\n      \"description\": \"Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.\",\n      \"sameAs\": [\n        \"https://github.com/vionix-th\"\n      ]\n    }",
-  "vendorCss": [
-    "assets/vendor/bootstrap/css/bootstrap.min.css",
-    "assets/vendor/bootstrap-icons/bootstrap-icons.css",
-    "assets/vendor/aos/aos.css",
-    "assets/vendor/glightbox/css/glightbox.min.css",
-    "assets/vendor/swiper/swiper-bundle.min.css"
-  ],
-  "styleCss": [
-    "assets/css/main.css",
-    "assets/css/components.css",
-    "assets/css/homepage.css"
-  ],
   "vendorScripts": [
     "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
     "assets/vendor/aos/aos.js",
@@ -29,5 +15,11 @@
     "assets/vendor/swiper/swiper-bundle.min.js"
   ],
   "permalink": "/index.html",
-  "currentPage": "index"
+  "currentPage": "index",
+  "vendorCssExtra": [
+    "assets/vendor/swiper/swiper-bundle.min.css"
+  ],
+  "styleCssExtra": [
+    "assets/css/homepage.css"
+  ]
 }
