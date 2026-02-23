@@ -1,0 +1,85 @@
+{% macro serviceCard(item, taxonomy, localeHref) %}
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+  <div class="service-item position-relative">
+    <div class="icon"><i class="bi {{ taxonomy[item.pillarId].icon }} icon"></i></div>
+    <h4><a href="{{ localeHref(item.href) }}" class="stretched-link">{{ taxonomy[item.pillarId].label }}</a></h4>
+    <p>{{ item.description }}</p>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro engagementCard(item, labels, localeHref) %}
+<div class="col-lg-4">
+  <div class="engagement-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+    <div class="icon mb-4"><i class="bi {{ item.icon }}"></i></div>
+    <h4 class="mb-4"><a class="engagement-title-link" href="{{ localeHref(item.href) }}">{{ item.title }}</a></h4>
+    <ul class="engagement-list">
+      {% for bullet in item.bullets %}
+      <li><i class="bi bi-check2-circle me-2"></i>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+    <div class="engagement-meta">
+      <p><strong>{{ labels.bestFor }}:</strong> {{ item.bestFor }}</p>
+      <p><strong>{{ labels.typical }}:</strong> {{ item.typical }}</p>
+      <p><strong>{{ labels.window }}:</strong> {{ item.window }}</p>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro testimonialCard(item) %}
+<div class="swiper-slide">
+  <div class="testimonial-item">
+    <img src="assets/img/testimonials/testimonials.png" class="testimonial-img" alt="" aria-hidden="true">
+    <h3><span class="anonymized-client-label">{{ item.client }}</span></h3>
+    <h4>{{ item.role }}</h4>
+    <div class="stars">
+      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+    </div>
+    <p>
+      <i class="bi bi-quote quote-icon-left"></i>
+      <span>{{ item.quote }}</span>
+      <i class="bi bi-quote quote-icon-right"></i>
+    </p>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro caseStudyCard(item, labels, taxonomy, localeHref) %}
+{% set filterClasses = "" %}
+{% for f in item.filters %}
+{% set filterClasses = filterClasses + " filter-" + f %}
+{% endfor %}
+<div class="col-lg-6 col-xl-4 isotope-item{{ filterClasses }}">
+  <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="{{ localeHref(item.href) }}">
+    <div class="case-card-head">
+      <h3><i class="bi {{ item.cardIcon or 'bi-diagram-3' }} case-title-icon"></i><span>{{ item.title }}</span></h3>
+      <p class="case-context">{{ item.context }}</p>
+      <div class="case-tags">
+        <span class="case-tag-primary"><i class="bi {{ taxonomy[item.primaryTag].icon }}"></i>{{ taxonomy[item.primaryTag].label }}</span>
+        {% for tag in item.secondaryTags %}
+        <span><i class="bi {{ taxonomy[tag].icon }}"></i>{{ taxonomy[tag].label }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="case-divider"></div>
+    <p><strong>{{ labels.problem }}:</strong> {{ item.problem }}</p>
+    <p><strong>{{ labels.intervention }}:</strong> {{ item.intervention }}</p>
+    <p class="case-outcome"><strong>{{ labels.outcome }}:</strong> {{ item.outcome }}</p>
+  </a>
+</div>
+{% endmacro %}
+
+{% macro skillColumn(col) %}
+<div class="col-md-6">
+  <div class="service-item">
+    <div class="icon"><i class="bi {{ col.icon }}"></i></div>
+    <h4>{{ col.title }}</h4>
+    <ul>
+      {% for item in col.items %}
+      <li><i class="bi bi-check-circle"></i> <span>{{ item }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endmacro %}

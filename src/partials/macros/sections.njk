@@ -1,0 +1,46 @@
+{% macro serviceDetailSection(section) %}
+<section id="{{ section.id }}" class="service-details section">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-12" data-aos="fade-up">
+        <div class="section-title service-detail-section-title">
+          <h2>{{ section.kicker }}</h2>
+          <p><span>{{ section.title }}</span></p>
+        </div>
+        <p class="service-detail-section-intro">{{ section.intro }}</p>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="service-detail-card h-100">
+          <h3><i class="bi bi-check2-circle service-card-title-icon" aria-hidden="true"></i><span>{{ section.fitTitle }}</span></h3>
+          <ul class="service-detail-list">
+            {% for point in section.fit %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-detail-card h-100">
+          <h3><i class="bi bi-diagram-3 service-card-title-icon" aria-hidden="true"></i><span>{{ section.approachTitle }}</span></h3>
+          <ul class="service-detail-list">
+            {% for point in section.approach %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150">
+        <div class="service-detail-card">
+          <h3><i class="bi bi-list-check service-card-title-icon" aria-hidden="true"></i><span>{{ section.deliverablesTitle }}</span></h3>
+          <ul class="service-detail-list">
+            {% for point in section.deliverables %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+          <p class="mb-0">{{ section.outro }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endmacro %}

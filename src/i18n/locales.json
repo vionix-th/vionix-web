@@ -1,5 +1,7 @@
 {
   "defaultLocale": "en",
-  "supportedLocales": ["en", "de"],
+  "supportedLocales": ["en", "de", "th"],
+  "publishLocales": ["de"],
+  "stagedLocales": ["th"],
   "routeMode": "root-default-prefixed-non-default"
 }

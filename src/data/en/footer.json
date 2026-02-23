@@ -1,5 +1,15 @@
 {
-  "stayConnected": "Stay Connected",
+  "usefulLinks": "Useful Links",
+  "ourServices": "Our Services",
   "followUs": "Follow Us",
-  "copyrightOwner": "Vionix Consulting"
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "caseStudies": "Case Studies",
+  "phoneLabel": "Phone",
+  "emailLabel": "Email",
+  "scheduleCall": "Schedule a Call",
+  "rightsReserved": "All Rights Reserved",
+  "copyrightOwner": "Vionix Consulting",
+  "anonymizationNote": "Client names are anonymized pseudonyms to protect privacy. Industry context and technical outcomes remain factually accurate."
 }

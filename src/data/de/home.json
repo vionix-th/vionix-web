@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Kritische Systeme wieder unter Ihrer Kontrolle",
+    "subtitle": "Stabilisierung und Modernisierung des Kerngeschäfts",
+    "intro": "Für IT-Führungskräfte, die Legacy-Systeme unter Produktionsdruck betreiben. Wir identifizieren Engpässe, validieren sichere Lösungswege und übergeben klare Leitplanken, damit Verbesserungen nachhaltig bleiben.",
+    "cta": "Kontaktieren Sie uns",
+    "ctaCopy": "um den ersten Schritt zu klären.",
+    "brandLine": "Zuverlässig. Effizient. Direkt."
+  },
+  "sections": {
+    "services": { "kicker": "Leistungen", "titleLead": "Was", "titleEmphasis": "wir verbessern" },
+    "proof": { "kicker": "Fallstudien" },
+    "about": { "kicker": "Über uns", "titleLead": "Wie", "titleEmphasis": "wir arbeiten" },
+    "engagements": { "kicker": "Zusammenarbeitsformate", "titleLead": "Wie", "titleEmphasis": "wir unterstützen" },
+    "team": { "kicker": "Team", "titleLead": "Unser", "titleEmphasis": "Expertenteam" },
+    "contact": { "kicker": "Kontakt", "titleLead": "Jetzt", "titleEmphasis": "Kontakt aufnehmen" }
+  },
+  "services": [
+    {
+      "pillarId": "database_reporting_performance",
+      "href": "service-details.html#database-performance",
+      "description": "Verkürzen Sie Laufzeiten, stabilisieren Sie Batch-Fenster und beseitigen Sie Engpässe bei der Berichterstellung."
+    },
+    {
+      "pillarId": "legacy_core_stabilisation",
+      "href": "service-details.html#legacy-core",
+      "description": "Reduzieren Sie Regressionsrisiken und lösen Sie Freigabeblockaden in fragilen Kernmodulen."
+    },
+    {
+      "pillarId": "incremental_system_modernisation",
+      "href": "service-details.html#modernisation-team",
+      "description": "Verlagern Sie Hochrisiko-Abläufe schrittweise in stabile Zielstrukturen mit messbaren Stabilitätsgewinnen."
+    },
+    {
+      "pillarId": "efficient_team_workflow_enablement",
+      "href": "service-details.html#workflow-enablement",
+      "description": "Steigern Sie die Planbarkeit von Freigaben mit pragmatischen Review- und Übergaberoutinen."
+    }
+  ],
+  "proofSlides": [
+    { "href": "case-study-vionix-01.html", "text": "Reduzierung der Laufzeit der Einzelhandelsberichte von 4 Stunden auf 30 Minuten in 80 Filialen" },
+    { "href": "case-study-vionix-02.html", "text": "Stärkung der POS-Infrastruktur für über 80 Modegeschäfte in Umgebungen mit hoher Staubbelastung" },
+    { "href": "case-study-vionix-03.html", "text": "Durchführung fehlerfreier Bestandsprüfungen in 80 Einzelhandelsgeschäften" },
+    { "href": "case-study-vionix-04.html", "text": "Implementierung einer proaktiven Filialkonnektivitätsüberwachung für zuverlässige tägliche Bestandssynchronisierung" },
+    { "href": "case-study-vionix-05.html", "text": "Industrialisierung einer Waldinventurmethode zur Fernerkundung in einsetzbare Desktop-Software" },
+    { "href": "case-study-vionix-06.html", "text": "Umstellung der Spektrumanalysator-Software auf eine plattformübergreifende, wartbare Architektur" },
+    { "href": "case-study-vionix-07.html", "text": "Einführung einer sicheren Miet-Webshop-Integration mit Echtzeit-Verfügbarkeitslogik" },
+    { "href": "case-study-vionix-08.html", "text": "Neuaufbau von Außendienstsoftware für zuverlässige Offline-Operationen in Bauumgebungen" },
+    { "href": "case-study-vionix-09.html", "text": "Stabilisierung eines 30 Jahre alten ERP-Workflows ohne vollständige Neufassung" },
+    { "href": "case-study-vionix-10.html", "text": "Ersetzen nächtlicher BI-ETL-Läufe durch Echtzeitberichte auf Live-ERP-Daten" },
+    { "href": "case-study-vionix-11.html", "text": "Digitalisierung des Wareneingangs im Lager auf älteren Handheld-Geräten" },
+    { "href": "case-study-vionix-12.html", "text": "Ablösung eines alten Arbeitsmanagementsystems durch Jira Cloud bei einem ERP-Anbieter mit 35 Mitarbeitenden" }
+  ],
+  "about": {
+    "headline": "Arbeitsmodell mit klaren Grenzen",
+    "intro": "Vionix führt kurze, klar begrenzte Diagnoseeinsätze durch, erstellt belastbare Ausgangswerte, validiert sichere Verbesserungswege und übergibt die operative Verantwortung sauber an Ihr Team zurück.",
+    "principles": [
+      {
+        "title": "Messbare Basis statt Bauchgefühl",
+        "text": "Messen Sie Laufzeit, Batch-Fensterdruck, Sperren, Deadlocks, Regressionshäufigkeit und Abhängigkeits-Hotspots, bevor Sie Änderungen planen."
+      },
+      {
+        "title": "Beweis vor Überzeugung",
+        "text": "Erstellen Sie frühzeitig Prototypen für 2-3 kritische Abläufe, um Machbarkeit zu validieren und verborgene Einschränkungen vor größerem Implementierungsaufwand aufzudecken."
+      },
+      {
+        "title": "Risikoarme Umsetzung und Übergabe",
+        "text": "Nutzen Sie parallele Validierung, explizite Rollback-Pfade und praktische Leitplanken. Übertragen Sie anschließend Eigenverantwortung durch Vorgehensweisen, Vorlagen, Checklisten und Schulungen."
+      }
+    ],
+    "weekOne": "Ergebnis in Woche 1: ein prägnantes Briefing (Ausgangslage + Engpässe), ein priorisierter Plan und eine validierte Empfehlung für den ersten Umsetzungsschritt mit Risikokontrollen.",
+    "goodFitTitle": "Passend, wenn",
+    "goodFit": [
+      "Berichterstellung ist langsam, Datenbanken sind überlastet, und Datenpfade sind sperrenlastig.",
+      "Umsatzkritische Module sind fragil, mit hohem Regressionsrisiko und unklaren Verantwortlichkeiten.",
+      "Lieferfähigkeit ist durch ausufernde Abhängigkeiten, Freigabedruck oder Offline-Einschränkungen blockiert."
+    ],
+    "notFitTitle": "Nicht passend",
+    "notFit": [
+      "Klassische Personalaufstockung ohne klares, messbares Systemziel.",
+      "Greenfield-MVP-Umsetzungen ohne Anforderungen an Produktionskontinuität.",
+      "Komplette Neuschreibungen oder rein kosmetische Umbauten ohne operative Ziele."
+    ]
+  },
+  "engagements": {
+    "intro1": "Wählen Sie das Format, das zu aktuellem Risiko und Lieferdruck passt. Jede Option erzeugt belastbare Ergebnisse und eine klare nächste Entscheidung.",
+    "intro2": "Die Formate werden in der Regel durch den Auftraggeber geführt. Weitere Spezialisten werden nur bei Bedarf und nach expliziter Abstimmung hinzugezogen. Ziel sind messbare Systemergebnisse und eine saubere Übergabe an Ihre internen Verantwortlichen.",
+    "cards": [
+      {
+        "icon": "bi-search",
+        "title": "1-Wochen-Analyse",
+        "href": "service-details.html#database-performance",
+        "bullets": [
+          "Basislaufzeit, Batch-Fensterdruck, Sperrenkonflikte und Fehlermodi.",
+          "Erfassen Sie Einschränkungen, Abhängigkeiten und die risikoreichsten Ausführungspfade.",
+          "Liefern Sie eine priorisierte Maßnahmenliste und eine validierte Empfehlung für den ersten Umsetzungsschritt."
+        ],
+        "bestFor": "Teams unter unmittelbarem Leistungs- oder Zuverlässigkeitsdruck mit unklaren technischen Einschränkungen.",
+        "typical": "Briefing zur Ausgangslage, Einschränkungskarte, priorisierte Maßnahmenliste und ein validierter Plan für den ersten Umsetzungsschritt.",
+        "window": "Entscheidungsfähige Umfangs- und Risikokontrollen innerhalb einer Woche."
+      },
+      {
+        "icon": "bi-kanban",
+        "title": "Implementierungssprint (2-4 Wochen)",
+        "href": "service-details.html#modernisation-team",
+        "bullets": [
+          "Implementieren Sie den ersten wirksamen Umsetzungsschritt mit messbaren Verbesserungszielen.",
+          "Ergänzen Sie Leitplanken, Rollback-Pfade und eine produktionssichere Einführungsreihenfolge.",
+          "Hinterlassen Sie einen klaren Umsetzungsplan für die nächsten Schritte und die Verantwortungsübergabe."
+        ],
+        "bestFor": "Module mit hohem Risiko, bei denen Teams messbare Fortschritte ohne Serviceunterbrechung benötigen.",
+        "typical": "Umgesetzter erster Schritt, Leitplanken, Rollback-Strategie und sequenzierter Einführungsplan.",
+        "window": "Messbare Zuverlässigkeits- oder Laufzeitgewinne in 2-4 Wochen."
+      },
+      {
+        "icon": "bi-people",
+        "title": "Befähigung / Praxis-Workshops",
+        "href": "service-details.html#workflow-enablement",
+        "bullets": [
+          "Stabilisieren Sie den Review- und Freigabeprozess mit praktischen Vorlagen und Kontrollpunkten.",
+          "Erhöhen Sie Onboarding-Geschwindigkeit und Übergabequalität für Module mit hoher Änderungsrate.",
+          "Erhöhen Sie die Vorhersehbarkeit von Freigaben durch wiederholbare Verantwortungsroutinen."
+        ],
+        "bestFor": "Teams mit inkonsistenten Reviews, Reibungsverlusten bei Freigaben oder fragilen Verantwortungsübergaben.",
+        "typical": "Leitfäden für Reviews und Freigaben, Onboarding-Vorlagen und wiederholbare Verantwortungsroutinen.",
+        "window": "Spürbare Verbesserungen der Liefervorhersagbarkeit innerhalb des ersten Monats."
+      }
+    ],
+    "labels": {
+      "bestFor": "Am besten für",
+      "typical": "Typische Ausgabe",
+      "window": "Ergebnisfenster"
+    }
+  },
+  "testimonials": [
+    {
+      "client": "Ironbridge ERP",
+      "role": "Softwarearchitektur und Teamleitung",
+      "quote": "Stefan verbindet breite technische Tiefe mit pragmatischer Umsetzung. Er löst komplexe Probleme schnell, strukturiert und wartbar."
+    },
+    {
+      "client": "Ironbridge ERP",
+      "role": "Qualität und Architektur",
+      "quote": "Er lieferte zuverlässig hochwertige Ergebnisse mit Initiative, Verbindlichkeit und sauberer Validierung auch unter Druck."
+    },
+    {
+      "client": "Canopy Metrics",
+      "role": "Softwareentwicklung",
+      "quote": "Nach kurzer Einarbeitung arbeitete Stefan eigenständig und produktiv in einem neuen Stack bei konstant hoher Qualität."
+    },
+    {
+      "client": "Ironbridge ERP",
+      "role": "Teamführung",
+      "quote": "Wir erlebten Stefan als ausdauernd, motiviert und präzise. Auch unter hoher Last blieb seine Lieferung stabil und verlässlich."
+    }
+  ],
+  "team": [
+    {
+      "name": "Stefan",
+      "role": "Gründer und Principal Consultant",
+      "image": "assets/img/team/team-1.jpg",
+      "profileHref": "skilltable-team1.html",
+      "profileLabel": "Stefan-Profil ansehen",
+      "email": "stefan@vionix.cloud",
+      "emailLabel": "E-Mail an Stefan",
+      "github": "https://github.com/vionix-th",
+      "githubLabel": "Vionix auf GitHub"
+    },
+    {
+      "name": "Ruthairat",
+      "role": "Mitgründerin und Leiterin Qualitätstechnik",
+      "image": "assets/img/team/team-2.jpg",
+      "profileHref": "skilltable-team2.html",
+      "profileLabel": "Ruthairat-Profil ansehen",
+      "email": "ruthairat@vionix.cloud",
+      "emailLabel": "E-Mail an Ruthairat"
+    }
+  ],
+  "contact": {
+    "addressLabel": "Adresse",
+    "scheduleLabel": "Telefon",
+    "scheduleCta": "Vereinbaren Sie einen Anruf",
+    "emailLabel": "Schicken Sie uns eine E-Mail",
+    "hoursLabel": "Geschäftszeiten",
+    "hoursText": "Montag bis Freitag: 09:00 bis 18:00 Uhr\nUTC+07:00, Bangkok-Zeit",
+    "mapTitle": "Lageplan des Büros",
+    "mapPlaceholder": "Die Karte ist deaktiviert, bis optionale Funktionen in den Cookie-Einstellungen aktiviert werden.",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "subject": "Thema",
+      "message": "Nachricht",
+      "loading": "Wird gesendet...",
+      "sent": "Ihre Nachricht wurde gesendet. Vielen Dank!",
+      "submit": "Nachricht senden",
+      "disclaimer": "Wir verwenden diese Angaben ausschließlich zur Bearbeitung Ihrer Anfrage (kein Spam). Typische Reaktionszeit: 1-2 Werktage."
+    }
+  }
+}

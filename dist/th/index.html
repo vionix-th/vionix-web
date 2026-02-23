@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <base href="/">
+  <title>Vionix Consulting — Software Architecture &amp; Legacy Modernisation</title>
+  
+  <meta name="description" content="Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.">
+  
+  
+  <meta name="keywords" content="software architecture, code review, refactoring, AI integration, LLM, modernization, consulting, training, Bangkok, Thailand">
+  
+  
+
+  <meta property="og:site_name" content="Vionix Consulting">
+  <meta property="og:title" content="Vionix Consulting — Software Architecture &amp; Legacy Modernisation">
+  
+  <meta property="og:description" content="Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.">
+  
+  
+  <meta property="og:type" content="website">
+  
+  <meta property="og:image" content="https://vionix.cloud/assets/img/logo.png">
+  
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vionix Consulting — Software Architecture &amp; Legacy Modernisation">
+  
+  <meta name="twitter:description" content="Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.">
+  
+
+  
+  <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Vionix Consulting",
+      "url": "https://vionix.cloud",
+      "logo": "https://vionix.cloud/assets/img/logo.png",
+      "description": "Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.",
+      "sameAs": [
+        "https://github.com/vionix-th"
+      ]
+    }
+  </script>
+  
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  
+
+  
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+
+  
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <link href="assets/css/components.css" rel="stylesheet">
+  
+
+  
+  <link href="assets/css/homepage.css" rel="stylesheet">
+  
+</head>
+
+<body class="index-page">
+  <header id="header" class="header sticky-top">
+  <div class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <div class="contact-item d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center" aria-hidden="true"></i>
+          <a class="topbar-email-link" href="mailto:info@vionix.cloud">info@vionix.cloud</a>
+        </div>
+        <div class="contact-item d-flex align-items-center ms-4">
+          <i class="bi bi-calendar4-week d-flex align-items-center" aria-hidden="true"></i>
+          <a class="topbar-cta-link" href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank"
+            rel="noopener noreferrer">นัดหมายการพูดคุย</a>
+        </div>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i class="bi bi-github"
+            aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="/th/index.html" class="logo d-flex align-items-center">
+        <span class="sitename">Vionix Consulting</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul id="navmenu-list">
+          <li class="dropdown"><a href="/th/index.html#featured-services"><span>บริการ</span></a><button
+              class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Services submenu"
+              aria-expanded="false"></button>
+            <ul>
+              <li><a href="/th/index.html#featured-services">ภาพรวมบริการ</a></li>
+              <li><a href="/th/index.html#about">แนวทางการทำงาน</a></li>
+              <li><a href="/th/index.html#engagement-formats">รูปแบบการทำงานร่วมกัน</a></li>
+              <li><a href="/th/service-details.html">รายละเอียดบริการ</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="/th/index.html#team"><span>ทีม</span></a><button class="toggle-dropdown bi bi-chevron-down"
+              type="button" aria-label="Toggle Team submenu" aria-expanded="false"></button>
+            <ul>
+              <li><a href="/th/index.html#team">ภาพรวมทีม</a></li>
+              <li><a href="/th/skilltable-team1.html">โปรไฟล์ Stefan</a></li>
+              <li><a href="/th/skilltable-team2.html">โปรไฟล์ Ruthairat</a></li>
+            </ul>
+          </li>
+          <li><a href="/th/case-studies.html">กรณีศึกษา</a></li>
+          <li><a href="/th/index.html#contact">ติดต่อ</a></li>
+        </ul>
+        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu"
+          aria-expanded="false" aria-controls="navmenu-list"></button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  
+
+<main class="main">
+  <section id="hero" class="hero section light-background">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-12 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+          <h1>นำระบบสำคัญกลับมาอยู่ในการควบคุมของคุณ</h1>
+          <h2>ทำให้ระบบหลักมีเสถียรภาพและทันสมัยขึ้น</h2>
+          <div class="hero-intro-narrow">
+            <p>สำหรับผู้นำด้านไอทีที่ต้องดูแลระบบเดิมภายใต้แรงกดดันจากงานจริง เราช่วยหาคอขวด ยืนยันแนวทางแก้ที่ปลอดภัย และส่งมอบแนวป้องกันให้ผลลัพธ์คงอยู่ระยะยาว</p>
+          </div>
+          <p class="hero-action-line"><a href="#contact" class="hero-contact-btn">ติดต่อเรา</a><span class="hero-action-copy"> เพื่อกำหนดก้าวแรกให้ชัดเจน <span class="hero-brand-line">เชื่อถือได้ มีประสิทธิภาพ ตรงประเด็น</span></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-services" class="featured-services section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>บริการ</h2>
+      <p><span>สิ่งที่</span> <span class="description-title">เราปรับปรุง</span></p>
+    </div>
+    <div class="container">
+      <div class="row gy-4">
+        
+        
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="NaN">
+  <div class="service-item position-relative">
+    <div class="icon"><i class="bi bi-code-square icon"></i></div>
+    <h4><a href="/th/service-details.html#database-performance" class="stretched-link">ประสิทธิภาพฐานข้อมูลและรายงาน</a></h4>
+    <p>ลดเวลารัน ทำให้หน้าต่างประมวลผลมีเสถียรภาพ และกำจัดคอขวดด้านรายงาน</p>
+  </div>
+</div>
+
+        
+        
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="NaN">
+  <div class="service-item position-relative">
+    <div class="icon"><i class="bi bi-arrow-repeat icon"></i></div>
+    <h4><a href="/th/service-details.html#legacy-core" class="stretched-link">เสถียรภาพระบบแกนหลักเดิม</a></h4>
+    <p>ลดความเสี่ยงการถดถอยและปลดล็อกการปล่อยงานในโมดูลหลักที่เปราะบาง</p>
+  </div>
+</div>
+
+        
+        
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="NaN">
+  <div class="service-item position-relative">
+    <div class="icon"><i class="bi bi-robot icon"></i></div>
+    <h4><a href="/th/service-details.html#modernisation-team" class="stretched-link">ปรับปรุงระบบแบบค่อยเป็นค่อยไป</a></h4>
+    <p>ย้ายงานความเสี่ยงสูงอย่างค่อยเป็นค่อยไปไปสู่โครงสร้างที่เสถียรขึ้นพร้อมผลลัพธ์ที่วัดได้</p>
+  </div>
+</div>
+
+        
+        
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="NaN">
+  <div class="service-item position-relative">
+    <div class="icon"><i class="bi bi-mortarboard icon"></i></div>
+    <h4><a href="/th/service-details.html#workflow-enablement" class="stretched-link">ยกระดับทีมและเวิร์กโฟลว์อย่างมีประสิทธิภาพ</a></h4>
+    <p>เพิ่มความคาดการณ์ได้ของการปล่อยงานด้วยกระบวนการรีวิวและส่งมอบที่ใช้งานได้จริง</p>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="proof-slide" class="proof-slide section light-background">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>กรณีศึกษา</h2>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper init-swiper proof-slide-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": { "delay": 4200 },
+            "spaceBetween": 16,
+            "slidesPerView": 1,
+            "pagination": {
+              "el": ".proof-slide-pagination",
+              "type": "bullets",
+              "clickable": true
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-01.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ลดเวลารายงานค้าปลีกจาก 4 ชั่วโมงเหลือ 30 นาทีใน 80 สาขา</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-02.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ยกระดับโครงสร้าง POS สำหรับร้านแฟชั่นกว่า 80 สาขาในสภาพแวดล้อมฝุ่นสูง</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-03.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ทำให้การตรวจนับสินค้าคงคลังใน 80 สาขาดำเนินการได้อย่างไร้ความผิดพลาด</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-04.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ติดตั้งการเฝ้าระวังการเชื่อมต่อสาขาเชิงรุกเพื่อให้ซิงค์สต็อกประจำวันได้ต่อเนื่อง</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-05.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ยกระดับวิธีสำรวจป่าไม้จากงานวิจัยสู่ซอฟต์แวร์เดสก์ท็อปที่ใช้งานได้จริง</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-06.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ย้ายซอฟต์แวร์วิเคราะห์สัญญาณสู่สถาปัตยกรรมข้ามแพลตฟอร์มที่ดูแลรักษาได้</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-07.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>เปิดใช้งานการเชื่อมต่อเว็บช็อปเช่าแบบปลอดภัยพร้อมตรรกะสต็อกแบบเรียลไทม์</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-08.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>สร้างซอฟต์แวร์ภาคสนามใหม่เพื่อรองรับการทำงานออฟไลน์อย่างเสถียร</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-09.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ทำให้เวิร์กโฟลว์ ERP อายุ 30 ปีเสถียรขึ้นโดยไม่ต้องเขียนใหม่ทั้งหมด</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-10.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>แทนที่ ETL กลางคืนด้วยรายงานแบบเรียลไทม์บนข้อมูล ERP สด</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-11.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>ดิจิทัลกระบวนการรับสินค้าเข้าคลังบนอุปกรณ์พกพารุ่นเก่า</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+          <article class="swiper-slide">
+            <a class="proof-slide-card" href="/th/case-study-vionix-12.html"><i class="bi bi-quote quote-icon-left" aria-hidden="true"></i><span>แทนที่ระบบงานเดิมด้วย Jira Cloud ในผู้ให้บริการ ERP ขนาด 35 คน</span><i class="bi bi-quote quote-icon-right" aria-hidden="true"></i></a>
+          </article>
+          
+        </div>
+        <div class="proof-slide-pagination swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>เกี่ยวกับเรา</h2>
+      <p><span>วิธีที่</span> <span class="description-title">เราทำงาน</span></p>
+    </div>
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/img/about.jpg" class="img-fluid" alt="Vionix consultants collaborating during a technical planning session">
+        </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-content ps-0 ps-lg-3">
+            <h3>รูปแบบการทำงานที่มีขอบเขตชัดเจน</h3>
+            <p class="fst-italic">Vionix ดำเนินงานวินิจฉัยระยะสั้นที่กำหนดขอบเขตชัดเจน สร้างค่าตั้งต้นที่ตรวจสอบได้ ยืนยันแนวทางปรับปรุงที่ปลอดภัย และส่งต่อความรับผิดชอบเชิงปฏิบัติการกลับสู่ทีมของคุณ</p>
+            <ul>
+              
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <div>
+                  <h4>เริ่มจากข้อมูลจริง ไม่ใช่ความรู้สึก</h4>
+                  <p>วัดเวลารัน แรงกดดันของหน้าต่างประมวลผล การล็อก เดดล็อก ความถี่การถดถอย และจุดเสี่ยงด้านการพึ่งพาก่อนวางแผนเปลี่ยนแปลง</p>
+                </div>
+              </li>
+              
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <div>
+                  <h4>พิสูจน์ก่อนขยาย</h4>
+                  <p>ทำต้นแบบงานวิกฤต 2-3 เส้นทางตั้งแต่ต้น เพื่อยืนยันความเป็นไปได้และเปิดเผยข้อจำกัดแฝงก่อนลงทุนพัฒนาก้อนใหญ่</p>
+                </div>
+              </li>
+              
+              <li>
+                <i class="bi bi-check-circle"></i>
+                <div>
+                  <h4>ส่งมอบอย่างควบคุมความเสี่ยง</h4>
+                  <p>ใช้การยืนยันผลแบบขนาน แผนย้อนกลับที่ชัดเจน และแนวป้องกันที่ใช้งานได้จริง จากนั้นถ่ายโอนความเป็นเจ้าของด้วยคู่มือ เทมเพลต เช็กลิสต์ และการโค้ช</p>
+                </div>
+              </li>
+              
+            </ul>
+            <p class="mb-3"><strong>ผลลัพธ์ในสัปดาห์แรก: บรีฟสรุป (ฐานข้อมูลปัจจุบัน + ข้อจำกัด), แผนลำดับความสำคัญ และข้อเสนอขั้นแรกที่ผ่านการยืนยันพร้อมการควบคุมความเสี่ยง</strong></p>
+          </div>
+        </div>
+        <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+          <div class="row g-3">
+            <div class="col-lg-6">
+              <div class="fit-card h-100">
+                <h4>เหมาะเมื่อ</h4>
+                <ul class="fit-list">
+                  
+                  <li><i class="bi bi-check2-circle me-2"></i>รายงานช้า ฐานข้อมูลรับโหลดหนัก และเส้นทางข้อมูลมีปัญหาการล็อกบ่อย</li>
+                  
+                  <li><i class="bi bi-check2-circle me-2"></i>โมดูลรายได้เปราะบาง มีความเสี่ยงการถดถอยสูง และความรับผิดชอบไม่ชัดเจน</li>
+                  
+                  <li><i class="bi bi-check2-circle me-2"></i>การส่งมอบติดขัดจากความซับซ้อนของการพึ่งพา แรงกดดันการปล่อยงาน หรือข้อจำกัดการทำงานออฟไลน์</li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="fit-card h-100">
+                <h4>ไม่เหมาะเมื่อ</h4>
+                <ul class="fit-list">
+                  
+                  <li><i class="bi bi-x-circle me-2"></i>ต้องการเพิ่มคนแบบทั่วไปโดยไม่มีเป้าหมายระบบที่ชัดเจน</li>
+                  
+                  <li><i class="bi bi-x-circle me-2"></i>งาน Greenfield MVP ที่ไม่มีข้อกำหนดด้านความต่อเนื่องของระบบผลิต</li>
+                  
+                  <li><i class="bi bi-x-circle me-2"></i>เขียนใหม่ทั้งหมดหรือปรับโฉมผิวเผินโดยไม่มีเป้าหมายเชิงปฏิบัติการ</li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="engagement-formats" class="services section light-background">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>รูปแบบการทำงานร่วมกัน</h2>
+      <p><span>วิธีที่</span> <span class="description-title">เราสนับสนุน</span></p>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center mb-4 mb-lg-5">
+        <div class="col-lg-10 col-xl-9">
+          <p class="mb-0">เลือกรูปแบบที่เหมาะกับความเสี่ยงและแรงกดดันการส่งมอบในปัจจุบัน แต่ละตัวเลือกให้ผลลัพธ์ที่จับต้องได้และช่วยตัดสินใจขั้นต่อไปได้ชัดเจน</p>
+          <p class="mb-0 mt-3">รูปแบบการทำงานส่วนใหญ่ขับเคลื่อนโดย Principal Consultant ผู้เชี่ยวชาญเพิ่มเติมจะเข้าร่วมเมื่อกำหนดขอบเขตไว้ชัดเจน เป้าหมายคือผลลัพธ์ระบบที่วัดได้และการส่งมอบต่อภายในองค์กรอย่างเรียบร้อย</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row gy-5">
+        
+        
+<div class="col-lg-4">
+  <div class="engagement-card" data-aos="fade-up" data-aos-delay="NaN">
+    <div class="icon mb-4"><i class="bi bi-search"></i></div>
+    <h4 class="mb-4"><a class="engagement-title-link" href="/th/service-details.html#database-performance">การประเมิน 1 สัปดาห์</a></h4>
+    <ul class="engagement-list">
+      
+      <li><i class="bi bi-check2-circle me-2"></i>วัดเวลารัน แรงกดดันหน้าต่างประมวลผล การแย่งล็อก และรูปแบบความล้มเหลว</li>
+      
+      <li><i class="bi bi-check2-circle me-2"></i>ทำแผนที่ข้อจำกัด การพึ่งพา และจุดเชื่อมงานที่เสี่ยงสูงสุด</li>
+      
+      <li><i class="bi bi-check2-circle me-2"></i>ส่งมอบรายการงานแบบจัดลำดับและข้อเสนอขั้นแรกที่ผ่านการยืนยัน</li>
+      
+    </ul>
+    <div class="engagement-meta">
+      <p><strong>เหมาะสำหรับ:</strong> ทีมที่กำลังเผชิญแรงกดดันด้านประสิทธิภาพหรือความเสถียรโดยยังไม่เห็นข้อจำกัดทางเทคนิคชัดเจน</p>
+      <p><strong>สิ่งที่ได้โดยทั่วไป:</strong> บรีฟฐานปัจจุบัน แผนที่ข้อจำกัด รายการงานที่จัดลำดับ และแผนขั้นแรกที่ผ่านการยืนยัน</p>
+      <p><strong>ช่วงเวลาผลลัพธ์:</strong> ได้ขอบเขตและการควบคุมความเสี่ยงที่พร้อมตัดสินใจภายในหนึ่งสัปดาห์</p>
+    </div>
+  </div>
+</div>
+
+        
+        
+<div class="col-lg-4">
+  <div class="engagement-card" data-aos="fade-up" data-aos-delay="NaN">
+    <div class="icon mb-4"><i class="bi bi-kanban"></i></div>
+    <h4 class="mb-4"><a class="engagement-title-link" href="/th/service-details.html#modernisation-team">สปรินต์ลงมือทำ (2-4 สัปดาห์)</a></h4>
+    <ul class="engagement-list">
+      
+      <li><i class="bi bi-check2-circle me-2"></i>ลงมือทำก้าวแรกที่ให้ผลกระทบสูงพร้อมเป้าหมายที่วัดผลได้</li>
+      
+      <li><i class="bi bi-check2-circle me-2"></i>เพิ่มแนวป้องกัน เส้นทางย้อนกลับ และลำดับการนำขึ้นใช้งานที่ปลอดภัย</li>
+      
+      <li><i class="bi bi-check2-circle me-2"></i>ทิ้งแผนขยายผลและการถ่ายโอนความรับผิดชอบที่ชัดเจน</li>
+      
+    </ul>
+    <div class="engagement-meta">
+      <p><strong>เหมาะสำหรับ:</strong> โมดูลความเสี่ยงสูงที่ต้องการความก้าวหน้าที่วัดได้โดยไม่กระทบบริการ</p>
+      <p><strong>สิ่งที่ได้โดยทั่วไป:</strong> ก้าวแรกที่ใช้งานจริง แนวป้องกัน กลยุทธ์ย้อนกลับ และแผนนำขึ้นใช้งานแบบเป็นลำดับ</p>
+      <p><strong>ช่วงเวลาผลลัพธ์:</strong> เห็นผลด้านความเสถียรหรือเวลารันที่วัดได้ภายใน 2-4 สัปดาห์</p>
+    </div>
+  </div>
+</div>
+
+        
+        
+<div class="col-lg-4">
+  <div class="engagement-card" data-aos="fade-up" data-aos-delay="NaN">
+    <div class="icon mb-4"><i class="bi bi-people"></i></div>
+    <h4 class="mb-4"><a class="engagement-title-link" href="/th/service-details.html#workflow-enablement">การยกระดับทีม / เวิร์กช็อป</a></h4>
+    <ul class="engagement-list">
+      
+      <li><i class="bi bi-check2-circle me-2"></i>ทำให้กระบวนการรีวิวและปล่อยงานเสถียรด้วยเทมเพลตและจุดตรวจที่ใช้งานได้จริง</li>
+      
+      <li><i class="bi bi-check2-circle me-2"></i>เพิ่มความเร็วในการออนบอร์ดและคุณภาพการส่งมอบต่อในโมดูลที่เปลี่ยนแปลงบ่อย</li>
+      
+      <li><i class="bi bi-check2-circle me-2"></i>เพิ่มความคาดการณ์ได้ของการปล่อยงานด้วยแนวปฏิบัติความรับผิดชอบที่ทำซ้ำได้</li>
+      
+    </ul>
+    <div class="engagement-meta">
+      <p><strong>เหมาะสำหรับ:</strong> ทีมที่มีมาตรฐานรีวิวไม่สม่ำเสมอ ปล่อยงานติดขัด หรือการส่งมอบความรับผิดชอบที่เปราะบาง</p>
+      <p><strong>สิ่งที่ได้โดยทั่วไป:</strong> คู่มือรีวิว/ปล่อยงาน เทมเพลตออนบอร์ด และแนวปฏิบัติความรับผิดชอบที่ทำซ้ำได้</p>
+      <p><strong>ช่วงเวลาผลลัพธ์:</strong> เห็นความคาดการณ์ได้ของการส่งมอบดีขึ้นชัดเจนภายในเดือนแรก</p>
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials section dark-background">
+    <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="" aria-hidden="true">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": { "delay": 5000 },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+          
+          
+<div class="swiper-slide">
+  <div class="testimonial-item">
+    <img src="assets/img/testimonials/testimonials.png" class="testimonial-img" alt="" aria-hidden="true">
+    <h3><span class="anonymized-client-label">Ironbridge ERP</span></h3>
+    <h4>สถาปัตยกรรมซอฟต์แวร์และหัวหน้าทีม</h4>
+    <div class="stars">
+      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+    </div>
+    <p>
+      <i class="bi bi-quote quote-icon-left"></i>
+      <span>Stefan มีทั้งความลึกทางเทคนิคและวินัยในการลงมือทำจริง สามารถแก้ปัญหาซับซ้อนได้รวดเร็วและเป็นระบบ</span>
+      <i class="bi bi-quote quote-icon-right"></i>
+    </p>
+  </div>
+</div>
+
+          
+          
+<div class="swiper-slide">
+  <div class="testimonial-item">
+    <img src="assets/img/testimonials/testimonials.png" class="testimonial-img" alt="" aria-hidden="true">
+    <h3><span class="anonymized-client-label">Ironbridge ERP</span></h3>
+    <h4>คุณภาพและสถาปัตยกรรม</h4>
+    <div class="stars">
+      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+    </div>
+    <p>
+      <i class="bi bi-quote quote-icon-left"></i>
+      <span>เขาส่งมอบงานคุณภาพสูงอย่างสม่ำเสมอ พร้อมความรับผิดชอบและการตรวจสอบที่รัดกุมภายใต้แรงกดดัน</span>
+      <i class="bi bi-quote quote-icon-right"></i>
+    </p>
+  </div>
+</div>
+
+          
+          
+<div class="swiper-slide">
+  <div class="testimonial-item">
+    <img src="assets/img/testimonials/testimonials.png" class="testimonial-img" alt="" aria-hidden="true">
+    <h3><span class="anonymized-client-label">Canopy Metrics</span></h3>
+    <h4>พัฒนาซอฟต์แวร์</h4>
+    <div class="stars">
+      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+    </div>
+    <p>
+      <i class="bi bi-quote quote-icon-left"></i>
+      <span>หลังช่วงออนบอร์ดสั้น Stefan สามารถทำงานในเทคสแตกใหม่ได้อย่างอิสระและคงคุณภาพสูงอย่างต่อเนื่อง</span>
+      <i class="bi bi-quote quote-icon-right"></i>
+    </p>
+  </div>
+</div>
+
+          
+          
+<div class="swiper-slide">
+  <div class="testimonial-item">
+    <img src="assets/img/testimonials/testimonials.png" class="testimonial-img" alt="" aria-hidden="true">
+    <h3><span class="anonymized-client-label">Ironbridge ERP</span></h3>
+    <h4>ภาวะผู้นำทีม</h4>
+    <div class="stars">
+      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+    </div>
+    <p>
+      <i class="bi bi-quote quote-icon-left"></i>
+      <span>เรามองว่า Stefan มีความอึด มีแรงขับ และละเอียดรอบคอบ แม้ภาระงานสูง เขายังคงส่งมอบได้เสถียรและเชื่อถือได้</span>
+      <i class="bi bi-quote quote-icon-right"></i>
+    </p>
+  </div>
+</div>
+
+          
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="team section light-background">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>ทีม</h2>
+      <p><span>ทีม</span> <span class="description-title">ผู้เชี่ยวชาญของเรา</span></p>
+    </div>
+    <div class="container">
+      <div class="row gy-4 justify-content-center">
+        
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-member">
+            <div class="member-img">
+              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Portrait of Stefan">
+              <div class="social">
+                <a href="/th/skilltable-team1.html" aria-label="ดูโปรไฟล์ Stefan"><i class="bi bi-person-vcard" aria-hidden="true"></i></a>
+                <a href="mailto:stefan@vionix.cloud" aria-label="อีเมลถึง Stefan"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+                
+                <a href="https://github.com/vionix-th" aria-label="Vionix บน GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+                
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Stefan</h4>
+              <span>ผู้ก่อตั้งและที่ปรึกษาหลัก</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-member">
+            <div class="member-img">
+              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="Portrait of Ruthairat">
+              <div class="social">
+                <a href="/th/skilltable-team2.html" aria-label="ดูโปรไฟล์ Ruthairat"><i class="bi bi-person-vcard" aria-hidden="true"></i></a>
+                <a href="mailto:ruthairat@vionix.cloud" aria-label="อีเมลถึง Ruthairat"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+                
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Ruthairat</h4>
+              <span>ผู้ร่วมก่อตั้งและผู้อำนวยการด้านวิศวกรรมคุณภาพ</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>ติดต่อ</h2>
+      <p><span>ติดต่อ</span> <span class="description-title">เราได้ทันที</span></p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+        <div class="col-lg-5">
+          <div class="info-wrap">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>ที่อยู่</h3>
+                <p>Soi Sukhumvit 72<br>Sam Rong Nua, Mueang Samut Prakan<br>Samut Prakan 10270<br>Thailand</p>
+              </div>
+            </div>
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-calendar4-week flex-shrink-0"></i>
+              <div>
+                <h3>โทรศัพท์</h3>
+                <p><a href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank" rel="noopener noreferrer">นัดหมายการพูดคุย</a></p>
+              </div>
+            </div>
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>ส่งอีเมลถึงเรา</h3>
+                <p><a href="mailto:info@vionix.cloud">info@vionix.cloud</a></p>
+              </div>
+            </div>
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-clock flex-shrink-0"></i>
+              <div>
+                <h3>เวลาทำการ</h3>
+                <p>วันจันทร์ถึงศุกร์: 09:00 ถึง 18:00<br>UTC+07:00 เวลาไทย</p>
+              </div>
+            </div>
+            <iframe class="contact-map d-none" data-optional-feature="map-embed" data-consent-src="https://maps.google.com/maps?q=Soi%20Sukhumvit%2072%2C%20Samrong%20Nuea%2C%20Mueang%20Samut%20Prakan%2C%20Samut%20Prakan%2010270%2C%20Thailand&t=&z=16&ie=UTF8&iwloc=&output=embed" title="แผนที่ที่ตั้งสำนักงาน" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="small text-muted mt-2" data-optional-placeholder="map-embed">แผนที่ถูกปิดไว้จนกว่าจะเปิดใช้คุณสมบัติเสริมในการตั้งค่าคุกกี้</div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <form action="https://usebasin.com/f/d9d4dce0cabf" method="post" class="php-email-form basin-form" data-basin-form data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4 contact-form-fields">
+              <div class="col-md-6">
+                <label for="name-field" class="pb-2">ชื่อของคุณ</label>
+                <input id="name-field" type="text" name="name" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email-field" class="pb-2">อีเมลของคุณ</label>
+                <input id="email-field" type="email" class="form-control" name="email" required>
+              </div>
+              <div class="col-md-12">
+                <label for="subject-field" class="pb-2">หัวข้อ</label>
+                <input id="subject-field" type="text" class="form-control" name="subject" required>
+              </div>
+              <div class="col-md-12">
+                <label for="message-field" class="pb-2">ข้อความ</label>
+                <textarea id="message-field" class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="col-md-12 text-center contact-form-submit">
+                <div class="loading">กำลังส่ง...</div>
+                <div class="error-message"></div>
+                <div class="sent-message">ส่งข้อความเรียบร้อยแล้ว ขอบคุณครับ/ค่ะ</div>
+                <button type="submit">ส่งข้อความ</button>
+              </div>
+            </div>
+            <div class="form-disclaimer-wrap" aria-label="Datenschutz und Reaktionszeit im Kontaktformular" role="note">
+              <div class="form-disclaimer">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                <p>เราใช้ข้อมูลนี้เพื่อตอบกลับคำขอของคุณเท่านั้น (ไม่มีสแปม) โดยปกติจะตอบกลับภายใน 1-2 วันทำการ</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer id="footer" class="footer">
+  <div class="footer-top-band">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="/th/index.html" class="d-flex align-items-center">
+            <span class="sitename">Vionix Consulting</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Soi Sukhumvit 72<br>Sam Rong Nua, Mueang Samut Prakan<br>Samut Prakan 10270<br>Thailand</p>
+            <p class="mt-3"><strong>โทรศัพท์:</strong> <a href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank" rel="noopener noreferrer">นัดหมายการพูดคุย</a></p>
+            <p><strong>อีเมล:</strong> <a href="mailto:info@vionix.cloud">info@vionix.cloud</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row gy-4">
+            <div class="col-6 col-lg-4 footer-group footer-links">
+              <h4>ลิงก์สำคัญ</h4>
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/index.html#hero">หน้าแรก</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/index.html#about">เกี่ยวกับเรา</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/index.html#contact">ติดต่อ</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/case-studies.html">กรณีศึกษา</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-lg-4 footer-group footer-links">
+              <h4>บริการของเรา</h4>
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/service-details.html#database-performance">ประสิทธิภาพฐานข้อมูลและรายงาน</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/service-details.html#legacy-core">เสถียรภาพระบบแกนหลักเดิม</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/service-details.html#modernisation-team">ปรับปรุงระบบแบบค่อยเป็นค่อยไป</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="/th/service-details.html#workflow-enablement">ยกระดับทีมและเวิร์กโฟลว์อย่างมีประสิทธิภาพ</a></li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-4 footer-group footer-social">
+              <h4>ติดตามเรา</h4>
+              <div class="social-links d-flex">
+                <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i
+                    class="bi bi-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Vionix Consulting</strong> <span>สงวนลิขสิทธิ์</span></p>
+    <p class="anonymization-note footer-anonymization-note mb-0"><sup>1</sup> ชื่อผู้ว่าจ้างทั้งหมดเป็นนามสมมติที่ไม่เปิดเผยตัวตนเพื่อคุ้มครองความเป็นส่วนตัว โดยยังคงรักษาบริบทอุตสาหกรรมและผลลัพธ์ทางเทคนิคตามข้อเท็จจริง</p>
+    <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+  </div>
+</footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+  aria-label="Scroll to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+<div id="preloader">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/vendor/aos/aos.js"></script>
+
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

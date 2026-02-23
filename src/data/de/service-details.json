@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "Wie Vionix kritische Softwaresysteme verbessert",
+    "subtitle": "Vier Umsetzungssäulen für Performance, Stabilität, Modernisierung und Team-Enablement",
+    "breadcrumbsHome": "Startseite",
+    "breadcrumbsCurrent": "Leistungsdetails"
+  },
+  "sections": [
+    {
+      "id": "database-performance",
+      "kicker": "Performance",
+      "title": "Datenbank- und Berichtsleistung",
+      "intro": "Finanzabschlüsse, Produktions-Dashboards und operative Berichte hängen von verlässlichen Datenplattformen ab. Wenn Abfragen minutenlang laufen und Nachtläufe in den Geschäftstag rutschen, spürt es das gesamte Unternehmen.",
+      "fitTitle": "Wann es passt",
+      "fit": [
+        "Geschäftskritische Berichte oder Dashboards überschreiten regelmäßig akzeptable Laufzeiten oder brechen ab.",
+        "Batch-Fenster (Abrechnung, Abstimmung, ETL) laufen bis in den nächsten Arbeitstag.",
+        "Sperrkonflikte, Deadlocks oder instabile Pläne verursachen wiederkehrende Incidents.",
+        "Teams vermeiden Änderungen, weil Abfrageverhalten intransparent ist und Risiken schwer einschätzbar sind."
+      ],
+      "approachTitle": "Wie wir arbeiten",
+      "approach": [
+        "Wir erstellen eine belastbare Ausgangsbasis: Laufzeitprofil, Sperrenkarte, Ausführungspläne und Lastspitzen.",
+        "Wir priorisieren wirkungsstarke Maßnahmen (Indizes, Query-Rewrites, Planstabilität, Reporting-Fluss).",
+        "Wir führen sichere Rollout-Muster ein (Parallelbetrieb, Canary-Reporting, Rollback-Skripte, Korrektheitschecks).",
+        "Wir übertragen praktische Leitplanken, damit Ihr Team die Verbesserungen nachhaltig halten kann."
+      ],
+      "deliverablesTitle": "Typische Ergebnisse",
+      "deliverables": [
+        "Eine priorisierte Maßnahmenliste mit den wirksamsten Schema-, Index- und Query-Verbesserungen.",
+        "Ein validierter erster Umsetzungsschritt mit gemessenen Vorher-/Nachher-Metriken.",
+        "Runbooks für Performance-Fehlersuche und risikokontrollierte Releases.",
+        "Leichtgewichtige Instrumentierungsskripte oder Dashboards in Ihr bestehendes Monitoring integriert."
+      ],
+      "outro": "Die meisten Engagements starten mit einem hochwirksamen Reporting-Pfad und skalieren erst nach nachweisbaren Gewinnen."
+    },
+    {
+      "id": "legacy-core",
+      "kicker": "Stabilisierung",
+      "title": "Stabilisierung von Legacy-Kernmodulen",
+      "intro": "ERP-Anpassungen, Bestandssynchronisierung oder Abrechnungsmodule tragen oft ein Jahrzehnt schneller Workarounds. Wenn ein einzelnes Modul die Umsatzrealisierung oder Produktionsplanung steuert, braucht Veränderung eine klare und sichere Zerlegungsstrategie.",
+      "fitTitle": "Wann es passt",
+      "fit": [
+        "Die Codebasis vermischt VB6/C#/C++/Caché-Schichten bei geringer Dokumentation und unklaren Verantwortlichkeiten.",
+        "Jede Änderung löst Regressionsfeuer oder Release-Freeze aus, weil Abhängigkeiten unbekannt sind.",
+        "Nur ein bis zwei Senior Engineers kennen die ursprüngliche Intention, Wissenstransfer ist fragil.",
+        "Prüfer oder Großkunden verlangen Stabilitätsnachweise, die das Modul derzeit nicht liefern kann."
+      ],
+      "approachTitle": "Wie wir arbeiten",
+      "approach": [
+        "Wir betreiben Code-Archäologie: Ausführungspfade, Datenmutationen und Runtime-Konfigurationen werden nachvollzogen.",
+        "Wir kartieren Abhängigkeits- und Datenflussgrenzen, um Kopplung und Integrationsnähte sichtbar zu machen.",
+        "Wir entwerfen sichere Nähte (Fassaden, Adapter, Anti-Corruption-Layer) für inkrementelle Entkopplung.",
+        "Wir ergänzen Leitplankentests vor Verhaltensänderungen, um stille Regressionen zu verhindern.",
+        "Wir setzen die ersten Refactoring-Schritte gemeinsam mit Ihrem Team um und übertragen die Strukturverantwortung."
+      ],
+      "deliverablesTitle": "Typische Ergebnisse",
+      "deliverables": [
+        "Modulkarte mit Verantwortlichkeiten, Abhängigkeiten und den kritischsten Risikostellen.",
+        "Sequenzierter Stabilisierungsplan mit Refactoring-Schritten und Sicherheitskontrollen.",
+        "Leitplankentests oder Diagnostik für messbare und wiederholbare Änderungen.",
+        "Wissenstransfer-Notizen und Beispiele zum aktuellen Modulverhalten."
+      ],
+      "outro": "Stabilisierungssprints fokussieren in der Regel jeweils ein Kernmodul, um Risiken kontrolliert und Fortschritt sichtbar zu halten."
+    },
+    {
+      "id": "modernisation-team",
+      "kicker": "Modernisierung",
+      "title": "Inkrementelle Systemmodernisierung",
+      "intro": "Großflächige Rewrites scheitern häufig am Betriebsdruck. Diese Säule verlagert kritische Fähigkeiten in kontrollierten Schritten und sichert Kontinuität bei gleichzeitiger Reduktion technischer Schulden.",
+      "fitTitle": "Wann es passt",
+      "fit": [
+        "Modernisierung läuft seit Jahren, während kritische Fähigkeiten weiter am Legacy-Code hängen.",
+        "Teams verschieben Architekturverbesserungen wegen Freigabedruck und Regressionsangst.",
+        "Integrationsgrenzen sind unklar, wodurch jede Migrationsidee unnötig riskant wird.",
+        "Die Führung braucht messbaren Fortschritt ohne Geschäftsunterbrechung."
+      ],
+      "approachTitle": "Wie wir arbeiten",
+      "approach": [
+        "Wir wählen hochwirksame Migrationsschritte mit direkter Geschäftsrelevanz.",
+        "Wir sequenzieren APIs, Services und Datengrenzen mit expliziten Abhängigkeiten und Rollback-Optionen.",
+        "Wir etablieren Kontrollpunkte und Leitplanken vor jedem Übergang in den nächsten Schritt.",
+        "Wir fahren Side-by-Side-Validierung, bis Korrektheit und Performance nachgewiesen sind.",
+        "Wir begleiten Teams in der Umsetzung, damit Architekturabsicht im Lieferdruck erhalten bleibt."
+      ],
+      "deliverablesTitle": "Typische Ergebnisse",
+      "deliverables": [
+        "Migrationskarte mit klaren Grenzen, Risiken und Übergangs-Kontrollpunkten.",
+        "Validierter erster Umsetzungsschritt mit messbaren Baseline-zu-Ziel-Metriken.",
+        "Phasenplan mit Rollback-Strategie und Verantwortungsmodell.",
+        "Operative Checklisten für sichere Einführung und Post-Release-Validierung."
+      ],
+      "outro": "Das Ziel ist kein Big-Bang-Rewrite, sondern kontrollierter Fortschritt mit messbarer Risikoreduktion pro Schritt."
+    },
+    {
+      "id": "workflow-enablement",
+      "kicker": "Enablement",
+      "title": "Team- und Workflow-Befähigung",
+      "intro": "Stabilitätsgewinne halten nicht, wenn Lieferabläufe weiterhin Unruhe erzeugen. Diese Säule härtet Review, Freigabe und Verantwortungsübergaben, damit Verbesserungen unter realem Druck bestehen bleiben.",
+      "fitTitle": "Wann es passt",
+      "fit": [
+        "Die Qualität von Code-Reviews schwankt stark zwischen Teams und erzeugt unvorhersehbare Fehler.",
+        "Release-Bereitschaft ist unklar, Incidents führen zu reaktiven Feuerwehreinsätzen.",
+        "Onboarding in Hochrisiko-Module ist langsam und stark personenabhängig.",
+        "Lerneffekte aus Incidents fließen kaum in Teamroutinen zurück."
+      ],
+      "approachTitle": "Wie wir arbeiten",
+      "approach": [
+        "Wir etablieren leichtgewichtige Standards für PR-Umfang, Review-Tiefe und Release-Bereitschaft.",
+        "Wir definieren praktikable Vereinbarungen für Branching, Übergaben und Incident-Nachbereitung.",
+        "Wir führen pragmatische Vorlagen (PRs, Runbooks, Release-Checklisten) zur Varianzreduktion ein.",
+        "Wir kalibrieren Teamgewohnheiten über Coaching und gezielte Clinics.",
+        "Wir verknüpfen Workflow-Verbesserungen mit messbaren Lieferergebnissen."
+      ],
+      "deliverablesTitle": "Typische Ergebnisse",
+      "deliverables": [
+        "Workflow-Diagnose zu Verzögerungen, Nacharbeit und Verantwortungs-Lücken.",
+        "Operative Leitfäden für Reviews, Releases und Incident-Übergaben.",
+        "Praktische Teamstandards und Vorlagen bei erhaltener Liefergeschwindigkeit.",
+        "Kurzer Enablement-Plan mit messbaren Zielen und verantwortlichen Rollen."
+      ],
+      "outro": "Ziel ist nachhaltige Lieferqualität, nicht zusätzlicher Prozessballast."
+    }
+  ],
+  "cta": {
+    "title": "Brauchen Sie einen klaren ersten Schritt?",
+    "copy": "Teilen Sie den aktuellen Engpass und den Geschäftsdruck. Vionix antwortet mit einer fokussierten Erstmaßnahme.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

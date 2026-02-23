@@ -41,9 +41,20 @@ fi
 
 [[ -d "$DIST" ]] || fail "dist directory missing. Run npm run build first."
 
-expected_pages=$(find "$SRC_PAGES" -maxdepth 1 -type f -name "*.njk" | wc -l | tr -d " ")
-locale_count=$(node -e 'const i18n=require("./src/i18n/locales.json");console.log((i18n.supportedLocales||[]).length)' | tr -d " ")
-expected_pages=$((expected_pages * locale_count))
+expected_pages=$(node -e '
+const fs=require("fs");
+const path=require("path");
+const root=process.cwd();
+const i18n=require(path.join(root,"src/i18n/locales.json"));
+const approval=require(path.join(root,"src/i18n/approval.json"));
+const pageCount=fs.readdirSync(path.join(root,"src/pages")).filter(f=>f.endsWith(".njk")).length;
+const publishCount=(i18n.publishLocales||[]).length*pageCount;
+const stagedApproved=(i18n.stagedLocales||[]).reduce((acc,locale)=>{
+  const entries=approval[locale]||{};
+  return acc+Object.values(entries).filter(e=>e&&e.status==="approved").length;
+},0);
+console.log(pageCount + publishCount + stagedApproved);
+' | tr -d " ")
 actual_pages=$(find "$DIST" -type f -name "*.html" | wc -l | tr -d " ")
 [[ "$actual_pages" = "$expected_pages" ]] || fail "dist HTML count mismatch (expected $expected_pages, got $actual_pages)."
 

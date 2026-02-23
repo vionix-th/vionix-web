@@ -16,6 +16,8 @@
   ],
   "permalink": "/service-details.html",
   "currentPage": "service-details",
+  "pageApprovalKey": "service-details",
+  "pageContentKey": "service-details",
   "styleCssExtra": [
     "assets/css/service-details-page.css"
   ]

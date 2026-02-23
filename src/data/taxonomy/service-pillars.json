@@ -1,0 +1,34 @@
+{
+  "database_reporting_performance": {
+    "icon": "bi-code-square",
+    "labels": {
+      "en": "Database & Reporting Performance",
+      "de": "Datenbank- und Berichtsleistung",
+      "th": "ประสิทธิภาพฐานข้อมูลและรายงาน"
+    }
+  },
+  "legacy_core_stabilisation": {
+    "icon": "bi-arrow-repeat",
+    "labels": {
+      "en": "Legacy Core Stabilisation",
+      "de": "Stabilisierung von Legacy-Kernmodulen",
+      "th": "เสถียรภาพระบบแกนหลักเดิม"
+    }
+  },
+  "incremental_system_modernisation": {
+    "icon": "bi-robot",
+    "labels": {
+      "en": "Incremental System Modernisation",
+      "de": "Inkrementelle Systemmodernisierung",
+      "th": "ปรับปรุงระบบแบบค่อยเป็นค่อยไป"
+    }
+  },
+  "efficient_team_workflow_enablement": {
+    "icon": "bi-mortarboard",
+    "labels": {
+      "en": "Efficient Team & Workflow Enablement",
+      "de": "Team- und Workflow-Befähigung",
+      "th": "ยกระดับทีมและเวิร์กโฟลว์อย่างมีประสิทธิภาพ"
+    }
+  }
+}

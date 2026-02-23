@@ -1,0 +1,79 @@
+{
+  "pageTitle": "Skills & Competencies",
+  "breadcrumbsHome": "Home",
+  "breadcrumbsCurrent": "Skills & Competencies",
+  "headline": "Professional Bio & Competency Profile",
+  "member": {
+    "name": "Ruthairat",
+    "role": "Co-Founder & Director Quality Engineering",
+    "image": "assets/img/team/team-2.jpg",
+    "imageAlt": "Portrait of Ruthairat, Co-Founder and Director of Quality Engineering at Vionix"
+  },
+  "intro": {
+    "lead": "Experienced professional in Supplier Quality Engineering with comprehensive expertise in project management, quality assurance, and supplier relations.",
+    "body": "Passionate about leveraging expertise to optimize supplier performance and enhance product quality. Proven ability to develop and execute comprehensive project plans, manage projects from initiation to completion, and implement best practices. Strong leadership skills in conducting supplier audits and fostering partnerships to support operational excellence."
+  },
+  "sections": [
+    {
+      "title": "Technical Expertise",
+      "columns": [
+        {
+          "icon": "bi-gear",
+          "title": "Quality Engineering",
+          "items": ["Supplier Quality Management", "Advanced Product Quality Planning (APQP)", "Technical Drawing & Engineering", "IC Component Package Assembly"]
+        },
+        {
+          "icon": "bi-tools",
+          "title": "Software & Tools",
+          "items": ["SAP, JMP, Microsoft Project", "Microsoft Office Suite", "Collaboration Tools (Teams, WebEx)", "Quality Management Systems"]
+        }
+      ]
+    },
+    {
+      "title": "Leadership & Management",
+      "columns": [
+        {
+          "icon": "bi-people",
+          "title": "Team Leadership",
+          "items": ["Cross-functional Team Management", "Supplier Relationship Management", "Project Leadership", "Process Improvement"]
+        },
+        {
+          "icon": "bi-clipboard-check",
+          "title": "Quality Management",
+          "items": ["Audit Leadership (VDA 6.3, IATF 16949)", "Risk Assessment & Management", "Change Management", "Quality System Implementation"]
+        }
+      ]
+    },
+    {
+      "title": "Core Competencies",
+      "columns": [
+        {
+          "icon": "bi-diagram-3",
+          "title": "Project Management",
+          "items": ["End-to-End Project Execution", "Resource Management", "Risk Assessment & Mitigation", "Documentation & Reporting"]
+        },
+        {
+          "icon": "bi-graph-up",
+          "title": "Quality Tools & Methods",
+          "items": ["APQP, FMEA, MSA, SPC, PPAP", "8D Problem Solving", "Process Audit Methodologies", "Continuous Improvement"]
+        }
+      ]
+    },
+    {
+      "title": "Languages & Certifications",
+      "columns": [
+        {
+          "icon": "bi-translate",
+          "title": "Languages",
+          "items": ["Thai: Native", "English: Advanced (C1)"]
+        },
+        {
+          "icon": "bi-award",
+          "title": "Certifications",
+          "items": ["Lead Auditor VDA 6.3", "Lead Auditor IATF 16949:2016", "Automotive Core Tools", "Plastic Injection Operations"]
+        }
+      ]
+    }
+  ],
+  "footer": "This Competency Profile is based on supplied documentation, references, and certifications. For further details or original reference documents, please contact Ruthairat directly."
+}

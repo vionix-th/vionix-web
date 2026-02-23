@@ -1,0 +1,40 @@
+{
+  "de": {
+    "index": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "service-details": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-studies": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "skilltable-team1": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "skilltable-team2": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-01": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-02": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-03": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-04": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-05": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-06": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-07": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-08": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-09": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-10": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-11": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" },
+    "case-study-vionix-12": { "status": "approved", "reviewer": "Caesar (native de)", "approvedAt": "2026-02-23" }
+  },
+  "th": {
+    "index": { "status": "approved", "reviewer": "Native TH reviewer", "approvedAt": "2026-02-23" },
+    "service-details": { "status": "approved", "reviewer": "Native TH reviewer", "approvedAt": "2026-02-23" },
+    "case-studies": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "skilltable-team1": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "skilltable-team2": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-01": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-02": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-03": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-04": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-05": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-06": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-07": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-08": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-09": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-10": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-11": { "status": "draft", "reviewer": "", "approvedAt": "" },
+    "case-study-vionix-12": { "status": "draft", "reviewer": "", "approvedAt": "" }
+  }
+}

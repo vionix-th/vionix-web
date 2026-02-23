@@ -17,6 +17,8 @@
   ],
   "permalink": "/case-studies.html",
   "currentPage": "case-studies",
+  "pageApprovalKey": "case-studies",
+  "pageContentKey": "case-studies",
   "styleCssExtra": [
     "assets/css/case-studies.css"
   ]

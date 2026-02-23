@@ -7,7 +7,12 @@
     "build": "npm run clean && eleventy && npm run test:contracts",
     "dev": "eleventy --serve",
     "serve:dist": "npx http-server dist",
-    "test:contracts": "bash scripts/validate_site_contracts.sh"
+    "test:contracts": "bash scripts/validate_site_contracts.sh",
+    "i18n:validate": "npm run i18n:validate:keys && npm run i18n:validate:approval && npm run i18n:validate:templates && npm run i18n:validate:typography",
+    "i18n:validate:keys": "node scripts/i18n/validate_keys.js",
+    "i18n:validate:approval": "node scripts/i18n/validate_approval.js",
+    "i18n:validate:templates": "node scripts/i18n/validate_template_contracts.js",
+    "i18n:validate:typography": "node scripts/i18n/check_typography.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",

@@ -1,199 +1,87 @@
 ---
 layout: base.njk
 ---
+{% from "macros/cards.njk" import skillColumn %}
 
 <main class="main">
+  <div class="page-title" data-aos="fade">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">{{ t.pageTitle }}</h1>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="{{ localeHref(index.html) }}">{{ t.breadcrumbsHome }}</a></li>
+          <li class="current">{{ t.breadcrumbsCurrent }}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Skills & Competencies</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Skills & Competencies</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
+  <section id="team" class="team section light-background">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>{{ t.headline }}</h2>
+    </div>
 
-    <section id="team" class="team section light-background">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Professional Bio & Competency Profile</h2>        
-      </div>   
-
-      <div class="container">
-        <div class="row gy-4 justify-content-center">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Portrait of Stefan, Founder and Principal Consultant at Vionix">
-                <div class="social">
-                  <a href="https://github.com/vionix-th"><i class="bi bi-github"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Stefan</h4>
-                <span>Founder & Principal Consultant</span>
+    <div class="container">
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-member">
+            <div class="member-img">
+              <img src="{{ t.member.image }}" class="img-fluid" alt="{{ t.member.imageAlt }}">
+              <div class="social">
+                {% if t.member.github %}
+                <a href="{{ t.member.github }}" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                {% endif %}
               </div>
             </div>
-          </div><!-- End Team Member -->
-        </div>
-      </div>
-    </section><!-- /Team Section -->    
-
-    <!-- Skills Section -->
-    <section id="bio-competency" class="bio-competency section light-background">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-12">
-            <div class="bio-content">
-              <div class="bio-section">                
-                <p class="fst-italic">Software Engineer with over 20 years of experience in software development, project management, and team leadership.</p>
-                <p>Highly experienced Software Engineer with over 20 years in software development, project management, and team leadership. Proficient in multiple programming languages and frameworks, with extensive experience in security, reverse engineering, embedded systems, and API development. Known for transforming chaotic work environments into efficient, well-organized teams, and implementing industry standards that enhance productivity and work quality. Fluent in German and English.</p>
-              </div>
-
-              <div class="bio-section">
-                <h3>Technical Skills</h3>
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-code-square"></i></div>
-                      <h4>Programming & Development</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>C, C++, C#, Java, JavaScript/Node.js</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>VisualBasic6, Caché Object Script</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Python, Perl, PHP, Bash, Pine-script</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>.NET, Qt, OpenGL, React Native</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-gear"></i></div>
-                      <h4>Infrastructure & Tools</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>MySQL, SQL Server, SQLite, Caché</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>MacOS, Windows, Linux Administration</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>VM-Sphere, VMWare, VirtualBox</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Xcode, Visual Studio, Eclipse, Git</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bio-section">
-                <h3>Specialized Expertise</h3>
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-shield-check"></i></div>
-                      <h4>Security & Reverse Engineering</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>Boot-loader/kernel development</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Binary reverse engineering</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Penetration testing</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Security tools & configuration</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-cpu"></i></div>
-                      <h4>Embedded & API Development</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>FTDI microcontroller API</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Hardware/firmware consulting</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>FTP/IMAP4 protocol implementation</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Telegram/OpenAI API integration</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bio-section">
-                <h3>Core Competencies</h3>
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-diagram-3"></i></div>
-                      <h4>Architecture & Development</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>Full lifecycle development</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Software architecture design</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Legacy system modernization</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Code reviews & quality assurance</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-people"></i></div>
-                      <h4>Leadership & Collaboration</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>Team leadership & mentoring</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Process optimization</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Cross-functional collaboration</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Technical training & knowledge sharing</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bio-section">
-                <h3>Languages & International Experience</h3>
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-translate"></i></div>
-                      <h4>Languages</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>German: Native</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>English: Fluent</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Thai: Intermediate</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Spanish/Mandarin: Limited</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="service-item">
-                      <div class="icon"><i class="bi bi-globe"></i></div>
-                      <h4>International Experience</h4>
-                      <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>Dominican Republic</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Bulgaria, Turkey, Greece</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Thailand/Bangkok</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Cross-cultural collaboration</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bio-section">
-                <h3>Certifications & References</h3>
-                <div class="service-item">
-                  <div class="icon"><i class="bi bi-award"></i></div>
-                  <ul>
-                    <li><i class="bi bi-check-circle"></i> <span>Elektor Technical Seminar: High-Frequency Technology</span></li>
-                    <li><i class="bi bi-check-circle"></i> <span>Consistently recognized for technical expertise and leadership</span></li>
-                    <li><i class="bi bi-check-circle"></i> <span>Praised for problem-solving and mentoring abilities</span></li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="bio-footer text-center mt-5">
-                <p class="fst-italic small">This Competency Profile is based on supplied documentation, references, and certifications. For further details or original reference documents, please contact Stefan directly.</p>
-              </div>
+            <div class="member-info">
+              <h4>{{ t.member.name }}</h4>
+              <span>{{ t.member.role }}</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <section id="bio-competency" class="bio-competency section light-background">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+        <div class="col-lg-12">
+          <div class="bio-content">
+            <div class="bio-section">
+              <p class="fst-italic">{{ t.intro.lead }}</p>
+              <p>{{ t.intro.body }}</p>
+            </div>
+
+            {% for section in t.sections %}
+            <div class="bio-section">
+              <h3>{{ section.title }}</h3>
+              {% if section.columns %}
+              <div class="row gy-4">
+                {% for col in section.columns %}
+                {{ skillColumn(col) }}
+                {% endfor %}
+              </div>
+              {% endif %}
+              {% if section.single %}
+              <div class="service-item">
+                <div class="icon"><i class="bi {{ section.single.icon }}"></i></div>
+                <ul>
+                  {% for item in section.single.items %}
+                  <li><i class="bi bi-check-circle"></i> <span>{{ item }}</span></li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
+            </div>
+            {% endfor %}
+
+            <div class="bio-footer text-center mt-5">
+              <p class="fst-italic small">{{ t.footer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

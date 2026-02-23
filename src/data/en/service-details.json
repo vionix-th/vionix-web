@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "How Vionix Improves Critical Software Systems",
+    "subtitle": "Four delivery pillars for performance, stability, modernisation, and team workflow enablement",
+    "breadcrumbsHome": "Home",
+    "breadcrumbsCurrent": "Service Details"
+  },
+  "sections": [
+    {
+      "id": "database-performance",
+      "kicker": "Performance",
+      "title": "Database & Reporting Performance",
+      "intro": "Finance closes, manufacturing dashboards, and operational reports all depend on predictable data platforms. When queries stretch into minutes and nightly jobs creep into business hours, the rest of the company feels it.",
+      "fitTitle": "When it fits",
+      "fit": [
+        "Business-critical reports or dashboards regularly exceed acceptable runtimes or time out entirely.",
+        "Batch processing windows (invoicing, reconciliation, ETL) overrun into the next workday.",
+        "Lock contention, deadlocks, or unstable plans create recurring service incidents.",
+        "Teams avoid changes because query behavior is opaque and risk is hard to estimate."
+      ],
+      "approachTitle": "How we work",
+      "approach": [
+        "Establish a baseline: runtime profile, lock map, execution plans, and peak-hour load characteristics.",
+        "Prioritise high-impact fixes (indexes, query rewrites, plan stability controls, reporting flow redesign).",
+        "Introduce safe rollout patterns (parallel runs, canary reporting, rollback scripts, correctness checks).",
+        "Transfer practical operational guardrails so teams can sustain gains after handover."
+      ],
+      "deliverablesTitle": "Typical deliverables",
+      "deliverables": [
+        "A prioritized backlog covering highest-impact schema/index/query improvements.",
+        "Validated first-slice implementation with measured baseline vs post-change metrics.",
+        "Runbooks for performance troubleshooting and release-time risk checks.",
+        "Lightweight instrumentation scripts or dashboards integrated with existing monitoring."
+      ],
+      "outro": "Most engagements start with one high-impact reporting path and expand only after measured wins are confirmed."
+    },
+    {
+      "id": "legacy-core",
+      "kicker": "Stabilisation",
+      "title": "Legacy Core Stabilisation",
+      "intro": "ERP customisations, inventory sync engines, and billing subsystems often carry a decade of quick fixes. When one module controls revenue recognition or production planning, change feels unsafe without a clear decomposition strategy.",
+      "fitTitle": "When it fits",
+      "fit": [
+        "The codebase mixes VB6/C#/C++/Caché layers with little documentation and unclear ownership.",
+        "Every change triggers regression fire-fights or release freezes due to unknown dependencies.",
+        "Only one or two senior engineers remember intent, and knowledge transfer is fragile.",
+        "Auditors or enterprise clients demand stability guarantees the current module cannot prove."
+      ],
+      "approachTitle": "How we work",
+      "approach": [
+        "Run code archaeology: trace execution paths, data mutations, and runtime configuration behavior.",
+        "Map dependency and data-flow boundaries to expose coupling, shared state, and integration seams.",
+        "Design safe seams (facades, adapters, anti-corruption layers) for incremental extraction.",
+        "Add guardrail tests before behavioral change to prevent silent regressions.",
+        "Pair with your team on the first refactoring slices and transfer structure ownership."
+      ],
+      "deliverablesTitle": "Typical deliverables",
+      "deliverables": [
+        "Module map highlighting responsibilities, dependencies, and highest-risk seams.",
+        "Sequenced stabilisation plan with recommended refactoring slices and safety controls.",
+        "Guardrail tests or diagnostics to keep future change measurable and repeatable.",
+        "Knowledge-transfer notes and examples capturing current module behavior."
+      ],
+      "outro": "Legacy stabilisation sprints usually target one core module at a time to keep risk bounded and progress visible."
+    },
+    {
+      "id": "modernisation-team",
+      "kicker": "Modernisation",
+      "title": "Incremental System Modernisation",
+      "intro": "Large rewrites rarely survive real operating pressure. This pillar moves critical capability in controlled slices, preserving continuity while reducing technical debt and runtime fragility.",
+      "fitTitle": "When it fits",
+      "fit": [
+        "Modernisation has been in progress for years while critical capabilities stay coupled to legacy code.",
+        "Teams defer architecture improvements due to release pressure and fear of regression.",
+        "Integration boundaries are unclear, making every migration proposal high-risk.",
+        "Leadership needs measurable progress without business interruption."
+      ],
+      "approachTitle": "How we work",
+      "approach": [
+        "Select high-leverage migration slices tied to business outcomes.",
+        "Sequence APIs, services, and data boundaries with explicit dependencies and rollback options.",
+        "Introduce checkpoints and guardrails before each step advances.",
+        "Operate side-by-side validation until correctness and performance thresholds are met.",
+        "Coach teams during implementation so architecture intent survives delivery pressure."
+      ],
+      "deliverablesTitle": "Typical deliverables",
+      "deliverables": [
+        "A migration map with explicit boundaries, risks, and transition checkpoints.",
+        "Validated first implementation slice with measurable baseline vs target metrics.",
+        "Phased implementation plan with rollback strategy and ownership model.",
+        "Operational checklists for safe rollout and post-release validation."
+      ],
+      "outro": "The objective is not a big-bang rewrite; it is controlled progress with measurable risk reduction in each slice."
+    },
+    {
+      "id": "workflow-enablement",
+      "kicker": "Enablement",
+      "title": "Efficient Team & Workflow Enablement",
+      "intro": "Stability gains fade if delivery workflows keep reintroducing chaos. This pillar hardens review, release, and ownership transfer so improvements remain durable under real-world pressure.",
+      "fitTitle": "When it fits",
+      "fit": [
+        "Code-review quality varies widely across teams, causing unpredictable defects.",
+        "Release readiness is ambiguous and incidents trigger reactive firefighting.",
+        "Onboarding to high-risk modules is slow and highly person-dependent.",
+        "Post-incident learning rarely feeds back into team routines."
+      ],
+      "approachTitle": "How we work",
+      "approach": [
+        "Establish lightweight standards for PR scope, review depth, and release readiness.",
+        "Define practical branch, handover, and incident follow-up agreements.",
+        "Introduce pragmatic templates (PRs, runbooks, release checklists) to reduce variation.",
+        "Calibrate team habits through coaching sessions and targeted clinics.",
+        "Tie workflow improvements to measurable delivery outcomes."
+      ],
+      "deliverablesTitle": "Typical deliverables",
+      "deliverables": [
+        "Workflow diagnostic covering delays, rework sources, and ownership gaps.",
+        "Operational playbooks for reviews, releases, and incident handoffs.",
+        "Practical team standards and templates that preserve speed.",
+        "Short enablement plan with measurable outcomes and accountable owners."
+      ],
+      "outro": "The target is sustainable delivery quality, not heavyweight process overhead."
+    }
+  ],
+  "cta": {
+    "title": "Need a sharper first step?",
+    "copy": "Share the current bottleneck and business pressure. Vionix responds with a focused first-step proposal.",
+    "button": "Contact Vionix",
+    "href": "index.html#contact"
+  }
+}

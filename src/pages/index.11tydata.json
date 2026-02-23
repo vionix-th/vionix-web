@@ -16,6 +16,8 @@
   ],
   "permalink": "/index.html",
   "currentPage": "index",
+  "pageApprovalKey": "index",
+  "pageContentKey": "home",
   "vendorCssExtra": [
     "assets/vendor/swiper/swiper-bundle.min.css"
   ],

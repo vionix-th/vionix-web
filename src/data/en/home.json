@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "title": "Critical systems back under your control",
+    "subtitle": "Stabilising and modernising core operations",
+    "intro": "For IT leaders running legacy systems under production pressure. We baseline bottlenecks, validate safe fixes, and hand over guardrails so improvements stick.",
+    "cta": "Contact us",
+    "ctaCopy": "to scope the first step.",
+    "brandLine": "Reliable. Efficient. Direct."
+  },
+  "sections": {
+    "services": { "kicker": "Services", "titleLead": "What", "titleEmphasis": "We Improve" },
+    "proof": { "kicker": "Case Studies" },
+    "about": { "kicker": "About", "titleLead": "How", "titleEmphasis": "We Work" },
+    "engagements": { "kicker": "Engagements", "titleLead": "How", "titleEmphasis": "We Engage" },
+    "team": { "kicker": "Team", "titleLead": "Our", "titleEmphasis": "Expert Team" },
+    "contact": { "kicker": "Contact", "titleLead": "Get in", "titleEmphasis": "touch" }
+  },
+  "services": [
+    {
+      "pillarId": "database_reporting_performance",
+      "href": "service-details.html#database-performance",
+      "description": "Shorten runtimes, stabilize batch windows, and remove reporting bottlenecks."
+    },
+    {
+      "pillarId": "legacy_core_stabilisation",
+      "href": "service-details.html#legacy-core",
+      "description": "Reduce regression risk and unblock release flow in fragile core modules."
+    },
+    {
+      "pillarId": "incremental_system_modernisation",
+      "href": "service-details.html#modernisation-team",
+      "description": "Shift high-risk flows toward safer seams with measurable stability gains."
+    },
+    {
+      "pillarId": "efficient_team_workflow_enablement",
+      "href": "service-details.html#workflow-enablement",
+      "description": "Increase release predictability with practical review and handover routines."
+    }
+  ],
+  "proofSlides": [
+    { "href": "case-study-vionix-01.html", "text": "Reduced retail reporting runtime from 4 hours to 30 minutes across 80 stores" },
+    { "href": "case-study-vionix-02.html", "text": "Hardened POS infrastructure for 80+ fashion stores in high-dust environments" },
+    { "href": "case-study-vionix-03.html", "text": "Delivered failure-free inventory checks across 80 retail stores" },
+    { "href": "case-study-vionix-04.html", "text": "Implemented proactive branch-connectivity monitoring for reliable daily stock sync" },
+    { "href": "case-study-vionix-05.html", "text": "Industrialised a forest-inventory remote-sensing method into deployable desktop software" },
+    { "href": "case-study-vionix-06.html", "text": "Migrated spectrum-analyzer software to a cross-platform maintainable architecture" },
+    { "href": "case-study-vionix-07.html", "text": "Launched secure rental-webshop integration with real-time availability logic" },
+    { "href": "case-study-vionix-08.html", "text": "Rebuilt field-service software for reliable offline operations on construction sites" },
+    { "href": "case-study-vionix-09.html", "text": "Stabilised a 30-year ERP engineering workflow without a full rewrite" },
+    { "href": "case-study-vionix-10.html", "text": "Replaced nightly BI ETL with real-time reporting on live ERP data" },
+    { "href": "case-study-vionix-11.html", "text": "Digitalised warehouse goods receipt on legacy handheld devices" },
+    { "href": "case-study-vionix-12.html", "text": "Replaced a legacy work-management system with Jira Cloud at a 35-person ERP vendor" }
+  ],
+  "about": {
+    "headline": "Operator model with explicit boundaries",
+    "intro": "Vionix runs short, constraint-led diagnostic engagements that establish baselines, validate safe improvement paths, and transfer operational ownership back to your team.",
+    "principles": [
+      {
+        "title": "Baseline before opinions",
+        "text": "Measure runtime, batch-window pressure, locks, deadlocks, regression frequency, and dependency hotspots before planning changes."
+      },
+      {
+        "title": "Proof before persuasion",
+        "text": "Prototype 2-3 critical flows early to validate feasibility and expose hidden constraints before larger implementation effort."
+      },
+      {
+        "title": "Risk-controlled delivery and handover",
+        "text": "Use parallel validation, explicit rollback paths, and practical guardrails, then transfer ownership through playbooks, templates, checks, and coaching."
+      }
+    ],
+    "weekOne": "Week-1 outcome: a concise briefing (baseline + constraints), a prioritised plan, and one validated first-slice recommendation with risk controls.",
+    "goodFitTitle": "Good fit",
+    "goodFit": [
+      "Slow reporting, overloaded databases, and lock-heavy data paths.",
+      "Fragile revenue modules with high regression risk and unclear ownership.",
+      "Delivery blocked by dependency sprawl, release pressure, or offline constraints."
+    ],
+    "notFitTitle": "Not a fit",
+    "notFit": [
+      "Generic staff augmentation without a clear system outcome.",
+      "Greenfield MVP builds without production continuity constraints.",
+      "Full rewrites or cosmetic redesigns without operational goals."
+    ]
+  },
+  "engagements": {
+    "intro1": "Choose the format that matches current risk and delivery pressure. Each option produces concrete outputs and a clear next decision.",
+    "intro2": "Engagements are usually principal-led. Additional specialists join only when explicitly scoped. The goal is measurable system outcomes and a clean handover to your internal owners.",
+    "cards": [
+      {
+        "icon": "bi-search",
+        "title": "1-Week Assessment",
+        "href": "service-details.html#database-performance",
+        "bullets": [
+          "Baseline runtime, batch-window pressure, lock contention, and failure modes.",
+          "Map constraints, dependencies, and highest-risk execution seams.",
+          "Deliver a prioritised backlog and one validated first-slice recommendation."
+        ],
+        "bestFor": "Teams under immediate performance or reliability pressure with unclear technical constraints.",
+        "typical": "Baseline brief, constraints map, prioritised backlog, and one validated first-slice plan.",
+        "window": "Decision-ready scope and risk controls within one week."
+      },
+      {
+        "icon": "bi-kanban",
+        "title": "Implementation Sprint (2-4 Weeks)",
+        "href": "service-details.html#modernisation-team",
+        "bullets": [
+          "Implement the first high-impact slice with measurable improvement targets.",
+          "Add guardrails, rollback paths, and production-safe rollout sequencing.",
+          "Leave a clear rollout plan for next slices and ownership handover."
+        ],
+        "bestFor": "High-risk modules where teams need measurable progress without service disruption.",
+        "typical": "Implemented first slice, guardrails, rollback strategy, and a sequenced rollout plan.",
+        "window": "Measurable reliability or runtime gains in 2-4 weeks."
+      },
+      {
+        "icon": "bi-people",
+        "title": "Enablement / Clinics",
+        "href": "service-details.html#workflow-enablement",
+        "bullets": [
+          "Harden review and release workflow with practical templates and checkpoints.",
+          "Increase onboarding speed and handover quality for high-change modules.",
+          "Improve release predictability through repeatable ownership routines."
+        ],
+        "bestFor": "Teams with inconsistent reviews, release friction, or fragile ownership transitions.",
+        "typical": "Review/release playbooks, onboarding templates, and repeatable ownership routines.",
+        "window": "Noticeable delivery predictability gains within the first month."
+      }
+    ],
+    "labels": {
+      "bestFor": "Best for",
+      "typical": "Typical output",
+      "window": "Outcome window"
+    }
+  },
+  "testimonials": [
+    {
+      "client": "Ironbridge ERP",
+      "role": "Software Architecture & Team Lead",
+      "quote": "Stefan combines broad technical depth with practical execution discipline. He resolves complex problems quickly with clear, maintainable solutions."
+    },
+    {
+      "client": "Ironbridge ERP",
+      "role": "Quality & Architecture",
+      "quote": "He consistently delivered high-quality results with initiative, reliability, and thorough validation under pressure."
+    },
+    {
+      "client": "Canopy Metrics",
+      "role": "Software Development",
+      "quote": "After a short onboarding phase, Stefan worked independently and productively in an unfamiliar stack while maintaining high quality."
+    },
+    {
+      "client": "Ironbridge ERP",
+      "role": "Team Leadership",
+      "quote": "We experienced Stefan as resilient, motivated, and precise. Even under high workload, his delivery remained stable and dependable."
+    }
+  ],
+  "team": [
+    {
+      "name": "Stefan",
+      "role": "Founder and Principal Consultant",
+      "image": "assets/img/team/team-1.jpg",
+      "profileHref": "skilltable-team1.html",
+      "profileLabel": "View Stefan profile",
+      "email": "stefan@vionix.cloud",
+      "emailLabel": "Email Stefan",
+      "github": "https://github.com/vionix-th",
+      "githubLabel": "Vionix on GitHub"
+    },
+    {
+      "name": "Ruthairat",
+      "role": "Co-Founder and Director of Quality Engineering",
+      "image": "assets/img/team/team-2.jpg",
+      "profileHref": "skilltable-team2.html",
+      "profileLabel": "View Ruthairat profile",
+      "email": "ruthairat@vionix.cloud",
+      "emailLabel": "Email Ruthairat"
+    }
+  ],
+  "contact": {
+    "addressLabel": "Address",
+    "scheduleLabel": "Call",
+    "scheduleCta": "Schedule a call",
+    "emailLabel": "Send us an email",
+    "hoursLabel": "Business Hours",
+    "hoursText": "Monday to Friday: 09:00 to 18:00\nUTC+07:00, Bangkok time",
+    "mapTitle": "Office location map",
+    "mapPlaceholder": "The map is disabled until optional features are enabled in cookie settings.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Message",
+      "loading": "Loading",
+      "sent": "Your message has been sent. Thank you!",
+      "submit": "Send Message",
+      "disclaimer": "We use this information only to respond to your inquiry (no spam). Typical response time: 1-2 business days."
+    }
+  }
+}

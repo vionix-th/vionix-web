@@ -84,19 +84,25 @@ Accessibility and interaction invariants:
 
 ## 5) Taxonomy invariants (must be used verbatim)
 
-Canonical service pillars:
-- `Database & Reporting Performance`
-- `Legacy Core Stabilisation`
-- `Incremental System Modernisation`
-- `Efficient Team & Workflow Enablement`
+Canonical service pillar IDs (must be stable across locales):
+- `database_reporting_performance`
+- `legacy_core_stabilisation`
+- `incremental_system_modernisation`
+- `efficient_team_workflow_enablement`
 
-No alternate names or abbreviations anywhere.
+Display labels may be localized (`en`/`de`/`th`) but must map 1:1 to canonical IDs.
+Do not introduce additional IDs or split/merge pillar semantics without explicit approval.
 
 Icon mapping:
-- Database & Reporting Performance -> `bi-code-square`
-- Legacy Core Stabilisation -> `bi-arrow-repeat`
-- Incremental System Modernisation -> `bi-robot`
-- Efficient Team & Workflow Enablement -> `bi-mortarboard`
+- `database_reporting_performance` -> `bi-code-square`
+- `legacy_core_stabilisation` -> `bi-arrow-repeat`
+- `incremental_system_modernisation` -> `bi-robot`
+- `efficient_team_workflow_enablement` -> `bi-mortarboard`
+
+Localization publication gate:
+- Localized pages (`de`, `th`) require explicit approval metadata in `src/i18n/approval.json`.
+- `approved` entries must include reviewer identity and approval date.
+- Build/publish must fail if a localized page lacks required approval status.
 
 ---
 
