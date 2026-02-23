@@ -9,7 +9,7 @@
         <div class="contact-item d-flex align-items-center ms-4">
           <i class="bi bi-calendar4-week d-flex align-items-center" aria-hidden="true"></i>
           <a class="topbar-cta-link" href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank"
-            rel="noopener noreferrer">Schedule a Call</a>
+            rel="noopener noreferrer">{{ localeData.nav.scheduleCall }}</a>
         </div>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
@@ -21,33 +21,33 @@
 
   <div class="branding d-flex align-items-center">
     <div class="container position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ localeHref('index.html') }}" class="logo d-flex align-items-center">
         <span class="sitename">Vionix Consulting</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul id="navmenu-list">
-          <li class="dropdown"><a href="index.html#featured-services"><span>Services</span></a><button
+          <li class="dropdown"><a href="{{ localeHref('index.html#featured-services') }}"><span>{{ localeData.nav.services }}</span></a><button
               class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Services submenu"
               aria-expanded="false"></button>
             <ul>
-              <li><a href="index.html#featured-services">Services Overview</a></li>
-              <li><a href="index.html#about">How We Work</a></li>
-              <li><a href="index.html#engagement-formats">Engagements</a></li>
-              <li><a href="service-details.html">Service Details</a></li>
+              <li><a href="{{ localeHref('index.html#featured-services') }}">{{ localeData.nav.servicesOverview }}</a></li>
+              <li><a href="{{ localeHref('index.html#about') }}">{{ localeData.nav.howWeWork }}</a></li>
+              <li><a href="{{ localeHref('index.html#engagement-formats') }}">{{ localeData.nav.engagements }}</a></li>
+              <li><a href="{{ localeHref('service-details.html') }}">{{ localeData.nav.serviceDetails }}</a></li>
             </ul>
           </li>
           <li class="dropdown">
-            <a href="index.html#team"><span>Team</span></a><button class="toggle-dropdown bi bi-chevron-down"
+            <a href="{{ localeHref('index.html#team') }}"><span>{{ localeData.nav.team }}</span></a><button class="toggle-dropdown bi bi-chevron-down"
               type="button" aria-label="Toggle Team submenu" aria-expanded="false"></button>
             <ul>
-              <li><a href="index.html#team">Team Overview</a></li>
-              <li><a href="skilltable-team1.html">Stefan's Profile</a></li>
-              <li><a href="skilltable-team2.html">Ruthairat's Profile</a></li>
+              <li><a href="{{ localeHref('index.html#team') }}">{{ localeData.nav.teamOverview }}</a></li>
+              <li><a href="{{ localeHref('skilltable-team1.html') }}">{{ localeData.nav.stefanProfile }}</a></li>
+              <li><a href="{{ localeHref('skilltable-team2.html') }}">{{ localeData.nav.ruthProfile }}</a></li>
             </ul>
           </li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="{{ localeHref('case-studies.html') }}">{{ localeData.nav.caseStudies }}</a></li>
+          <li><a href="{{ localeHref('index.html#contact') }}">{{ localeData.nav.contact }}</a></li>
         </ul>
         <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu"
           aria-expanded="false" aria-controls="navmenu-list"></button>

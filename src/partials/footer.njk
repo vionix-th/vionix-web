@@ -3,7 +3,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
+          <a href="{{ localeHref('index.html') }}" class="d-flex align-items-center">
             <span class="sitename">Vionix Consulting</span>
           </a>
           <div class="footer-contact pt-3">
@@ -16,27 +16,27 @@
         <div class="col-lg-7">
           <div class="row gy-4">
             <div class="col-6 col-lg-4 footer-group footer-links">
-              <h4>Useful Links</h4>
+              <h4>{{ localeData.footer.usefulLinks }}</h4>
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <a href="index.html#hero">Home</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="case-studies.html">Case Studies</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('index.html#hero') }}">{{ localeData.footer.home }}</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('index.html#about') }}">{{ localeData.footer.about }}</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('index.html#contact') }}">{{ localeData.footer.contact }}</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('case-studies.html') }}">{{ localeData.footer.caseStudies }}</a></li>
               </ul>
             </div>
 
             <div class="col-6 col-lg-4 footer-group footer-links">
-              <h4>Our Services</h4>
+              <h4>{{ localeData.footer.ourServices }}</h4>
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#database-performance">Database &amp; Reporting Performance</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#legacy-core">Legacy Core Stabilisation</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#modernisation-team">Incremental System Modernisation</a></li>
-                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#workflow-enablement">Efficient Team &amp; Workflow Enablement</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('service-details.html#database-performance') }}">Database &amp; Reporting Performance</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('service-details.html#legacy-core') }}">Legacy Core Stabilisation</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('service-details.html#modernisation-team') }}">Incremental System Modernisation</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="{{ localeHref('service-details.html#workflow-enablement') }}">Efficient Team &amp; Workflow Enablement</a></li>
               </ul>
             </div>
 
             <div class="col-12 col-lg-4 footer-group footer-social">
-              <h4>Follow Us</h4>
+              <h4>{{ localeData.footer.followUs }}</h4>
               <div class="social-links d-flex">
                 <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i
                     class="bi bi-github" aria-hidden="true"></i></a>
@@ -49,10 +49,8 @@
   </div>
 
   <div class="container copyright text-center mt-4">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">Vionix Consulting</strong> <span>All Rights
-        Reserved</span></p>
-    <p class="anonymization-note footer-anonymization-note mb-0"><sup>1</sup> Client names are anonymized pseudonyms
-      used to protect client privacy. Industry context and technical outcomes remain factual.</p>
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">{{ localeData.footer.copyrightOwner }}</strong> <span>{{ localeData.footer.rightsReserved }}</span></p>
+    <p class="anonymization-note footer-anonymization-note mb-0"><sup>1</sup> {{ localeData.footer.anonymizationNote }}</p>
     <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
   </div>
 </footer>

@@ -1,6 +1,14 @@
 {
   "services": "Services",
+  "servicesOverview": "Services Overview",
+  "howWeWork": "How We Work",
+  "engagements": "Engagements",
+  "serviceDetails": "Service Details",
   "team": "Team",
+  "teamOverview": "Team Overview",
+  "stefanProfile": "Stefan's Profile",
+  "ruthProfile": "Ruthairat's Profile",
   "caseStudies": "Case Studies",
-  "contact": "Contact"
+  "contact": "Contact",
+  "scheduleCall": "Schedule a Call"
 }

@@ -42,14 +42,16 @@ fi
 [[ -d "$DIST" ]] || fail "dist directory missing. Run npm run build first."
 
 expected_pages=$(find "$SRC_PAGES" -maxdepth 1 -type f -name "*.njk" | wc -l | tr -d " ")
-actual_pages=$(find "$DIST" -maxdepth 1 -type f -name "*.html" | wc -l | tr -d " ")
+locale_count=$(node -e 'const i18n=require("./src/i18n/locales.json");console.log((i18n.supportedLocales||[]).length)' | tr -d " ")
+expected_pages=$((expected_pages * locale_count))
+actual_pages=$(find "$DIST" -type f -name "*.html" | wc -l | tr -d " ")
 [[ "$actual_pages" = "$expected_pages" ]] || fail "dist HTML count mismatch (expected $expected_pages, got $actual_pages)."
 
 for required in CNAME robots.txt sitemap.xml; do
   [[ -f "$DIST/$required" ]] || fail "dist/$required missing"
 done
 
-for html in "$DIST"/*.html; do
+while IFS= read -r html; do
   nav_line=$(first_line "assets/js/nav.js" "$html")
   main_line=$(first_line "assets/js/main.js" "$html")
   main_css_line=$(first_line "assets/css/main.css" "$html")
@@ -62,6 +64,6 @@ for html in "$DIST"/*.html; do
   if has_match '<link href="[^/"][^"]?" rel="stylesheet">' "$html"; then
     fail "$(basename "$html") contains malformed stylesheet href values"
   fi
-done
+done < <(find "$DIST" -type f -name "*.html" | sort)
 
 echo "[PASS] Site contracts verified for $actual_pages pages."
