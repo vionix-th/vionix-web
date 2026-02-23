@@ -9,6 +9,8 @@ Scope:
   Do not restructure or “improve” their narrative unless explicitly instructed.
 - Shared shell concerns remain in scope across all pages, including case studies:
   header/nav/footer consistency, shared CSS/JS wiring, and accessibility bug fixes.
+- Source of truth is Eleventy source files under `src/`; generated site output is `dist/`.
+- Do not hand-edit generated files in `dist/`.
 
 ---
 
@@ -35,11 +37,21 @@ Scope:
 - Use Bootstrap, Bootstrap Icons, and the BizLand template assets/styles.
 - Preserve the template’s layout, responsiveness, and animations.
 - Keep everything compatible with static hosting.
-- Reuse existing template pages/patterns; build-time HTML partials/layouts are allowed for shared shell components.
+- Use Eleventy + Nunjucks for build-time generation (`src/` -> `dist/`).
+- Vite is not part of the Vionix site workflow.
+- Reuse existing template pages/patterns; build-time HTML partials/layouts are required for shared shell components.
 - Keep generated output fully static; do not rely on runtime server-side includes or client-side HTML assembly for core layout.
 - CSS/JS modularization is allowed when it reduces coupling and preserves template behavior.
 - If CSS/JS is split, keep a clear ownership boundary (shared vs page-specific) and avoid duplicate logic.
 - JavaScript only (no frameworks, no TypeScript).
+
+Source layout contract:
+- `src/pages`: page templates and page-level data files (`*.11tydata.json`)
+- `src/layouts`: page layouts
+- `src/partials`: shared shell components (`head`, `header`, `footer`, `scripts`)
+- `src/data`: locale/content data
+- `src/i18n`: locale registry/config
+- `dist`: generated publish output (read-only for manual edits)
 
 ---
 
@@ -103,9 +115,10 @@ Prefer:
 Site-wide wiring (all pages):
 - Any page that includes `assets/js/main.js` must include `assets/js/nav.js` before it.
 - Shared pages should load `assets/css/main.css` as the global style foundation.
+- Apply these contracts via `src/layouts/base.njk` and `src/partials/*`, not by duplicating markup in each page.
 
 Homepage-only wiring:
-- `index.html` must include:
+- The generated homepage output (`dist/index.html`) must include:
   - `assets/css/main.css`
   - `assets/css/homepage.css`
   - `assets/js/nav.js` loaded before `assets/js/main.js`
@@ -128,4 +141,5 @@ CSS ownership:
 - `homepage.css`: homepage-only layout and components (proof slider and engagement/fit card density tuning).
 
 Change policy:
-- Do not reintroduce inline `<style>` blocks 
+- Do not reintroduce inline `<style>` blocks.
+- Do not reintroduce root-level hand-maintained `*.html` sources; edit templates in `src/pages` instead.
