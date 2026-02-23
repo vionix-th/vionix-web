@@ -1,0 +1,37 @@
+{
+  "index": {
+    "pageTitle": "Vionix Consulting — Softwarearchitektur & Legacy-Modernisierung",
+    "metaDescription": "Beratung und Training für Softwarearchitektur, Code-Reviews, Refactoring sowie KI/LLM-Integration in Unternehmen mit Legacy- und modernen Systemen.",
+    "metaKeywords": "Softwarearchitektur, Code-Review, Refactoring, KI-Integration, LLM, Modernisierung, Beratung, Training",
+    "ogType": "website",
+    "structuredData": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"Vionix Consulting\",\n  \"url\": \"https://vionix.cloud\",\n  \"logo\": \"https://vionix.cloud/assets/img/logo.png\",\n  \"description\": \"Beratung und Training für Softwarearchitektur, Code-Reviews, Refactoring sowie KI/LLM-Integration in Unternehmen mit Legacy- und modernen Systemen.\",\n  \"sameAs\": [\n    \"https://github.com/vionix-th\"\n  ]\n}"
+  },
+  "service-details": {
+    "pageTitle": "Leistungsdetails — Softwarearchitektur & Modernisierung | Vionix Consulting",
+    "metaDescription": "Vionix Consulting liefert Datenbank- und Reporting-Performance, Stabilisierung von Legacy-Kernmodulen, inkrementelle Systemmodernisierung und Team-Enablement für kritische Softwaresysteme.",
+    "metaKeywords": "Datenbank-Performance, Legacy-Stabilisierung, Systemmodernisierung, Workflow-Enablement, Softwarearchitektur-Beratung",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "case-studies": {
+    "pageTitle": "Fallstudien | Vionix Consulting",
+    "metaDescription": "Fallstudien von Vionix Consulting zu Datenbank-Performance, Legacy-Stabilisierung und inkrementeller Modernisierung in kritischen Systemen.",
+    "metaKeywords": "Fallstudien, Softwareberatung, Datenbank-Performance, Legacy-Stabilisierung, Modernisierung",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "skilltable-team1": {
+    "pageTitle": "Fähigkeiten & Kompetenzen - Vionix Consulting",
+    "metaDescription": "Kompetenzprofil und technische Schwerpunkte des Vionix-Teams",
+    "metaKeywords": "Softwareentwicklung, technische Kompetenzen, Kompetenzprofil",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "skilltable-team2": {
+    "pageTitle": "Fähigkeiten & Kompetenzen - Vionix Consulting",
+    "metaDescription": "Kompetenzprofil und technische Schwerpunkte des Vionix-Teams",
+    "metaKeywords": "Qualitätsengineering, technische Kompetenzen, Kompetenzprofil",
+    "ogType": "website",
+    "structuredData": ""
+  }
+}

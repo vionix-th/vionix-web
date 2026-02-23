@@ -12,6 +12,7 @@ const locales = readJson("src/i18n/locales.json");
 const targets = [
   "nav.json",
   "footer.json",
+  "page-meta.json",
   "home.json",
   "service-details.json",
   "case-studies.json",

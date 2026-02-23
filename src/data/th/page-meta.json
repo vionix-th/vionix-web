@@ -1,0 +1,37 @@
+{
+  "index": {
+    "pageTitle": "Vionix Consulting — สถาปัตยกรรมซอฟต์แวร์และการปรับปรุงระบบเดิม",
+    "metaDescription": "ที่ปรึกษาและการฝึกอบรมด้านสถาปัตยกรรมซอฟต์แวร์ การรีวิวโค้ด การรีแฟกเตอร์ และการผสาน AI/LLM สำหรับองค์กรที่มีทั้งระบบเดิมและระบบสมัยใหม่",
+    "metaKeywords": "สถาปัตยกรรมซอฟต์แวร์, รีวิวโค้ด, รีแฟกเตอร์, AI, LLM, ที่ปรึกษา, ปรับปรุงระบบ",
+    "ogType": "website",
+    "structuredData": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"Vionix Consulting\",\n  \"url\": \"https://vionix.cloud\",\n  \"logo\": \"https://vionix.cloud/assets/img/logo.png\",\n  \"description\": \"ที่ปรึกษาและการฝึกอบรมด้านสถาปัตยกรรมซอฟต์แวร์ การรีวิวโค้ด การรีแฟกเตอร์ และการผสาน AI/LLM สำหรับองค์กรที่มีทั้งระบบเดิมและระบบสมัยใหม่\",\n  \"sameAs\": [\n    \"https://github.com/vionix-th\"\n  ]\n}"
+  },
+  "service-details": {
+    "pageTitle": "รายละเอียดบริการ — สถาปัตยกรรมซอฟต์แวร์และการปรับปรุงระบบ | Vionix Consulting",
+    "metaDescription": "Vionix Consulting ให้บริการด้านประสิทธิภาพฐานข้อมูลและรายงาน การทำระบบเดิมให้เสถียร การปรับปรุงระบบแบบค่อยเป็นค่อยไป และการยกระดับทีมสำหรับระบบซอฟต์แวร์สำคัญ",
+    "metaKeywords": "ประสิทธิภาพฐานข้อมูล, ระบบเดิม, modernisation, workflow, ที่ปรึกษาสถาปัตยกรรมซอฟต์แวร์",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "case-studies": {
+    "pageTitle": "กรณีศึกษา | Vionix Consulting",
+    "metaDescription": "กรณีศึกษาของ Vionix Consulting ในงานประสิทธิภาพฐานข้อมูล การทำระบบเดิมให้เสถียร และการปรับปรุงระบบแบบค่อยเป็นค่อยไป",
+    "metaKeywords": "กรณีศึกษา, ที่ปรึกษาซอฟต์แวร์, ฐานข้อมูล, ระบบเดิม, modernisation",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "skilltable-team1": {
+    "pageTitle": "ทักษะและความเชี่ยวชาญ - Vionix Consulting",
+    "metaDescription": "โปรไฟล์ความเชี่ยวชาญและทักษะเชิงเทคนิคของทีม Vionix",
+    "metaKeywords": "วิศวกรรมซอฟต์แวร์, ทักษะเทคนิค, โปรไฟล์ความเชี่ยวชาญ",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "skilltable-team2": {
+    "pageTitle": "ทักษะและความเชี่ยวชาญ - Vionix Consulting",
+    "metaDescription": "โปรไฟล์ความเชี่ยวชาญและทักษะเชิงเทคนิคของทีม Vionix",
+    "metaKeywords": "วิศวกรรมคุณภาพ, ทักษะเทคนิค, โปรไฟล์ความเชี่ยวชาญ",
+    "ogType": "website",
+    "structuredData": ""
+  }
+}

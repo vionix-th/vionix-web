@@ -3,5 +3,8 @@
   "supportedLocales": ["en", "de", "th"],
   "publishLocales": ["de"],
   "stagedLocales": ["th"],
+  "stagedRequiredApproved": {
+    "th": ["index", "service-details"]
+  },
   "routeMode": "root-default-prefixed-non-default"
 }

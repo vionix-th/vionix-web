@@ -16,11 +16,6 @@ const pageKeys = fs
   .filter((f) => f.endsWith(".11tydata.json"))
   .map((f) => f.replace(/\.11tydata\.json$/, ""));
 
-const requiredThaiApproved = [
-  "index",
-  "service-details"
-];
-
 function validateApprovedEntry(locale, pageKey, entry) {
   if (!entry || entry.status !== "approved") {
     console.error(`[FAIL] ${locale}.${pageKey} must be approved`);
@@ -62,8 +57,9 @@ for (const locale of locales.stagedLocales || []) {
     }
   }
 
-  if (locale === "th") {
-    for (const pageKey of requiredThaiApproved) {
+  const stagedRequiredApproved = (locales.stagedRequiredApproved || {})[locale] || [];
+  if (stagedRequiredApproved.length > 0) {
+    for (const pageKey of stagedRequiredApproved) {
       failures += validateApprovedEntry(locale, pageKey, localeEntries[pageKey]);
     }
   }

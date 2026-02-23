@@ -7,6 +7,13 @@
     "assets/vendor/aos/aos.css",
     "assets/vendor/glightbox/css/glightbox.min.css"
   ],
+  "vendorScripts": [
+    "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+    "assets/vendor/aos/aos.js",
+    "assets/vendor/glightbox/js/glightbox.min.js",
+    "assets/vendor/waypoints/noframework.waypoints.js",
+    "assets/vendor/purecounter/purecounter_vanilla.js"
+  ],
   "styleCss": [
     "assets/css/main.css",
     "assets/css/components.css"

@@ -2,39 +2,46 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <base href="/">
-  <title>{{ pageTitle }}</title>
-  {% if metaDescription %}
-  <meta name="description" content="{{ metaDescription }}">
+  {% set metaPageKey = pageApprovalKey or currentPage or page.fileSlug %}
+  {% set localizedMeta = (localeData.meta[metaPageKey] if localeData and localeData.meta else {}) %}
+  {% set resolvedTitle = localizedMeta.pageTitle or pageTitle %}
+  {% set resolvedDescription = localizedMeta.metaDescription or metaDescription %}
+  {% set resolvedKeywords = localizedMeta.metaKeywords or metaKeywords %}
+  {% set resolvedOgType = localizedMeta.ogType or ogType or 'website' %}
+  {% set resolvedStructuredData = (localizedMeta.structuredData if localizedMeta.structuredData is defined else structuredData) %}
+  <title>{{ resolvedTitle }}</title>
+  {% if resolvedDescription %}
+  <meta name="description" content="{{ resolvedDescription }}">
   {% endif %}
-  {% if metaKeywords %}
-  <meta name="keywords" content="{{ metaKeywords }}">
+  {% if resolvedKeywords %}
+  <meta name="keywords" content="{{ resolvedKeywords }}">
   {% endif %}
   {% if canonicalUrl %}
   <link rel="canonical" href="{{ canonicalUrl }}">
   {% endif %}
 
   <meta property="og:site_name" content="Vionix Consulting">
-  <meta property="og:title" content="{{ pageTitle }}">
-  {% if metaDescription %}
-  <meta property="og:description" content="{{ metaDescription }}">
+  <meta property="og:title" content="{{ resolvedTitle }}">
+  {% if resolvedDescription %}
+  <meta property="og:description" content="{{ resolvedDescription }}">
   {% endif %}
   {% if canonicalUrl %}
   <meta property="og:url" content="{{ canonicalUrl }}">
   {% endif %}
-  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:type" content="{{ resolvedOgType }}">
   {% if ogImage %}
   <meta property="og:image" content="{{ ogImage }}">
   {% endif %}
 
   <meta name="twitter:card" content="{{ twitterCard or 'summary' }}">
-  <meta name="twitter:title" content="{{ pageTitle }}">
-  {% if metaDescription %}
-  <meta name="twitter:description" content="{{ metaDescription }}">
+  <meta name="twitter:title" content="{{ resolvedTitle }}">
+  {% if resolvedDescription %}
+  <meta name="twitter:description" content="{{ resolvedDescription }}">
   {% endif %}
 
-  {% if structuredData %}
+  {% if resolvedStructuredData %}
   <script type="application/ld+json">
-{{ structuredData | safe }}
+{{ resolvedStructuredData | safe }}
   </script>
   {% endif %}
 

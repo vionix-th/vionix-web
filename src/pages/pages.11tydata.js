@@ -11,6 +11,7 @@ const enServiceDetails = require("../data/en/service-details.json");
 const enCaseStudies = require("../data/en/case-studies.json");
 const enSkillTeam1 = require("../data/en/skilltable-team1.json");
 const enSkillTeam2 = require("../data/en/skilltable-team2.json");
+const enPageMeta = require("../data/en/page-meta.json");
 
 const deSite = require("../data/de/site.json");
 const deNav = require("../data/de/nav.json");
@@ -20,6 +21,7 @@ const deServiceDetails = require("../data/de/service-details.json");
 const deCaseStudies = require("../data/de/case-studies.json");
 const deSkillTeam1 = require("../data/de/skilltable-team1.json");
 const deSkillTeam2 = require("../data/de/skilltable-team2.json");
+const dePageMeta = require("../data/de/page-meta.json");
 
 const thSite = require("../data/th/site.json");
 const thNav = require("../data/th/nav.json");
@@ -29,6 +31,7 @@ const thServiceDetails = require("../data/th/service-details.json");
 const thCaseStudies = require("../data/th/case-studies.json");
 const thSkillTeam1 = require("../data/th/skilltable-team1.json");
 const thSkillTeam2 = require("../data/th/skilltable-team2.json");
+const thPageMeta = require("../data/th/page-meta.json");
 
 const localeBundles = {
   en: {
@@ -41,7 +44,8 @@ const localeBundles = {
       "case-studies": enCaseStudies,
       "skilltable-team1": enSkillTeam1,
       "skilltable-team2": enSkillTeam2
-    }
+    },
+    meta: enPageMeta
   },
   de: {
     site: deSite,
@@ -53,7 +57,8 @@ const localeBundles = {
       "case-studies": deCaseStudies,
       "skilltable-team1": deSkillTeam1,
       "skilltable-team2": deSkillTeam2
-    }
+    },
+    meta: dePageMeta
   },
   th: {
     site: thSite,
@@ -65,7 +70,8 @@ const localeBundles = {
       "case-studies": thCaseStudies,
       "skilltable-team1": thSkillTeam1,
       "skilltable-team2": thSkillTeam2
-    }
+    },
+    meta: thPageMeta
   }
 };
 
@@ -114,6 +120,29 @@ function shouldRenderLocalePage(localeCode, pageKey) {
   return false;
 }
 
+function getLocaleLabel(localeCode) {
+  const labels = {
+    en: "EN",
+    de: "DE",
+    th: "TH"
+  };
+  return labels[localeCode] || localeCode.toUpperCase();
+}
+
+function buildLocalePermalink(basePath, localeCode) {
+  if (localeCode === defaultLocale) return basePath;
+  return `/${localeCode}${basePath}`;
+}
+
+function getBasePermalink(data) {
+  const fromData = data.permalink || `/${data.page.fileSlug}.html`;
+  const localePrefix = data.localeCode && data.localeCode !== defaultLocale ? `/${data.localeCode}` : "";
+  if (localePrefix && fromData.startsWith(`${localePrefix}/`)) {
+    return fromData.slice(localePrefix.length);
+  }
+  return fromData;
+}
+
 module.exports = {
   ...pageDefaults,
   supportedLocales: i18n.supportedLocales,
@@ -134,7 +163,8 @@ module.exports = {
         site: bundle.site,
         nav: bundle.nav,
         footer: bundle.footer,
-        taxonomy: getLocalizedPillars(data.localeCode)
+        taxonomy: getLocalizedPillars(data.localeCode),
+        meta: bundle.meta
       };
     },
     t: (data) => {
@@ -142,6 +172,18 @@ module.exports = {
       if (!pageContentKey) return {};
       const bundle = localeBundles[data.localeCode] || localeBundles[defaultLocale];
       return bundle.pages[pageContentKey] || {};
+    },
+    availableLocales: (data) => {
+      const pageKey = data.pageApprovalKey || data.currentPage || data.page.fileSlug;
+      const basePath = getBasePermalink(data);
+      return (i18n.supportedLocales || [])
+        .filter((code) => shouldRenderLocalePage(code, pageKey))
+        .map((code) => ({
+          code,
+          label: getLocaleLabel(code),
+          isCurrent: code === data.localeCode,
+          href: buildLocalePermalink(basePath, code)
+        }));
     },
     permalink: (data) => {
       const base = data.permalink || `/${data.page.fileSlug}.html`;

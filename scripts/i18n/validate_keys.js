@@ -54,6 +54,7 @@ const schemaFiles = [
   "site.json",
   "nav.json",
   "footer.json",
+  "page-meta.json",
   "home.json",
   "service-details.json",
   "case-studies.json",

@@ -1,79 +1,117 @@
 {
-  "pageTitle": "Skills & Competencies",
-  "breadcrumbsHome": "Home",
-  "breadcrumbsCurrent": "Skills & Competencies",
-  "headline": "Professional Bio & Competency Profile",
+  "pageTitle": "Fähigkeiten & Kompetenzen",
+  "breadcrumbsHome": "Startseite",
+  "breadcrumbsCurrent": "Fähigkeiten & Kompetenzen",
+  "headline": "Professioneller Werdegang & Kompetenzprofil",
   "member": {
     "name": "Ruthairat",
-    "role": "Co-Founder & Director Quality Engineering",
+    "role": "Co-Founderin & Director Quality Engineering",
     "image": "assets/img/team/team-2.jpg",
-    "imageAlt": "Portrait of Ruthairat, Co-Founder and Director of Quality Engineering at Vionix"
+    "imageAlt": "Porträt von Ruthairat, Co-Founderin und Director Quality Engineering bei Vionix"
   },
   "intro": {
-    "lead": "Experienced professional in Supplier Quality Engineering with comprehensive expertise in project management, quality assurance, and supplier relations.",
-    "body": "Passionate about leveraging expertise to optimize supplier performance and enhance product quality. Proven ability to develop and execute comprehensive project plans, manage projects from initiation to completion, and implement best practices. Strong leadership skills in conducting supplier audits and fostering partnerships to support operational excellence."
+    "lead": "Erfahrene Spezialistin im Supplier Quality Engineering mit breiter Expertise in Projektmanagement, Qualitätssicherung und Lieferantensteuerung.",
+    "body": "Fokussiert darauf, Lieferantenleistung systematisch zu verbessern und Produktqualität nachhaltig zu erhöhen. Nachweisliche Stärke in der Planung und Umsetzung komplexer Vorhaben von der Initiierung bis zum Abschluss sowie in der Einführung belastbarer Best Practices. Führungsstark in Lieferantenaudits und im Aufbau tragfähiger Partnerschaften zur operativen Exzellenz."
   },
   "sections": [
     {
-      "title": "Technical Expertise",
+      "title": "Technische Expertise",
       "columns": [
         {
           "icon": "bi-gear",
           "title": "Quality Engineering",
-          "items": ["Supplier Quality Management", "Advanced Product Quality Planning (APQP)", "Technical Drawing & Engineering", "IC Component Package Assembly"]
+          "items": [
+            "Supplier Quality Management",
+            "Advanced Product Quality Planning (APQP)",
+            "Technische Zeichnungen & Engineering",
+            "IC-Component Package Assembly"
+          ]
         },
         {
           "icon": "bi-tools",
-          "title": "Software & Tools",
-          "items": ["SAP, JMP, Microsoft Project", "Microsoft Office Suite", "Collaboration Tools (Teams, WebEx)", "Quality Management Systems"]
+          "title": "Software & Werkzeuge",
+          "items": [
+            "SAP, JMP, Microsoft Project",
+            "Microsoft Office Suite",
+            "Kollaborationstools (Teams, WebEx)",
+            "Qualitätsmanagementsysteme"
+          ]
         }
       ]
     },
     {
-      "title": "Leadership & Management",
+      "title": "Führung & Management",
       "columns": [
         {
           "icon": "bi-people",
-          "title": "Team Leadership",
-          "items": ["Cross-functional Team Management", "Supplier Relationship Management", "Project Leadership", "Process Improvement"]
+          "title": "Teamführung",
+          "items": [
+            "Steuerung funktionsübergreifender Teams",
+            "Lieferantenbeziehungsmanagement",
+            "Projektleitung",
+            "Prozessverbesserung"
+          ]
         },
         {
           "icon": "bi-clipboard-check",
-          "title": "Quality Management",
-          "items": ["Audit Leadership (VDA 6.3, IATF 16949)", "Risk Assessment & Management", "Change Management", "Quality System Implementation"]
+          "title": "Qualitätsmanagement",
+          "items": [
+            "Audit-Leitung (VDA 6.3, IATF 16949)",
+            "Risikobewertung und -steuerung",
+            "Change Management",
+            "Einführung von Qualitätssystemen"
+          ]
         }
       ]
     },
     {
-      "title": "Core Competencies",
+      "title": "Kernkompetenzen",
       "columns": [
         {
           "icon": "bi-diagram-3",
-          "title": "Project Management",
-          "items": ["End-to-End Project Execution", "Resource Management", "Risk Assessment & Mitigation", "Documentation & Reporting"]
+          "title": "Projektmanagement",
+          "items": [
+            "End-to-End-Projektdurchführung",
+            "Ressourcenmanagement",
+            "Risikobewertung und -minderung",
+            "Dokumentation & Reporting"
+          ]
         },
         {
           "icon": "bi-graph-up",
-          "title": "Quality Tools & Methods",
-          "items": ["APQP, FMEA, MSA, SPC, PPAP", "8D Problem Solving", "Process Audit Methodologies", "Continuous Improvement"]
+          "title": "Qualitätsmethoden & Werkzeuge",
+          "items": [
+            "APQP, FMEA, MSA, SPC, PPAP",
+            "8D-Problemlösung",
+            "Prozessaudit-Methodiken",
+            "Kontinuierliche Verbesserung"
+          ]
         }
       ]
     },
     {
-      "title": "Languages & Certifications",
+      "title": "Sprachen & Zertifikate",
       "columns": [
         {
           "icon": "bi-translate",
-          "title": "Languages",
-          "items": ["Thai: Native", "English: Advanced (C1)"]
+          "title": "Sprachen",
+          "items": [
+            "Thai: Muttersprache",
+            "Englisch: Fortgeschritten (C1)"
+          ]
         },
         {
           "icon": "bi-award",
-          "title": "Certifications",
-          "items": ["Lead Auditor VDA 6.3", "Lead Auditor IATF 16949:2016", "Automotive Core Tools", "Plastic Injection Operations"]
+          "title": "Zertifikate",
+          "items": [
+            "Lead Auditor VDA 6.3",
+            "Lead Auditor IATF 16949:2016",
+            "Automotive Core Tools",
+            "Plastic Injection Operations"
+          ]
         }
       ]
     }
   ],
-  "footer": "This Competency Profile is based on supplied documentation, references, and certifications. For further details or original reference documents, please contact Ruthairat directly."
+  "footer": "Dieses Kompetenzprofil basiert auf bereitgestellten Unterlagen, Referenzen und Zertifikaten. Für weitere Details oder Originalnachweise bitte Ruthairat direkt kontaktieren."
 }

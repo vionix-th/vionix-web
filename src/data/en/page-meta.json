@@ -1,0 +1,37 @@
+{
+  "index": {
+    "pageTitle": "Vionix Consulting — Software Architecture & Legacy Modernisation",
+    "metaDescription": "Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.",
+    "metaKeywords": "software architecture, code review, refactoring, AI integration, LLM, modernization, consulting, training, Bangkok, Thailand",
+    "ogType": "website",
+    "structuredData": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"Vionix Consulting\",\n  \"url\": \"https://vionix.cloud\",\n  \"logo\": \"https://vionix.cloud/assets/img/logo.png\",\n  \"description\": \"Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.\",\n  \"sameAs\": [\n    \"https://github.com/vionix-th\"\n  ]\n}"
+  },
+  "service-details": {
+    "pageTitle": "Service Details — Software Architecture & Modernisation | Vionix Consulting",
+    "metaDescription": "Vionix Consulting delivers database and reporting performance work, legacy core stabilisation, incremental system modernisation, and efficient team workflow enablement for critical software systems.",
+    "metaKeywords": "database performance consulting, legacy core stabilisation, system modernisation, workflow enablement, software architecture consulting, Vionix Consulting",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "case-studies": {
+    "pageTitle": "Case Studies | Vionix Consulting",
+    "metaDescription": "Case studies from Vionix Consulting covering database performance, legacy stabilisation, and incremental modernisation in critical systems.",
+    "metaKeywords": "case studies, software consulting, database performance, legacy stabilisation, modernisation",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "skilltable-team1": {
+    "pageTitle": "Skills & Competencies - Vionix Consulting",
+    "metaDescription": "Professional skills and competencies of Vionix Consulting team members",
+    "metaKeywords": "software engineering, technical skills, professional competencies",
+    "ogType": "website",
+    "structuredData": ""
+  },
+  "skilltable-team2": {
+    "pageTitle": "Skills & Competencies - Vionix Consulting",
+    "metaDescription": "Professional skills and competencies of Vionix Consulting team members",
+    "metaKeywords": "software engineering, technical skills, professional competencies",
+    "ogType": "website",
+    "structuredData": ""
+  }
+}

@@ -1,87 +1,131 @@
 {
-  "pageTitle": "Skills & Competencies",
-  "breadcrumbsHome": "Home",
-  "breadcrumbsCurrent": "Skills & Competencies",
-  "headline": "Professional Bio & Competency Profile",
+  "pageTitle": "Fähigkeiten & Kompetenzen",
+  "breadcrumbsHome": "Startseite",
+  "breadcrumbsCurrent": "Fähigkeiten & Kompetenzen",
+  "headline": "Professioneller Werdegang & Kompetenzprofil",
   "member": {
     "name": "Stefan",
-    "role": "Founder & Principal Consultant",
+    "role": "Gründer & Principal Consultant",
     "image": "assets/img/team/team-1.jpg",
-    "imageAlt": "Portrait of Stefan, Founder and Principal Consultant at Vionix",
+    "imageAlt": "Porträt von Stefan, Gründer und Principal Consultant bei Vionix",
     "github": "https://github.com/vionix-th"
   },
   "intro": {
-    "lead": "Software Engineer with over 20 years of experience in software development, project management, and team leadership.",
-    "body": "Highly experienced Software Engineer with over 20 years in software development, project management, and team leadership. Proficient in multiple programming languages and frameworks, with extensive experience in security, reverse engineering, embedded systems, and API development. Known for transforming chaotic work environments into efficient, well-organized teams, and implementing industry standards that enhance productivity and work quality. Fluent in German and English."
+    "lead": "Software Engineer mit über 20 Jahren Erfahrung in Softwareentwicklung, Projektsteuerung und Teamführung.",
+    "body": "Sehr erfahrener Software Engineer mit mehr als 20 Jahren Praxis in Softwareentwicklung, Projektsteuerung und Teamführung. Versiert in mehreren Programmiersprachen und Frameworks sowie mit umfassender Erfahrung in Security, Reverse Engineering, Embedded Systems und API-Entwicklung. Bekannt dafür, unstrukturierte Arbeitsumfelder in effiziente, belastbare Teams zu überführen und Standards einzuführen, die Produktivität und Arbeitsqualität spürbar erhöhen. Arbeitssprachen: Deutsch und Englisch."
   },
   "sections": [
     {
-      "title": "Technical Skills",
+      "title": "Technische Fähigkeiten",
       "columns": [
         {
           "icon": "bi-code-square",
-          "title": "Programming & Development",
-          "items": ["C, C++, C#, Java, JavaScript/Node.js", "VisualBasic6, Caché Object Script", "Python, Perl, PHP, Bash, Pine-script", ".NET, Qt, OpenGL, React Native"]
+          "title": "Programmierung & Entwicklung",
+          "items": [
+            "C, C++, C#, Java, JavaScript/Node.js",
+            "VisualBasic6, Caché Object Script",
+            "Python, Perl, PHP, Bash, Pine Script",
+            ".NET, Qt, OpenGL, React Native"
+          ]
         },
         {
           "icon": "bi-gear",
-          "title": "Infrastructure & Tools",
-          "items": ["MySQL, SQL Server, SQLite, Caché", "MacOS, Windows, Linux Administration", "VM-Sphere, VMWare, VirtualBox", "Xcode, Visual Studio, Eclipse, Git"]
+          "title": "Infrastruktur & Werkzeuge",
+          "items": [
+            "MySQL, SQL Server, SQLite, Caché",
+            "Administration von macOS, Windows und Linux",
+            "vSphere, VMware, VirtualBox",
+            "Xcode, Visual Studio, Eclipse, Git"
+          ]
         }
       ]
     },
     {
-      "title": "Specialized Expertise",
+      "title": "Spezialisierte Expertise",
       "columns": [
         {
           "icon": "bi-shield-check",
           "title": "Security & Reverse Engineering",
-          "items": ["Boot-loader/kernel development", "Binary reverse engineering", "Penetration testing", "Security tools & configuration"]
+          "items": [
+            "Bootloader- und Kernel-Entwicklung",
+            "Binäres Reverse Engineering",
+            "Penetration Testing",
+            "Security-Tools und Konfiguration"
+          ]
         },
         {
           "icon": "bi-cpu",
-          "title": "Embedded & API Development",
-          "items": ["FTDI microcontroller API", "Hardware/firmware consulting", "FTP/IMAP4 protocol implementation", "Telegram/OpenAI API integration"]
+          "title": "Embedded & API-Entwicklung",
+          "items": [
+            "FTDI-Mikrocontroller-APIs",
+            "Hardware- und Firmware-Beratung",
+            "Implementierung von FTP- und IMAP4-Protokollen",
+            "Integration von Telegram- und OpenAI-APIs"
+          ]
         }
       ]
     },
     {
-      "title": "Core Competencies",
+      "title": "Kernkompetenzen",
       "columns": [
         {
           "icon": "bi-diagram-3",
-          "title": "Architecture & Development",
-          "items": ["Full lifecycle development", "Software architecture design", "Legacy system modernization", "Code reviews & quality assurance"]
+          "title": "Architektur & Entwicklung",
+          "items": [
+            "End-to-End-Entwicklung über den gesamten Lebenszyklus",
+            "Entwurf tragfähiger Softwarearchitekturen",
+            "Modernisierung von Legacy-Systemen",
+            "Code Reviews und Qualitätssicherung"
+          ]
         },
         {
           "icon": "bi-people",
-          "title": "Leadership & Collaboration",
-          "items": ["Team leadership & mentoring", "Process optimization", "Cross-functional collaboration", "Technical training & knowledge sharing"]
+          "title": "Führung & Zusammenarbeit",
+          "items": [
+            "Teamführung und Mentoring",
+            "Prozessoptimierung",
+            "Zusammenarbeit über Fachbereiche hinweg",
+            "Technische Schulung und Wissenstransfer"
+          ]
         }
       ]
     },
     {
-      "title": "Languages & International Experience",
+      "title": "Sprachen & internationale Erfahrung",
       "columns": [
         {
           "icon": "bi-translate",
-          "title": "Languages",
-          "items": ["German: Native", "English: Fluent", "Thai: Intermediate", "Spanish/Mandarin: Limited"]
+          "title": "Sprachen",
+          "items": [
+            "Deutsch: Muttersprache",
+            "Englisch: Fließend",
+            "Thai: Mittelstufe",
+            "Spanisch/Mandarin: Grundkenntnisse"
+          ]
         },
         {
           "icon": "bi-globe",
-          "title": "International Experience",
-          "items": ["Dominican Republic", "Bulgaria, Turkey, Greece", "Thailand/Bangkok", "Cross-cultural collaboration"]
+          "title": "Internationale Erfahrung",
+          "items": [
+            "Dominikanische Republik",
+            "Bulgarien, Türkei, Griechenland",
+            "Thailand/Bangkok",
+            "Interkulturelle Zusammenarbeit"
+          ]
         }
       ]
     },
     {
-      "title": "Certifications & References",
+      "title": "Zertifikate & Referenzen",
       "single": {
         "icon": "bi-award",
-        "items": ["Elektor Technical Seminar: High-Frequency Technology", "Consistently recognized for technical expertise and leadership", "Praised for problem-solving and mentoring abilities"]
+        "items": [
+          "Elektor-Fachseminar: Hochfrequenztechnik",
+          "Kontinuierlich ausgezeichnet für technische Expertise und Führung",
+          "Besonders geschätzt für strukturierte Problemlösung und Mentoring"
+        ]
       }
     }
   ],
-  "footer": "This Competency Profile is based on supplied documentation, references, and certifications. For further details or original reference documents, please contact Stefan directly."
+  "footer": "Dieses Kompetenzprofil basiert auf bereitgestellten Unterlagen, Referenzen und Zertifikaten. Für weitere Details oder Originalnachweise bitte Stefan direkt kontaktieren."
 }
