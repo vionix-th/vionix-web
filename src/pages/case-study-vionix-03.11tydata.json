@@ -1,0 +1,25 @@
+{
+  "bodyClass": "case-study-details-page",
+  "pageTitle": "Case Study: Restoring Trust in Critical Compliance: Zero-Failure Inventory Rollout for Compliance Audits | Vionix Consulting",
+  "metaDescription": "How Vionix delivered an offline-first inventory system with audit-ready paper trails and a zero-failure rollout across 80 stores.",
+  "metaKeywords": "",
+  "canonicalUrl": "https://vionix.cloud/case-study-vionix-03.html",
+  "ogType": "article",
+  "ogImage": "https://vionix.cloud/assets/img/logo.png",
+  "twitterCard": "summary",
+  "structuredData": "",
+  "vendorCss": [
+    "assets/vendor/bootstrap/css/bootstrap.min.css",
+    "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+    "assets/vendor/aos/aos.css",
+    "assets/vendor/glightbox/css/glightbox.min.css"
+  ],
+  "styleCss": [
+    "assets/css/main.css",
+    "assets/css/components.css",
+    "assets/css/case-study-details.css"
+  ],
+  "vendorScripts": [],
+  "permalink": "/case-study-vionix-03.html",
+  "currentPage": "case-study-vionix-03"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "vionix-web",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && eleventy",
+    "dev": "eleventy --serve",
+    "serve:dist": "npx http-server dist"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "http-server": "^14.1.1",
+    "nunjucks": "^3.2.4"
+  }
+}

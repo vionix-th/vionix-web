@@ -1,0 +1,54 @@
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{{ pageTitle }}</title>
+  {% if metaDescription %}
+  <meta name="description" content="{{ metaDescription }}">
+  {% endif %}
+  {% if metaKeywords %}
+  <meta name="keywords" content="{{ metaKeywords }}">
+  {% endif %}
+  {% if canonicalUrl %}
+  <link rel="canonical" href="{{ canonicalUrl }}">
+  {% endif %}
+
+  <meta property="og:site_name" content="Vionix Consulting">
+  <meta property="og:title" content="{{ pageTitle }}">
+  {% if metaDescription %}
+  <meta property="og:description" content="{{ metaDescription }}">
+  {% endif %}
+  {% if canonicalUrl %}
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  {% endif %}
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  {% if ogImage %}
+  <meta property="og:image" content="{{ ogImage }}">
+  {% endif %}
+
+  <meta name="twitter:card" content="{{ twitterCard or 'summary' }}">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  {% if metaDescription %}
+  <meta name="twitter:description" content="{{ metaDescription }}">
+  {% endif %}
+
+  {% if structuredData %}
+  <script type="application/ld+json">
+{{ structuredData | safe }}
+  </script>
+  {% endif %}
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  {% for css in vendorCss %}
+  <link href="{{ css }}" rel="stylesheet">
+  {% endfor %}
+
+  {% for css in styleCss %}
+  <link href="{{ css }}" rel="stylesheet">
+  {% endfor %}
+</head>

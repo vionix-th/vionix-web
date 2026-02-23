@@ -1,0 +1,25 @@
+{
+  "bodyClass": "case-study-details-page",
+  "pageTitle": "Case Study: Bridging the Gap: Digitalising Goods Receipt on Legacy Hardware | Vionix Consulting",
+  "metaDescription": "How Vionix delivered a Windows CE goods-receipt app and SOAP middleware to eliminate paper workflows and run for years without software incidents.",
+  "metaKeywords": "",
+  "canonicalUrl": "https://vionix.cloud/case-study-vionix-11.html",
+  "ogType": "article",
+  "ogImage": "https://vionix.cloud/assets/img/logo.png",
+  "twitterCard": "summary",
+  "structuredData": "",
+  "vendorCss": [
+    "assets/vendor/bootstrap/css/bootstrap.min.css",
+    "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+    "assets/vendor/aos/aos.css",
+    "assets/vendor/glightbox/css/glightbox.min.css"
+  ],
+  "styleCss": [
+    "assets/css/main.css",
+    "assets/css/components.css",
+    "assets/css/case-study-details.css"
+  ],
+  "vendorScripts": [],
+  "permalink": "/case-study-vionix-11.html",
+  "currentPage": "case-study-vionix-11"
+}

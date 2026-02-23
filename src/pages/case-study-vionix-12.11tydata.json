@@ -1,0 +1,25 @@
+{
+  "bodyClass": "case-study-details-page",
+  "pageTitle": "Case Study: Turning a Black-Box Legacy System into a Company-Wide Delivery and Support Operating System | Vionix Consulting",
+  "metaDescription": "How Vionix migrated a legacy project and service operating model to Jira Cloud with a pilot, rollout, and full handover to the client team.",
+  "metaKeywords": "",
+  "canonicalUrl": "https://vionix.cloud/case-study-vionix-12.html",
+  "ogType": "article",
+  "ogImage": "https://vionix.cloud/assets/img/logo.png",
+  "twitterCard": "summary",
+  "structuredData": "",
+  "vendorCss": [
+    "assets/vendor/bootstrap/css/bootstrap.min.css",
+    "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+    "assets/vendor/aos/aos.css",
+    "assets/vendor/glightbox/css/glightbox.min.css"
+  ],
+  "styleCss": [
+    "assets/css/main.css",
+    "assets/css/components.css",
+    "assets/css/case-study-details.css"
+  ],
+  "vendorScripts": [],
+  "permalink": "/case-study-vionix-12.html",
+  "currentPage": "case-study-vionix-12"
+}

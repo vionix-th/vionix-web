@@ -1,0 +1,257 @@
+---
+layout: base.njk
+---
+
+<main class="main">
+
+    <div class="page-title" data-aos="fade">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Case Studies</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Case Studies</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="case-study-hub" class="portfolio section">
+      <div class="case-studies-hero-title" data-aos="fade-up">
+        <div class="container section-title case-studies-hero-title-content">
+          <h2>Case Studies</h2>
+          <p><span>Real-world engagements in critical system performance, stabilisation, modernisation, and enablement</span></p>
+        </div>
+        <div class="container case-studies-hero-intro" data-aos="fade-up" data-aos-delay="100">
+          <div class="row justify-content-center mb-0">
+            <div class="col-lg-10 col-xl-9">
+              <p class="mb-0">
+                Explore full project stories, including constraints, technical decisions, and outcomes. Start with the cards below and open any study for complete context.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order" data-aos="fade-up" data-aos-delay="150">
+        <ul class="portfolio-filters isotope-filters">
+          <li data-filter="*" class="filter-active">All Studies</li>
+          <li data-filter=".filter-database"><i class="bi bi-code-square"></i>Database &amp; Reporting Performance</li>
+          <li data-filter=".filter-legacy"><i class="bi bi-arrow-repeat"></i>Legacy Core Stabilisation</li>
+          <li data-filter=".filter-modernisation"><i class="bi bi-robot"></i>Incremental System Modernisation</li>
+          <li data-filter=".filter-enablement"><i class="bi bi-mortarboard"></i>Efficient Team &amp; Workflow Enablement</li>
+        </ul>
+
+        <div class="case-grid-shell">
+          <div class="row g-4 g-xl-5 isotope-container case-grid">
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-database filter-legacy">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-01.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-diagram-3 case-title-icon"></i><span>Database Discipline Under Sales Pressure</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Nordlicht Retail</span> - German fashion retailer</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-code-square"></i>Database</span> <span><i class="bi bi-arrow-repeat"></i>Legacy</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Mission-critical reports took four hours, crashed, and locked HQ systems.</p>
+              <p><strong>Intervention:</strong> Query-plan forensics, indexing, view abstraction, and lock-safe reporting redesign.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Runtime dropped from 4 hours to 30 minutes, with system locks removed.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-legacy filter-modernisation">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-03.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-gear case-title-icon"></i><span>Zero-Failure Inventory</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Nordlicht Retail</span> - German fashion retailer</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-arrow-repeat"></i>Legacy</span> <span><i class="bi bi-robot"></i>Modernisation</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Legacy inventory software instability created tax and insurance compliance risk.</p>
+              <p><strong>Intervention:</strong> Re-platformed to C# and SQL, local-first architecture, and high-touch rollout support.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> 0% failure rate across all 80 stores.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-legacy">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-02.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-gear case-title-icon"></i><span>Hardening POS Infrastructure</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Nordlicht Retail</span> - German fashion retailer</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-arrow-repeat"></i>Legacy</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Dust-driven POS failures disrupted transactions and inventory sync.</p>
+              <p><strong>Intervention:</strong> Ventilated enclosure redesign, hardened hardware builds, and maintenance protocol.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Failure rate dropped to 1-2 incidents per quarter across the estate.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-legacy">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-04.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-gear case-title-icon"></i><span>Monitoring Layer for Distributed Data Reliability</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Nordlicht Retail</span> - German fashion retailer</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-arrow-repeat"></i>Legacy</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Overnight store data transfers failed silently and planning teams discovered issues too late.</p>
+              <p><strong>Intervention:</strong> VPN rollout support, heartbeat monitoring, dashboard visibility, and fallback retrieval paths.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Real-time issue visibility replaced next-morning failure discovery.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-modernisation filter-legacy filter-enablement">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-06.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-people case-title-icon"></i><span>Cross-Platform Rebuild for Measurement Software</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Helios RF Systems</span> - RF analyzer manufacturer</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-robot"></i>Modernisation</span> <span><i class="bi bi-arrow-repeat"></i>Legacy</span> <span><i class="bi bi-mortarboard"></i>Enablement</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> A legacy Windows codebase was unstable, slow to evolve, and hurting market perception.</p>
+              <p><strong>Intervention:</strong> Qt and C++ re-architecture, modular migration, communication layer abstraction, and team enablement.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Stable cross-platform product restored software as a market differentiator.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-modernisation filter-enablement">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-05.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-people case-title-icon"></i><span>From Research Scripts to Deployable Agency Software</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Canopy Metrics</span> - forestry analytics venture</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-robot"></i>Modernisation</span> <span><i class="bi bi-mortarboard"></i>Enablement</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Mathematically strong research scripts were not deployable or maintainable for real users.</p>
+              <p><strong>Intervention:</strong> Full desktop rebuild with structured interfaces, visualization stack, and maintainable workflow.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Delivered a production-grade demonstrator with handover-ready codebase.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-legacy filter-modernisation filter-enablement">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-07.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-gear case-title-icon"></i><span>When the Webshop Was Ready—But the Back-End Wasn't</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Skyline Access</span> - aerial platform rental network</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-arrow-repeat"></i>Legacy</span> <span><i class="bi bi-robot"></i>Modernisation</span> <span><i class="bi bi-mortarboard"></i>Enablement</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> A launch-ready webshop had no integration path to the live rental system.</p>
+              <p><strong>Intervention:</strong> DMZ architecture, CSP Gateway, and a REST API to expose complex availability logic.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Webshop launched on schedule after three months of integration work.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-modernisation filter-legacy">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-08.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-people case-title-icon"></i><span>When Offline Isn't Optional</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Rhine Equipment Services</span> - construction equipment dealer and service provider</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-robot"></i>Modernisation</span> <span><i class="bi bi-arrow-repeat"></i>Legacy</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> A hybrid Node.js/C# field app crashed, desynced, and failed in offline conditions.</p>
+              <p><strong>Intervention:</strong> Rebuilt to C# WinForms with typed datasets, offline-first sync, and recovery safeguards.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> True offline work restored and user acceptance improved across the fleet.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-legacy filter-modernisation filter-enablement">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-09.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-gear case-title-icon"></i><span>From Chaos to Control</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Ironbridge ERP</span> - ERP vendor for equipment trade and rental</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-arrow-repeat"></i>Legacy</span> <span><i class="bi bi-robot"></i>Modernisation</span> <span><i class="bi bi-mortarboard"></i>Enablement</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> A 30-year ERP ran without version control or isolated development environments.</p>
+              <p><strong>Intervention:</strong> Git adoption, branch separation, local environments, and automated installers.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Service resolution time dropped from days to hours with stable deployments.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-database filter-legacy filter-enablement">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-10.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-diagram-3 case-title-icon"></i><span>When Real-Time Became Possible Again</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Ironbridge ERP</span> - ERP vendor for equipment trade and rental</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-code-square"></i>Database</span> <span><i class="bi bi-arrow-repeat"></i>Legacy</span> <span><i class="bi bi-mortarboard"></i>Enablement</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Nightly BI batch processing failed for large customers and broke trust in reporting.</p>
+              <p><strong>Intervention:</strong> Replaced ETL with indexed SQL Views, runtime calculations, and side-by-side validation.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Real-time reporting returned without disrupting daily ERP operations.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-legacy filter-modernisation filter-enablement">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-11.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-gear case-title-icon"></i><span>Digitalising Goods Receipt on Legacy Hardware</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Atlas Heavy Industries</span> - regional operation in a global equipment group</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-arrow-repeat"></i>Legacy</span> <span><i class="bi bi-robot"></i>Modernisation</span> <span><i class="bi bi-mortarboard"></i>Enablement</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Goods receipts were paper-based and the existing ERP lacked a mobile interface.</p>
+              <p><strong>Intervention:</strong> Built a Windows CE client and SOAP bridge with vendor-aligned interface design.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Process became fully digital and ran for five years without software tickets.</p>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-xl-4 isotope-item filter-legacy filter-modernisation filter-enablement">
+            <a class="case-card case-card-link h-100 d-flex flex-column text-reset text-decoration-none" href="case-study-vionix-12.html">
+              <div class="case-card-head">
+                <h3><i class="bi bi-people case-title-icon"></i><span>From Black Box to Operating System (Jira Cloud)</span></h3>
+                <p class="case-context"><span class="anonymized-client-label">Ironbridge ERP</span> - mid-market ERP organisation</p>
+                <div class="case-tags">
+                  <span class="case-tag-primary"><i class="bi bi-robot"></i>Modernisation</span> <span><i class="bi bi-arrow-repeat"></i>Legacy</span> <span><i class="bi bi-mortarboard"></i>Enablement</span>
+                </div>
+              </div>
+              <div class="case-divider"></div>
+              <p><strong>Problem:</strong> Work management was opaque, interrupt-driven, and fragmented across teams.</p>
+              <p><strong>Intervention:</strong> Rolled out Jira Cloud with governance, routing rules, and pilot-led adoption.</p>
+              <p class="case-outcome"><strong>Outcome:</strong> Company-wide rollout retired the legacy system and improved delivery clarity.</p>
+            </a>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-background">
+      <div class="container">
+        <div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+          <div>
+            <h3 class="mb-2">Discuss a similar challenge</h3>
+            <p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#contact">Contact Vionix</a>
+        </div>
+      </div>
+    </section>
+
+  </main>

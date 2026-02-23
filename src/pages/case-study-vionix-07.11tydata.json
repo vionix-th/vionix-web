@@ -1,0 +1,25 @@
+{
+  "bodyClass": "case-study-details-page",
+  "pageTitle": "Case Study: When the Webshop Was Ready—But the Back-End Wasn't | Vionix Consulting",
+  "metaDescription": "How Vionix designed a DMZ integration layer and REST API to connect a ready webshop to a live rental ERP and launch on schedule.",
+  "metaKeywords": "",
+  "canonicalUrl": "https://vionix.cloud/case-study-vionix-07.html",
+  "ogType": "article",
+  "ogImage": "https://vionix.cloud/assets/img/logo.png",
+  "twitterCard": "summary",
+  "structuredData": "",
+  "vendorCss": [
+    "assets/vendor/bootstrap/css/bootstrap.min.css",
+    "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+    "assets/vendor/aos/aos.css",
+    "assets/vendor/glightbox/css/glightbox.min.css"
+  ],
+  "styleCss": [
+    "assets/css/main.css",
+    "assets/css/components.css",
+    "assets/css/case-study-details.css"
+  ],
+  "vendorScripts": [],
+  "permalink": "/case-study-vionix-07.html",
+  "currentPage": "case-study-vionix-07"
+}

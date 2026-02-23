@@ -1,0 +1,25 @@
+{
+  "bodyClass": "case-study-details-page",
+  "pageTitle": "Case Study: When Offline Isn't Optional: Rebuilding a Field Service System That Actually Works in Construction Pits | Vionix Consulting",
+  "metaDescription": "How Vionix replaced a failing field-service system with a typed C# stack and reliable offline synchronization for technicians in harsh conditions.",
+  "metaKeywords": "",
+  "canonicalUrl": "https://vionix.cloud/case-study-vionix-08.html",
+  "ogType": "article",
+  "ogImage": "https://vionix.cloud/assets/img/logo.png",
+  "twitterCard": "summary",
+  "structuredData": "",
+  "vendorCss": [
+    "assets/vendor/bootstrap/css/bootstrap.min.css",
+    "assets/vendor/bootstrap-icons/bootstrap-icons.css",
+    "assets/vendor/aos/aos.css",
+    "assets/vendor/glightbox/css/glightbox.min.css"
+  ],
+  "styleCss": [
+    "assets/css/main.css",
+    "assets/css/components.css",
+    "assets/css/case-study-details.css"
+  ],
+  "vendorScripts": [],
+  "permalink": "/case-study-vionix-08.html",
+  "currentPage": "case-study-vionix-08"
+}

@@ -35,7 +35,8 @@ Scope:
 - Use Bootstrap, Bootstrap Icons, and the BizLand template assets/styles.
 - Preserve the template’s layout, responsiveness, and animations.
 - Keep everything compatible with static hosting.
-- Reuse existing template pages/patterns; do not modularize HTML into partials.
+- Reuse existing template pages/patterns; build-time HTML partials/layouts are allowed for shared shell components.
+- Keep generated output fully static; do not rely on runtime server-side includes or client-side HTML assembly for core layout.
 - CSS/JS modularization is allowed when it reduces coupling and preserves template behavior.
 - If CSS/JS is split, keep a clear ownership boundary (shared vs page-specific) and avoid duplicate logic.
 - JavaScript only (no frameworks, no TypeScript).

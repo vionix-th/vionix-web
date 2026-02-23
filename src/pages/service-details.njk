@@ -1,0 +1,240 @@
+---
+layout: base.njk
+---
+
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Service Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Service Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="200">
+            <!-- Database & Reporting Performance Section -->
+            <section id="database-performance" class="service-details section">
+              <div class="container">
+                <div class="row gy-4">
+                  <div class="col-lg-12" data-aos="fade-up">
+                    <div class="section-title service-detail-section-title">
+                      <h2>Performance</h2>
+                      <p><span>Database &amp; Reporting</span> <span class="description-title">Performance</span></p>
+                    </div>
+                    <p class="service-detail-section-intro">Finance closes, manufacturing dashboards, and operational reports all depend on predictable data platforms. When queries stretch into minutes and nightly jobs creep into business hours, the rest of the company feels it.</p>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-check2-circle service-card-title-icon" aria-hidden="true"></i><span>When it’s a fit</span></h3>
+                      <ul class="service-detail-list">
+                        <li>Business-critical reports or dashboards regularly exceed acceptable runtimes or time out entirely.</li>
+                        <li>Batch processing windows (invoicing, reconciliation, ETL) overrun into the next workday.</li>
+                        <li>Database growth outpaces retention and backup plans, threatening both storage and performance.</li>
+                        <li>Frequent blocking or deadlocks require constant operator intervention during peak hours.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-diagram-3 service-card-title-icon" aria-hidden="true"></i><span>How we work</span></h3>
+                      <ul class="service-detail-list">
+                        <li>Capture real workload characteristics (query stats, plan cache, traces) across SQL Server, PostgreSQL, MySQL, or InterSystems Caché.</li>
+                        <li>Audit schemas, indexing strategies, and ORM usage to remove unnecessary scans and round-trips.</li>
+                        <li>Separate operational and analytical workloads via replicas, staging layers, or export routines.</li>
+                        <li>Introduce lightweight observability—query baselines, job runtimes, storage growth tracking—so regressions are visible early.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-detail-card">
+                      <h3><i class="bi bi-list-check service-card-title-icon" aria-hidden="true"></i><span>Typical deliverables</span></h3>
+                      <ul class="service-detail-list">
+                        <li>A concise performance brief summarising the top bottlenecks with before/after measurements.</li>
+                        <li>A prioritized backlog covering the most impactful schema/index updates, query rewrites, or scheduling changes.</li>
+                        <li>Guidance on retention/archival strategy to keep growth under control without losing auditability.</li>
+                        <li>Simple instrumentation scripts or dashboards that plug into your existing monitoring.</li>
+                      </ul>
+                      <p class="mb-0">Engagements often run as a one-week assessment followed by a focused implementation sprint.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Legacy Core Stabilisation Section -->
+            <section id="legacy-core" class="service-details section">
+              <div class="container">
+                <div class="row gy-4">
+                  <div class="col-lg-12" data-aos="fade-up">
+                    <div class="section-title service-detail-section-title">
+                      <h2>Stabilisation</h2>
+                      <p><span>Legacy Core</span> <span class="description-title">Stabilisation</span></p>
+                    </div>
+                    <p class="service-detail-section-intro">ERP customisations, inventory synchronisation, or bespoke billing engines often accumulate a decade of quick fixes. When a single module controls revenue recognition or production scheduling, touching it without a plan feels reckless.</p>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-check2-circle service-card-title-icon" aria-hidden="true"></i><span>When it’s a fit</span></h3>
+                      <ul class="service-detail-list">
+                        <li>The codebase mixes VB6/C#/C++/Caché layers with little documentation and unclear ownership.</li>
+                        <li>Every change triggers regression firefights or requires code freezes because dependencies are unknown.</li>
+                        <li>Only one or two senior engineers remember the intent, and knowledge transfer is at risk.</li>
+                        <li>Auditors or customers demand stability guarantees the current system cannot provide.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-diagram-3 service-card-title-icon" aria-hidden="true"></i><span>How we work</span></h3>
+                      <ul class="service-detail-list">
+                        <li>Perform “code archaeology”: trace execution paths, data mutations, and runtime configuration.</li>
+                        <li>Draw dependency and data-flow maps to expose coupling, shared state, and integration seams.</li>
+                        <li>Design safe seams (facades, adapters, anti-corruption layers) so high-risk logic can be isolated gradually.</li>
+                        <li>Add guardrail tests (database fixtures, integration harnesses, golden files) before modifying behaviour.</li>
+                        <li>Pair with your team to implement the first refactoring slices and transfer the new structure.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-detail-card">
+                      <h3><i class="bi bi-list-check service-card-title-icon" aria-hidden="true"></i><span>Typical deliverables</span></h3>
+                      <ul class="service-detail-list">
+                        <li>A module map highlighting responsibilities, dependencies, and the riskiest seams.</li>
+                        <li>A sequenced stabilisation plan describing recommended refactoring slices and safeguards.</li>
+                        <li>Guardrail tests or diagnostic tools so future work can rely on repeatable checks.</li>
+                        <li>Knowledge-transfer notes or walkthroughs capturing how the module now behaves.</li>
+                      </ul>
+                      <p class="mb-0">Most stabilisation sprints focus on one core module at a time, keeping progress controlled.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Incremental System Modernisation Section -->
+            <section id="modernisation-team" class="service-details section">
+              <div class="container">
+                <div class="row gy-4">
+                  <div class="col-lg-12" data-aos="fade-up">
+                    <div class="section-title service-detail-section-title">
+                      <h2>Modernisation</h2>
+                      <p><span>Incremental System</span> <span class="description-title">Modernisation</span></p>
+                    </div>
+                    <p class="service-detail-section-intro">Big-bang rewrites fail when delivery pressure, integrations, and operational risk are ignored. Incremental modernisation works by sequencing architecture changes into small, testable steps that improve the system without breaking business flow.</p>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-check2-circle service-card-title-icon" aria-hidden="true"></i><span>When it’s a fit</span></h3>
+                      <ul class="service-detail-list">
+                        <li>Modernisation has been “in progress” for years while critical capabilities remain tightly coupled to legacy code.</li>
+                        <li>Core modules cannot be changed safely because dependencies and cutover boundaries are unclear.</li>
+                        <li>Teams postpone architecture improvements due to release pressure and fear of regression.</li>
+                        <li>There is no clear migration path from current architecture to a maintainable target state.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-diagram-3 service-card-title-icon" aria-hidden="true"></i><span>How we work</span></h3>
+                      <ul class="service-detail-list">
+                        <li>Map business-critical capabilities to current architecture and define target slices with explicit ownership.</li>
+                        <li>Sequence migration steps (APIs, services, data boundaries) with clear dependencies and rollback options.</li>
+                        <li>Plan coexistence patterns so legacy and new components can run safely during transition.</li>
+                        <li>Introduce checkpoints and guardrails that verify each step before moving to the next slice.</li>
+                        <li>Coach teams during implementation so architecture intent survives delivery pressure.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-detail-card">
+                      <h3><i class="bi bi-list-check service-card-title-icon" aria-hidden="true"></i><span>Typical deliverables</span></h3>
+                      <ul class="service-detail-list">
+                        <li>A modernisation roadmap with current-state constraints, target slices, and sequencing logic.</li>
+                        <li>A phased implementation plan with explicit dependency handling and rollback strategy.</li>
+                        <li>A prioritized migration backlog focused on risk reduction and operational continuity.</li>
+                        <li>Decision records capturing architectural trade-offs for future maintainers.</li>
+                      </ul>
+                      <p class="mb-0">The goal is measurable architecture progress every sprint, without sacrificing delivery reliability.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Efficient Team & Workflow Enablement Section -->
+            <section id="workflow-enablement" class="service-details section">
+              <div class="container">
+                <div class="row gy-4">
+                  <div class="col-lg-12" data-aos="fade-up">
+                    <div class="section-title service-detail-section-title">
+                      <h2>Enablement</h2>
+                      <p><span>Efficient Team &amp; Workflow</span> <span class="description-title">Enablement</span></p>
+                    </div>
+                    <p class="service-detail-section-intro">Stability improvements do not last if delivery workflows keep reintroducing chaos. This pillar hardens the way teams review, release, and transfer ownership so improvements remain durable under real-world pressure.</p>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-check2-circle service-card-title-icon" aria-hidden="true"></i><span>When it’s a fit</span></h3>
+                      <ul class="service-detail-list">
+                        <li>Code review quality varies widely between teams, leading to unpredictable defects in production.</li>
+                        <li>Release steps are manual and tribal, so deployment confidence remains low.</li>
+                        <li>Onboarding takes too long because critical system behaviour is not documented in actionable form.</li>
+                        <li>Delivery slows down whenever key engineers are unavailable.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-detail-card h-100">
+                      <h3><i class="bi bi-diagram-3 service-card-title-icon" aria-hidden="true"></i><span>How we work</span></h3>
+                      <ul class="service-detail-list">
+                        <li>Audit current development flow from ticket intake to production support to identify friction and rework loops.</li>
+                        <li>Establish lightweight standards for PR scope, review depth, and release readiness checks.</li>
+                        <li>Define working agreements for branching, handovers, and incident follow-up that teams can actually maintain.</li>
+                        <li>Introduce practical templates (PRs, runbooks, release checklists) that reduce variation without heavy process.</li>
+                        <li>Transfer ownership through guided walkthroughs and paired execution on live tasks.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-detail-card">
+                      <h3><i class="bi bi-list-check service-card-title-icon" aria-hidden="true"></i><span>Typical deliverables</span></h3>
+                      <ul class="service-detail-list">
+                        <li>A workflow diagnostic showing critical delays, rework sources, and ownership gaps.</li>
+                        <li>Operational playbooks for reviews, releases, and incident-response handoffs.</li>
+                        <li>Practical team standards and templates that reduce noise while preserving speed.</li>
+                        <li>A short enablement plan with measurable workflow outcomes and accountable owners.</li>
+                      </ul>
+                      <p class="mb-0">The objective is predictable delivery cadence and lower operational stress without adding heavyweight bureaucracy.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="cta-box mt-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+                <div>
+                  <h3 class="mb-2">Discuss a similar challenge</h3>
+                  <p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p>
+                </div>
+                <a class="btn btn-primary" href="index.html#contact">Contact Vionix</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+</section><!-- /Service Details Section -->
+
+  </main>

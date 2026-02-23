@@ -1,0 +1,16 @@
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+  aria-label="Scroll to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+<div id="preloader">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+{% for src in vendorScripts %}
+<script src="{{ src }}"></script>
+{% endfor %}
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/main.js"></script>
