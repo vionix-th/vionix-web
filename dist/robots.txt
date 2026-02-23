@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Keep implementation-only assets out of search results.
+Disallow: /assets/scss/
+Disallow: /assets/vendor/php-email-form/
+
+Sitemap: https://vionix.cloud/sitemap.xml

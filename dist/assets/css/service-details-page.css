@@ -1,0 +1,102 @@
+/*--------------------------------------------------------------
+# Vionix Service Details
+--------------------------------------------------------------*/
+#service-details {
+  padding-top: 2rem;
+  padding-bottom: 2.25rem;
+}
+
+#service-details > .container > .row > .col-lg-10 > .service-details.section {
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+}
+
+.service-detail-card {
+  --vx-card-border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  --vx-card-radius: 12px;
+  --vx-card-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  padding: 1.6rem;
+  height: 100%;
+}
+
+.service-detail-section-title {
+  padding-bottom: 0.75rem;
+}
+
+.service-details .service-detail-section-title h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.service-details .service-detail-section-title p {
+  margin: 10px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+}
+
+.service-details .service-detail-section-title p .description-title {
+  color: var(--accent-color);
+}
+
+.service-detail-section-intro {
+  max-width: 900px;
+  margin: 0 auto 0.1rem auto;
+  text-align: center;
+  color: var(--vx-text-body);
+}
+
+.service-detail-card h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-card-title-icon {
+  color: var(--vx-icon-accent);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.service-details ul.service-detail-list {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin: 0;
+}
+
+.service-details ul.service-detail-list li {
+  margin-bottom: 0.85rem;
+  color: var(--vx-text-body);
+  line-height: 1.5;
+  display: list-item;
+  align-items: initial;
+}
+
+#service-details .cta-box {
+  margin-top: 0.8rem !important;
+}
+
+@media (max-width: 768px) {
+  #service-details {
+    padding-top: 1.35rem;
+    padding-bottom: 1.6rem;
+  }
+
+  #service-details > .container > .row > .col-lg-10 > .service-details.section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .service-detail-section-intro {
+    text-align: left;
+  }
+
+  .service-detail-card {
+    padding: 1.3rem;
+  }
+}

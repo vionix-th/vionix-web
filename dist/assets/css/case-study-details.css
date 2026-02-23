@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------
+# Vionix Case Study Detail Pages
+--------------------------------------------------------------*/
+.case-study-wrap {
+  --vx-card-border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  --vx-card-radius: 14px;
+  --vx-card-shadow: 0 16px 30px rgba(0, 0, 0, 0.05);
+  padding: 1.6rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.case-study-wrap h1 {
+  font-size: 1.7rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.35;
+}
+
+.case-study-wrap h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.case-study-wrap h4 {
+  font-size: 1.05rem;
+  margin-top: 1.1rem;
+}
+
+.case-study-wrap p,
+.case-study-wrap li {
+  color: var(--vx-text-body);
+  line-height: 1.65;
+}
+
+.case-study-wrap ul,
+.case-study-wrap ol {
+  margin-bottom: 0.8rem;
+}

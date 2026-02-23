@@ -1,6 +1,7 @@
 # Deploy Vionix from `dist` (Eleventy)
 
 This repository now builds static output with Eleventy into `dist/`.
+For GitHub Pages `Deploy from a branch` with folder `/dist`, `dist/` must be committed.
 
 ## Build Commands
 
@@ -34,4 +35,5 @@ npm run serve:dist
 ## Notes
 
 - `dist/` includes passthrough copies for `assets/`, `CNAME`, `robots.txt`, and `sitemap.xml`.
+- `.gitignore` is configured to allow tracking `dist/` for this deployment model.
 - `de` and `th` locale structures are scaffolded only; phase 1 publishes English output.

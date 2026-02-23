@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Case Study: From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It | Vionix Consulting</title>
+  
+  <meta name="description" content="How Vionix stabilised a 30-year ERP by introducing version control, isolated dev environments, and incremental modernization without a rewrite.">
+  
+  
+  
+  <link rel="canonical" href="https://vionix.cloud/case-study-vionix-09.html">
+  
+
+  <meta property="og:site_name" content="Vionix Consulting">
+  <meta property="og:title" content="Case Study: From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It | Vionix Consulting">
+  
+  <meta property="og:description" content="How Vionix stabilised a 30-year ERP by introducing version control, isolated dev environments, and incremental modernization without a rewrite.">
+  
+  
+  <meta property="og:url" content="https://vionix.cloud/case-study-vionix-09.html">
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://vionix.cloud/assets/img/logo.png">
+  
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Case Study: From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It | Vionix Consulting">
+  
+  <meta name="twitter:description" content="How Vionix stabilised a 30-year ERP by introducing version control, isolated dev environments, and incremental modernization without a rewrite.">
+  
+
+  
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  
+
+  
+
+  
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <link href="assets/css/components.css" rel="stylesheet">
+  
+
+  
+  <link href="assets/css/case-study-details.css" rel="stylesheet">
+  
+</head>
+
+<body class="case-study-details-page">
+  <header id="header" class="header sticky-top">
+  <div class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <div class="contact-item d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center" aria-hidden="true"></i>
+          <a class="topbar-email-link" href="mailto:info@vionix.cloud">info@vionix.cloud</a>
+        </div>
+        <div class="contact-item d-flex align-items-center ms-4">
+          <i class="bi bi-calendar4-week d-flex align-items-center" aria-hidden="true"></i>
+          <a class="topbar-cta-link" href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank"
+            rel="noopener noreferrer">Schedule a Call</a>
+        </div>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i class="bi bi-github"
+            aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <span class="sitename">Vionix Consulting</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul id="navmenu-list">
+          <li class="dropdown"><a href="index.html#featured-services"><span>Services</span></a><button
+              class="toggle-dropdown bi bi-chevron-down" type="button" aria-label="Toggle Services submenu"
+              aria-expanded="false"></button>
+            <ul>
+              <li><a href="index.html#featured-services">Services Overview</a></li>
+              <li><a href="index.html#about">How We Work</a></li>
+              <li><a href="index.html#engagement-formats">Engagements</a></li>
+              <li><a href="service-details.html">Service Details</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="index.html#team"><span>Team</span></a><button class="toggle-dropdown bi bi-chevron-down"
+              type="button" aria-label="Toggle Team submenu" aria-expanded="false"></button>
+            <ul>
+              <li><a href="index.html#team">Team Overview</a></li>
+              <li><a href="skilltable-team1.html">Stefan's Profile</a></li>
+              <li><a href="skilltable-team2.html">Ruthairat's Profile</a></li>
+            </ul>
+          </li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-nav-toggle d-xl-none bi bi-list" type="button" aria-label="Open menu"
+          aria-expanded="false" aria-controls="navmenu-list"></button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  
+<main class="main">
+<div class="page-title" data-aos="fade">
+<div class="container d-lg-flex justify-content-between align-items-center">
+<h2 class="mb-2 mb-lg-0">Case Study</h2>
+<nav class="breadcrumbs">
+<ol>
+<li>
+<a href="index.html">Home</a>
+</li>
+<li>
+<a href="case-studies.html">Case Studies</a>
+</li>
+<li class="current">From Chaos to Control</li>
+</ol>
+</nav>
+</div>
+</div>
+<section class="section">
+<div class="container" data-aos="fade-up">
+<div class="case-study-wrap">
+<a class="back-link" href="case-studies.html">
+<i class="bi bi-arrow-left">
+</i> Back to all case studies</a>
+
+<h1>From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It</h1>
+
+<h3>Snapshot</h3>
+<p>A mid-sized German ERP software manufacturer with a 30-year-old codebase (Visual Basic 6, .NET 3.5, InterSystems Cach&eacute;) operating without version control, automated testing, or individual development environments. All developers worked simultaneously in a shared source directory on a single terminal server&mdash;management believed this prevented IP theft. Service cases exceeded 20 per day; deployments were trial-and-error exercises; Windows updates routinely broke the development environment.</p>
+<p>
+<strong>Delivery model:</strong> Principal-led engagement (Stefan, Founder &amp; Principal Consultant)<br>
+<strong>Client:</strong> <span class="anonymized-client-label">Ironbridge ERP</span> (German ERP vendor for equipment trade and rental)</p>
+
+<h3>The Challenge</h3>
+<p>The product worked&mdash;customers valued its features&mdash;but instability was driving everyone to breaking point. Developers shouted across the office hunting for whoever &quot;broke&quot; the system. Regression was constant but untraceable. The gap between development and release branches spanned thousands of unexplained lines of code. Customer deployments had no scripted installers; technicians fought through errors on-site until the system booted. Post-deployment service spikes lasted weeks.</p>
+<p>The development environment itself was fragile: orphaned ActiveX components, undocumented internal libraries, and dependencies no one could reproduce. Every Windows update triggered days of trial-and-error reinstallations. The Sales Director&mdash;who led software development despite no technical background&mdash;resisted change. Long-tenured developers were hostile to object-oriented programming and unwilling to learn. Projects were implemented as isolated, customer-specific code with zero reusable abstraction.</p>
+
+<h3>Constraints</h3>
+<p>
+<strong>Political:</strong> The Sales Director financially benefited from selling &quot;individual programming&quot; and viewed abstraction as a threat to revenue and control.</p>
+<p>
+<strong>Cultural:</strong> Legacy developers rejected new tooling and modern practices; management equated the terminal server model with IP protection.</p>
+<p>
+<strong>Technical:</strong> A ~30-year codebase touched by countless developers, with no documentation of how custom tooling (code generators, protocols) functioned. The system could no longer be installed on a fresh machine.</p>
+<p>
+<strong>Operational:</strong> The team was under extreme pressure&mdash;20+ daily service cases, toxic morale, and customer frustration at breaking point.</p>
+
+<h3>Approach</h3>
+<p>
+<strong>1. Map the Mess</strong>
+<br>Documented the current state: which systems existed, how they interacted, what dependencies were present. This became the foundation for all subsequent work.</p>
+<p>
+<strong>2. Introduce Version Control (Git)</strong>
+<br>Placed Visual Basic, C#, and Cach&eacute; components under Git. Automated daily exports from the Cach&eacute; server to create snapshots of backend changes. This ended the &quot;manhunt&quot; culture and made regression traceable for the first time.</p>
+<p>
+<strong>3. Separate the Branches</strong>
+<br>Enforced strict separation: Unstable Development, Testing, Release. Developers stopped manually copying code line-by-line into a &quot;release branch&quot; whose divergence from development no one could explain.</p>
+<p>
+<strong>4. Build Individual Development Environments</strong>
+<br>Ended the shared terminal server model. Each developer received a local workstation with their own environment. Pull requests and merging replaced chaotic simultaneous edits to shared directories. This required intensive negotiation with management, who feared IP theft&mdash;Vionix demonstrated that copy-paste made terminal servers irrelevant for that purpose.</p>
+<p>
+<strong>5. Automate and Stabilize Installations</strong>
+<br>Bundled all components (including legacy ActiveX dependencies) into a single scripted installer. Created a comprehensive manifest file for the VB6 application and automated its generation, making the system self-healing when dependencies changed. Configured legacy components to run reliably on modern Windows.</p>
+<p>
+<strong>6. Train and Adapt Gradually</strong>
+<br>Conducted recurring training sessions: Git workflows, SOLID principles, software architecture, abstraction techniques. Used real projects as examples (e.g., extracting a reusable CSV export class rather than reimplementing it per customer). Gave developers time between changes to adapt.</p>
+<p>
+<strong>7. Restructure Team Dynamics</strong>
+<br>Created mixed teams: technically proficient developers built abstractions (objects, reusable modules); legacy developers consumed them in their imperative code. This approach preserved existing skills while introducing modern patterns, built trust, and transformed isolated work into collaboration.</p>
+
+<h3>What Was Delivered</h3>
+<ul>
+<li>
+<strong>Version-controlled codebase</strong> (Git) with automated daily snapshots of Cach&eacute; backend changes</li>
+<li>
+<strong>Branch strategy</strong> enforcing separation between unstable development, testing, and release</li>
+<li>
+<strong>Individual local development environments</strong> replacing the shared terminal server</li>
+<li>
+<strong>Automated installer</strong> with dependency resolution and self-healing manifest generation</li>
+<li>
+<strong>Training curriculum</strong> covering Git, architecture principles, and practical abstraction techniques</li>
+<li>
+<strong>Reorganized team structure</strong> enabling collaboration between old-guard and modern-skilled developers</li>
+</ul>
+
+<h3>Results</h3>
+<p>
+<strong>Service Case Resolution Time:</strong> Reduced from days to hours. Version control enabled side-by-side code comparison instead of manual archaeology through thousands of lines.</p>
+<p>
+<strong>Deployment Stability:</strong> Customer IT departments no longer feared Windows updates or version upgrades. Scripted installers eliminated trial-and-error on-site troubleshooting.</p>
+<p>
+<strong>Traceability:</strong> The company could now prove whether issues stemmed from code changes or user error&mdash;previously impossible. Management valued this transparency highly.</p>
+<p>
+<strong>Developer Morale:</strong> Stress levels dropped significantly. Developers had their own environments, understood their tooling, and stopped being blamed for untraceable regressions.</p>
+<p>
+<strong>Service Case Nature:</strong> While total volume didn't immediately drop, the character shifted&mdash;user errors could be definitively identified, and regression-driven cases became resolvable quickly.</p>
+
+<h3>Why It Worked</h3>
+<p>
+<strong>Vionix didn't fight the legacy&mdash;Vionix stabilized it first.</strong> Version control and environment isolation created accountability and psychological safety before asking anyone to change how they coded.</p>
+<p>
+<strong>Political resistance was addressed with economic logic.</strong> The terminal server argument collapsed once Vionix demonstrated that copy-paste made it irrelevant for IP protection. The Sales Director's resistance was bypassed by delivering results that management and customers valued.</p>
+<p>
+<strong>Vionix met developers where they were.</strong> Rather than forcing OOP adoption, Vionix let technically proficient team members create abstractions while legacy developers consumed them imperatively. This built trust through demonstrated value, not ideology.</p>
+<p>
+<strong>Automation removed fragility.</strong> The self-healing manifest and scripted installer eliminated the Windows update panic cycle, freeing cognitive space for improvement.</p>
+
+<h3>How Vionix Worked</h3>
+<p>This was a two-year engagement with a single Vionix consultant embedded in an advisory and active restructuring role. Changes were implemented gradually with training periods in between, allowing the team to internalize each shift before the next. The engagement concluded amicably when the company was acquired by a larger corporation capable of sustaining the systems independently.</p>
+
+</div>
+</div>
+</section>
+<section class="section light-background">
+<div class="container">
+<div class="cta-box d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+<div>
+<h3 class="mb-2">Discuss a similar challenge</h3>
+<p class="mb-0">Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.</p>
+</div>
+<a class="btn btn-primary" href="index.html#contact">Contact Vionix</a>
+</div>
+</div>
+</section>
+</main>
+
+  <footer id="footer" class="footer">
+  <div class="footer-top-band">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">Vionix Consulting</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Soi Sukhumvit 72<br>Sam Rong Nua, Mueang Samut Prakan<br>Samut Prakan 10270<br>Thailand</p>
+            <p class="mt-3"><strong>Phone:</strong> <a href="https://cal.com/vionix-consulting/schedule-a-call" target="_blank" rel="noopener noreferrer">Schedule a Call</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@vionix.cloud">info@vionix.cloud</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row gy-4">
+            <div class="col-6 col-lg-4 footer-group footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <a href="index.html#hero">Home</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="case-studies.html">Case Studies</a></li>
+              </ul>
+            </div>
+
+            <div class="col-6 col-lg-4 footer-group footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#database-performance">Database &amp; Reporting Performance</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#legacy-core">Legacy Core Stabilisation</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#modernisation-team">Incremental System Modernisation</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="service-details.html#workflow-enablement">Efficient Team &amp; Workflow Enablement</a></li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-lg-4 footer-group footer-social">
+              <h4>Follow Us</h4>
+              <div class="social-links d-flex">
+                <a href="https://github.com/vionix-th" class="github" aria-label="Vionix on GitHub"><i
+                    class="bi bi-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Vionix Consulting</strong> <span>All Rights
+        Reserved</span></p>
+    <p class="anonymization-note footer-anonymization-note mb-0"><sup>1</sup> Client names are anonymized pseudonyms
+      used to protect client privacy. Industry context and technical outcomes remain factual.</p>
+    <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+  </div>
+</footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+  aria-label="Scroll to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+<div id="preloader">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

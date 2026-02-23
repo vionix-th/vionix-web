@@ -1,0 +1,81 @@
+/*--------------------------------------------------------------
+# Vionix Skill Table Pages
+--------------------------------------------------------------*/
+.bio-competency {
+  padding: 60px 0;
+}
+
+.bio-section {
+  margin-bottom: 40px;
+}
+
+.bio-section h3 {
+  color: var(--vx-text-strong);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.bio-section .service-item {
+  --vx-card-border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  --vx-card-radius: 8px;
+  --vx-card-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.bio-section .service-item:hover {
+  transform: translateY(-5px);
+}
+
+.bio-section .service-item .icon {
+  font-size: 2.5rem;
+  color: var(--vx-icon-accent);
+  margin-bottom: 1.5rem;
+}
+
+.bio-section .service-item .icon i {
+  color: var(--vx-icon-accent);
+}
+
+.bio-section .service-item h4 {
+  color: var(--vx-text-strong);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.bio-section .service-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bio-section .service-item ul li {
+  padding: 0.8rem 0;
+  color: var(--vx-text-body);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.bio-section .service-item ul li i {
+  color: var(--vx-icon-accent);
+  font-size: 1.1rem;
+  margin-right: 0.75rem;
+}
+
+.bio-section .service-item ul li:not(:last-child) {
+  border-bottom: 1px solid var(--vx-divider);
+}
+
+.bio-footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid var(--vx-divider);
+}
+
+.bio-footer p {
+  color: var(--default-color);
+  font-size: 0.9rem;
+}
