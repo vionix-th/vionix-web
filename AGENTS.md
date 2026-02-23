@@ -9,6 +9,8 @@ Scope:
   Do not restructure or “improve” their narrative unless explicitly instructed.
 - Shared shell concerns remain in scope across all pages, including case studies:
   header/nav/footer consistency, shared CSS/JS wiring, and accessibility bug fixes.
+- Narrative constraints on case studies do not relax technical wiring invariants.
+  All generated pages must satisfy global runtime and accessibility contracts.
 - Source of truth is Eleventy source files under `src/`; generated site output is `dist/`.
 - Do not hand-edit generated files in `dist/`.
 
@@ -25,6 +27,8 @@ Scope:
 ### Accuracy / No invention
 - Do not fabricate claims, metrics, clients, timelines, or credentials.
 - If a critical detail is missing, add: `<!-- MISSING: ... -->` rather than guessing.
+- When behavior regresses, fix the deterministic source of truth (template/data/config)
+  before adding runtime mitigation.
 
 ### Consistency
 - Keep terminology and taxonomy consistent across pages (headings, CTAs, footer lists, filters).
@@ -36,6 +40,8 @@ Scope:
 
 - Use Bootstrap, Bootstrap Icons, and the BizLand template assets/styles.
 - Preserve the template’s layout, responsiveness, and animations.
+- Optional enhancement layers (animation/interaction polish) must never gate critical
+  content visibility, navigation, or baseline readability.
 - Keep everything compatible with static hosting.
 - Use Eleventy + Nunjucks for build-time generation (`src/` -> `dist/`).
 - Vite is not part of the Vionix site workflow.
@@ -149,3 +155,5 @@ CSS ownership:
 Change policy:
 - Do not reintroduce inline `<style>` blocks.
 - Do not reintroduce root-level hand-maintained `*.html` sources; edit templates in `src/pages` instead.
+- Treat page-level overrides that reduce inherited assets/config as high-risk changes.
+  Any such override requires explicit justification in the commit message.

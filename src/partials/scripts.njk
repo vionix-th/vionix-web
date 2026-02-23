@@ -12,5 +12,9 @@
 <script src="{{ src }}"></script>
 {% endfor %}
 
+{% for src in (vendorScriptsExtra or []) %}
+<script src="{{ src }}"></script>
+{% endfor %}
+
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/main.js"></script>

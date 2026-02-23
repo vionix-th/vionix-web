@@ -6,12 +6,7 @@
   "canonicalUrl": "https://vionix.cloud/",
   "ogType": "website",
   "structuredData": "{\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"Organization\",\n      \"name\": \"Vionix Consulting\",\n      \"url\": \"https://vionix.cloud\",\n      \"logo\": \"https://vionix.cloud/assets/img/logo.png\",\n      \"description\": \"Expert consulting and training in software architecture, code reviews, refactoring, and AI/LLM integration for tech firms, startups, and organizations with legacy or modern systems.\",\n      \"sameAs\": [\n        \"https://github.com/vionix-th\"\n      ]\n    }",
-  "vendorScripts": [
-    "assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
-    "assets/vendor/aos/aos.js",
-    "assets/vendor/glightbox/js/glightbox.min.js",
-    "assets/vendor/waypoints/noframework.waypoints.js",
-    "assets/vendor/purecounter/purecounter_vanilla.js",
+  "vendorScriptsExtra": [
     "assets/vendor/swiper/swiper-bundle.min.js"
   ],
   "permalink": "/index.html",

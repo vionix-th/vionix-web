@@ -75,6 +75,35 @@ while IFS= read -r html; do
   if has_match '<link href="[^/"][^"]?" rel="stylesheet">' "$html"; then
     fail "$(basename "$html") contains malformed stylesheet href values"
   fi
+
+  # Enhancement dependency contracts.
+  if has_match 'data-aos=' "$html"; then
+    has_match 'assets/vendor/aos/aos\.js' "$html" || fail "$(basename "$html") uses data-aos but is missing assets/vendor/aos/aos.js"
+    has_match 'assets/vendor/aos/aos\.css' "$html" || fail "$(basename "$html") uses data-aos but is missing assets/vendor/aos/aos.css"
+  fi
+
+  if has_match 'isotope-layout|isotope-container|isotope-filters' "$html"; then
+    has_match 'assets/vendor/imagesloaded/imagesloaded\.pkgd\.min\.js' "$html" || fail "$(basename "$html") uses isotope markup but is missing imagesLoaded"
+    has_match 'assets/vendor/isotope-layout/isotope\.pkgd\.min\.js' "$html" || fail "$(basename "$html") uses isotope markup but is missing Isotope"
+  fi
+
+  if has_match 'init-swiper|class="swiper ' "$html"; then
+    has_match 'assets/vendor/swiper/swiper-bundle\.min\.js' "$html" || fail "$(basename "$html") uses swiper markup but is missing Swiper JS"
+    has_match 'assets/vendor/swiper/swiper-bundle\.min\.css' "$html" || fail "$(basename "$html") uses swiper markup but is missing Swiper CSS"
+  fi
+
+  if has_match 'class="[^"]*glightbox' "$html"; then
+    has_match 'assets/vendor/glightbox/js/glightbox\.min\.js' "$html" || fail "$(basename "$html") uses glightbox but is missing GLightbox JS"
+    has_match 'assets/vendor/glightbox/css/glightbox\.min\.css' "$html" || fail "$(basename "$html") uses glightbox but is missing GLightbox CSS"
+  fi
+
+  if has_match 'skills-animation' "$html"; then
+    has_match 'assets/vendor/waypoints/noframework\.waypoints\.js' "$html" || fail "$(basename "$html") uses skills-animation but is missing Waypoints"
+  fi
+
+  if has_match 'purecounter' "$html"; then
+    has_match 'assets/vendor/purecounter/purecounter_vanilla\.js' "$html" || fail "$(basename "$html") uses purecounter but is missing PureCounter"
+  fi
 done < <(find "$DIST" -type f -name "*.html" | sort)
 
 echo "[PASS] Site contracts verified for $actual_pages pages."
