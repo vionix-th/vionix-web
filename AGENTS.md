@@ -95,6 +95,8 @@ Narrative editing safety:
 - Do not collapse source narratives into generic bullet summaries. Preserve section intent, factual density, and causal flow from the English source.
 - Do not use external translation tooling (web translators, MT APIs, browser translation features) unless Caesar explicitly approves it for the task.
 - For translation work, use English as canonical source and translate block-by-block while preserving block types and list cardinality.
+- English-first change policy: changes to English page structure, design, or published copy are incomplete until equivalent `de` and `th` updates are applied in the same change set unless Caesar explicitly authorizes staged rollout.
+- Keep locale synchronization strict: `en`/`de`/`th` must remain structurally aligned for shared pages/components (sections, CTAs, metadata intent, route/link targets), while allowing natural-language wording differences.
 - A passing `i18n:validate`/`build`/`test:contracts` run is required but never sufficient to claim translation quality.
 - Treat parenthetical model-meta artifacts as blocking defects (e.g., explanatory asides that do not belong in published prose).
 - Facts that appear in parentheses must be narrated properly in sentence form unless parentheses are semantically required (acronym expansion, units, legal names).
