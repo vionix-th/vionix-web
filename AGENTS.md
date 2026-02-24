@@ -13,6 +13,7 @@ Scope:
   All generated pages must satisfy global runtime and accessibility contracts.
 - Source of truth is Eleventy source files under `src/`; generated site output is `dist/`.
 - Do not hand-edit generated files in `dist/`.
+- Deployment for this project serves from committed `dist/` output; when publishing content/template changes, regenerate and commit the corresponding `dist/` files in the same work unit.
 
 ---
 
