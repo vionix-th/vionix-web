@@ -134,24 +134,58 @@
   },
   "testimonials": [
     {
+      "id": "logis-software-architecture-team-lead",
       "client": "Ironbridge ERP",
       "role": "Softwarearchitektur und Teamleitung",
       "quote": "Stefan verbindet breite technische Tiefe mit pragmatischer Umsetzung. Er löst komplexe Probleme schnell, strukturiert und wartbar."
     },
     {
+      "id": "logis-efficiency-under-pressure",
       "client": "Ironbridge ERP",
       "role": "Umsetzung unter Druck",
       "quote": "Auch unter schwierigen Bedingungen und hohem Zeitdruck arbeitete Stefan planvoll, effizient und klar ergebnisorientiert. Er definierte zudem Qualitätsziele und überwachte sie mit Code-Reviews, Versionskontrolle und Tests."
     },
     {
-      "client": "Canopy Metrics",
-      "role": "Softwareentwicklung",
-      "quote": "Nach kurzer Einarbeitung übernahm Stefan Aufgaben eigenständig und fand sich schnell in einem neuen Stack zurecht."
-    },
-    {
+      "id": "logis-initiative-ownership",
       "client": "Ironbridge ERP",
       "role": "Initiative und Verantwortung",
       "quote": "Stefan übernahm klar Verantwortung für seine Aufgaben und zeigte durchgehend Initiative, Motivation und klare Zielorientierung."
+    },
+    {
+      "id": "logis-quality-architecture",
+      "client": "Ironbridge ERP",
+      "role": "Qualität und Architektur",
+      "quote": "Stefan zeichnete sich durch schnelle Auffassungsgabe und verlässliche Umsetzung aus. Seine Arbeit war durchgehend gründlich, zuverlässig und sorgfältig."
+    },
+    {
+      "id": "logis-exceptional-quality",
+      "client": "Ironbridge ERP",
+      "role": "Konstant hohe Qualität",
+      "quote": "Die Qualität von Stefans Arbeit war durchgehend außergewöhnlich hoch, und seine Beiträge wurden in jeder Hinsicht voll anerkannt."
+    },
+    {
+      "id": "treescape-software-development",
+      "client": "Canopy Metrics",
+      "role": "Softwareentwicklung",
+      "quote": "Nach kurzer Einarbeitung bearbeitete Stefan Aufgaben eigenständig. Er passte sich schnell an ein unbekanntes Umfeld an."
+    },
+    {
+      "id": "treescape-collaboration",
+      "client": "Canopy Metrics",
+      "role": "Teamzusammenarbeit",
+      "quote": "Stefan wurde schnell zu einem gefragten Ansprechpartner im Team und arbeitete mit dem Management kooperativ und konstruktiv zusammen."
+    },
+    {
+      "id": "logis-team-leadership",
+      "client": "Ironbridge ERP",
+      "role": "Teamführung",
+      "quote": "Stefan ist ausdauernd, motiviert und belastbar und arbeitet sorgfältig sowie präzise. Auch bei hoher Arbeitslast blieb er sehr zuverlässig."
+    },
+    {
+      "id": "logis-professional-conduct",
+      "client": "Ironbridge ERP",
+      "role": "Professionelles Auftreten",
+      "quote": "Sein Verhalten gegenüber Führungskräften und Kolleginnen und Kollegen war durchgehend professionell."
     }
   ],
   "team": [

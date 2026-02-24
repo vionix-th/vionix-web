@@ -94,6 +94,190 @@
   new PureCounter();
 
   /**
+   * Homepage testimonials: randomize one quote per client and cache selection
+   */
+  const TESTIMONIAL_SELECTION_KEY = 'vionix_testimonial_selection_v1';
+  const TESTIMONIAL_SELECTION_TTL_MS = 24 * 60 * 60 * 1000;
+
+  function shuffledCopy(values) {
+    const copy = values.slice();
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = copy[i];
+      copy[i] = copy[j];
+      copy[j] = temp;
+    }
+    return copy;
+  }
+
+  function buildClientSequence(clients, targetLength, maxPerClient, availableByClient) {
+    const counts = new Map();
+
+    function backtrack(sequence) {
+      if (sequence.length === targetLength) return sequence.slice();
+
+      const previous = sequence.length > 0 ? sequence[sequence.length - 1] : null;
+      const candidates = shuffledCopy(clients).filter((client) => {
+        const used = counts.get(client) || 0;
+        const available = availableByClient.get(client) || 0;
+        if (client === previous) return false;
+        if (used >= maxPerClient) return false;
+        if (used >= available) return false;
+        return true;
+      });
+
+      for (const candidate of candidates) {
+        sequence.push(candidate);
+        counts.set(candidate, (counts.get(candidate) || 0) + 1);
+        const result = backtrack(sequence);
+        if (result) return result;
+        sequence.pop();
+        counts.set(candidate, (counts.get(candidate) || 1) - 1);
+      }
+      return null;
+    }
+
+    return backtrack([]);
+  }
+
+  function applyRandomizedTestimonials() {
+    const swiperElement = document.querySelector('#testimonials .init-swiper[data-testimonial-randomized="true"]');
+    if (!swiperElement) return;
+
+    const wrapper = swiperElement.querySelector('.swiper-wrapper');
+    if (!wrapper) return;
+
+    const slides = Array.from(wrapper.querySelectorAll(':scope > .swiper-slide'));
+    if (slides.length === 0) return;
+
+    const idsByClient = new Map();
+    const slideById = new Map();
+    const clientById = new Map();
+
+    slides.forEach((slide, index) => {
+      const client = String(slide.dataset.testimonialClient || '').trim();
+      const fallbackId = `testimonial-${index + 1}`;
+      const id = String(slide.dataset.testimonialId || fallbackId).trim();
+      if (!client || !id) return;
+
+      slide.dataset.testimonialClient = client;
+      slide.dataset.testimonialId = id;
+      slideById.set(id, slide);
+      clientById.set(id, client);
+
+      if (!idsByClient.has(client)) {
+        idsByClient.set(client, []);
+      }
+      idsByClient.get(client).push(id);
+    });
+
+    const clients = Array.from(idsByClient.keys());
+    if (clients.length === 0) return;
+
+    const maxSlidesRaw = Number.parseInt(swiperElement.dataset.maxSlides || '', 10);
+    const maxSlides = Number.isInteger(maxSlidesRaw) && maxSlidesRaw > 0 ? maxSlidesRaw : slides.length;
+    const maxPerClientRaw = Number.parseInt(swiperElement.dataset.maxPerClient || '', 10);
+    const maxPerClient = Number.isInteger(maxPerClientRaw) && maxPerClientRaw > 0 ? maxPerClientRaw : 1;
+    const requestedCount = Math.min(maxSlides, slides.length);
+    const availableByClient = new Map(clients.map((client) => [client, (idsByClient.get(client) || []).length]));
+
+    let targetCount = requestedCount;
+    let clientSequence = null;
+    while (targetCount > 0 && !clientSequence) {
+      clientSequence = buildClientSequence(clients, targetCount, maxPerClient, availableByClient);
+      if (!clientSequence) targetCount -= 1;
+    }
+    if (!clientSequence || targetCount === 0) return;
+
+    const poolSignature = Array.from(slideById.keys()).sort().join('|');
+    const storageKey = `${TESTIMONIAL_SELECTION_KEY}:${window.location.pathname || '/'}`;
+    let selectedIds = null;
+
+    try {
+      const raw = window.localStorage.getItem(storageKey);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        const notExpired = Number(parsed && parsed.expiresAt) > Date.now();
+        const samePool = String(parsed && parsed.poolSignature || '') === poolSignature;
+        const sameTarget = Number(parsed && parsed.targetCount) === targetCount;
+        const ids = Array.isArray(parsed && parsed.ids) ? parsed.ids.filter((id) => slideById.has(id)) : [];
+        let validAdjacency = true;
+        for (let i = 1; i < ids.length; i += 1) {
+          if (clientById.get(ids[i]) === clientById.get(ids[i - 1])) {
+            validAdjacency = false;
+            break;
+          }
+        }
+        const counts = new Map();
+        ids.forEach((id) => {
+          const client = clientById.get(id);
+          counts.set(client, (counts.get(client) || 0) + 1);
+        });
+        const validCounts = Array.from(counts.values()).every((count) => count <= maxPerClient);
+        if (notExpired && samePool && sameTarget && ids.length === targetCount && validAdjacency && validCounts) {
+          selectedIds = ids;
+        }
+      }
+    } catch (error) {
+      selectedIds = null;
+    }
+
+    if (!selectedIds) {
+      const availableIdsByClient = new Map(
+        Array.from(idsByClient.entries()).map(([client, ids]) => [client, shuffledCopy(ids)])
+      );
+      selectedIds = [];
+      for (const client of clientSequence) {
+        const clientPool = availableIdsByClient.get(client) || [];
+        const chosenId = clientPool.shift();
+        if (!chosenId) continue;
+        selectedIds.push(chosenId);
+      }
+      if (selectedIds.length === 0) return;
+
+      try {
+        window.localStorage.setItem(storageKey, JSON.stringify({
+          ids: selectedIds,
+          poolSignature: poolSignature,
+          targetCount: targetCount,
+          expiresAt: Date.now() + TESTIMONIAL_SELECTION_TTL_MS
+        }));
+      } catch (error) {
+        // ignore storage failures
+      }
+    }
+
+    const selectedSet = new Set(selectedIds);
+    slides.forEach((slide) => {
+      if (!selectedSet.has(slide.dataset.testimonialId)) {
+        slide.remove();
+      }
+    });
+
+    selectedIds.forEach((id) => {
+      const slide = slideById.get(id);
+      if (slide && slide.parentElement === wrapper) {
+        wrapper.appendChild(slide);
+      }
+    });
+
+    const remainingSlides = wrapper.querySelectorAll(':scope > .swiper-slide').length;
+    const configNode = swiperElement.querySelector('.swiper-config');
+    if (configNode && remainingSlides <= 1) {
+      try {
+        const config = JSON.parse(configNode.textContent.trim());
+        config.loop = false;
+        delete config.autoplay;
+        configNode.textContent = JSON.stringify(config, null, 10);
+      } catch (error) {
+        // ignore malformed config
+      }
+    }
+  }
+
+  window.addEventListener('load', applyRandomizedTestimonials);
+
+  /**
    * Init swiper sliders
    */
   function initSwiper() {

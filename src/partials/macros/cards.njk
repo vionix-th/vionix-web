@@ -28,7 +28,7 @@
 {% endmacro %}
 
 {% macro testimonialCard(item) %}
-<div class="swiper-slide">
+<div class="swiper-slide" data-testimonial-id="{{ item.id }}" data-testimonial-client="{{ item.client }}">
   <div class="testimonial-item">
     <img src="assets/img/testimonials/testimonials.png" class="testimonial-img" alt="" aria-hidden="true">
     <h3><span class="anonymized-client-label">{{ item.client }}</span></h3>
