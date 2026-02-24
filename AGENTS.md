@@ -84,6 +84,9 @@ Accessibility and interaction invariants:
 - Business content comes from Markdown sources (plans, competency profiles, resumes, testimonials, etc.).
 - Manually rewrite Markdown into high-quality, semantic HTML that fits the BizLand template.
 - Do not build tooling to auto-convert Markdown.
+- Markdown is editorial source-of-truth for narrative drafting, not render input for automated page generation.
+- Do not programmatically consume localized Markdown to assemble page narrative content.
+- The model must read Markdown and write final page copy manually into templates/data with source-faithful meaning.
 - If a Markdown source contains client-identifying details (e.g., a real company name), derive an anonymized public label in HTML only if Caesar provides it; otherwise use `<!-- MISSING: ... -->`.
 - For potentially identifying quantities/timelines, prefer ranges unless Caesar explicitly approves exact public values.
 
@@ -93,6 +96,8 @@ Narrative editing safety:
 - Do not use external translation tooling (web translators, MT APIs, browser translation features) unless Caesar explicitly approves it for the task.
 - For translation work, use English as canonical source and translate block-by-block while preserving block types and list cardinality.
 - A passing `i18n:validate`/`build`/`test:contracts` run is required but never sufficient to claim translation quality.
+- Treat parenthetical model-meta artifacts as blocking defects (e.g., explanatory asides that do not belong in published prose).
+- Facts that appear in parentheses must be narrated properly in sentence form unless parentheses are semantically required (acronym expansion, units, legal names).
 
 ---
 
