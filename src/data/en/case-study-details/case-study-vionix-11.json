@@ -39,7 +39,7 @@
         {
           "type": "list",
           "items": [
-            "Legacy Operating System: The target devices ran Windows CE, requiring development on the older.NET Compact Framework (.NET 3.5).",
+            "Legacy Operating System: The target devices ran Windows CE, requiring development on the older DotNET Compact Framework (version 3.5).",
             "User Proficiency: The warehouse staff were not technical users. The interface had to be drastically simple to ensure adoption and prevent confusion.",
             "Vendor Resistance: The ERP provider did not natively support third-party mobile devices, creating potential friction in defining the interface."
           ]
@@ -58,7 +58,7 @@
           "type": "ordered",
           "items": [
             "Stakeholder Alignment: Vionix facilitated a concept phase with the client's IT lead to define the workflow. Crucially, Vionix engaged the ERP vendor management early to formalise the interface specification, bypassing initial resistance from their support teams.",
-            "Robust Protocol Selection: Vionix implemented a SOAP-based interface. This choice provided strict type safety within the constraints of the.NET Compact Framework and ensured seamless integration with the ERP's existing technology stack.",
+            "Robust Protocol Selection: Vionix implemented a SOAP-based interface. This choice provided strict type safety within the constraints of the DotNET Compact Framework and ensured seamless integration with the ERP's existing technology stack.",
             "Targeted Development: Vionix built a bespoke client application in C# (.NET 3.5), strictly optimising for the limited resources of Windows CE.",
             "\"Zero-Training\" UX Design: Vionix designed the user interface to be minimalist and linear, guiding the user through the scan-and-book process without requiring knowledge of the underlying system."
           ]

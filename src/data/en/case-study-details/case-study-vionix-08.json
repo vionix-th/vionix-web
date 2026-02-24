@@ -70,7 +70,7 @@
         },
         {
           "type": "p",
-          "text": "3. Used SQL Server Views as the \"source of truth\" for data contracts Rather than writing custom extraction programs to transform schema A into schema B, Vionix exposed server-side Views (with computed fields where necessary) that represented exactly what the client needed. Administrators could configure filters (for example \"sync only public product groups, exclude wholesale categories\") that were applied as SQL WHERE clauses."
+          "text": "3. Used SQL Server Views as the \"source of truth\" for data contracts Rather than writing custom extraction programs to transform schema A into schema B, Vionix exposed server-side Views (with computed fields where necessary) that represented exactly what the client needed. Administrators could configure filters for example \"sync only public product groups, exclude wholesale categories\" that were applied as SQL WHERE clauses."
         },
         {
           "type": "p",

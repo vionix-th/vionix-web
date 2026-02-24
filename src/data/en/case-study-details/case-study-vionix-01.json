@@ -75,7 +75,7 @@
         },
         {
           "type": "p",
-          "text": "3. View-Based Abstraction Encapsulated common join patterns (for example sales transactions + stock movements + outlet metadata) into database views. This eliminated redundant query logic and ensured consistency."
+          "text": "3. View-Based Abstraction Encapsulated common join patterns, for example sales transactions plus stock movements plus outlet metadata, into database views. This eliminated redundant query logic and ensured consistency."
         },
         {
           "type": "p",
@@ -87,13 +87,13 @@
         },
         {
           "type": "p",
-          "text": "6. Transactional Calculation Architecture Stopped relying on snapshot data (which required locks to ensure consistency). Instead, summed all sales, returns, and stock movements transactionally, then correlated with annual physical inventory counts. This approach:"
+          "text": "6. Transactional Calculation Architecture Stopped relying on snapshot data, which required locks to ensure consistency. Instead, summed all sales, returns, and stock movements transactionally, then correlated with annual physical inventory counts. This approach:"
         },
         {
           "type": "list",
           "items": [
             "Eliminated the need for long-running locks",
-            "Made manual corrections (for example inventory adjustments) immediately visible across the system",
+            "Made manual corrections, for example inventory adjustments, immediately visible across the system",
             "Drastically reduced faulty records from stale snapshots"
           ]
         },
@@ -129,7 +129,7 @@
             "Runtime reduction: 4 hours -> 30 minutes for critical distribution reports",
             "Zero system locks: HQ IT infrastructure no longer frozen during report generation",
             "Eliminated daily crashes: Reports ran reliably every morning",
-            "Immediate data propagation: Manual corrections (for example inventory adjustments) reflected instantly, not after overnight batch jobs",
+            "Immediate data propagation: Manual corrections, for example inventory adjustments, reflected instantly, not after overnight batch jobs",
             "Restored credibility: Became the only IT staff member trusted by the Head of Sales, ending the perception of technical incompetence"
           ]
         }
@@ -141,7 +141,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Technical pragmatism over perfectionism Rather than demanding a full system rewrite, the solution worked within existing constraints (dual databases, legacy POS). Strategic indexing and view consolidation delivered 87.5% improvement without touching the core application."
+          "text": "Technical pragmatism over perfectionism Rather than demanding a full system rewrite, the solution worked within existing constraints in a dual-database legacy POS environment. Strategic indexing and view consolidation delivered 87.5% improvement without touching the core application."
         },
         {
           "type": "p",
