@@ -160,7 +160,7 @@
         <ol>
           <li><a href="/de/index.html">Startseite</a></li>
           <li><a href="/de/case-studies.html">Fallstudien</a></li>
-          <li class="current">Cross-Plattform-Neuaufbau für Messsoftware</li>
+          <li class="current">Von Spaghetti zu Strategie</li>
         </ol>
       </nav>
     </div>
@@ -171,86 +171,86 @@
       <div class="case-study-wrap">
         <a class="back-link" href="/de/case-studies.html"><i class="bi bi-arrow-left"></i> Zurück zu allen Fallstudien</a>
 
-        <h1>Cross-Plattform-Neuaufbau für Messsoftware</h1>
+        <h1>Von Spaghetti zu Strategie: Einen Spectrum-Analyzer-Software-Stack neu aufbauen</h1>
 
         
         <h3>Kurzprofil</h3>
         
         
-        <p>Delivery model: Principal-led engagement (Stefan, Founder &amp; Principal Consultant) Client: Helios RF Systems (German RF systems manufacturer)</p>
+        <p>Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Helios RF Systems (deutscher Hersteller von HF-Systemen).</p>
         
         
         
-        <p>A German manufacturer of handheld spectrum analyzers faced a critical problem: their flagship PC software had become unmaintainable. Originally built by a single developer using direct Windows API calls, the codebase had devolved into spaghetti code where every bug fix triggered new regressions. The software - bundled free with hardware as a customer acquisition tool - had stopped being a selling point and started costing sales. The CEO needed a complete rebuild that would run cross-platform (Windows, macOS, Linux), support a sustainable internal development process, and restore the software role as a competitive differentiator.</p>
+        <p>Ein deutscher Hersteller handgehaltener Spektrumanalysatoren stand vor einem kritischen Problem: Die zentrale PC-Software war nicht mehr wartbar. Ursprünglich von einem einzelnen Entwickler mit direkten Windows-API-Aufrufen erstellt, war die Codebasis zu Spaghetti-Code verkommen, bei dem jeder Bugfix neue Regressionen auslöste. Die Software, die als kostenfreies Hardware-Bundle der Kundengewinnung dienen sollte, schadete inzwischen dem Vertrieb. Der CEO forderte einen vollständigen Neuaufbau mit Plattformparität für Windows, macOS und Linux, tragfähigem Entwicklungsprozess und erneuter Differenzierung im Wettbewerb.</p>
         
         
         
         <h3>Die Herausforderung</h3>
         
         
-        <p>The legacy application had no coherent architecture. Features had been added &quot;on demand&quot; over years, and the original developer was overwhelmed by mounting technical debt. Every extension - whether a new measurement mode, export format, or visualization option - broke existing functionality.</p>
+        <p>Die Legacy-Anwendung besaß keine konsistente Architektur. Funktionen wurden über Jahre auf Zuruf ergänzt, der ursprüngliche Entwickler war unter der technischen Schuld kollabiert. Jede Erweiterung, ob neuer Messmodus, Exportformat oder Visualisierungsoption, beschädigte bestehende Funktionalität.</p>
         
         
         
-        <p>The business impact was measurable: the software was no longer a credible marketing asset. Competitors like Rohde &amp; Schwarz and Agilent offered polished, multi-platform tools; this manufacturer offering felt brittle and outdated. The CEO frustration centered on three points: declining feature velocity, recurring crashes, and platform lock-in to Windows.</p>
+        <p>Die Auswirkungen waren messbar: Die Software war als Marketinginstrument nicht mehr glaubwürdig. Wettbewerber wie Rohde und Schwarz sowie Agilent lieferten ausgereifte Multi-Plattform-Tools, während die Lösung des Herstellers fragil und veraltet wirkte. Der CEO benannte drei Kernprobleme: sinkende Feature-Geschwindigkeit, wiederkehrende Abstürze und Windows-Lock-in.</p>
         
         
         
         <h3>Rahmenbedingungen</h3>
         
         
-        <p>Cross-Platform Mandate The new software had to run identically on Windows, macOS, and Linux without separate codebases.</p>
+        <p>Plattformmandat Die neue Software musste auf Windows, macOS und Linux identisch laufen, ohne getrennte Codebasen.</p>
         
         
         
-        <p>Legacy Hardware Support End users - often university professors - operated older PCs with limited GPU capabilities. The solution needed both hardware-accelerated rendering and a software fallback.</p>
+        <p>Legacy-Hardware-Support Endnutzer, oft Professoren, arbeiteten mit älteren Rechnern und begrenzter GPU-Leistung. Die Lösung brauchte sowohl hardwarebeschleunigtes Rendering als auch einen Software-Fallback.</p>
         
         
         
-        <p>Accuracy Over Speed Measurement results had to be mathematically correct; performance was secondary but still critical for real-time spectrum visualization.</p>
+        <p>Korrektheit vor Geschwindigkeit Messergebnisse mussten mathematisch korrekt sein. Performance war zweitrangig, blieb aber für Echtzeit-Spektrumvisualisierung kritisch.</p>
         
         
         
         <h3>Vorgehen</h3>
         
         
-        <p>1. Framework Selection: Qt + C++ Qt was chosen for its mature cross-platform abstractions and native performance. C++ ensured compatibility with existing mathematical libraries and low-level device communication.</p>
+        <p>1. Framework-Entscheidung: Qt plus C++ Qt wurde wegen reifer Cross-Platform-Abstraktionen und nativer Performance gewählt. C++ stellte Kompatibilität zu vorhandenen mathematischen Bibliotheken und gerätenaher Kommunikation sicher.</p>
         
         
         
-        <p>2. Team Assembly &amp; Coordination Two additional developers were hired to work alongside the hardware and firmware teams. The engagement included technical leadership - not just code migration, but establishing coding standards, review processes, and architectural patterns.</p>
+        <p>2. Teamaufbau und Koordination Zwei zusätzliche Entwickler wurden eingestellt und eng mit Hardware- und Firmware-Teams verzahnt. Das Engagement umfasste technische Führung, nicht nur Code-Portierung: Coding-Standards, Review-Prozesse und Architekturmuster wurden eingeführt.</p>
         
         
         
-        <p>3. Modular Port of Legacy Features Existing modules were incrementally migrated into the new Qt framework:</p>
+        <p>3. Modulare Migration der Legacy-Funktionalität Bestehende Module wurden inkrementell in das neue Qt-Framework überführt:</p>
         
         
         
         <ul>
           
-          <li>Real-time spectrum visualization (OpenGL-accelerated with software fallback)</li>
+          <li>Echtzeit-Spektrumvisualisierung (OpenGL-beschleunigt mit Software-Fallback)</li>
           
-          <li>Waterfall diagrams and multi-domain displays</li>
+          <li>Wasserfalldiagramme und Multi-Domain-Darstellungen</li>
           
-          <li>Automated measurement templates for specific frequency bands</li>
+          <li>Automatisierte Messvorlagen für definierte Frequenzbänder</li>
           
-          <li>Multi-format data export (CSV, proprietary formats)</li>
+          <li>Datenexport in mehreren Formaten (CSV und proprietäre Formate)</li>
           
-          <li>Pseudocode interpreter for remote device control</li>
+          <li>Pseudocode-Interpreter zur Fernsteuerung von Geräten</li>
           
         </ul>
         
         
         
-        <p>4. Custom FTDI Communication Layer An in-house Qt wrapper was built around the FTDI chip interface to abstract low-level USB communication and provide a clean API for the application layer.</p>
+        <p>4. Eigene FTDI-Kommunikationsschicht Um Low-Level-USB-Kommunikation zu abstrahieren, entwickelte Vionix einen internen Qt-Wrapper für die FTDI-Schnittstelle mit sauberer API für die Anwendungsebene.</p>
         
         
         
-        <p>5. Theming Framework for Professional UI A custom Qt theming engine was implemented to ensure the interface met commercial polish standards expected by enterprise and academic buyers.</p>
+        <p>5. Theming-Framework für professionelle UI Es wurde eine eigene Qt-Theming-Engine umgesetzt, damit die Oberfläche den Qualitätsanspruch von Industrie- und Hochschulkunden erfüllt.</p>
         
         
         
-        <p>6. Documentation &amp; Knowledge Transfer Source code was documented inline and processed with Doxygen to auto-generate developer documentation. Five core design patterns were standardized across the architecture to reduce cognitive load for future maintainers. Version control migrated to Git.</p>
+        <p>6. Dokumentation und Wissenstransfer Quellcode wurde inline dokumentiert und per Doxygen als Entwicklerdokumentation erzeugt. Fünf zentrale Designmuster wurden architekturweit standardisiert, um kognitive Last für spätere Maintainer zu senken. Versionskontrolle wurde auf Git umgestellt.</p>
         
         
         
@@ -259,13 +259,13 @@
         
         <ul>
           
-          <li>A production-ready, cross-platform desktop application (Windows, macOS, Linux)</li>
+          <li>Produktionsreife Cross-Platform-Desktopanwendung für Windows, macOS und Linux</li>
           
-          <li>Modular architecture supporting real-time data visualization, measurement automation, and extensibility</li>
+          <li>Modulare Architektur für Echtzeit-Visualisierung, Messautomatisierung und Erweiterbarkeit</li>
           
-          <li>Doxygen-generated developer documentation and clean-code practices embedded in the team workflow</li>
+          <li>Mit Doxygen generierte Entwicklerdokumentation plus verankerte Clean-Code-Praktiken im Teamablauf</li>
           
-          <li>An open-source plugin ecosystem enabling users to write custom measurement modules and contribute feature ideas</li>
+          <li>Open-Source-Plugin-Ökosystem, mit dem Nutzer eigene Messmodule entwickeln und Featureideen beitragen konnten</li>
           
         </ul>
         
@@ -274,37 +274,37 @@
         <h3>Ergebnisse</h3>
         
         
-        <p>Software Regained Marketing Value The rebuilt application was showcased at major German trade exhibitions, where competitors acknowledged its technical quality. It returned to its intended role: a value-add bundled with hardware to drive customer acquisition.</p>
+        <p>Software wieder als Vertriebsargument einsetzbar Die neu aufgebaute Anwendung wurde auf großen deutschen Fachmessen präsentiert, wo selbst Wettbewerber die technische Qualität anerkannten. Sie erfüllte wieder ihren Zweck als wertsteigerndes Hardware-Bundle zur Kundengewinnung.</p>
         
         
         
-        <p>Customer Acceptance &amp; Community Growth Users embraced the new tooling, and an active open-source community formed around the plugin architecture. Customers contributed extensions, measurement templates, and feature requests - turning the software into a co-developed ecosystem rather than a vendor-only product.</p>
+        <p>Kundenakzeptanz und Community-Wachstum Die neue Toolchain wurde breit angenommen, und um die Plugin-Architektur entstand eine aktive Open-Source-Community. Kunden lieferten Erweiterungen, Messvorlagen und Feature-Vorschläge. Aus einem Herstellerprodukt wurde ein koentwickeltes Ökosystem.</p>
         
         
         
-        <p>Internal Team Autonomy The manufacturer internal development team could independently maintain and extend the codebase post-handover. The combination of architectural documentation, design pattern consistency, and modular structure eliminated dependency on external consulting.</p>
+        <p>Interne Teamautonomie Nach der Übergabe konnte das interne Team die Codebasis eigenständig warten und erweitern. Architektur-Dokumentation, konsistente Designmuster und modulare Struktur reduzierten die Abhängigkeit von externer Beratung auf null.</p>
         
         
         
         <h3>Warum es funktioniert hat</h3>
         
         
-        <p>Architectural Discipline Over Quick Wins Rather than patching the legacy system, the engagement prioritized long-term maintainability: modular boundaries, documented patterns, and test-friendly abstractions. This upfront investment paid dividends in feature velocity once the foundation was stable.</p>
+        <p>Architekturdisziplin vor kurzfristigen Schnellgewinnen Statt das Legacy-System weiter zu flicken, priorisierte das Engagement langfristige Wartbarkeit: modulare Grenzen, dokumentierte Muster und testfreundliche Abstraktionen. Diese Vorleistung zahlte sich in der Feature-Geschwindigkeit aus, sobald das Fundament stabil war.</p>
         
         
         
-        <p>Cross-Functional Coordination Close collaboration between firmware, hardware, and software teams ensured the FTDI communication layer and measurement logic stayed synchronized. Technical decisions were not made in isolation; they reflected real constraints from the device side.</p>
+        <p>Cross-funktionale Koordination Die enge Zusammenarbeit von Firmware-, Hardware- und Software-Teams hielt FTDI-Kommunikation und Messlogik synchron. Entscheidungen wurden nicht isoliert getroffen, sondern entlang realer Gerätekonstraints.</p>
         
         
         
-        <p>User Extensibility as a Design Goal The open-source plugin model transformed users from passive consumers into active contributors. This distributed innovation reduced the manufacturer feature backlog and strengthened customer loyalty.</p>
+        <p>Nutzererweiterbarkeit als explizites Designziel Das Open-Source-Plugin-Modell machte Anwender von passiven Konsumenten zu aktiven Mitgestaltern. Die verteilte Innovation reduzierte den Hersteller-Backlog und stärkte Kundenbindung.</p>
         
         
         
         <h3>So hat Vionix gearbeitet</h3>
         
         
-        <p>The engagement combined hands-on development with team enablement. Leadership responsibilities included hiring, code review, architectural decisions, and coordination with hardware/firmware engineers. The project ran approximately one year from initial scoping to production release. At handover, the internal team operated autonomously with documented source code, standardized patterns, and a clear path for future extensions.</p>
+        <p>Das Engagement kombinierte hands-on Entwicklung mit Team-Enablement. Führungsaufgaben umfassten Hiring, Code-Reviews, Architekturentscheidungen und Abstimmung mit Hardware- sowie Firmware-Engineering. Das Projekt lief etwa ein Jahr von der Erstanalyse bis zum Produktionsrelease. Zur Übergabe arbeitete das interne Team autonom mit dokumentiertem Quellcode, standardisierten Mustern und klarem Erweiterungspfad.</p>
         
         
         
@@ -319,7 +319,7 @@
           <h3 class="mb-2">Ähnliche Herausforderung besprechen</h3>
           <p class="mb-0">Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.</p>
         </div>
-        <a class="btn btn-primary" href="/de/index. html#contact">Vionix kontaktieren</a>
+        <a class="btn btn-primary" href="/de/index.html#contact">Vionix kontaktieren</a>
       </div>
     </div>
   </section>

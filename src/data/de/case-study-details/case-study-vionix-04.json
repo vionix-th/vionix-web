@@ -1,0 +1,181 @@
+{
+  "pageTitleShort": "Monitoring-Schicht",
+  "heroTitle": "Bestände sichtbar machen: Wie eine Monitoring-Schicht die Datenerfassung über 80 Filialen stabilisierte",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Monitoring-Schicht"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Nordlicht Retail (deutscher Modehändler). Auslöser: Tägliche Bestands- und Verkaufsdaten aus Filialen kamen häufig nicht in der Zentrale an, was Disposition und Nachversorgung störte. Engagement-Typ: Infrastruktur-Rollout-Unterstützung plus individuelle Monitoring-Lösung. Zeitleiste: mehrphasig (VPN-Einführung, danach Monitoring-Implementierung und Failover-Fähigkeit)."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der Tagesbetrieb des Kunden hing von der verlässlichen nächtlichen Übertragung von Bestands- und Verkaufsdaten aus jeder Filiale in die Zentrale ab. In der Praxis kamen Daten jedoch regelmäßig nicht an."
+        },
+        {
+          "type": "p",
+          "text": "Die Ursachen waren vielfältig und nur schwer vorhersagbar:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Fragile Legacy-POS-Software (objektbasiert, nicht von Vionix entwickelt), die Transfers unzuverlässig auslöste",
+            "Uneinheitliche Telekommunikationsinfrastruktur: DSL-Ausfälle, Leitungsstörungen, physische Trennungen (Kabel gezogen oder beschädigt)",
+            "Keine Transparenz über Störungen: Die Zentrale bemerkte fehlende Daten oft erst am nächsten Morgen, wenn Planungsentscheidungen bereits verzögert waren"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Das Ergebnis war eine Kaskade operativer Reibung: ungeplante Bestandslücken, ineffiziente Nachversorgung und zunehmende Frustration im gesamten Unternehmen."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Keine Möglichkeit zum Ersatz der POS-Software: Das Legacy-System musste im Betrieb bleiben",
+            "Dezentrale Fehlerbilder: 80 geografisch verteilte Ausfallpunkte ohne zentrales Monitoring",
+            "Reaktive Arbeitsweise: Es gab keine Werkzeuge, um Konnektivitätsprobleme in Echtzeit zu erkennen und zu diagnostizieren"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der Kunde entschied eigenständig, gemeinsam mit der Deutschen Telekom ein bundesweites Unternehmens-VPN mit dedizierter Hardware aufzubauen, um die Konnektivität zu stabilisieren. Für die Umsetzung benötigte Telekom einen technisch belastbaren Partner auf Kundenseite, und Vionix übernahm diese Rolle."
+        },
+        {
+          "type": "p",
+          "text": "Was Vionix umgesetzt hat:"
+        },
+        {
+          "type": "ordered",
+          "items": [
+            "Gemeinsame Rollout-Planung mit der Deutschen Telekom für 80 Filialen",
+            "Schulung zu IPsec-VPN-Konfiguration und zertifikatsbasierter Authentifizierung",
+            "Bundesweite Bereitstellung und Konfiguration von VPN-Hardware und Software in allen Filialen"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ergebnis von Phase 1: Filialen waren jetzt über ein privates Netzwerk adressierbar, die Übertragungszuverlässigkeit verbesserte sich aber nicht grundlegend. Das VPN löste Routing- und Sicherheitsfragen, kompensierte jedoch weder Software-Instabilität noch lokale Infrastrukturprobleme."
+        },
+        {
+          "type": "p",
+          "text": "Da reine Konnektivität nicht ausreichte, implementierte Vionix zusätzlich eine proaktive Monitoring- und Steuerungsschicht."
+        },
+        {
+          "type": "p",
+          "text": "Was Vionix gebaut hat:"
+        },
+        {
+          "type": "ordered",
+          "items": [
+            "Heartbeat-Monitoring via SNMP über alle 80 Filialen zur Echtzeit-Erkennung von Verbindungsabbrüchen",
+            "Webbasiertes Monitoring-Dashboard für die Zentrale mit Live-Status aller Standorte",
+            "Automatische Alarmierung, sobald ein Standort offline geht",
+            "Manuelles On-Demand-Abrufen von Filialdaten statt Warten auf den nächsten geplanten Sync-Lauf",
+            "Fallback-Konnektivität über ISDN und analoge Einwahl, sodass POS-Systeme bei DSL-Ausfall weiterhin melden konnten",
+            "PPP-Verbindungen aus der Zentrale (ISDN oder analog), um Daten von nicht erreichbaren Filialen aktiv abzuholen"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Warum das funktionierte: Die Lösung verschob den Kunden von reaktiver Entdeckung (Probleme erst am nächsten Morgen sehen) zu proaktiver Behebung (Störungen sofort erkennen und Daten bei Bedarf manuell nachziehen)."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "VPN-Rollout für 80 Filialen (Hardware, IPsec-Konfiguration, Zertifikatsmanagement)",
+            "Individuelles SNMP-basiertes Monitoring-System mit Alarmierung",
+            "Webanwendung für Echtzeit-Transparenz und manuelle Datenabholung",
+            "Dualer Fallback-Transport (ISDN und analoges Modem) bei DSL-Ausfällen",
+            "Operative Übergabe inklusive Training der Zentrale zur eigenständigen Diagnose und Störungsbehebung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Keine Morgenüberraschungen mehr: Die Zentrale sah Konnektivitätsprobleme im Moment ihres Auftretens statt 12 Stunden später",
+            "Schnellere Wiederherstellung: Operatoren konnten Filialen sofort kontaktieren, Ursachen klären (Telekom-Ausfall, physische Trennung usw.) und passend eskalieren",
+            "Abruf auf Anforderung: Nach Wiederherstellung von DSL konnten Daten unmittelbar gezogen werden statt bis zum nächsten Sync-Fenster zu warten",
+            "Verlässlichere Bestandsplanung: Mit weniger Datenlücken wurden Nachversorgung und Umlagerungen deutlich planbarer",
+            "Kundenzufriedenheit: Das System zeigte seinen Wert klar, nachdem anfängliche Skepsis gegenüber dem VPN-Invest bestätigt oder widerlegt werden musste"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Rahmenbedingungen akzeptiert statt dagegen anzukämpfen Legacy-POS und instabile Infrastruktur verschwanden nicht kurzfristig. Die Monitoring-Schicht arbeitete um die Fragilität herum, statt auf eine teure und langsame Komplettablösung zu setzen."
+        },
+        {
+          "type": "p",
+          "text": "2. Self-Service-Fähigkeit für den Kunden geschaffen Die manuelle Abruffunktion machte die Zentrale zwischen Sync-Fenstern handlungsfähig. Probleme konnten am selben Tag gelöst und Daten wiederhergestellt werden."
+        },
+        {
+          "type": "p",
+          "text": "3. Mehrstufige Redundanz auf Transportebene ISDN- und Analog-Fallback stellten sicher, dass selbst bei kompletter DSL-Störung keine Daten verloren gingen. Das war für einen verteilten Filialbetrieb ohne lokale IT entscheidend."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Partnerkoordination: Gemeinsame Umsetzung mit der Deutschen Telekom, Vionix verantwortete die technische Konfiguration vor Ort, Telekom die Netz-Infrastruktur",
+            "Inkrementelle Lieferung: Zuerst VPN eingeführt, anschließend Monitoring- und Failover-Fähigkeiten ergänzt, sobald die Lücke eindeutig war",
+            "Training und Übergabe: Operatives Enablement der Zentrale, damit Monitoring, Diagnose und Datenabruf ohne Eskalation an Vionix funktionieren"
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

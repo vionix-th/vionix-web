@@ -1,0 +1,185 @@
+{
+  "pageTitleShort": "Forest Inventory Method",
+  "heroTitle": "From Research Scripts to Agency-Ready Software: Industrialising a Forest Inventory Method",
+  "backLabel": "Back to all case studies",
+  "breadcrumbs": {
+    "home": "Home",
+    "hub": "Case Studies",
+    "current": "Forest Inventory Method"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Snapshot",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Delivery model: Principal-led engagement (Stefan, Founder & Principal Consultant) Client: Canopy Metrics (German forestry analytics venture) Industry: Environmental science / forestry technology Audience: German regional forestry agencies (Bundeslander) Timeline: ~1 year Scope: Migrate novel forestry algorithms from university scripting tools to a deployable Windows desktop application"
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "The Challenge",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A researcher had developed a novel method for automated forest inventory - replacing manual tape-measure surveys with analysis of aerial imagery and infrared measurements. The underlying mathematics and algorithms worked, but they existed only as scripts in an obscure university tool (similar to MATLAB), designed for producing isolated research graphics, not end-user software."
+        },
+        {
+          "type": "p",
+          "text": "The situation had deteriorated: the researcher had parted ways with his original developer, leaving no path forward. The \"prototype\" had no user interface, required hardcoded parameters, and relied on copy-pasted code variants for different input scenarios. It could not be distributed, demonstrated to agencies, or operated by anyone outside the lab. The researcher believed he was close to a finished product; in reality, he had a proof-of-concept with no industrial foundation."
+        },
+        {
+          "type": "p",
+          "text": "Traditional forest inventory involved field teams physically measuring tree circumferences with tape measures to estimate timber volume per hectare - a labour-intensive, time-consuming process. The new method promised to automate this using remote sensing data, but only if the software could be reliably operated by forestry professionals, not just the researcher himself."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Constraints",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Strict confidentiality: The algorithm details were covered by a rigorous NDA; the case study must describe the engineering transformation, not the proprietary method itself.",
+            "Windows offline deployment: The target users (regional agencies) required a standalone desktop application, not a web service or cloud tool.",
+            "Performance demands: Rendering large map datasets in OpenGL required efficient memory management and GPU utilisation.",
+            "Commercialisation intent: The end goal was procurement by German Bundeslander, meaning the software needed to be presentation-ready and agency-appropriate."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Approach",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Assessed the Gap Between Research Code and Product The existing scripts were single-purpose, interpreter-based files with no abstraction layers. Parameters were hardcoded; input handling was brittle; there was no version control, no modularity, and no separation between algorithm logic and visualisation. The first step was acknowledging this was not \"nearly finished\" - it required a full rebuild around the existing mathematical core."
+        },
+        {
+          "type": "p",
+          "text": "2. Established an Industrial Development Environment Set up version control and defined development standards for a mixed team (interns, mathematicians, and the researcher). Introduced branching, code review practices, and a structured build system. This allowed mathematicians - who had basic programming skills - to contribute algorithm modules without destabilising the main codebase."
+        },
+        {
+          "type": "p",
+          "text": "3. Designed Clean Interfaces Between Mathematics and Software Rather than integrating raw mathematical code directly, defined clear API boundaries: mathematicians encapsulated their work in callable functions, and the lead developer integrated these into the application. This kept domain logic separate from UI, data handling, and rendering, making the codebase maintainable and testable."
+        },
+        {
+          "type": "p",
+          "text": "4. Migrated to Borland C++ and Built the Desktop Application Ported all algorithms from the university scripting tool to C++. Built the entire user interface from scratch, covering:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Import pipeline: parsers for various proprietary formats (binary, text-based, CSV variants, GPS device output).",
+            "Internal data model: a custom binary project format to persist intermediate state.",
+            "Visualisation: upgraded 2D graphics to OpenGL-rendered map views, with GPU-accelerated handling of large datasets.",
+            "Export options: CSV, database connectivity via ODBC and SQLite, enabling integration with external GIS or reporting systems.",
+            "Memory management: optimised for Windows desktop constraints, leveraging GPU memory for rendering operations."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "5. Validated Against Real-World Ground Truth The researcher conducted parallel field surveys using traditional tape-measure methods. These reference datasets were used to validate the software output, ensuring the ported algorithms produced results consistent with manual inventory. Correctness was confirmed through source code review, output comparison, and iterative feedback on visualisation accuracy and UI workflows."
+        },
+        {
+          "type": "p",
+          "text": "6. Prepared for Agency Demonstrations Delivered the application as a standard Windows installer with documentation (authored by the researcher). By the end of the engagement, the software was stable enough to present to German forestry authorities, and those demonstrations took place as planned."
+        },
+        {
+          "type": "p",
+          "text": "7. Handed Over a Maintainable Codebase Version-controlled source, clear architecture, modular algorithm integration, and documented handover materials were left in place. An experienced developer could take over without requiring deep domain knowledge of the mathematics."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "What Was Delivered",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Complete desktop application: Windows installer, offline operation, GUI-driven workflows for import, processing, visualisation, and export.",
+            "Multi-format import engine: Handled proprietary binary and text formats from measurement devices, GPS data, and CSV variants.",
+            "Custom project file format: Binary storage for intermediate results and session persistence.",
+            "Database export capability: ODBC and SQLite integration for downstream analysis and reporting.",
+            "OpenGL-based visualisation: GPU-accelerated rendering of large forestry map datasets, replacing static 2D graphics.",
+            "Version-controlled codebase: Structured for team collaboration, with clear interfaces between mathematical modules and application logic.",
+            "Training and handover materials: Interns and mathematicians were onboarded into the development environment; clean handover documentation enabled continuity."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Results",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "All original algorithms and mathematical models were successfully ported from the university scripting environment into the industrial C++ application. The software transitioned from a researcher-only prototype with hardcoded parameters to a demonstrable product presented to German regional forestry agencies."
+        },
+        {
+          "type": "p",
+          "text": "The engineering gap was closed: what had been a collection of single-purpose scripts became a deployable, user-facing application capable of importing real-world sensor data, running the proprietary analysis, and exporting results in agency-compatible formats."
+        },
+        {
+          "type": "p",
+          "text": "However, the project did not reach commercial release. The researcher shifted focus to expanding the method with new ideas rather than finalising the existing product for procurement. After one year, when the software was technically functional but commercialisation remained indefinitely deferred, the engagement concluded as the contract term ended."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Why It Worked",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Clarity about the engineering deficit: The researcher initially believed the prototype was \"nearly done.\" Honest assessment of the gap - and the work required to close it - set realistic expectations and focused effort on industrial-grade foundations rather than feature additions."
+        },
+        {
+          "type": "p",
+          "text": "Separation of concerns: Mathematicians contributed domain logic through defined interfaces; they did not need to become software engineers. This preserved their focus on correctness while keeping the application architecture clean."
+        },
+        {
+          "type": "p",
+          "text": "Incremental validation against ground truth: Real-world field survey data provided a reference for correctness. This de-risked the port: algorithmic output could be continuously compared to known-good results, catching regressions early."
+        },
+        {
+          "type": "p",
+          "text": "Modular, maintainable architecture: The codebase was structured for handover. When the engagement ended, the software was not abandoned - it was ready for another developer to continue, should the researcher choose to pursue productisation later."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "How Vionix Worked",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Team composition: One lead developer (architect, hands-on implementer, and mentor), 2-3 rotating interns (variable skill levels), and 2-3 mathematicians (algorithm authors with basic version control literacy)."
+        },
+        {
+          "type": "p",
+          "text": "Division of responsibility: The lead developer owned the application architecture, UI, data pipeline, and integration. Mathematicians encapsulated their work in callable modules. Interns contributed where their skills allowed, with mentoring on development practices."
+        },
+        {
+          "type": "p",
+          "text": "Validation and feedback loops: The researcher validated output correctness, UI workflows, and visualisation fidelity. The development team relied on his domain expertise for acceptance criteria, not for software design decisions."
+        },
+        {
+          "type": "p",
+          "text": "Handover: The engagement concluded when the contract term ended and commercialisation stalled due to scope expansion. A clean, version-controlled codebase and handover documentation were left in place, enabling continuity if the project resumed under new development leadership."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Discuss a similar challenge",
+    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
+    "button": "Contact Vionix",
+    "href": "index. html#contact"
+  }
+}

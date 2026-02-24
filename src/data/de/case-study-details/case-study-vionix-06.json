@@ -1,0 +1,165 @@
+{
+  "pageTitleShort": "Von Spaghetti zu Strategie",
+  "heroTitle": "Von Spaghetti zu Strategie: Einen Spectrum-Analyzer-Software-Stack neu aufbauen",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Von Spaghetti zu Strategie"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Helios RF Systems (deutscher Hersteller von HF-Systemen)."
+        },
+        {
+          "type": "p",
+          "text": "Ein deutscher Hersteller handgehaltener Spektrumanalysatoren stand vor einem kritischen Problem: Die zentrale PC-Software war nicht mehr wartbar. Ursprünglich von einem einzelnen Entwickler mit direkten Windows-API-Aufrufen erstellt, war die Codebasis zu Spaghetti-Code verkommen, bei dem jeder Bugfix neue Regressionen auslöste. Die Software, die als kostenfreies Hardware-Bundle der Kundengewinnung dienen sollte, schadete inzwischen dem Vertrieb. Der CEO forderte einen vollständigen Neuaufbau mit Plattformparität für Windows, macOS und Linux, tragfähigem Entwicklungsprozess und erneuter Differenzierung im Wettbewerb."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Die Legacy-Anwendung besaß keine konsistente Architektur. Funktionen wurden über Jahre auf Zuruf ergänzt, der ursprüngliche Entwickler war unter der technischen Schuld kollabiert. Jede Erweiterung, ob neuer Messmodus, Exportformat oder Visualisierungsoption, beschädigte bestehende Funktionalität."
+        },
+        {
+          "type": "p",
+          "text": "Die Auswirkungen waren messbar: Die Software war als Marketinginstrument nicht mehr glaubwürdig. Wettbewerber wie Rohde und Schwarz sowie Agilent lieferten ausgereifte Multi-Plattform-Tools, während die Lösung des Herstellers fragil und veraltet wirkte. Der CEO benannte drei Kernprobleme: sinkende Feature-Geschwindigkeit, wiederkehrende Abstürze und Windows-Lock-in."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Plattformmandat Die neue Software musste auf Windows, macOS und Linux identisch laufen, ohne getrennte Codebasen."
+        },
+        {
+          "type": "p",
+          "text": "Legacy-Hardware-Support Endnutzer, oft Professoren, arbeiteten mit älteren Rechnern und begrenzter GPU-Leistung. Die Lösung brauchte sowohl hardwarebeschleunigtes Rendering als auch einen Software-Fallback."
+        },
+        {
+          "type": "p",
+          "text": "Korrektheit vor Geschwindigkeit Messergebnisse mussten mathematisch korrekt sein. Performance war zweitrangig, blieb aber für Echtzeit-Spektrumvisualisierung kritisch."
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Framework-Entscheidung: Qt plus C++ Qt wurde wegen reifer Cross-Platform-Abstraktionen und nativer Performance gewählt. C++ stellte Kompatibilität zu vorhandenen mathematischen Bibliotheken und gerätenaher Kommunikation sicher."
+        },
+        {
+          "type": "p",
+          "text": "2. Teamaufbau und Koordination Zwei zusätzliche Entwickler wurden eingestellt und eng mit Hardware- und Firmware-Teams verzahnt. Das Engagement umfasste technische Führung, nicht nur Code-Portierung: Coding-Standards, Review-Prozesse und Architekturmuster wurden eingeführt."
+        },
+        {
+          "type": "p",
+          "text": "3. Modulare Migration der Legacy-Funktionalität Bestehende Module wurden inkrementell in das neue Qt-Framework überführt:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Echtzeit-Spektrumvisualisierung (OpenGL-beschleunigt mit Software-Fallback)",
+            "Wasserfalldiagramme und Multi-Domain-Darstellungen",
+            "Automatisierte Messvorlagen für definierte Frequenzbänder",
+            "Datenexport in mehreren Formaten (CSV und proprietäre Formate)",
+            "Pseudocode-Interpreter zur Fernsteuerung von Geräten"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "4. Eigene FTDI-Kommunikationsschicht Um Low-Level-USB-Kommunikation zu abstrahieren, entwickelte Vionix einen internen Qt-Wrapper für die FTDI-Schnittstelle mit sauberer API für die Anwendungsebene."
+        },
+        {
+          "type": "p",
+          "text": "5. Theming-Framework für professionelle UI Es wurde eine eigene Qt-Theming-Engine umgesetzt, damit die Oberfläche den Qualitätsanspruch von Industrie- und Hochschulkunden erfüllt."
+        },
+        {
+          "type": "p",
+          "text": "6. Dokumentation und Wissenstransfer Quellcode wurde inline dokumentiert und per Doxygen als Entwicklerdokumentation erzeugt. Fünf zentrale Designmuster wurden architekturweit standardisiert, um kognitive Last für spätere Maintainer zu senken. Versionskontrolle wurde auf Git umgestellt."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Produktionsreife Cross-Platform-Desktopanwendung für Windows, macOS und Linux",
+            "Modulare Architektur für Echtzeit-Visualisierung, Messautomatisierung und Erweiterbarkeit",
+            "Mit Doxygen generierte Entwicklerdokumentation plus verankerte Clean-Code-Praktiken im Teamablauf",
+            "Open-Source-Plugin-Ökosystem, mit dem Nutzer eigene Messmodule entwickeln und Featureideen beitragen konnten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Software wieder als Vertriebsargument einsetzbar Die neu aufgebaute Anwendung wurde auf großen deutschen Fachmessen präsentiert, wo selbst Wettbewerber die technische Qualität anerkannten. Sie erfüllte wieder ihren Zweck als wertsteigerndes Hardware-Bundle zur Kundengewinnung."
+        },
+        {
+          "type": "p",
+          "text": "Kundenakzeptanz und Community-Wachstum Die neue Toolchain wurde breit angenommen, und um die Plugin-Architektur entstand eine aktive Open-Source-Community. Kunden lieferten Erweiterungen, Messvorlagen und Feature-Vorschläge. Aus einem Herstellerprodukt wurde ein koentwickeltes Ökosystem."
+        },
+        {
+          "type": "p",
+          "text": "Interne Teamautonomie Nach der Übergabe konnte das interne Team die Codebasis eigenständig warten und erweitern. Architektur-Dokumentation, konsistente Designmuster und modulare Struktur reduzierten die Abhängigkeit von externer Beratung auf null."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Architekturdisziplin vor kurzfristigen Schnellgewinnen Statt das Legacy-System weiter zu flicken, priorisierte das Engagement langfristige Wartbarkeit: modulare Grenzen, dokumentierte Muster und testfreundliche Abstraktionen. Diese Vorleistung zahlte sich in der Feature-Geschwindigkeit aus, sobald das Fundament stabil war."
+        },
+        {
+          "type": "p",
+          "text": "Cross-funktionale Koordination Die enge Zusammenarbeit von Firmware-, Hardware- und Software-Teams hielt FTDI-Kommunikation und Messlogik synchron. Entscheidungen wurden nicht isoliert getroffen, sondern entlang realer Gerätekonstraints."
+        },
+        {
+          "type": "p",
+          "text": "Nutzererweiterbarkeit als explizites Designziel Das Open-Source-Plugin-Modell machte Anwender von passiven Konsumenten zu aktiven Mitgestaltern. Die verteilte Innovation reduzierte den Hersteller-Backlog und stärkte Kundenbindung."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Das Engagement kombinierte hands-on Entwicklung mit Team-Enablement. Führungsaufgaben umfassten Hiring, Code-Reviews, Architekturentscheidungen und Abstimmung mit Hardware- sowie Firmware-Engineering. Das Projekt lief etwa ein Jahr von der Erstanalyse bis zum Produktionsrelease. Zur Übergabe arbeitete das interne Team autonom mit dokumentiertem Quellcode, standardisierten Mustern und klarem Erweiterungspfad."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

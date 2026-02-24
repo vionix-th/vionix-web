@@ -1,0 +1,138 @@
+{
+  "pageTitleShort": "Als der Webshop bereit war",
+  "heroTitle": "Als der Webshop bereit war, das Back-End aber nicht",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Als der Webshop bereit war"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Skyline Access (deutsche Vermietgruppe für Hubarbeitsbühnen). Flottengröße: über 1.000 Maschinen an bundesweiten Standorten. Kernsystem: InterSystems-Caché-Datenbank für Vermietbestand, Wartungsfenster und Kundenaufträge. Projektdauer: 3 Monate (Architektur, Umsetzung und Go-live)."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ein großer deutscher Vermieter hatte eine externe Webagentur mit dem Aufbau eines Online-Buchungsportals beauftragt. Das Projekt war weit fortgeschritten, Design und Nutzerführung funktionierten, ein Launch-Termin war fix. Was fehlte, war die Verbindung zum produktiven Vermiet-Back-End. Die Webagentur hatte den Shop isoliert entwickelt, ohne Sicht auf bestehende IT-Infrastruktur, Datenbankarchitektur und API-Anforderungen. Als der Kunde Vionix zum Verbinden der Systeme hinzuzog, wurde klar: Integration war nicht nur vertagt, sie war nie belastbar spezifiziert worden."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Termindruck: Zwischen Vermieter und Webagentur war bereits ein öffentlicher Launch-Termin zugesagt. Die Integration musste ohne Terminbruch gelöst werden."
+        },
+        {
+          "type": "p",
+          "text": "Organisatorische Silos: Webagentur und interne IT arbeiteten unabhängig voneinander, ohne Vorab-Abstimmung zu Infrastruktur- oder Sicherheitsanforderungen."
+        },
+        {
+          "type": "p",
+          "text": "Systemkomplexität: Die Caché-Datenbank verwaltete nicht nur Verfügbarkeiten, sondern auch Wartungsfenster, Maschinen-Gruppenersatz, Distanzlogik zum Einsatzort und überlappende Reservierungen. Eine scheinbar einfache Verfügbarkeitsprüfung erforderte Abfragen über mehrere voneinander abhängige Datenebenen."
+        },
+        {
+          "type": "p",
+          "text": "Sicherheitsreife: Die interne IT hatte bislang weder öffentliche APIs exponiert noch DMZ-Strukturen betrieben. Zuerst musste ein belastbares Sicherheitsfundament geschaffen werden."
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix moderierte einen Drei-Parteien-Workshop (interne IT, Webagentur, Vionix), um die fehlende Integrationsschicht vollständig zu modellieren."
+        },
+        {
+          "type": "ordered",
+          "items": [
+            "Infrastruktur-Assessment: Festgestellt wurde, dass weder öffentliche IP-Zuweisung noch DMZ-Topologie oder Firewall-Regeln für externe API-Exposition vorhanden waren. Vionix entwarf eine sichere Perimeter-Architektur mit dediziertem DMZ-Server für das CSP Gateway.",
+            "Firewall- und Netzwerk-Hardening: Gemeinsam mit der internen IT wurden Enterprise-Firewall-Regeln, notwendige TCP-Portfreigaben und Netzsegmentierung zwischen öffentlichem Gateway und internem Caché-System umgesetzt.",
+            "CSP-Gateway-Bereitstellung: Das InterSystems CSP Gateway wurde ausgerollt und abgesichert, um als HTTP-Brücke zwischen Webshop und Caché-Datenbank zu dienen.",
+            "REST-API-Design: Ein REST-Endpunkt für Maschinenverfügbarkeit wurde implementiert. Die API-Logik berücksichtigte Maschinen-Gruppenersatz, Wartungsfenster, Distanzfilterung zum Einsatzort und gegengeprüfte Reservierungsdaten, um bereits gebuchte Maschinen zuverlässig auszuschließen.",
+            "Datenqualitäts-Feedbackloop: Während der Tests zeigte der Webshop inkonsistente Verfügbarkeiten. Die Analyse legte Legacy-Datenfehler offen, etwa als verfügbar markierte Maschinen mit geplanter Wartung. Vionix verfolgte die Ursachen bis zu historischen Erfassungsfehlern zurück und ermöglichte gezielte Bereinigung.",
+            "Übergabe und Wissenstransfer: Die interne IT erhielt Training zu Firewall-Betrieb, DMZ-Härtung, API-Monitoring und Sicherheitsauswirkungen öffentlicher Dienste."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Sichere API-Infrastruktur: DMZ-gehostetes CSP Gateway mit REST-Endpunkt, gehärtet für öffentliche Erreichbarkeit",
+            "Verfügbarkeits-Logik-Engine: Mehrfaktorberechnung über Maschinen-Gruppen, Wartungsfenster, Distanz und Reservierungen",
+            "Firewall- und Netzwerksicherheitskonfiguration: Enterprise-Regeln, Portmanagement und Segmentierung",
+            "Operative Dokumentation und Training: interne IT für API-Betrieb, Sicherheitslage und Troubleshooting befähigt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der Webshop ging nach drei Monaten Integrationsarbeit termingerecht live. Vionix übergab Infrastruktur und API-Komponenten vollständig an die interne IT, die den laufenden Betrieb übernahm. Auch ohne nachgelagerte Adoptionsmetriken wurde ein strategischer Vertriebskanal freigeschaltet, relevant für ein Unternehmen mit über 40 Standorten im wettbewerbsintensiven deutschen Markt für Hubarbeitsbühnenvermietung."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Frühe Intervention verhinderte teure Nacharbeit Die gemeinsame technische Klärung vor weiterer Implementierung verhinderte ein späteres Nachrüsten in inkompatible Architekturen."
+        },
+        {
+          "type": "p",
+          "text": "Security-first-Design Der DMZ- und API-Layer wurde von Beginn an produktionsgerecht abgesichert. So wurde das typische Muster vermieden, erst unsicher zu starten und später mühsam nachzuhärten."
+        },
+        {
+          "type": "p",
+          "text": "Domänenlogik im API-Back-End zentralisiert Die komplexe Verfügbarkeitslogik blieb serverseitig in der API statt im Webshop-Frontend. Dadurch blieb sie konsistent und für weitere Vertriebskanäle wiederverwendbar."
+        },
+        {
+          "type": "p",
+          "text": "Datenqualität als positiver Nebeneffekt Die Integrationstests legten über Jahre angesammelte operative Datenfehler offen und machten das API-Projekt zugleich zu einer wirksamen Datenhygiene-Initiative."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix arbeitete als technischer Vermittler zwischen Webagentur und interner IT und übersetzte Geschäftsanforderungen in belastbare Infrastrukturentscheidungen. Nach Architektur und Umsetzung der Integrationsschicht wurden alle Assets sowie Betriebswissen an das Kundenteam übergeben, sodass Betrieb und Weiterentwicklung eigenständig möglich waren."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

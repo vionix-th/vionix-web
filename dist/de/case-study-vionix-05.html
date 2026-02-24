@@ -160,7 +160,7 @@
         <ol>
           <li><a href="/de/index.html">Startseite</a></li>
           <li><a href="/de/case-studies.html">Fallstudien</a></li>
-          <li class="current">Von Forschungsskripten zu auslieferbarer Agentursoftware</li>
+          <li class="current">Forstinventur-Methode industrialisiert</li>
         </ol>
       </nav>
     </div>
@@ -171,28 +171,28 @@
       <div class="case-study-wrap">
         <a class="back-link" href="/de/case-studies.html"><i class="bi bi-arrow-left"></i> Zurück zu allen Fallstudien</a>
 
-        <h1>Von Forschungsskripten zu auslieferbarer Agentursoftware</h1>
+        <h1>Von Forschungsskripten zur behördentauglichen Software: Eine Forstinventur-Methode industrialisiert</h1>
 
         
         <h3>Kurzprofil</h3>
         
         
-        <p>Delivery model: Principal-led engagement (Stefan, Founder &amp; Principal Consultant) Client: Canopy Metrics (German forestry analytics venture) Industry: Environmental science / forestry technology Audience: German regional forestry agencies (Bundeslander) Timeline: ~1 year Scope: Migrate novel forestry algorithms from university scripting tools to a deployable Windows desktop application</p>
+        <p>Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Canopy Metrics (deutsches Forst-Analytics-Vorhaben). Branche: Umweltwissenschaft und Forsttechnologie. Zielgruppe: deutsche Landesforstbehörden. Zeitleiste: etwa ein Jahr. Umfang: Überführung neuartiger Forstalgorithmen aus universitären Skriptwerkzeugen in eine ausrollbare Windows-Desktopanwendung.</p>
         
         
         
         <h3>Die Herausforderung</h3>
         
         
-        <p>A researcher had developed a novel method for automated forest inventory - replacing manual tape-measure surveys with analysis of aerial imagery and infrared measurements. The underlying mathematics and algorithms worked, but they existed only as scripts in an obscure university tool (similar to MATLAB), designed for producing isolated research graphics, not end-user software.</p>
+        <p>Ein Forscher hatte eine neuartige Methode zur automatisierten Forstinventur entwickelt. Statt manueller Bandmaß-Aufnahmen im Gelände sollten Luftbild- und Infrarotdaten ausgewertet werden. Mathematik und Algorithmen funktionierten, existierten jedoch nur als Skripte in einem obskuren universitären Werkzeug ähnlich MATLAB, ausgelegt auf isolierte Forschungsdiagramme statt Endanwender-Software.</p>
         
         
         
-        <p>The situation had deteriorated: the researcher had parted ways with his original developer, leaving no path forward. The &quot;prototype&quot; had no user interface, required hardcoded parameters, and relied on copy-pasted code variants for different input scenarios. It could not be distributed, demonstrated to agencies, or operated by anyone outside the lab. The researcher believed he was close to a finished product; in reality, he had a proof-of-concept with no industrial foundation.</p>
+        <p>Die Situation war eskaliert: Der Forscher hatte sich vom ursprünglichen Entwickler getrennt, ein belastbarer Weiterentwicklungspfad existierte nicht. Der vermeintliche Prototyp hatte keine nutzbare Benutzeroberfläche, arbeitete mit hart codierten Parametern und nutzte kopierte Codevarianten je Eingabeszenario. Er war weder verteilbar noch bei Behörden vorführbar und außerhalb des Labors nicht betreibbar. Der Forscher glaubte, er sei kurz vor einem Produkt. Tatsächlich lag ein Proof of Concept ohne industrielle Grundlage vor.</p>
         
         
         
-        <p>Traditional forest inventory involved field teams physically measuring tree circumferences with tape measures to estimate timber volume per hectare - a labour-intensive, time-consuming process. The new method promised to automate this using remote sensing data, but only if the software could be reliably operated by forestry professionals, not just the researcher himself.</p>
+        <p>Klassische Forstinventur bedeutete weiterhin, Baumumfänge im Feld manuell mit Maßband zu erfassen, um Holzvolumen pro Hektar abzuschätzen. Das ist arbeitsintensiv und langsam. Die neue Methode versprach Automatisierung über Fernerkundungsdaten, aber nur dann, wenn die Software zuverlässig von Forstfachleuten bedient werden konnte und nicht nur vom Forscher selbst.</p>
         
         
         
@@ -201,13 +201,13 @@
         
         <ul>
           
-          <li>Strict confidentiality: The algorithm details were covered by a rigorous NDA; the case study must describe the engineering transformation, not the proprietary method itself.</li>
+          <li>Strikte Vertraulichkeit: Die Algorithmik unterlag einer strengen NDA. Die Fallstudie beschreibt daher die Engineering-Transformation, nicht die proprietäre Methode selbst.</li>
           
-          <li>Windows offline deployment: The target users (regional agencies) required a standalone desktop application, not a web service or cloud tool.</li>
+          <li>Windows-Offline-Deployment: Die Zielnutzer in Behörden brauchten eine eigenständige Desktopanwendung, keinen Cloud- oder Webdienst.</li>
           
-          <li>Performance demands: Rendering large map datasets in OpenGL required efficient memory management and GPU utilisation.</li>
+          <li>Leistungsanforderung: Das Rendern großer Kartendatensätze in OpenGL erforderte effizientes Speicher- und GPU-Management.</li>
           
-          <li>Commercialisation intent: The end goal was procurement by German Bundeslander, meaning the software needed to be presentation-ready and agency-appropriate.</li>
+          <li>Kommerzialisierungsziel: Angestrebt war Beschaffung durch deutsche Bundesländer. Die Software musste entsprechend präsentationsfähig und behördentauglich sein.</li>
           
         </ul>
         
@@ -216,47 +216,47 @@
         <h3>Vorgehen</h3>
         
         
-        <p>1. Assessed the Gap Between Research Code and Product The existing scripts were single-purpose, interpreter-based files with no abstraction layers. Parameters were hardcoded; input handling was brittle; there was no version control, no modularity, and no separation between algorithm logic and visualisation. The first step was acknowledging this was not &quot;nearly finished&quot; - it required a full rebuild around the existing mathematical core.</p>
+        <p>1. Lücke zwischen Forschungscode und Produkt präzise bewerten Die vorhandenen Skripte waren monofunktionale Interpreter-Dateien ohne Abstraktionsschichten. Parameter waren fest verdrahtet, Eingaben fragil, Versionskontrolle und Modularität fehlten, ebenso die Trennung von Algorithmik und Visualisierung. Der erste Schritt war die ehrliche Feststellung: Das war nicht fast fertig, sondern ein vollständiger Neuaufbau um den mathematischen Kern.</p>
         
         
         
-        <p>2. Established an Industrial Development Environment Set up version control and defined development standards for a mixed team (interns, mathematicians, and the researcher). Introduced branching, code review practices, and a structured build system. This allowed mathematicians - who had basic programming skills - to contribute algorithm modules without destabilising the main codebase.</p>
+        <p>2. Industrielles Entwicklungsumfeld aufbauen Vionix führte Versionskontrolle ein und definierte Entwicklungsstandards für ein gemischtes Team aus Praktikanten, Mathematikern und Forscher. Branching, Review-Routinen und ein strukturierter Build-Prozess wurden etabliert. So konnten Mathematiker mit grundlegenden Programmierkenntnissen Algorithmusmodule beisteuern, ohne die Hauptcodebasis zu destabilisieren.</p>
         
         
         
-        <p>3. Designed Clean Interfaces Between Mathematics and Software Rather than integrating raw mathematical code directly, defined clear API boundaries: mathematicians encapsulated their work in callable functions, and the lead developer integrated these into the application. This kept domain logic separate from UI, data handling, and rendering, making the codebase maintainable and testable.</p>
+        <p>3. Saubere Schnittstellen zwischen Mathematik und Software gestalten Statt mathematischen Rohcode direkt zu integrieren, wurden klare API-Grenzen gesetzt: Mathematiker kapselten ihre Logik in aufrufbaren Funktionen, der Lead-Entwickler integrierte diese in die Anwendung. Damit blieb Fachlogik getrennt von UI, Datenverarbeitung und Rendering und die Codebasis wartbar sowie testbar.</p>
         
         
         
-        <p>4. Migrated to Borland C++ and Built the Desktop Application Ported all algorithms from the university scripting tool to C++. Built the entire user interface from scratch, covering:</p>
+        <p>4. Migration auf Borland C++ und Aufbau der Desktopanwendung Alle Algorithmen wurden aus dem universitären Skriptwerkzeug nach C++ portiert. Die Benutzeroberfläche entstand vollständig neu, inklusive:</p>
         
         
         
         <ul>
           
-          <li>Import pipeline: parsers for various proprietary formats (binary, text-based, CSV variants, GPS device output).</li>
+          <li>Import-Pipeline: Parser für verschiedene proprietäre Formate (binär, textbasiert, CSV-Varianten, GPS-Geräteausgaben).</li>
           
-          <li>Internal data model: a custom binary project format to persist intermediate state.</li>
+          <li>Internes Datenmodell: eigenes binäres Projektformat zur Persistenz von Zwischenständen.</li>
           
-          <li>Visualisation: upgraded 2D graphics to OpenGL-rendered map views, with GPU-accelerated handling of large datasets.</li>
+          <li>Visualisierung: Umstellung von 2D-Grafik auf OpenGL-Kartenansichten mit GPU-beschleunigter Verarbeitung großer Datenmengen.</li>
           
-          <li>Export options: CSV, database connectivity via ODBC and SQLite, enabling integration with external GIS or reporting systems.</li>
+          <li>Exportoptionen: CSV sowie Datenbankanbindung über ODBC und SQLite für Anschluss an GIS- und Reporting-Systeme.</li>
           
-          <li>Memory management: optimised for Windows desktop constraints, leveraging GPU memory for rendering operations.</li>
+          <li>Speicherverwaltung: Optimiert für Windows-Desktop-Bedingungen unter Nutzung von GPU-Speicher für Rendering-Operationen.</li>
           
         </ul>
         
         
         
-        <p>5. Validated Against Real-World Ground Truth The researcher conducted parallel field surveys using traditional tape-measure methods. These reference datasets were used to validate the software output, ensuring the ported algorithms produced results consistent with manual inventory. Correctness was confirmed through source code review, output comparison, and iterative feedback on visualisation accuracy and UI workflows.</p>
+        <p>5. Gegen reale Ground-Truth validieren Der Forscher führte Parallelmessungen im Feld mit klassischer Bandmaß-Methode durch. Diese Referenzdaten validierten die Softwareergebnisse. Korrektheit wurde über Source-Review, Ergebnisvergleich und iteratives Feedback zu Visualisierungsgenauigkeit und UI-Workflows abgesichert.</p>
         
         
         
-        <p>6. Prepared for Agency Demonstrations Delivered the application as a standard Windows installer with documentation (authored by the researcher). By the end of the engagement, the software was stable enough to present to German forestry authorities, and those demonstrations took place as planned.</p>
+        <p>6. Für Behörden-Demonstrationen vorbereiten Die Anwendung wurde als standardisierter Windows-Installer mit Dokumentation ausgeliefert (durch den Forscher erstellt). Zum Ende des Engagements war die Lösung stabil genug für Präsentationen bei deutschen Forstbehörden und diese Demonstrationen fanden wie geplant statt.</p>
         
         
         
-        <p>7. Handed Over a Maintainable Codebase Version-controlled source, clear architecture, modular algorithm integration, and documented handover materials were left in place. An experienced developer could take over without requiring deep domain knowledge of the mathematics.</p>
+        <p>7. Wartbare Codebasis übergeben Versionskontrollierter Quellcode, klare Architektur, modulare Algorithmusintegration und dokumentierte Übergabeartefakte wurden vollständig hinterlassen. Ein erfahrener Entwickler konnte übernehmen, ohne tiefes mathematisches Spezialwissen vorauszusetzen.</p>
         
         
         
@@ -265,19 +265,19 @@
         
         <ul>
           
-          <li>Complete desktop application: Windows installer, offline operation, GUI-driven workflows for import, processing, visualisation, and export.</li>
+          <li>Vollständige Desktopanwendung: Windows-Installer, Offline-Betrieb sowie GUI-geführte Abläufe für Import, Verarbeitung, Visualisierung und Export.</li>
           
-          <li>Multi-format import engine: Handled proprietary binary and text formats from measurement devices, GPS data, and CSV variants.</li>
+          <li>Import-Engine für mehrere Formate: Unterstützung proprietärer Binär- und Textformate, GPS-Daten und CSV-Varianten.</li>
           
-          <li>Custom project file format: Binary storage for intermediate results and session persistence.</li>
+          <li>Eigenes Projektdateiformat: Binäre Ablage von Zwischenständen und Sitzungszuständen.</li>
           
-          <li>Database export capability: ODBC and SQLite integration for downstream analysis and reporting.</li>
+          <li>Datenbankexport: ODBC- und SQLite-Anbindung für nachgelagerte Analyse und Berichte.</li>
           
-          <li>OpenGL-based visualisation: GPU-accelerated rendering of large forestry map datasets, replacing static 2D graphics.</li>
+          <li>OpenGL-basierte Visualisierung: GPU-beschleunigtes Rendering großer forstlicher Kartendaten statt statischer 2D-Grafiken.</li>
           
-          <li>Version-controlled codebase: Structured for team collaboration, with clear interfaces between mathematical modules and application logic.</li>
+          <li>Versionskontrollierte Codebasis: Teamfähig aufgebaut mit klaren Schnittstellen zwischen mathematischen Modulen und Anwendungsebene.</li>
           
-          <li>Training and handover materials: Interns and mathematicians were onboarded into the development environment; clean handover documentation enabled continuity.</li>
+          <li>Training und Übergabeunterlagen: Praktikanten und Mathematiker wurden in das Entwicklungsumfeld eingeführt; saubere Dokumentation sicherte Kontinuität.</li>
           
         </ul>
         
@@ -286,53 +286,53 @@
         <h3>Ergebnisse</h3>
         
         
-        <p>All original algorithms and mathematical models were successfully ported from the university scripting environment into the industrial C++ application. The software transitioned from a researcher-only prototype with hardcoded parameters to a demonstrable product presented to German regional forestry agencies.</p>
+        <p>Alle ursprünglichen Algorithmen und mathematischen Modelle wurden erfolgreich aus dem universitären Skriptumfeld in eine industrielle C++-Anwendung überführt. Die Lösung entwickelte sich vom forskungsnahen Prototyp mit fest codierten Parametern zu einem vorführbaren Produkt für Landesforstbehörden.</p>
         
         
         
-        <p>The engineering gap was closed: what had been a collection of single-purpose scripts became a deployable, user-facing application capable of importing real-world sensor data, running the proprietary analysis, and exporting results in agency-compatible formats.</p>
+        <p>Die Engineering-Lücke wurde geschlossen: Aus einer Sammlung isolierter Skripte entstand eine ausrollbare Anwenderanwendung, die reale Sensordaten importieren, die proprietäre Analyse ausführen und Ergebnisse in behördentauglichen Formaten exportieren konnte.</p>
         
         
         
-        <p>However, the project did not reach commercial release. The researcher shifted focus to expanding the method with new ideas rather than finalising the existing product for procurement. After one year, when the software was technically functional but commercialisation remained indefinitely deferred, the engagement concluded as the contract term ended.</p>
+        <p>Eine kommerzielle Markteinführung erfolgte dennoch nicht. Der Forscher verlagerte seinen Fokus auf methodische Erweiterungen statt Produktabschluss für Beschaffungsprozesse. Nach einem Jahr wurde das Engagement beendet, weil die Software technisch funktionsfähig war, die Produktisierung jedoch auf unbestimmte Zeit verschoben blieb.</p>
         
         
         
         <h3>Warum es funktioniert hat</h3>
         
         
-        <p>Clarity about the engineering deficit: The researcher initially believed the prototype was &quot;nearly done.&quot; Honest assessment of the gap - and the work required to close it - set realistic expectations and focused effort on industrial-grade foundations rather than feature additions.</p>
+        <p>Klarheit über das Engineering-Defizit Der Forscher hielt den Prototyp anfangs für fast fertig. Die ehrliche Bewertung der Lücke und des tatsächlichen Arbeitsumfangs setzte realistische Erwartungen und lenkte den Fokus auf industrielle Grundlagen statt auf zusätzliche Features.</p>
         
         
         
-        <p>Separation of concerns: Mathematicians contributed domain logic through defined interfaces; they did not need to become software engineers. This preserved their focus on correctness while keeping the application architecture clean.</p>
+        <p>Saubere Aufgabentrennung Mathematiker lieferten Domänenlogik über definierte Schnittstellen und mussten nicht zu Softwareingenieuren werden. So blieb ihr Fokus auf fachlicher Korrektheit, während die Anwendungsarchitektur sauber blieb.</p>
         
         
         
-        <p>Incremental validation against ground truth: Real-world field survey data provided a reference for correctness. This de-risked the port: algorithmic output could be continuously compared to known-good results, catching regressions early.</p>
+        <p>Inkrementelle Validierung gegen Ground-Truth Reale Felddaten boten einen belastbaren Korrektheitsanker. Die Portierung wurde dadurch entlastet, weil Ergebnisse kontinuierlich mit bekannten Referenzen verglichen und Regressionen früh erkannt werden konnten.</p>
         
         
         
-        <p>Modular, maintainable architecture: The codebase was structured for handover. When the engagement ended, the software was not abandoned - it was ready for another developer to continue, should the researcher choose to pursue productisation later.</p>
+        <p>Modulare, wartbare Architektur Die Codebasis wurde explizit übergabefähig strukturiert. Nach Projektende war die Software nicht blockiert, sondern in einem Zustand, den neue Entwickler bei Bedarf produktiv fortführen konnten.</p>
         
         
         
         <h3>So hat Vionix gearbeitet</h3>
         
         
-        <p>Team composition: One lead developer (architect, hands-on implementer, and mentor), 2-3 rotating interns (variable skill levels), and 2-3 mathematicians (algorithm authors with basic version control literacy).</p>
+        <p>Teamzuschnitt: ein Lead-Entwickler (Architekt, Umsetzer, Mentor), 2 bis 3 rotierende Praktikanten mit heterogenem Niveau und 2 bis 3 Mathematiker als Algorithmusautoren mit grundlegender Versionskontrollpraxis.</p>
         
         
         
-        <p>Division of responsibility: The lead developer owned the application architecture, UI, data pipeline, and integration. Mathematicians encapsulated their work in callable modules. Interns contributed where their skills allowed, with mentoring on development practices.</p>
+        <p>Verantwortungsteilung: Der Lead verantwortete Architektur, UI, Datenpipeline und Integration. Mathematiker kapselten fachliche Logik in aufrufbare Module. Praktikanten übernahmen Beiträge gemäß Kompetenzprofil und wurden methodisch begleitet.</p>
         
         
         
-        <p>Validation and feedback loops: The researcher validated output correctness, UI workflows, and visualisation fidelity. The development team relied on his domain expertise for acceptance criteria, not for software design decisions.</p>
+        <p>Validierungs- und Feedbackschleifen: Der Forscher validierte Ergebnisqualität, UI-Workflows und Visualisierungsgenauigkeit. Das Team nutzte seine Domänenexpertise als Akzeptanzkriterium, nicht als Ersatz für Softwaredesign-Entscheidungen.</p>
         
         
         
-        <p>Handover: The engagement concluded when the contract term ended and commercialisation stalled due to scope expansion. A clean, version-controlled codebase and handover documentation were left in place, enabling continuity if the project resumed under new development leadership.</p>
+        <p>Übergabe: Das Engagement endete mit Ablauf der Vertragslaufzeit und ausbleibender Produktisierung durch Scope-Erweiterung. Eine saubere, versionskontrollierte Codebasis plus Übergabedokumentation wurde hinterlassen und sicherte Anschlussfähigkeit für künftige Entwicklung.</p>
         
         
         
@@ -347,7 +347,7 @@
           <h3 class="mb-2">Ähnliche Herausforderung besprechen</h3>
           <p class="mb-0">Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.</p>
         </div>
-        <a class="btn btn-primary" href="/de/index. html#contact">Vionix kontaktieren</a>
+        <a class="btn btn-primary" href="/de/index.html#contact">Vionix kontaktieren</a>
       </div>
     </div>
   </section>

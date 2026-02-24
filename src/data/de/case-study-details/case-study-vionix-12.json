@@ -1,0 +1,163 @@
+{
+  "pageTitleShort": "Ein Black-Box-Legacy-System umdrehen",
+  "heroTitle": "Ein Black-Box-Legacy-System in ein unternehmensweites Delivery- und Support-Betriebssystem überführen (Jira Cloud)",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Ein Black-Box-Legacy-System umdrehen"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Ironbridge ERP (deutscher ERP-Anbieter für Maschinenhandel und Vermietung). Ein mittelständischer Anbieter modernisierte sein internes Projekt- und Servicefall-Management nach Jahren ad-hoc-gesteuerter, interruptionsgetriebener Arbeit bei geringer organisatorischer IT-Reife. Vionix führte ein fünfmonatiges Engagement durch (2 Monate Entwicklungs-Pilot plus 3 Monate unternehmensweiter Rollout) mit einer Organisation von etwa 35 Personen und übergab die vollständige Administration am Ende."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der Kunde arbeitete für Projekte und Servicefälle mit einem internen Managementsystem, das unrealistische 15-Minuten-Zeiterfassung erzwang und Schattenprozesse wie Papiernotizen oder nachträgliches Blockbuchen begünstigte. Die gemeldeten Aufwände entsprachen dadurch oft nicht der tatsächlichen Arbeit."
+        },
+        {
+          "type": "p",
+          "text": "Änderungsdokumentation war faktisch manuell und wurde häufig übersprungen. Entwickler hatten kaum Sicht auf die Arbeit anderer. Es entstand ein isoliertes Black-Box-Arbeitsmodell."
+        },
+        {
+          "type": "p",
+          "text": "Supportannahme und Zuweisung waren ohne konsistente Triage oder Transparenz organisiert. Tickets konnten beliebig klassifiziert und verteilt werden, danach aus dem Blick geraten. Kunden mussten Sachverhalte wiederholt erklären, interne Blocker wurden manuell hinterhergetragen."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Die Unternehmenskultur war stark vertriebsgetrieben. Führung hatte begrenzte Engineering- und Projektmanagementkompetenz, wodurch Governance und Priorisierung schwer stabil zu halten waren."
+        },
+        {
+          "type": "p",
+          "text": "Das Startmandat zielte formal nur auf Entwicklungsmodernisierung, obwohl die Probleme den gesamten Betriebsmodus über Entwicklung, Support und Beratung betrafen."
+        },
+        {
+          "type": "p",
+          "text": "Das Legacy-System war manipulationsanfällig, weil Historie bearbeitet oder gelöscht werden konnte. Daraus war eine Druck-und-Archiv-Kultur als Schutz gegen Streitfälle entstanden."
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "ordered",
+          "items": [
+            "Echtes Betriebsmodell diagnostizieren: Über Interviews und Teamgespräche wurde bestätigt, dass das Kernproblem nicht nur Coding-Praktiken waren, sondern Projekt- und Service-Steuerung übergreifend.",
+            "Kontrollierten Entwicklungs-Pilot fahren: Jira Cloud wurde als Single Source of Truth eingeführt. Das Legacy-System lief im Pilot nur noch für Intake und Abschlussmarkierung parallel.",
+            "Reibung senken und Nachvollziehbarkeit erhöhen: Entwickler wurden trainiert, Commits direkt mit Jira-Issues zu verknüpfen. Manuelle Änderungsprosa wurde durch auditierbaren Workflow ersetzt.",
+            "Priorisierung täglich explizit machen: Kurze tägliche Abstimmungen zur Neuordnung der Prioritäten ermöglichten planbarere Arbeit mit weniger Unterbrechungen.",
+            "Drive-by-Tasking beenden: Strikte Routing-Regeln wurden eingeführt. Support, Vertrieb und Beratung durften Entwickler nicht mehr direkt beauftragen. Anforderungen liefen über Entwicklungsleitung und Jira.",
+            "Business und Engineering täglich synchronisieren: Ein tägliches Alignment zwischen Entwicklungsleitung und Vertriebs- sowie Beratungsleitung stellte Abgleich von Kundenrealität und Lieferkapazität sicher.",
+            "Jira an die Realität anpassen: Workflows wurden im Pilot iterativ so nachgeschärft, dass sie tatsächliche Arbeitsflüsse abbilden."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Gelieferte Artefakte umfassten die Jira-Cloud-Konfiguration und Trainingsunterlagen, die in internen Enablement-Sessions eingesetzt wurden."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Jira-Cloud-Betriebsmodell: unternehmensweiter End-to-End-Rollout als Ersatz des internen Legacy-Managementsystems",
+            "Workflow-Governance: Routing- und Priorisierungsregeln, die direkte Entwicklerunterbrechungen systematisch entfernten",
+            "Nachvollziehbarer Delivery-Prozess: Commit-zu-Ticket-Verknüpfung und auditierbare Arbeitshistorie für Entwicklung und Service",
+            "Enablement-Artefakte: Trainings, Präsentationen und Admin-Übergabe für nachhaltigen internen Betrieb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bereits im Pilot stieg die Entwicklermoral deutlich. Beschwerden über ständige Unterbrechungen und unstrukturierte Arbeit gingen stark zurück, weil tägliche Erwartungen planbar wurden."
+        },
+        {
+          "type": "p",
+          "text": "Die Organisation reduzierte ihre Papierabhängigkeit erheblich und sparte geschätzt 500 bis 1000 Ausdrucke pro Monat, weil Jira verlässlichere Historie und Transparenz bot als das editierbare Legacy-System."
+        },
+        {
+          "type": "p",
+          "text": "Support und Beratung erhielten genügend Sichtbarkeit, um Kunden konkret über Status und Blocker zu informieren. Das erhöhte Kundenzufriedenheit, insbesondere durch klarere Antworten und besseres Service-Reporting, etwa zu monatlichem Ticketvolumen und Trends."
+        },
+        {
+          "type": "p",
+          "text": "Ein wichtiger organisatorischer Effekt war stabilisierte Fluktuation. Neue Entwickler verließen das Unternehmen seltener frühzeitig, sobald Arbeit nicht mehr chaotisch und intransparent erlebt wurde."
+        },
+        {
+          "type": "p",
+          "text": "Die letzte Adoptionshürde war Widerstand in der Supportführung aus Sorge vor Kontrollverlust und zusätzlichem Tooling. Durch gezieltes Eins-zu-eins-Coaching wurde dieser Blocker innerhalb von etwa zwei Wochen in tragfähige Zustimmung überführt."
+        },
+        {
+          "type": "p",
+          "text": "Nach weiteren drei Monaten arbeitete das gesamte Unternehmen in Jira Cloud. Das rund 20 Jahre alte Legacy-System auf früherer NET-Basis wurde abgeschaltet, und der Kunde übernahm Administration sowie laufendes Management vollständig selbst."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ganzsystem-Diagnose statt enger Tool-Fixierung Der Engpass lag nicht nur im Entwicklungswerkzeug, sondern im Betriebsmodell über Entwicklung, Support und Beratung hinweg."
+        },
+        {
+          "type": "p",
+          "text": "Pilot-first-De-Risking Der kontrollierte Entwicklungs-Pilot zeigte früh Wert, blieb gleichzeitig rückrollbar und machte dadurch den breiten Rollout umsetzbar."
+        },
+        {
+          "type": "p",
+          "text": "Verhaltensregeln statt reiner Softwarekonfiguration Routing-Regeln, tägliche Priorisierung und Führungsausrichtung beseitigten strukturelle Unterbrechungsmuster, die durch Tool-Setup allein nicht lösbar gewesen wären."
+        },
+        {
+          "type": "p",
+          "text": "Gezielte Adoptionsarbeit Fokussiertes Coaching der letzten widerständigen Stakeholdergruppe wandelte blockierenden Widerstand in operativen Buy-in."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix führte ein fünfmonatiges Solo-Engagement durch, beginnend mit einem zweimonatigen Entwicklungs-Pilot und anschließendem dreimonatigem Rollout über die gesamte Organisation. Die Arbeit kombinierte Moderation, Prozessdesign, Konfiguration und Teamcoaching. Administration und laufende Governance wurden am Ende vollständig intern übergeben."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

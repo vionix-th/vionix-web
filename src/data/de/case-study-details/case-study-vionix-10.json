@@ -1,0 +1,177 @@
+{
+  "pageTitleShort": "Als Echtzeit wieder möglich wurde",
+  "heroTitle": "Als Echtzeit wieder möglich wurde",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Als Echtzeit wieder möglich wurde"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Ironbridge ERP (deutscher ERP-Anbieter für Maschinenhandel und Vermietung). Herausforderung: Internes BI-System mit nächtlichen Batch-Prozessen skalierte nicht mehr. Bei großen Kunden wurde das Nachtfenster überschritten, Daten blieben unvollständig, Vertrauen ging verloren. Dauer: 3 Monate. Ansatz: Komplexe ETL-Architektur durch optimierte SQL-Views, gezielte Indizierung und Laufzeitberechnungen auf der Quell-Datenbank ersetzt."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ein deutscher ERP-Anbieter hatte für Maschinenkunden ein spezialisiertes BI-System gebaut. Nacht für Nacht extrahierte ein eigener Transformationsprozess Daten aus der ERP-Datenbank, strukturierte sie um, berechnete Kennzahlen und lud sie in eine separate SQL-Server-Datenbank für Berichte. Das Frontend mit List und Label war funktional und bei Kunden akzeptiert."
+        },
+        {
+          "type": "p",
+          "text": "Doch das System versagte. Bei großen Kunden mit Millionen Transaktionen wurde der Nachtlauf nicht vor Arbeitsbeginn fertig. Management-Dashboards zeigten unvollständige, veraltete oder fehlende Daten. Kundenvertrauen brach ein. Das BI-System, vorher Differenzierungsmerkmal, wurde zum Verkaufsrisiko."
+        },
+        {
+          "type": "p",
+          "text": "Die Ursache war nicht Datenkomplexität, sondern ein Architekturirrtum. Das ursprüngliche Team hatte ohne belastbare SQL- und Datenbank-Optimierungskompetenz angenommen, Echtzeitabfragen seien unmöglich. Auf dieser Annahme entstand eine gesamte ETL-Landschaft, die über Jahre unwartbar wurde. Jede Erweiterung erzeugte neue Regressionen, niemand wollte sie noch anfassen."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der Kunde lehnte einen vollständigen Neubau explizit ab. Das BI-Frontend funktionierte und war akzeptiert. Jede Lösung musste die UI erhalten und gleichzeitig den Skalierungsengpass beseitigen."
+        },
+        {
+          "type": "p",
+          "text": "Hinzu kam ein menschlicher Faktor: Das ursprüngliche Entwicklungsteam besaß tiefes Systemwissen, aber fragile Egos. Das Transformation-System war ihr Werk. Dessen Scheitern musste ohne Gesichtsverlust adressiert werden."
+        },
+        {
+          "type": "p",
+          "text": "Jede Direktabfrage auf der produktiven ERP-Datenbank musste zudem beweisen, dass sie den Tagesbetrieb nicht stört. Locks oder langsame Queries mit Auswirkungen auf Fachanwender waren ausgeschlossen."
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Schnelle Discovery und Hypothesentest in 10 Tagen Vionix prüfte die bestehende Transformationslogik und die ausgeführten SQL-Queries auf der Sekundärdatenbank. Das Muster war schnell klar: fehlende Indizes verursachten Full-Table-Scans, und vermeintlich komplexe Transformationen waren in Wahrheit normale Joins und Aggregationen. Der Nacht-ETL existierte primär wegen der Annahme, Echtzeit sei unmöglich, nicht wegen technischer Notwendigkeit."
+        },
+        {
+          "type": "p",
+          "text": "2. Proof of Concept mit SQL-Views Vionix baute einen Prototyp für zwei bis drei der meistgenutzten BI-Reports direkt auf SQL-Views der ERP-Quelle. Die Views bildeten die Datenaufbereitung ab, inklusive korrekter Joins, berechneter Felder wie Lagerstände und Durchschnittspreise sowie Stored Procedures für komplexere Fälle. Über Query-Optimizer und Ausführungspläne wurden fehlende Indizes identifiziert und gezielt ergänzt."
+        },
+        {
+          "type": "p",
+          "text": "3. Parallelvalidierung von Performance und Korrektheit Beide Systeme liefen parallel: der Legacy-Nacht-ETL und die neue Echtzeit-View-Architektur. Das erlaubte direkten Datenvergleich und bot ein Sicherheitsnetz. Lasttests unter produktionsnahen Bedingungen mit zig Millionen Datensätzen bestätigten vernachlässigbare Auswirkungen auf ERP-Insert- und Update-Operationen. Exklusive Locks blieben minimal, Tagesprozesse blieben unbeeinträchtigt."
+        },
+        {
+          "type": "p",
+          "text": "4. Entwickler-Buy-in durch Zusammenarbeit Das ursprüngliche Team reagierte zunächst defensiv, weil ihr System ersetzt wurde. Vionix änderte den Rahmen: keine Schuldzuweisung, sondern gemeinsame Migration. Als die Entwickler die Einfachheit des Prototyps sahen, etwa Select-Änderung in Views statt Debugging fragiler Transformationsketten über tausende Zeilen, kippte Widerstand in aktive Unterstützung."
+        },
+        {
+          "type": "p",
+          "text": "5. Vollständige Migration und Wissenstransfer In den folgenden Wochen migrierte Vionix alle BI-Strukturen systematisch in die View-Architektur, stellte Feature-Parität sicher und führte strukturierte Schulungen mit Präsentationen, Tutorials und Walkthroughs durch. Das Team dokumentierte, fragte nach und erhielt Materialien als Referenz. Inline-Codekommentare reichten als laufende Dokumentation aus."
+        },
+        {
+          "type": "p",
+          "text": "6. Rollback-Sicherheit und schrittweiser Vertrauensaufbau Das finanzielle Risiko blieb auf Beratungsstunden begrenzt, weil das alte System während der Umstellung betriebsbereit blieb. Ein Rückfallpfad war vorhanden, wurde aber nicht benötigt. Bis Projektende war das Vertrauen in die neue Architektur vollständig hergestellt."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Optimierte SQL-Views auf der ERP-Quell-Datenbank als Ersatz für Sekundär-BI-Datenbank und nächtliche ETL-Pipeline",
+            "Strategische Indizes auf ERP-Tabellen zur Beseitigung von Table-Scans und für Sub-Sekunden-Abfragen",
+            "Berechnete Felder und Aggregationen über Views und Stored Procedures zur Laufzeit statt Vor-Materialisierung",
+            "Parallelvalidierungsumgebung mit Nachweis von Datenkonsistenz und Performance unter Produktionslast",
+            "Schulungsmaterialien und Live-Sessions zur eigenständigen Wartung und Erweiterung durch das interne Team",
+            "Skalierbare Architektur, die mit Datenvolumen wächst und die starre Nachtfenstergrenze beseitigt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Das BI-System konnte wieder aktiv vermarktet werden. Kunden erhielten kohärente Echtzeitdaten ohne Verzögerung oder Lücken. Performance-Bedenken bestätigten sich nicht, der ERP-Tagesbetrieb blieb unbeeinträchtigt."
+        },
+        {
+          "type": "p",
+          "text": "Das Ticketaufkommen normalisierte sich. Kundenzufriedenheit stieg. Interner Stress sank deutlich, weil Änderungen nicht mehr automatisch als regressionsgefährdend erlebt wurden."
+        },
+        {
+          "type": "p",
+          "text": "Entscheidend war die Skalierung: Kunden mit mehr als zehn Millionen Transaktionsdatensätzen, zuvor außerhalb der Nachtverarbeitungskapazität, liefen stabil weiter. Die Architektur setzte keine künstliche Wachstumsgrenze mehr."
+        },
+        {
+          "type": "p",
+          "text": "Zum Projektende wurden die ursprünglichen Entwickler selbst zu Befürwortern. Eine Select-Anpassung in einer View war objektiv einfacher als die Fehlersuche in fragilen Transformationspipelines. Die Entlastung war real und kein diplomatisches Signal."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Legacy-Annahmen hinterfragt Die gesamte ETL-Architektur existierte, weil irgendwann jemand Echtzeit für unmöglich erklärte. Diese Annahme wurde nie neu geprüft, obwohl sich SQL-Server-Fähigkeiten weiterentwickelt hatten. Vionix auditierte zuerst die Prämisse, nicht nur die Implementierung."
+        },
+        {
+          "type": "p",
+          "text": "Native Datenbankfähigkeiten konsequent genutzt Moderne relationale Datenbanken sind für genau diese Last gebaut: indexierte Lookups, Joins und Laufzeitaggregationen. Die Transformationslogik war nicht komplex genug für ein externes Verarbeitungssystem."
+        },
+        {
+          "type": "p",
+          "text": "Architekturkomplexität reduziert Jede zusätzliche Schicht wie Sekundärdatenbank, ETL-Pipeline oder Nacht-Scheduler erhöht Wartungslast und Ausfallrisiko. Der View-basierte Ansatz kollabierte drei bewegliche Teile auf einen und erhöhte Wartbarkeit deutlich."
+        },
+        {
+          "type": "p",
+          "text": "Nachweis statt Debatte Vionix argumentierte nicht abstrakt für Echtzeit, sondern demonstrierte sie. Der Prototyp mit zwei bis drei Reports plus Ausführungspläne und Parallelvalidierung machte die Entscheidung belastbar."
+        },
+        {
+          "type": "p",
+          "text": "Menschliches System aktiv mitgeführt Technische Korrektheit allein reicht bei verletzten Besitzständen nicht. Vionix band das ursprüngliche Team als Partner ein, ließ sie die Vereinfachung selbst erfahren und würdigte ihr Systemwissen. Die Lösung setzte sich durch, weil sie auch sozial akzeptiert wurde."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix arbeitete über drei Monate als eingebetteter technischer Advisor. Die Discovery-Phase mit zehn Tagen stellte Machbarkeit her, der Rest floss in Migration, Validierung und Wissenstransfer."
+        },
+        {
+          "type": "p",
+          "text": "Die Schulung war strukturiert und praktisch: Live-Sessions mit dem Entwicklungsteam, Präsentationsmaterial als Referenz und Inline-Codekommentare. Es wurde kein schweres Prozessregime eingeführt, nur so viel Strenge wie für selbstständigen Betrieb nötig."
+        },
+        {
+          "type": "p",
+          "text": "Das Engagement wurde stundenbasiert abgerechnet und spiegelte den iterativen Charakter wider. Die Lösung war früh erkennbar, die Zeit floss bewusst in gründliche Validierung, saubere Migration und echten Kompetenzaufbau. Zur Übergabe gehörte nicht nur der Code, sondern auch das architektonische Entscheidungsverständnis im internen Team."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

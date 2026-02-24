@@ -16,7 +16,6 @@ const targets = [
   "home.json",
   "service-details.json",
   "case-studies.json",
-  "case-study-details.json",
   "skilltable-team1.json",
   "skilltable-team2.json"
 ];
@@ -52,6 +51,9 @@ function walk(value, keyPath, filePath) {
   if (/\b(TODO|lorem ipsum|XXX)\b/i.test(s)) {
     add("placeholder-like content detected");
   }
+  if (/\b(MYMEMORY|QUERY LENGTH LIMIT EXCEEDED|TRANSLATED\.NET\/DOC\/USAGELIMITS\.PHP)\b/i.test(s)) {
+    add("machine-translation artifact detected");
+  }
   if (/\s{2,}/.test(s)) {
     add("double whitespace detected");
   }
@@ -64,6 +66,20 @@ for (const locale of locales.supportedLocales || []) {
     if (!fs.existsSync(full)) continue;
     const json = readJson(rel);
     walk(json, "", rel);
+  }
+
+  const detailDirRel = `src/data/${locale}/case-study-details`;
+  const detailDir = path.join(root, detailDirRel);
+  if (fs.existsSync(detailDir)) {
+    const files = fs
+      .readdirSync(detailDir)
+      .filter((name) => name.endsWith(".json"))
+      .sort();
+    for (const file of files) {
+      const rel = `${detailDirRel}/${file}`;
+      const json = readJson(rel);
+      walk(json, "", rel);
+    }
   }
 }
 

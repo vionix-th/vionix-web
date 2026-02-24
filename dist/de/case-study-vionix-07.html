@@ -160,7 +160,7 @@
         <ol>
           <li><a href="/de/index.html">Startseite</a></li>
           <li><a href="/de/case-studies.html">Fallstudien</a></li>
-          <li class="current">Webshop bereit - Back-End noch nicht</li>
+          <li class="current">Als der Webshop bereit war</li>
         </ol>
       </nav>
     </div>
@@ -171,62 +171,62 @@
       <div class="case-study-wrap">
         <a class="back-link" href="/de/case-studies.html"><i class="bi bi-arrow-left"></i> Zurück zu allen Fallstudien</a>
 
-        <h1>Webshop bereit - Back-End noch nicht</h1>
+        <h1>Als der Webshop bereit war, das Back-End aber nicht</h1>
 
         
         <h3>Kurzprofil</h3>
         
         
-        <p>Delivery model: Principal-led engagement (Stefan, Founder &amp; Principal Consultant) Client: Skyline Access (German aerial work platform rental group) Fleet Scale: 1,000+ machines across nationwide locations Core System: InterSystems Caché database managing rental inventory, maintenance schedules, and customer orders Challenge Duration: 3 months (architecture, implementation, and go-live)</p>
+        <p>Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Skyline Access (deutsche Vermietgruppe für Hubarbeitsbühnen). Flottengröße: über 1.000 Maschinen an bundesweiten Standorten. Kernsystem: InterSystems-Caché-Datenbank für Vermietbestand, Wartungsfenster und Kundenaufträge. Projektdauer: 3 Monate (Architektur, Umsetzung und Go-live).</p>
         
         
         
         <h3>Die Herausforderung</h3>
         
         
-        <p>A major German rental company had commissioned a third-party web developer to build an online booking platform for aerial work platforms. The project was well underway—design was polished, user flows were functional, and a launch date had been agreed. But no one had planned how the webshop would connect to the live rental management system. The web developer had built the storefront in isolation, with no visibility into the company&#39;s existing IT infrastructure, database architecture, or API requirements. When the rental company contacted Vionix to &quot;connect the two systems,&quot; it became clear that integration hadn&#39;t just been deferred—it hadn&#39;t been scoped at all.</p>
+        <p>Ein großer deutscher Vermieter hatte eine externe Webagentur mit dem Aufbau eines Online-Buchungsportals beauftragt. Das Projekt war weit fortgeschritten, Design und Nutzerführung funktionierten, ein Launch-Termin war fix. Was fehlte, war die Verbindung zum produktiven Vermiet-Back-End. Die Webagentur hatte den Shop isoliert entwickelt, ohne Sicht auf bestehende IT-Infrastruktur, Datenbankarchitektur und API-Anforderungen. Als der Kunde Vionix zum Verbinden der Systeme hinzuzog, wurde klar: Integration war nicht nur vertagt, sie war nie belastbar spezifiziert worden.</p>
         
         
         
         <h3>Rahmenbedingungen</h3>
         
         
-        <p>Timeline Pressure: A public launch date had already been committed between the rental company and the web developer, creating urgency to resolve integration without derailing the schedule.</p>
+        <p>Termindruck: Zwischen Vermieter und Webagentur war bereits ein öffentlicher Launch-Termin zugesagt. Die Integration musste ohne Terminbruch gelöst werden.</p>
         
         
         
-        <p>Organisational Silos: The web development firm operated independently of the internal IT team, with no prior collaboration on infrastructure or security requirements.</p>
+        <p>Organisatorische Silos: Webagentur und interne IT arbeiteten unabhängig voneinander, ohne Vorab-Abstimmung zu Infrastruktur- oder Sicherheitsanforderungen.</p>
         
         
         
-        <p>System Complexity: The Caché database didn&#39;t just track machine availability—it managed maintenance windows, machine group substitutions, distance-to-site calculations, and overlapping customer reservations. A &quot;simple&quot; availability check required querying multiple interdependent data layers.</p>
+        <p>Systemkomplexität: Die Caché-Datenbank verwaltete nicht nur Verfügbarkeiten, sondern auch Wartungsfenster, Maschinen-Gruppenersatz, Distanzlogik zum Einsatzort und überlappende Reservierungen. Eine scheinbar einfache Verfügbarkeitsprüfung erforderte Abfragen über mehrere voneinander abhängige Datenebenen.</p>
         
         
         
-        <p>Security Maturity: The internal IT team had not previously exposed public-facing APIs or operated demilitarised zones (DMZs), requiring foundational security architecture work.</p>
+        <p>Sicherheitsreife: Die interne IT hatte bislang weder öffentliche APIs exponiert noch DMZ-Strukturen betrieben. Zuerst musste ein belastbares Sicherheitsfundament geschaffen werden.</p>
         
         
         
         <h3>Vorgehen</h3>
         
         
-        <p>Vionix convened a three-party workshop (rental company IT, web developer, and Vionix) to map out the missing integration layer.</p>
+        <p>Vionix moderierte einen Drei-Parteien-Workshop (interne IT, Webagentur, Vionix), um die fehlende Integrationsschicht vollständig zu modellieren.</p>
         
         
         
         <ol>
           
-          <li>Infrastructure Assessment: Determined that the company had no public IP allocation, DMZ topology, or firewall rules for external API exposure. Designed a secure perimeter architecture with a dedicated server in a DMZ to host the CSP Gateway.</li>
+          <li>Infrastruktur-Assessment: Festgestellt wurde, dass weder öffentliche IP-Zuweisung noch DMZ-Topologie oder Firewall-Regeln für externe API-Exposition vorhanden waren. Vionix entwarf eine sichere Perimeter-Architektur mit dediziertem DMZ-Server für das CSP Gateway.</li>
           
-          <li>Firewall &amp; Network Hardening: Collaborated with internal IT to configure enterprise firewall rules, open necessary TCP ports, and establish network segmentation between the public-facing gateway and the internal Caché environment.</li>
+          <li>Firewall- und Netzwerk-Hardening: Gemeinsam mit der internen IT wurden Enterprise-Firewall-Regeln, notwendige TCP-Portfreigaben und Netzsegmentierung zwischen öffentlichem Gateway und internem Caché-System umgesetzt.</li>
           
-          <li>CSP Gateway Provisioning: Deployed and secured the InterSystems CSP Gateway to act as the HTTP bridge between the webshop and the Caché database.</li>
+          <li>CSP-Gateway-Bereitstellung: Das InterSystems CSP Gateway wurde ausgerollt und abgesichert, um als HTTP-Brücke zwischen Webshop und Caché-Datenbank zu dienen.</li>
           
-          <li>REST API Design: Implemented a REST endpoint to expose machine availability data. The API logic incorporated: machine group substitutions (to offer alternative models when a specific unit was unavailable), maintenance schedules (to exclude machines with upcoming service requirements), distance-to-site filtering (to prioritise logistically viable machines), and cross-referenced order data (to block machines already reserved by other customers).</li>
+          <li>REST-API-Design: Ein REST-Endpunkt für Maschinenverfügbarkeit wurde implementiert. Die API-Logik berücksichtigte Maschinen-Gruppenersatz, Wartungsfenster, Distanzfilterung zum Einsatzort und gegengeprüfte Reservierungsdaten, um bereits gebuchte Maschinen zuverlässig auszuschließen.</li>
           
-          <li>Data Quality Feedback Loop: During testing, the webshop surfaced inconsistent availability results. Investigation revealed legacy data errors in the rental database (for example machines marked as available despite scheduled maintenance). Vionix traced these back to historical data entry mistakes, enabling the client to correct long-standing data hygiene issues.</li>
+          <li>Datenqualitäts-Feedbackloop: Während der Tests zeigte der Webshop inkonsistente Verfügbarkeiten. Die Analyse legte Legacy-Datenfehler offen, etwa als verfügbar markierte Maschinen mit geplanter Wartung. Vionix verfolgte die Ursachen bis zu historischen Erfassungsfehlern zurück und ermöglichte gezielte Bereinigung.</li>
           
-          <li>Handover &amp; Knowledge Transfer: Delivered training to internal IT on firewall maintenance, DMZ server hardening, API monitoring, and the security implications of operating public-facing services.</li>
+          <li>Übergabe und Wissenstransfer: Die interne IT erhielt Training zu Firewall-Betrieb, DMZ-Härtung, API-Monitoring und Sicherheitsauswirkungen öffentlicher Dienste.</li>
           
         </ol>
         
@@ -237,13 +237,13 @@
         
         <ul>
           
-          <li>Secure API Infrastructure: DMZ-hosted CSP Gateway with REST endpoint, hardened for public internet exposure</li>
+          <li>Sichere API-Infrastruktur: DMZ-gehostetes CSP Gateway mit REST-Endpunkt, gehärtet für öffentliche Erreichbarkeit</li>
           
-          <li>Availability Logic Engine: Multi-factor availability calculation spanning machine groups, maintenance windows, distance, and reservations</li>
+          <li>Verfügbarkeits-Logik-Engine: Mehrfaktorberechnung über Maschinen-Gruppen, Wartungsfenster, Distanz und Reservierungen</li>
           
-          <li>Firewall &amp; Network Security Configuration: Enterprise firewall rules, port management, and network segmentation</li>
+          <li>Firewall- und Netzwerksicherheitskonfiguration: Enterprise-Regeln, Portmanagement und Segmentierung</li>
           
-          <li>Operational Documentation &amp; Training: Internal IT upskilled on API operations, security posture, and troubleshooting</li>
+          <li>Operative Dokumentation und Training: interne IT für API-Betrieb, Sicherheitslage und Troubleshooting befähigt</li>
           
         </ul>
         
@@ -252,33 +252,33 @@
         <h3>Ergebnisse</h3>
         
         
-        <p>The webshop went live on schedule after three months of integration work. Vionix handed over all infrastructure and API components to internal IT, who assumed full operational responsibility. While Vionix did not track post-launch adoption metrics, the project unblocked a strategic digital channel for a company operating across 40+ locations in Germany&#39;s competitive aerial work platform rental market.</p>
+        <p>Der Webshop ging nach drei Monaten Integrationsarbeit termingerecht live. Vionix übergab Infrastruktur und API-Komponenten vollständig an die interne IT, die den laufenden Betrieb übernahm. Auch ohne nachgelagerte Adoptionsmetriken wurde ein strategischer Vertriebskanal freigeschaltet, relevant für ein Unternehmen mit über 40 Standorten im wettbewerbsintensiven deutschen Markt für Hubarbeitsbühnenvermietung.</p>
         
         
         
         <h3>Warum es funktioniert hat</h3>
         
         
-        <p>Early Intervention Prevented Rework: Convening all parties before code was written avoided the expensive scenario of retrofitting integration into incompatible architectures.</p>
+        <p>Frühe Intervention verhinderte teure Nacharbeit Die gemeinsame technische Klärung vor weiterer Implementierung verhinderte ein späteres Nachrüsten in inkompatible Architekturen.</p>
         
         
         
-        <p>Security-First Design: Building the DMZ and API layer with production-grade security from the start avoided the common anti-pattern of &quot;launching insecurely, then hardening later&quot;.</p>
+        <p>Security-first-Design Der DMZ- und API-Layer wurde von Beginn an produktionsgerecht abgesichert. So wurde das typische Muster vermieden, erst unsicher zu starten und später mühsam nachzuhärten.</p>
         
         
         
-        <p>Domain Logic Centralised in the API: By embedding complex availability rules (maintenance, distance, substitutions) in the backend API rather than the webshop, Vionix ensured that rental logic remained consistent across all future sales channels.</p>
+        <p>Domänenlogik im API-Back-End zentralisiert Die komplexe Verfügbarkeitslogik blieb serverseitig in der API statt im Webshop-Frontend. Dadurch blieb sie konsistent und für weitere Vertriebskanäle wiederverwendbar.</p>
         
         
         
-        <p>Data Quality as a Side Effect: The integration testing process revealed operational data errors that had silently accumulated over time, turning the API project into an unplanned data cleansing initiative.</p>
+        <p>Datenqualität als positiver Nebeneffekt Die Integrationstests legten über Jahre angesammelte operative Datenfehler offen und machten das API-Projekt zugleich zu einer wirksamen Datenhygiene-Initiative.</p>
         
         
         
         <h3>So hat Vionix gearbeitet</h3>
         
         
-        <p>Vionix operated as a technical mediator between the web development firm and the rental company&#39;s internal IT, translating business requirements into infrastructure decisions. After architecting and implementing the integration layer, Vionix transferred all assets and operational knowledge to the client&#39;s team, enabling them to maintain and evolve the system independently.</p>
+        <p>Vionix arbeitete als technischer Vermittler zwischen Webagentur und interner IT und übersetzte Geschäftsanforderungen in belastbare Infrastrukturentscheidungen. Nach Architektur und Umsetzung der Integrationsschicht wurden alle Assets sowie Betriebswissen an das Kundenteam übergeben, sodass Betrieb und Weiterentwicklung eigenständig möglich waren.</p>
         
         
         
@@ -293,7 +293,7 @@
           <h3 class="mb-2">Ähnliche Herausforderung besprechen</h3>
           <p class="mb-0">Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.</p>
         </div>
-        <a class="btn btn-primary" href="/de/index. html#contact">Vionix kontaktieren</a>
+        <a class="btn btn-primary" href="/de/index.html#contact">Vionix kontaktieren</a>
       </div>
     </div>
   </section>

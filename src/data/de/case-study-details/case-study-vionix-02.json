@@ -1,0 +1,173 @@
+{
+  "pageTitleShort": "POS-Ausfälle",
+  "heroTitle": "Wenn das ganze Geschäft an der Kasse hängt: Chronische POS-Ausfälle in 80+ Modefilialen behoben",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "POS-Ausfälle"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Nordlicht Retail (deutscher Modehändler)."
+        },
+        {
+          "type": "p",
+          "text": "Ein großer deutscher Modehändler mit über 80 Filialen kämpfte mit eskalierenden Ausfällen der Kassensysteme, verursacht durch Textilstaub. Aus einem gelegentlichen Ärgernis wurde mit wachsendem Filialnetz eine tägliche Krise. Vionix gestaltete den Hardware-Stack neu, arbeitete mit Ladenbaupartnern an belüfteten Einhausungen in Verkaufstheken und etablierte jährliche Tiefenreinigungszyklen. Dadurch sanken die Ausfälle von mehreren pro Woche auf 1 bis 2 pro Quartal."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der Textileinzelhandel erzeugt durch Warenhandling, Falten und Kundenverkehr permanent Staub in der Luft. Über Jahre standen beim Händler Standard-Desktop-PCs mit Scanner, Bondrucker, Kassenschublade und Netzwerkkarte offen auf oder unter den Theken. Bei 20 Filialen war ein Ausfall pro Monat noch tolerierbar. Mit dem Wachstum auf 80+ Standorte stiegen die Ausfälle zunächst linear mit der Filialzahl und beschleunigten sich zusätzlich durch alternde Hardware und zunehmenden Staubeintrag. Als Vionix einstieg, fielen im Verbund täglich oder wöchentlich mehrere Terminals aus."
+        },
+        {
+          "type": "p",
+          "text": "Jeder Ausfall zwang das Personal zur handschriftlichen Erfassung von Verkäufen. Das führte zu Rechenfehlern, falschem Wechselgeld, blinden Flecken im Bestand (keine Echtzeit-Synchronisation zur Zentrale), Telefonchaos zwischen Filialen und Disposition sowie wachsender Frustration bei Kassenkräften und Kunden. Das POS-Terminal war zum Single Point of Failure für Umsatz und Betrieb geworden."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Umgebung: Textilstaub ist in aktiven Verkaufsflächen unvermeidbar. Kein Hardware-Hardening kann Exposition vollständig eliminieren.",
+            "Betrieb: Ein gleichzeitiger Austausch von 80+ Terminals hätte den Betrieb gelähmt. Die Lösung musste schrittweise bei Ausfall ausgerollt werden.",
+            "Stakeholder-Akzeptanz: Das Thekenlayout lag bei Innenarchitekten. Technische Änderungen erforderten Verhandlung und Co-Design.",
+            "Realistische Erwartung: Der Kunde musste akzeptieren, dass Null-Ausfälle nicht erreichbar sind. Realistisch war nur klare Minimierung."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Realistische Erwartungen setzen Vionix eröffnete das Engagement mit der klaren Botschaft: Selbst gehärtete Systeme fallen in staubigen Umgebungen gelegentlich aus. Ziel ist die Minimierung von Downtime, nicht deren vollständige Eliminierung."
+        },
+        {
+          "type": "p",
+          "text": "2. Einwöchige Analyse und Planung Es folgte eine einwöchige Diagnose von Ausfallmustern, Staubeintragspunkten, Thekenlayouts und bestehenden Hardware-Lebenszyklen."
+        },
+        {
+          "type": "p",
+          "text": "3. Co-Design belüfteter Thekeneinhausungen Gemeinsam mit den Ladenbaupartnern wurden Verkaufstheken mit dedizierten, belüfteten PC-Fächern neu konzipiert. Das neue Layout beinhaltete:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Saubere Kabelführung vom geschützten PC-Fach zu externen Peripheriegeräten (Scanner, Drucker, Kassenschublade)",
+            "Ausreichend Luftführung rund um das Gehäuse zur Vermeidung von Hitzestau",
+            "Montagepunkte für zusätzliche Staubfilter"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "4. Aufbau kundenspezifischer gehärteter PCs Standardgeräte wurden zugunsten komponentenbasierter Systeme aufgegeben, optimiert für staubintensive und uptime-kritische Umgebungen:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Industriegeeignete Lüfter für CPU- und Gehäusebelüftung",
+            "Zusätzliche Staubfilter im Ansaug- und Abluftpfad",
+            "Hochwertige Mainboards, RAM und CPUs zur Reduktion komponentenbedingter Ausfälle"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "5. Mehrtägiges Burn-in-Testing Jede Einheit wurde vor Auslieferung mehrere Tage unter Dauerlast getestet, um Frühausfälle zu erkennen und Stabilität abzusichern."
+        },
+        {
+          "type": "p",
+          "text": "6. Inkrementeller Rollout bei Ausfall Neue Systeme wurden schrittweise installiert, sobald alte Terminals ausfielen. So ließ sich ein disruptives Flotten-Upgrade vermeiden."
+        },
+        {
+          "type": "p",
+          "text": "7. Jährliches Tiefenreinigungsprotokoll Ein geplanter Wartungszyklus wurde eingeführt: Ein Techniker besucht jede Filiale einmal pro Jahr, demontiert Terminals, reinigt intern, tauscht Filter, prüft Kabelführung und bestätigt die Integrität der Einhausung. Anfangs führte Vionix dies selbst durch (50:50 zwischen Lead und Kollege), später übernahm ein geschulter Partner den Hauptanteil (80 Prozent) unter Vionix-Aufsicht (20 Prozent)."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "80+ individuell aufgebaute, staubgehärtete POS-Terminals mit industrieller Belüftung und Filtration",
+            "Neues Thekenkonzept mit belüfteten PC-Fächern und strukturierter Verkabelung",
+            "Dokumentiertes jährliches Wartungsprotokoll plus geschulter Ausführungspartner",
+            "Mehrtägiges Burn-in-Testverfahren zur Qualitätssicherung vor Deployment"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Ausfallrate gesenkt: von mehreren Ausfällen pro Woche (im Peak täglich) auf 1 bis 2 pro Quartal im Gesamtverbund",
+            "Operative Stabilität: Wegfall manueller Notprozesse, Rechenfehler, Wechselgeldfehler und Bestandssynchronisationsausfälle",
+            "Verbesserte Arbeitsrealität: Kassenkräfte arbeiteten deutlich weniger gegen das System, die Zentrale erhielt wieder Echtzeitsicht auf Bestände",
+            "Höheres Kundenvertrauen: Der Händler nahm Vionix als Partner wahr, der systemische Infrastrukturprobleme löst statt nur Vorfälle abzufedern"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Umgebungskontrolle war genauso entscheidend wie Komponentenqualität Das Theken-Redesign mit physischer Trennung der PCs in belüfteten, gefilterten Einhausungen war ebenso wichtig wie die Auswahl robuster Hardware."
+        },
+        {
+          "type": "p",
+          "text": "Inkrementeller Rollout entsprach der Betriebsrealität Der Austausch bei Ausfall vermied die Kosten und Störungen eines gleichzeitigen Komplettwechsels."
+        },
+        {
+          "type": "p",
+          "text": "Erwartungsmanagement verhinderte Enttäuschung Die Zielsetzung 'minimal akzeptable Ausfallrate' statt 'Null-Downtime' brachte das mentale Modell des Kunden in Einklang mit physischer Realität."
+        },
+        {
+          "type": "p",
+          "text": "Burn-in-Tests zogen Ausfallrisiken nach vorn Mehrtägige Stresstests identifizierten schwache Komponenten, bevor sie in den Filialbetrieb gelangten."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix führte die initiale Analyse, das Hardening-Design und die Protokollentwicklung und trainierte parallel einen internen Kollegen, der schrittweise die Hauptverantwortung im Wartungsbetrieb übernahm. Das Theken-Redesign erforderte enge Zusammenarbeit mit den Innenausbaupartnern des Händlers. Technische Vorgaben wie Luftführung, Kabelführung und Filterzugang mussten in ästhetisch und ergonomisch tragfähige Thekenlayouts übersetzt werden. Die laufende Wartung wurde später an einen Spezialpartner übergeben, unter Vionix-Supervision, um langfristige Stabilität ohne Dauerabhängigkeit sicherzustellen."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

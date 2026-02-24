@@ -1,0 +1,185 @@
+{
+  "pageTitleShort": "Forstinventur-Methode industrialisiert",
+  "heroTitle": "Von Forschungsskripten zur behördentauglichen Software: Eine Forstinventur-Methode industrialisiert",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Forstinventur-Methode industrialisiert"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Canopy Metrics (deutsches Forst-Analytics-Vorhaben). Branche: Umweltwissenschaft und Forsttechnologie. Zielgruppe: deutsche Landesforstbehörden. Zeitleiste: etwa ein Jahr. Umfang: Überführung neuartiger Forstalgorithmen aus universitären Skriptwerkzeugen in eine ausrollbare Windows-Desktopanwendung."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ein Forscher hatte eine neuartige Methode zur automatisierten Forstinventur entwickelt. Statt manueller Bandmaß-Aufnahmen im Gelände sollten Luftbild- und Infrarotdaten ausgewertet werden. Mathematik und Algorithmen funktionierten, existierten jedoch nur als Skripte in einem obskuren universitären Werkzeug ähnlich MATLAB, ausgelegt auf isolierte Forschungsdiagramme statt Endanwender-Software."
+        },
+        {
+          "type": "p",
+          "text": "Die Situation war eskaliert: Der Forscher hatte sich vom ursprünglichen Entwickler getrennt, ein belastbarer Weiterentwicklungspfad existierte nicht. Der vermeintliche Prototyp hatte keine nutzbare Benutzeroberfläche, arbeitete mit hart codierten Parametern und nutzte kopierte Codevarianten je Eingabeszenario. Er war weder verteilbar noch bei Behörden vorführbar und außerhalb des Labors nicht betreibbar. Der Forscher glaubte, er sei kurz vor einem Produkt. Tatsächlich lag ein Proof of Concept ohne industrielle Grundlage vor."
+        },
+        {
+          "type": "p",
+          "text": "Klassische Forstinventur bedeutete weiterhin, Baumumfänge im Feld manuell mit Maßband zu erfassen, um Holzvolumen pro Hektar abzuschätzen. Das ist arbeitsintensiv und langsam. Die neue Methode versprach Automatisierung über Fernerkundungsdaten, aber nur dann, wenn die Software zuverlässig von Forstfachleuten bedient werden konnte und nicht nur vom Forscher selbst."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Strikte Vertraulichkeit: Die Algorithmik unterlag einer strengen NDA. Die Fallstudie beschreibt daher die Engineering-Transformation, nicht die proprietäre Methode selbst.",
+            "Windows-Offline-Deployment: Die Zielnutzer in Behörden brauchten eine eigenständige Desktopanwendung, keinen Cloud- oder Webdienst.",
+            "Leistungsanforderung: Das Rendern großer Kartendatensätze in OpenGL erforderte effizientes Speicher- und GPU-Management.",
+            "Kommerzialisierungsziel: Angestrebt war Beschaffung durch deutsche Bundesländer. Die Software musste entsprechend präsentationsfähig und behördentauglich sein."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Lücke zwischen Forschungscode und Produkt präzise bewerten Die vorhandenen Skripte waren monofunktionale Interpreter-Dateien ohne Abstraktionsschichten. Parameter waren fest verdrahtet, Eingaben fragil, Versionskontrolle und Modularität fehlten, ebenso die Trennung von Algorithmik und Visualisierung. Der erste Schritt war die ehrliche Feststellung: Das war nicht fast fertig, sondern ein vollständiger Neuaufbau um den mathematischen Kern."
+        },
+        {
+          "type": "p",
+          "text": "2. Industrielles Entwicklungsumfeld aufbauen Vionix führte Versionskontrolle ein und definierte Entwicklungsstandards für ein gemischtes Team aus Praktikanten, Mathematikern und Forscher. Branching, Review-Routinen und ein strukturierter Build-Prozess wurden etabliert. So konnten Mathematiker mit grundlegenden Programmierkenntnissen Algorithmusmodule beisteuern, ohne die Hauptcodebasis zu destabilisieren."
+        },
+        {
+          "type": "p",
+          "text": "3. Saubere Schnittstellen zwischen Mathematik und Software gestalten Statt mathematischen Rohcode direkt zu integrieren, wurden klare API-Grenzen gesetzt: Mathematiker kapselten ihre Logik in aufrufbaren Funktionen, der Lead-Entwickler integrierte diese in die Anwendung. Damit blieb Fachlogik getrennt von UI, Datenverarbeitung und Rendering und die Codebasis wartbar sowie testbar."
+        },
+        {
+          "type": "p",
+          "text": "4. Migration auf Borland C++ und Aufbau der Desktopanwendung Alle Algorithmen wurden aus dem universitären Skriptwerkzeug nach C++ portiert. Die Benutzeroberfläche entstand vollständig neu, inklusive:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Import-Pipeline: Parser für verschiedene proprietäre Formate (binär, textbasiert, CSV-Varianten, GPS-Geräteausgaben).",
+            "Internes Datenmodell: eigenes binäres Projektformat zur Persistenz von Zwischenständen.",
+            "Visualisierung: Umstellung von 2D-Grafik auf OpenGL-Kartenansichten mit GPU-beschleunigter Verarbeitung großer Datenmengen.",
+            "Exportoptionen: CSV sowie Datenbankanbindung über ODBC und SQLite für Anschluss an GIS- und Reporting-Systeme.",
+            "Speicherverwaltung: Optimiert für Windows-Desktop-Bedingungen unter Nutzung von GPU-Speicher für Rendering-Operationen."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "5. Gegen reale Ground-Truth validieren Der Forscher führte Parallelmessungen im Feld mit klassischer Bandmaß-Methode durch. Diese Referenzdaten validierten die Softwareergebnisse. Korrektheit wurde über Source-Review, Ergebnisvergleich und iteratives Feedback zu Visualisierungsgenauigkeit und UI-Workflows abgesichert."
+        },
+        {
+          "type": "p",
+          "text": "6. Für Behörden-Demonstrationen vorbereiten Die Anwendung wurde als standardisierter Windows-Installer mit Dokumentation ausgeliefert (durch den Forscher erstellt). Zum Ende des Engagements war die Lösung stabil genug für Präsentationen bei deutschen Forstbehörden und diese Demonstrationen fanden wie geplant statt."
+        },
+        {
+          "type": "p",
+          "text": "7. Wartbare Codebasis übergeben Versionskontrollierter Quellcode, klare Architektur, modulare Algorithmusintegration und dokumentierte Übergabeartefakte wurden vollständig hinterlassen. Ein erfahrener Entwickler konnte übernehmen, ohne tiefes mathematisches Spezialwissen vorauszusetzen."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Vollständige Desktopanwendung: Windows-Installer, Offline-Betrieb sowie GUI-geführte Abläufe für Import, Verarbeitung, Visualisierung und Export.",
+            "Import-Engine für mehrere Formate: Unterstützung proprietärer Binär- und Textformate, GPS-Daten und CSV-Varianten.",
+            "Eigenes Projektdateiformat: Binäre Ablage von Zwischenständen und Sitzungszuständen.",
+            "Datenbankexport: ODBC- und SQLite-Anbindung für nachgelagerte Analyse und Berichte.",
+            "OpenGL-basierte Visualisierung: GPU-beschleunigtes Rendering großer forstlicher Kartendaten statt statischer 2D-Grafiken.",
+            "Versionskontrollierte Codebasis: Teamfähig aufgebaut mit klaren Schnittstellen zwischen mathematischen Modulen und Anwendungsebene.",
+            "Training und Übergabeunterlagen: Praktikanten und Mathematiker wurden in das Entwicklungsumfeld eingeführt; saubere Dokumentation sicherte Kontinuität."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Alle ursprünglichen Algorithmen und mathematischen Modelle wurden erfolgreich aus dem universitären Skriptumfeld in eine industrielle C++-Anwendung überführt. Die Lösung entwickelte sich vom forskungsnahen Prototyp mit fest codierten Parametern zu einem vorführbaren Produkt für Landesforstbehörden."
+        },
+        {
+          "type": "p",
+          "text": "Die Engineering-Lücke wurde geschlossen: Aus einer Sammlung isolierter Skripte entstand eine ausrollbare Anwenderanwendung, die reale Sensordaten importieren, die proprietäre Analyse ausführen und Ergebnisse in behördentauglichen Formaten exportieren konnte."
+        },
+        {
+          "type": "p",
+          "text": "Eine kommerzielle Markteinführung erfolgte dennoch nicht. Der Forscher verlagerte seinen Fokus auf methodische Erweiterungen statt Produktabschluss für Beschaffungsprozesse. Nach einem Jahr wurde das Engagement beendet, weil die Software technisch funktionsfähig war, die Produktisierung jedoch auf unbestimmte Zeit verschoben blieb."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Klarheit über das Engineering-Defizit Der Forscher hielt den Prototyp anfangs für fast fertig. Die ehrliche Bewertung der Lücke und des tatsächlichen Arbeitsumfangs setzte realistische Erwartungen und lenkte den Fokus auf industrielle Grundlagen statt auf zusätzliche Features."
+        },
+        {
+          "type": "p",
+          "text": "Saubere Aufgabentrennung Mathematiker lieferten Domänenlogik über definierte Schnittstellen und mussten nicht zu Softwareingenieuren werden. So blieb ihr Fokus auf fachlicher Korrektheit, während die Anwendungsarchitektur sauber blieb."
+        },
+        {
+          "type": "p",
+          "text": "Inkrementelle Validierung gegen Ground-Truth Reale Felddaten boten einen belastbaren Korrektheitsanker. Die Portierung wurde dadurch entlastet, weil Ergebnisse kontinuierlich mit bekannten Referenzen verglichen und Regressionen früh erkannt werden konnten."
+        },
+        {
+          "type": "p",
+          "text": "Modulare, wartbare Architektur Die Codebasis wurde explizit übergabefähig strukturiert. Nach Projektende war die Software nicht blockiert, sondern in einem Zustand, den neue Entwickler bei Bedarf produktiv fortführen konnten."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Teamzuschnitt: ein Lead-Entwickler (Architekt, Umsetzer, Mentor), 2 bis 3 rotierende Praktikanten mit heterogenem Niveau und 2 bis 3 Mathematiker als Algorithmusautoren mit grundlegender Versionskontrollpraxis."
+        },
+        {
+          "type": "p",
+          "text": "Verantwortungsteilung: Der Lead verantwortete Architektur, UI, Datenpipeline und Integration. Mathematiker kapselten fachliche Logik in aufrufbare Module. Praktikanten übernahmen Beiträge gemäß Kompetenzprofil und wurden methodisch begleitet."
+        },
+        {
+          "type": "p",
+          "text": "Validierungs- und Feedbackschleifen: Der Forscher validierte Ergebnisqualität, UI-Workflows und Visualisierungsgenauigkeit. Das Team nutzte seine Domänenexpertise als Akzeptanzkriterium, nicht als Ersatz für Softwaredesign-Entscheidungen."
+        },
+        {
+          "type": "p",
+          "text": "Übergabe: Das Engagement endete mit Ablauf der Vertragslaufzeit und ausbleibender Produktisierung durch Scope-Erweiterung. Eine saubere, versionskontrollierte Codebasis plus Übergabedokumentation wurde hinterlassen und sicherte Anschlussfähigkeit für künftige Entwicklung."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "pageTitleShort": "Inventur-Rollout ohne Ausfälle",
+  "heroTitle": "Vertrauen in kritische Compliance wiederherstellen: Inventur-Rollout ohne Ausfälle für Audit-Sicherheit",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Inventur-Rollout ohne Ausfälle"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Nordlicht Retail (deutscher Modehändler). Skalierung: über 80 Filialen mit 3 bis 6 Mitarbeitenden pro Standort. Kontext: Jährliche Inventur-Audits für Versicherungs- und Regulatorik-Compliance."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der Kunde nutzte eine individuell entwickelte Legacy-Anwendung (auf Basis von CA-Visual Objects) für die jährlichen Filialinventuren. Dieses System war zu einem erheblichen Risiko geworden."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Instabilität: Die Anwendung stürzte bei der Datenverarbeitung häufig ab und übertrug Daten unzuverlässig in die Zentrale.",
+            "Compliance-Risiko: Ungenaue Bestandsdaten führten zu substanziellen Risiken bei Steueranforderungen und Versicherungsbewertungen.",
+            "Vertrauensverlust: Jahre technischer Ausfälle hatten das Vertrauen der Mitarbeitenden massiv beschädigt. Die Inventur galt als risikoreich und stressbelastet."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "constraints-complexity",
+      "heading": "Rahmenbedingungen und Komplexität",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Null-Vertrauensumfeld: Die zentrale Hürde war primär psychologisch, nicht technisch. Der Kunde hatte aufgrund früherer Erfahrungen praktisch kein Vertrauen mehr in Softwarelösungen.",
+            "Konnektivität: Filialen brauchten volle Offline-Fähigkeit, um den Betrieb unabhängig vom Netzstatus sicherzustellen.",
+            "Auditierbarkeit: Digitale Datensätze mussten sofort durch physische Ausdrucke lokal verifizierbar sein."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix wechselte innerhalb von etwa einem Monat von der Analyse in die produktive Einführung, mit klarem Fokus auf Stabilität und Datenintegrität."
+        },
+        {
+          "type": "p",
+          "text": "1. Re-Plattforming auf C# und SQL Vionix löste sich von der instabilen CA-Visual-Objects-Architektur. Die neue Lösung wurde in C# entwickelt und ersetzte dateibasierte Abhängigkeiten durch Microsoft SQL Server Express. Damit entstand transaktionale Integrität: Daten wurden vor jeder Übertragung zunächst sicher lokal persistiert."
+        },
+        {
+          "type": "p",
+          "text": "2. Local-First-Architektur Um Netzwerkabhängigkeit zu eliminieren, wurde das System so gebaut, dass alle notwendigen Bestands- und Validierungsdaten lokal auf den Filialrechnern vorliegen. Dadurch blieb die Anwendung auch im Offline-Betrieb reaktionsfähig und stabil."
+        },
+        {
+          "type": "p",
+          "text": "3. Hardware- und Reporting-Integration Vionix integrierte Handscanner direkt für schnelle Datenerfassung. Entscheidend war außerdem die Einführung von List und Label für präzise Ausdrucke vor Ort. Filialleitungen erhielten damit sofort eine belastbare Hardcopy-Prüfung ihrer digitalen Meldung."
+        },
+        {
+          "type": "p",
+          "text": "4. Trust-Rollout im Hyper-Care-Modus Um die Vertrauenslücke zu schließen, begleiteten Vionix-Berater die Teams in den ersten Nachtschicht-Inventuren physisch vor Ort. Vionix reiste dafür durch Deutschland und unterstützte die ersten fünf Standorte persönlich."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Individuelle Inventur-Anwendung in C#: robuster Desktop-Client mit Offline-Fähigkeit.",
+            "Lokaler Datenspeicher: SQL-Server-Express-Instanz für belastbares Caching.",
+            "Zentraler Sync-Mechanismus: neuer fehlertoleranter Übertragungspfad in die Zentrale.",
+            "Mitarbeiterschulung: umfassendes Onboarding für Teamleitungen und Belegschaft."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "0 Prozent Ausfallrate: Über alle 80 Filialen fiel Fehler- und Absturzrate auf null.",
+            "Sofortige Vertrauensrückgewinnung: Die Lösung lief in den ersten fünf Pilotfilialen so stabil, dass der Kunde den Vor-Ort-Support für die verbleibenden 75 Standorte abbestellte.",
+            "Regulatorische Sicherheit: Die Datenübertragung in die Zentrale war zu 100 Prozent vollständig und korrekt und erfüllte Anforderungen von Versicherung und Behördenprüfung."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Präsenz als Feature Der technische Wechsel auf C# und SQL Server löste die Stabilitätsprobleme, aber der Projekterfolg wurde über die Einführungsstrategie entschieden. Durch physische Präsenz in den kritischen Nachtschichten absorbierte Vionix die Kundennervosität und übernahm sichtbar Verantwortung. Das System bewies sich im Feld, nicht nur im Testlabor, und der Kunde gewann nahezu sofort wieder operative Eigenständigkeit."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Zusammenarbeit und Training Vionix arbeitete direkt mit Geschäftsführung und Teamleitungen an der Prozessgestaltung. Der gesamte Zyklus wurde aus einer Hand geführt: von Legacy-Analyse und Interviews bis zum Endanwendertraining, damit die Technologie tatsächlich zur operativen Realität in den Filialen passt."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

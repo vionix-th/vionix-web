@@ -160,7 +160,7 @@
         <ol>
           <li><a href="/de/index.html">Startseite</a></li>
           <li><a href="/de/case-studies.html">Fallstudien</a></li>
-          <li class="current">Wareneingang auf Legacy-Hardware digitalisiert</li>
+          <li class="current">Wareneingang digitalisieren</li>
         </ol>
       </nav>
     </div>
@@ -171,24 +171,24 @@
       <div class="case-study-wrap">
         <a class="back-link" href="/de/case-studies.html"><i class="bi bi-arrow-left"></i> Zurück zu allen Fallstudien</a>
 
-        <h1>Wareneingang auf Legacy-Hardware digitalisiert</h1>
+        <h1>Brücke zwischen Alt und Neu: Wareneingang auf Legacy-Hardware digitalisieren</h1>
 
         
         <h3>Kurzprofil</h3>
         
         
-        <p>Delivery model: Principal-led engagement (Stefan, Founder &amp; Principal Consultant) Client: Atlas Heavy Industries (German regional operation in a global heavy-equipment network) Context: The client operates central warehouses responsible for processing significant volumes of incoming heavy machinery parts. They had already invested in ruggedised Windows CE handheld scanners but lacked the software infrastructure to make them functional.</p>
+        <p>Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Atlas Heavy Industries (deutsche Regionseinheit eines globalen Netzwerks für Schwertechnik). Kontext: In den Zentrallagern wurden hohe Volumina eingehender Ersatzteile verarbeitet. Robuste Windows-CE-Handscanner waren bereits beschafft, aber die notwendige Software-Infrastruktur fehlte.</p>
         
         
         
         <h3>Die Herausforderung</h3>
         
         
-        <p>The client warehousing operations were dependent on paper-based workflows. Staff manually recorded goods receipts on clipboards and later keyed the data into the ERP system, a slow process prone to transcription errors.</p>
+        <p>Die Lagerprozesse basierten auf Papierabläufen. Mitarbeitende erfassten Wareneingänge zunächst auf Klemmbrettern und tippten die Daten später ins ERP, langsam und fehleranfällig durch Übertragungsfehler.</p>
         
         
         
-        <p>While the hardware strategy was in place (Windows CE scanners had already been procured), the software strategy was missing. The client&#39;s existing ERP system offered no native mobile interface or API suitable for handheld devices. The challenge was to build a bridge between modern mobile hardware and a rigid backend system that wasn&#39;t designed to support it.</p>
+        <p>Die Hardwarestrategie stand bereits, die Softwareschicht fehlte. Das vorhandene ERP bot keine native mobile Oberfläche und keine geeignete API für Handhelds. Die Aufgabe war, eine tragfähige Brücke zwischen moderner Scan-Hardware und einem starren Back-End-System zu bauen, das dafür nie ausgelegt war.</p>
         
         
         
@@ -197,11 +197,11 @@
         
         <ul>
           
-          <li>Legacy Operating System: The target devices ran Windows CE, requiring development on the older.NET Compact Framework (.NET 3.5).</li>
+          <li>Legacy-Betriebssystem: Die Zielgeräte liefen auf Windows CE, was Entwicklung im älteren NET-Compact-Framework in Version 3.5 erforderte.</li>
           
-          <li>User Proficiency: The warehouse staff were not technical users. The interface had to be drastically simple to ensure adoption and prevent confusion.</li>
+          <li>Nutzerkompetenz: Das Lagerpersonal war nicht technisch spezialisiert. Die Oberfläche musste radikal einfach bleiben, um Akzeptanz zu sichern und Fehlbedienung zu vermeiden.</li>
           
-          <li>Vendor Resistance: The ERP provider did not natively support third-party mobile devices, creating potential friction in defining the interface.</li>
+          <li>Herstellerwiderstand: Der ERP-Anbieter unterstützte Dritt-Hardware nicht nativ, was Reibung bei der Schnittstellendefinition erzeugte.</li>
           
         </ul>
         
@@ -210,19 +210,19 @@
         <h3>Vorgehen</h3>
         
         
-        <p>The project moved from concept to deployment in three months.</p>
+        <p>Das Projekt ging in drei Monaten von der Konzeptphase in den produktiven Einsatz.</p>
         
         
         
         <ol>
           
-          <li>Stakeholder Alignment: Vionix facilitated a concept phase with the client&#39;s IT lead to define the workflow. Crucially, Vionix engaged the ERP vendor management early to formalise the interface specification, bypassing initial resistance from their support teams.</li>
+          <li>Stakeholder-Alignment: Vionix moderierte mit der IT-Leitung des Kunden die Konzeptphase und definierte den Zielablauf. Entscheidend war die frühe Einbindung des ERP-Managements, um die anfängliche Blockade in Support-Einheiten zu umgehen und die Schnittstelle verbindlich festzulegen.</li>
           
-          <li>Robust Protocol Selection: Vionix implemented a SOAP-based interface. This choice provided strict type safety within the constraints of the.NET Compact Framework and ensured seamless integration with the ERP&#39;s existing technology stack.</li>
+          <li>Robuste Protokollwahl: Vionix setzte auf SOAP. Unter den Rahmenbedingungen des NET-Compact-Frameworks lieferte dies strikte Typisierung und saubere Integration mit dem bestehenden ERP-Technologiestack.</li>
           
-          <li>Targeted Development: Vionix built a bespoke client application in C# (.NET 3.5), strictly optimising for the limited resources of Windows CE.</li>
+          <li>Gezielte Umsetzung: Vionix entwickelte einen maßgeschneiderten Client in C# auf Basis des NET-Frameworks 3.5, optimiert auf die begrenzten Ressourcen von Windows-CE-Geräten.</li>
           
-          <li>&quot;Zero-Training&quot; UX Design: Vionix designed the user interface to be minimalist and linear, guiding the user through the scan-and-book process without requiring knowledge of the underlying system.</li>
+          <li>Zero-Training-UX: Die Benutzeroberfläche wurde minimalistisch und linear gestaltet, sodass der Scan-und-Buchen-Ablauf ohne Systemwissen bedienbar blieb.</li>
           
         </ol>
         
@@ -233,11 +233,11 @@
         
         <ul>
           
-          <li>Custom Windows CE Application: A native application optimized for specific handheld hardware.</li>
+          <li>Individuelle Windows-CE-Anwendung: native App für die konkrete Handheld-Hardware optimiert.</li>
           
-          <li>SOAP Middleware: A stable communication layer bridging the handhelds and the ERP.</li>
+          <li>SOAP-Middleware: stabile Kommunikationsschicht zwischen Handgeräten und ERP.</li>
           
-          <li>Operational Training: On-site training for warehouse staff on device usage and for IT administrators on device configuration.</li>
+          <li>Operatives Training: Vor-Ort-Schulung für Lagerpersonal zur Nutzung und für IT-Administratoren zur Gerätekonfiguration.</li>
           
         </ul>
         
@@ -248,11 +248,11 @@
         
         <ul>
           
-          <li>100% Digitalisation: The manual paper-and-clipboard process was eliminated immediately upon go-live.</li>
+          <li>100 Prozent Digitalisierung: Der papierbasierte Klemmbrett-Prozess wurde unmittelbar nach Go-live vollständig abgelöst.</li>
           
-          <li>Long-Term Stability: The system has proven to be exceptionally stable, running for over five years with zero software-related support tickets.</li>
+          <li>Langfristige Stabilität: Das System lief über mehr als fünf Jahre ohne softwarebedingte Supporttickets.</li>
           
-          <li>Resilience: In the only recorded incident during the system lifecycle, a sudden failure of all devices, our investigation quickly identified a client-side network misconfiguration, proving the software integrity remained intact.</li>
+          <li>Resilienz: Im einzigen dokumentierten Störfall mit Ausfall aller Geräte identifizierte die Analyse rasch eine kundenseitige Netzfehlkonfiguration, während die Softwareintegrität intakt blieb.</li>
           
         </ul>
         
@@ -261,18 +261,18 @@
         <h3>Warum es funktioniert hat</h3>
         
         
-        <p>Simplicity over Features By stripping the mobile interface down to its absolute essentials, Vionix removed the barrier to entry for warehouse staff. The software didn&#39;t try to replicate the ERP; it only exposed the specific function needed (goods-in).</p>
+        <p>Einfachheit vor Funktionsfülle Durch radikale Reduktion der mobilen Oberfläche auf den Kernprozess senkte Vionix die Einstiegshürde für Lagerpersonal. Die Anwendung versuchte nicht, das ERP zu replizieren, sondern exponierte nur die benötigte Funktion Wareneingang.</p>
         
         
         
-        <p>Defensive Engineering The choice of SOAP and strict type safety meant the integration was rigid but reliable. This architecture contributed to the &quot;silent runner&quot; nature of the project, where the software continues to function year after year without maintenance.</p>
+        <p>Defensive Engineering-Entscheidung Die Wahl von SOAP mit strikter Typisierung machte die Integration bewusst rigide, aber verlässlich. Genau diese Architektur begründete den Silent-Runner-Charakter des Projekts, in dem die Lösung über Jahre ohne nennenswerten Wartungsbedarf lief.</p>
         
         
         
         <h3>So hat Vionix gearbeitet</h3>
         
         
-        <p>Managing Multi-Vendor Politics The project relied on the cooperation of the client ERP vendor. Their support team was initially reluctant to support third-party hardware. By escalating the technical architecture discussions to the vendor management, Vionix secured the necessary cooperation to build a reliable interface, eventually handing over backend maintenance to them completely.</p>
+        <p>Umgang mit Multi-Vendor-Politik Das Projekt hing von Kooperation mit dem ERP-Anbieter ab, dessen Supportseite Dritt-Hardware anfänglich ablehnte. Durch Eskalation der Architekturgespräche auf Management-Ebene stellte Vionix die notwendige Zusammenarbeit sicher und konnte die Backend-Wartung später vollständig an den Anbieter übergeben.</p>
         
         
         
@@ -287,7 +287,7 @@
           <h3 class="mb-2">Ähnliche Herausforderung besprechen</h3>
           <p class="mb-0">Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.</p>
         </div>
-        <a class="btn btn-primary" href="/de/index. html#contact">Vionix kontaktieren</a>
+        <a class="btn btn-primary" href="/de/index.html#contact">Vionix kontaktieren</a>
       </div>
     </div>
   </section>

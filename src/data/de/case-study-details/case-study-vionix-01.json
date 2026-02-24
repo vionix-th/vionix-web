@@ -1,0 +1,193 @@
+{
+  "pageTitleShort": "Datenbankdisziplin unter Vertriebsdruck",
+  "heroTitle": "Wenn 4-Stunden-Reports die gesamte Zentrale blockieren: Vertrauen durch Datenbankdisziplin zurückgewinnen",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Datenbankdisziplin unter Vertriebsdruck"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Nordlicht Retail (deutscher Modehändler)."
+        },
+        {
+          "type": "p",
+          "text": "Ein großer deutscher Modehändler mit über 80 Filialen wurde von einem Legacy-POS-Reporting-System ausgebremst. Für die tägliche Warenverteilung mussten Berichte laufen, die bis zu 4 Stunden dauerten, die gesamte IT der Zentrale blockierten und regelmäßig abstürzten. Das Engagement stellte die operative Stabilität innerhalb von 3 Wochen wieder her und reparierte die Zusammenarbeit zwischen IT- und Vertriebsleitung."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Jeden Morgen benötigte die Vertriebsleitung Verteilreports, um Bestand auf über 80 Filialen zu allokieren. Der Ablauf war täglich eine Krise:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "4 Stunden Laufzeit für Schlüsselberichte, oft mit Absturz vor Abschluss",
+            "Exklusive Datenbanksperren froren während der Ausführung die gesamte Zentrale ein",
+            "Datenbankchaos mit MySQL und MSSQL ohne kohärentes Schemadesign",
+            "Legacy-Codebasis: handgeschriebene Reporting-Software in CA-Visual Objects, einer Nischensprache mit geringer Wartbarkeit",
+            "Dauerbeschwerden: Die IT hatte im Fachbereich massiv an Glaubwürdigkeit verloren, der Vertrieb hielt das Technikteam für handlungsunfähig"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Das System war zum Flaschenhals des gesamten Filialbetriebs geworden, und in der IT konnte niemand mehr belastbar kommunizieren, was technisch realistisch machbar war."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Kein Budget für Ersatz: Das POS-Kernsystem konnte nicht neu gebaut werden",
+            "Duale Datenbankarchitektur: Die bestehende MySQL-MSSQL-Aufteilung war gesetzt",
+            "Hoher Betriebsdruck: Reports waren geschäftskritisch, Ausfälle während der Korrekturen nicht akzeptabel",
+            "Vertrauensdefizit: Die Lösung musste sofort sichtbare Verbesserungen liefern, um Vertrauen zurückzugewinnen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Query-Plan-Forensik Für jede relevante Abfrage der Reporting-Software wurden Ausführungspläne analysiert. Sichtbar wurden fehlende Indizes, kartesische Joins und Full-Table-Scans auf Transaktionstabellen mit Millionen Datensätzen."
+        },
+        {
+          "type": "p",
+          "text": "2. Strategische Indizierung Auf häufig verknüpften Spalten und zentralen Filterprädikaten wurden gezielt Indizes ergänzt. Priorisiert wurden die Abfragen, die die längsten Sperren verursachten."
+        },
+        {
+          "type": "p",
+          "text": "3. Abstraktion über Datenbank-Views Wiederkehrende Join-Muster (z. B. Verkaufstransaktionen plus Lagerbewegungen plus Filialmetadaten) wurden in Views gekapselt. Das beseitigte redundante Query-Logik und erhöhte die Konsistenz."
+        },
+        {
+          "type": "p",
+          "text": "4. Stored Procedures für berechnete Felder Komplexe Berechnungen (Bestandsdeltas, regionale Aggregationen) wurden in Stored Procedures verlagert, die die Views versorgen. Dadurch sank die Rechenlast im Reporting-Layer deutlich."
+        },
+        {
+          "type": "p",
+          "text": "5. Lock-intensives Tooling ersetzt Die handgeschriebene CA-Visual-Objects-Lösung wurde abgelöst. Mit List und Label wurde ein kommerzielles Reporting-Tool eingeführt, das auf die neuen Views ohne exklusive Locks zugreift."
+        },
+        {
+          "type": "p",
+          "text": "6. Transaktionsbasierte Berechnungsarchitektur Statt auf Snapshot-Daten zu setzen (mit zusätzlichen Konsistenzsperren), wurden Verkäufe, Retouren und Lagerbewegungen transaktionsbasiert summiert und mit jährlichen physischen Inventuren korreliert. Dieser Ansatz:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Eliminierte die Notwendigkeit lang laufender Sperren",
+            "Machte manuelle Korrekturen (z. B. Bestandsanpassungen) sofort systemweit sichtbar",
+            "Reduzierte fehlerhafte Datensätze aus veralteten Snapshots massiv"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "7. Nutzeraufklärung zu Datenkorrektheit Gemeinsam mit dem Vertrieb wurde die Erwartungshaltung neu kalibriert: Ein Report mit 5 Artikeln statt 4 oder 6 ist operativ gleichwertig, wenn kurz nach Reporterstellung ein Verkauf stattfindet. Ziel ist entscheidungsfähige Genauigkeit, nicht Echtzeit-Perfektion. Das entschärfte Beschwerden über Kleindifferenzen und lenkte den Fokus auf handlungsrelevante Erkenntnisse."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Indiziertes Datenbankschema mit Views, die rund 80 Prozent der Reporting-Abfragen konsolidieren",
+            "List-und-Label-basierte Reporting-Suite als Ersatz für Legacy-CA-Visual-Objects-Code",
+            "Transaktionsbasierte Berechnungs-Engine (Stored Procedures) für Bestandsabgleich",
+            "Dokumentation des neuen Datenmodells und der Query-Muster für interne Nachpflege",
+            "Training für den Vertrieb zur Interpretation von Reportdaten und Zeitfenster-Effekten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Laufzeitreduktion: von 4 Stunden auf 30 Minuten für kritische Verteilreports",
+            "Keine Systemlocks mehr: Die IT-Infrastruktur der Zentrale friert bei Reportläufen nicht mehr ein",
+            "Tägliche Abstürze eliminiert: Reports liefen morgens zuverlässig",
+            "Sofortige Datenwirkung: Manuelle Korrekturen (z. B. Bestandsanpassungen) waren unmittelbar sichtbar statt erst nach Nachtbatches",
+            "Glaubwürdigkeit zurückgewonnen: Das IT-Team wurde wieder als belastbarer Partner wahrgenommen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Technischer Pragmatismus statt Perfektionismus Statt eine Voll-Neuentwicklung zu verlangen, arbeitete die Lösung innerhalb realer Grenzen (duale Datenbanken, Legacy-POS). Strategische Indizierung und View-Konsolidierung lieferten eine Verbesserung von 87,5 Prozent ohne Eingriff in die Kernanwendung."
+        },
+        {
+          "type": "p",
+          "text": "Korrektheit als Geschäftsbegriff neu gerahmt Die Aufklärungsarbeit war so wichtig wie der technische Fix. Erst durch Abgleich von Vertriebserwartung und Datenbankrealität (eventual consistency, Zeitfenster) wechselte das Narrativ von 'Daten sind falsch' zu 'Daten sind entscheidungsfähig'."
+        },
+        {
+          "type": "p",
+          "text": "Transaktionsbasierte Wahrheit Der Wechsel von Snapshot-Locking zu transaktionsbasierter Summierung löste Performance- und Genauigkeitsprobleme gleichzeitig. Damit wurde die Ursache beseitigt statt nur um sie herum zu optimieren."
+        },
+        {
+          "type": "p",
+          "text": "Menschenzentrierte Lieferung Erfolg wurde nicht nur an Query-Zeiten gemessen, sondern daran, ob IT und Vertrieb wieder produktiv zusammenarbeiten konnten. Der Vertrauensaufbau war das eigentliche Endergebnis."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Das Engagement war als dreiwöchige Intensivintervention aufgebaut:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Woche 1: Query-Plan-Analyse, Indexumsetzung und View-Design",
+            "Woche 2: Entwicklung von Stored Procedures, Integration von List und Label, Tests",
+            "Woche 3: Schulung, Monitoring und Übergabe an die interne IT"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tägliche Abstimmungen mit der Vertriebsleitung hielten Prioritäten und Feedback eng synchron. Die Umsetzung lief parallel zum Bestandssystem, ohne Downtime, bis die neue Reporting-Suite vollständig validiert war."
+        },
+        {
+          "type": "p",
+          "text": "Nach Abschluss übernahm die interne IT Datenbankschema und Reporting-Werkzeuge vollständig. Die Dokumentation ermöglichte spätere Anpassungen ohne externe Abhängigkeit."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

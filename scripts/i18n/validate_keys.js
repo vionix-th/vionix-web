@@ -58,7 +58,6 @@ const schemaFiles = [
   "home.json",
   "service-details.json",
   "case-studies.json",
-  "case-study-details.json",
   "skilltable-team1.json",
   "skilltable-team2.json"
 ];
@@ -75,6 +74,43 @@ for (const file of schemaFiles) {
     }
     const candidate = readJson(targetPath);
     compareKeys(base, candidate, targetPath);
+  }
+}
+
+function listCaseStudyFiles(locale) {
+  const dir = path.join(root, `src/data/${locale}/case-study-details`);
+  if (!fs.existsSync(dir)) return null;
+  return fs
+    .readdirSync(dir)
+    .filter((name) => name.endsWith(".json"))
+    .sort();
+}
+
+for (const locale of supported) {
+  const baseFiles = listCaseStudyFiles(defaultLocale);
+  const candidateFiles = listCaseStudyFiles(locale);
+
+  if (!baseFiles || !candidateFiles) {
+    console.error(`[FAIL] missing case-study-details directory for locale ${locale}`);
+    process.exitCode = 1;
+    continue;
+  }
+
+  const missingFiles = baseFiles.filter((f) => !candidateFiles.includes(f));
+  const extraFiles = candidateFiles.filter((f) => !baseFiles.includes(f));
+  if (missingFiles.length || extraFiles.length) {
+    console.error(`[FAIL] case-study-details file mismatch for locale ${locale}`);
+    missingFiles.forEach((f) => console.error(`  - missing ${f}`));
+    extraFiles.forEach((f) => console.error(`  + extra ${f}`));
+    process.exitCode = 1;
+    continue;
+  }
+
+  if (locale === defaultLocale) continue;
+  for (const file of baseFiles) {
+    const base = readJson(`src/data/${defaultLocale}/case-study-details/${file}`);
+    const candidate = readJson(`src/data/${locale}/case-study-details/${file}`);
+    compareKeys(base, candidate, `src/data/${locale}/case-study-details/${file}`);
   }
 }
 

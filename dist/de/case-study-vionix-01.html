@@ -171,44 +171,44 @@
       <div class="case-study-wrap">
         <a class="back-link" href="/de/case-studies.html"><i class="bi bi-arrow-left"></i> Zurück zu allen Fallstudien</a>
 
-        <h1>Datenbankdisziplin unter Vertriebsdruck</h1>
+        <h1>Wenn 4-Stunden-Reports die gesamte Zentrale blockieren: Vertrauen durch Datenbankdisziplin zurückgewinnen</h1>
 
         
         <h3>Kurzprofil</h3>
         
         
-        <p>Delivery model: Principal-led engagement (Stefan, Founder &amp; Principal Consultant) Client: Nordlicht Retail (German fashion retailer)</p>
+        <p>Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Nordlicht Retail (deutscher Modehändler).</p>
         
         
         
-        <p>A Major German fashion retailer with 80+ outlets was paralysed by a legacy POS reporting system. Daily distribution planning required reports that took 4 hours to run, locked the entire headquarters IT infrastructure, and crashed regularly. The engagement restored operational stability in 3 weeks and rebuilt the relationship between IT and Sales leadership.</p>
+        <p>Ein großer deutscher Modehändler mit über 80 Filialen wurde von einem Legacy-POS-Reporting-System ausgebremst. Für die tägliche Warenverteilung mussten Berichte laufen, die bis zu 4 Stunden dauerten, die gesamte IT der Zentrale blockierten und regelmäßig abstürzten. Das Engagement stellte die operative Stabilität innerhalb von 3 Wochen wieder her und reparierte die Zusammenarbeit zwischen IT- und Vertriebsleitung.</p>
         
         
         
         <h3>Die Herausforderung</h3>
         
         
-        <p>Every morning, the Head of Sales needed distribution reports to allocate stock across 80 retail outlets. The process was a daily crisis:</p>
+        <p>Jeden Morgen benötigte die Vertriebsleitung Verteilreports, um Bestand auf über 80 Filialen zu allokieren. Der Ablauf war täglich eine Krise:</p>
         
         
         
         <ul>
           
-          <li>4-hour runtime for key reports, with frequent crashes before completion</li>
+          <li>4 Stunden Laufzeit für Schlüsselberichte, oft mit Absturz vor Abschluss</li>
           
-          <li>Exclusive database locks froze all HQ systems during execution</li>
+          <li>Exklusive Datenbanksperren froren während der Ausführung die gesamte Zentrale ein</li>
           
-          <li>Dual-database chaos: MySQL and MSSQL with no coherent schema design</li>
+          <li>Datenbankchaos mit MySQL und MSSQL ohne kohärentes Schemadesign</li>
           
-          <li>Legacy codebase: Hand-written reporting software in CA-Visual Objects, a niche language with limited maintainability</li>
+          <li>Legacy-Codebasis: handgeschriebene Reporting-Software in CA-Visual Objects, einer Nischensprache mit geringer Wartbarkeit</li>
           
-          <li>Constant complaints: IT had lost credibility with the business. Sales viewed the technical team as incompetent</li>
+          <li>Dauerbeschwerden: Die IT hatte im Fachbereich massiv an Glaubwürdigkeit verloren, der Vertrieb hielt das Technikteam für handlungsunfähig</li>
           
         </ul>
         
         
         
-        <p>The system had become a bottleneck for the entire retail operation, with no one in IT able to communicate effectively with Sales about what was technically feasible.</p>
+        <p>Das System war zum Flaschenhals des gesamten Filialbetriebs geworden, und in der IT konnte niemand mehr belastbar kommunizieren, was technisch realistisch machbar war.</p>
         
         
         
@@ -217,13 +217,13 @@
         
         <ul>
           
-          <li>No budget for replacement: The POS system itself could not be rewritten</li>
+          <li>Kein Budget für Ersatz: Das POS-Kernsystem konnte nicht neu gebaut werden</li>
           
-          <li>Dual-database architecture: Had to work within the existing MySQL/MSSQL split</li>
+          <li>Duale Datenbankarchitektur: Die bestehende MySQL-MSSQL-Aufteilung war gesetzt</li>
           
-          <li>Operational pressure: Reports were mission-critical. Downtime during fixes was unacceptable</li>
+          <li>Hoher Betriebsdruck: Reports waren geschäftskritisch, Ausfälle während der Korrekturen nicht akzeptabel</li>
           
-          <li>Trust deficit: Any solution had to deliver immediate, visible improvement to regain business confidence</li>
+          <li>Vertrauensdefizit: Die Lösung musste sofort sichtbare Verbesserungen liefern, um Vertrauen zurückzugewinnen</li>
           
         </ul>
         
@@ -232,43 +232,43 @@
         <h3>Vorgehen</h3>
         
         
-        <p>1. Query Plan Forensics Analysed execution plans for every statement in the reporting software. Identified missing indexes, Cartesian joins, and full table scans on transactional tables with millions of rows.</p>
+        <p>1. Query-Plan-Forensik Für jede relevante Abfrage der Reporting-Software wurden Ausführungspläne analysiert. Sichtbar wurden fehlende Indizes, kartesische Joins und Full-Table-Scans auf Transaktionstabellen mit Millionen Datensätzen.</p>
         
         
         
-        <p>2. Strategic Indexing Added indexes on frequently joined columns and filter predicates. Prioritised the queries causing the longest locks.</p>
+        <p>2. Strategische Indizierung Auf häufig verknüpften Spalten und zentralen Filterprädikaten wurden gezielt Indizes ergänzt. Priorisiert wurden die Abfragen, die die längsten Sperren verursachten.</p>
         
         
         
-        <p>3. View-Based Abstraction Encapsulated common join patterns (for example sales transactions + stock movements + outlet metadata) into database views. This eliminated redundant query logic and ensured consistency.</p>
+        <p>3. Abstraktion über Datenbank-Views Wiederkehrende Join-Muster (z. B. Verkaufstransaktionen plus Lagerbewegungen plus Filialmetadaten) wurden in Views gekapselt. Das beseitigte redundante Query-Logik und erhöhte die Konsistenz.</p>
         
         
         
-        <p>4. Stored Procedures for Calculated Fields Moved complex calculations (inventory deltas, regional aggregations) into stored procedures feeding the views, reducing the computational burden on the reporting layer.</p>
+        <p>4. Stored Procedures für berechnete Felder Komplexe Berechnungen (Bestandsdeltas, regionale Aggregationen) wurden in Stored Procedures verlagert, die die Views versorgen. Dadurch sank die Rechenlast im Reporting-Layer deutlich.</p>
         
         
         
-        <p>5. Replaced Lock-Heavy Tooling Retired the CA-Visual Objects hand-written software. Implemented List &amp; Label, a commercial reporting tool, to query the new views without exclusive locks.</p>
+        <p>5. Lock-intensives Tooling ersetzt Die handgeschriebene CA-Visual-Objects-Lösung wurde abgelöst. Mit List und Label wurde ein kommerzielles Reporting-Tool eingeführt, das auf die neuen Views ohne exklusive Locks zugreift.</p>
         
         
         
-        <p>6. Transactional Calculation Architecture Stopped relying on snapshot data (which required locks to ensure consistency). Instead, summed all sales, returns, and stock movements transactionally, then correlated with annual physical inventory counts. This approach:</p>
+        <p>6. Transaktionsbasierte Berechnungsarchitektur Statt auf Snapshot-Daten zu setzen (mit zusätzlichen Konsistenzsperren), wurden Verkäufe, Retouren und Lagerbewegungen transaktionsbasiert summiert und mit jährlichen physischen Inventuren korreliert. Dieser Ansatz:</p>
         
         
         
         <ul>
           
-          <li>Eliminated the need for long-running locks</li>
+          <li>Eliminierte die Notwendigkeit lang laufender Sperren</li>
           
-          <li>Made manual corrections (for example inventory adjustments) immediately visible across the system</li>
+          <li>Machte manuelle Korrekturen (z. B. Bestandsanpassungen) sofort systemweit sichtbar</li>
           
-          <li>Drastically reduced faulty records from stale snapshots</li>
+          <li>Reduzierte fehlerhafte Datensätze aus veralteten Snapshots massiv</li>
           
         </ul>
         
         
         
-        <p>7. User Education on &quot;Data Correctness&quot; Worked with Sales to reframe expectations: A report showing 5 items in stock vs. 4 or 6 is operationally equivalent if a sale could occur moments after generation. The goal is decision-grade accuracy, not real-time perfection. This shift defused complaints about minor discrepancies and focused attention on actionable insights.</p>
+        <p>7. Nutzeraufklärung zu Datenkorrektheit Gemeinsam mit dem Vertrieb wurde die Erwartungshaltung neu kalibriert: Ein Report mit 5 Artikeln statt 4 oder 6 ist operativ gleichwertig, wenn kurz nach Reporterstellung ein Verkauf stattfindet. Ziel ist entscheidungsfähige Genauigkeit, nicht Echtzeit-Perfektion. Das entschärfte Beschwerden über Kleindifferenzen und lenkte den Fokus auf handlungsrelevante Erkenntnisse.</p>
         
         
         
@@ -277,15 +277,15 @@
         
         <ul>
           
-          <li>Indexed database schema with views consolidating 80% of reporting queries</li>
+          <li>Indiziertes Datenbankschema mit Views, die rund 80 Prozent der Reporting-Abfragen konsolidieren</li>
           
-          <li>List &amp; Label-based reporting suite replacing legacy CA-Visual Objects code</li>
+          <li>List-und-Label-basierte Reporting-Suite als Ersatz für Legacy-CA-Visual-Objects-Code</li>
           
-          <li>Transactional calculation engine (stored procedures) for inventory reconciliation</li>
+          <li>Transaktionsbasierte Berechnungs-Engine (Stored Procedures) für Bestandsabgleich</li>
           
-          <li>Documentation on the new data model and query patterns for future maintainers</li>
+          <li>Dokumentation des neuen Datenmodells und der Query-Muster für interne Nachpflege</li>
           
-          <li>Training session for Sales on interpreting report data and understanding timing constraints</li>
+          <li>Training für den Vertrieb zur Interpretation von Reportdaten und Zeitfenster-Effekten</li>
           
         </ul>
         
@@ -296,15 +296,15 @@
         
         <ul>
           
-          <li>Runtime reduction: 4 hours -&gt; 30 minutes for critical distribution reports</li>
+          <li>Laufzeitreduktion: von 4 Stunden auf 30 Minuten für kritische Verteilreports</li>
           
-          <li>Zero system locks: HQ IT infrastructure no longer frozen during report generation</li>
+          <li>Keine Systemlocks mehr: Die IT-Infrastruktur der Zentrale friert bei Reportläufen nicht mehr ein</li>
           
-          <li>Eliminated daily crashes: Reports ran reliably every morning</li>
+          <li>Tägliche Abstürze eliminiert: Reports liefen morgens zuverlässig</li>
           
-          <li>Immediate data propagation: Manual corrections (for example inventory adjustments) reflected instantly, not after overnight batch jobs</li>
+          <li>Sofortige Datenwirkung: Manuelle Korrekturen (z. B. Bestandsanpassungen) waren unmittelbar sichtbar statt erst nach Nachtbatches</li>
           
-          <li>Restored credibility: Became the only IT staff member trusted by the Head of Sales, ending the perception of technical incompetence</li>
+          <li>Glaubwürdigkeit zurückgewonnen: Das IT-Team wurde wieder als belastbarer Partner wahrgenommen</li>
           
         </ul>
         
@@ -313,46 +313,46 @@
         <h3>Warum es funktioniert hat</h3>
         
         
-        <p>Technical pragmatism over perfectionism Rather than demanding a full system rewrite, the solution worked within existing constraints (dual databases, legacy POS). Strategic indexing and view consolidation delivered 87.5% improvement without touching the core application.</p>
+        <p>Technischer Pragmatismus statt Perfektionismus Statt eine Voll-Neuentwicklung zu verlangen, arbeitete die Lösung innerhalb realer Grenzen (duale Datenbanken, Legacy-POS). Strategische Indizierung und View-Konsolidierung lieferten eine Verbesserung von 87,5 Prozent ohne Eingriff in die Kernanwendung.</p>
         
         
         
-        <p>Reframing &quot;correctness&quot; as a business concept The educational component was as critical as the technical fix. By aligning Sales expectations with database realities (eventual consistency, timing windows), complaints shifted from &quot;the data is wrong&quot; to &quot;this helps me make decisions.&quot;</p>
+        <p>Korrektheit als Geschäftsbegriff neu gerahmt Die Aufklärungsarbeit war so wichtig wie der technische Fix. Erst durch Abgleich von Vertriebserwartung und Datenbankrealität (eventual consistency, Zeitfenster) wechselte das Narrativ von &#39;Daten sind falsch&#39; zu &#39;Daten sind entscheidungsfähig&#39;.</p>
         
         
         
-        <p>Transaction-based truth Moving from snapshot locking to transactional summation solved both performance and accuracy problems simultaneously. This architectural choice eliminated the root cause (exclusive locks) rather than optimising around it.</p>
+        <p>Transaktionsbasierte Wahrheit Der Wechsel von Snapshot-Locking zu transaktionsbasierter Summierung löste Performance- und Genauigkeitsprobleme gleichzeitig. Damit wurde die Ursache beseitigt statt nur um sie herum zu optimieren.</p>
         
         
         
-        <p>Human-centric delivery Success was measured not just by query speed, but by whether IT could have a productive conversation with Sales. The trust rebuild was the ultimate outcome.</p>
+        <p>Menschenzentrierte Lieferung Erfolg wurde nicht nur an Query-Zeiten gemessen, sondern daran, ob IT und Vertrieb wieder produktiv zusammenarbeiten konnten. Der Vertrauensaufbau war das eigentliche Endergebnis.</p>
         
         
         
         <h3>So hat Vionix gearbeitet</h3>
         
         
-        <p>The engagement was structured as a 3-week intensive intervention:</p>
+        <p>Das Engagement war als dreiwöchige Intensivintervention aufgebaut:</p>
         
         
         
         <ul>
           
-          <li>Week 1: Query plan analysis, index implementation, and view design</li>
+          <li>Woche 1: Query-Plan-Analyse, Indexumsetzung und View-Design</li>
           
-          <li>Week 2: Stored procedure development, List &amp; Label integration, and testing</li>
+          <li>Woche 2: Entwicklung von Stored Procedures, Integration von List und Label, Tests</li>
           
-          <li>Week 3: User training, monitoring, and handover to internal IT</li>
+          <li>Woche 3: Schulung, Monitoring und Übergabe an die interne IT</li>
           
         </ul>
         
         
         
-        <p>Daily stand-ups with the Head of Sales ensured alignment on priorities and immediate feedback on improvements. The work was performed alongside the existing system (no downtime), with the new reporting suite running in parallel until validation was complete.</p>
+        <p>Tägliche Abstimmungen mit der Vertriebsleitung hielten Prioritäten und Feedback eng synchron. Die Umsetzung lief parallel zum Bestandssystem, ohne Downtime, bis die neue Reporting-Suite vollständig validiert war.</p>
         
         
         
-        <p>Post-delivery, internal IT retained ownership of the database schema and reporting tool, with documentation enabling future modifications without external dependency.</p>
+        <p>Nach Abschluss übernahm die interne IT Datenbankschema und Reporting-Werkzeuge vollständig. Die Dokumentation ermöglichte spätere Anpassungen ohne externe Abhängigkeit.</p>
         
         
         
@@ -367,7 +367,7 @@
           <h3 class="mb-2">Ähnliche Herausforderung besprechen</h3>
           <p class="mb-0">Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.</p>
         </div>
-        <a class="btn btn-primary" href="/de/index. html#contact">Vionix kontaktieren</a>
+        <a class="btn btn-primary" href="/de/index.html#contact">Vionix kontaktieren</a>
       </div>
     </div>
   </section>

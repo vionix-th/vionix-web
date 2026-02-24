@@ -1,0 +1,177 @@
+{
+  "pageTitleShort": "Von Chaos zu Kontrolle",
+  "heroTitle": "Von Chaos zu Kontrolle: Ein 30 Jahre altes Legacy-ERP stabilisieren, ohne es neu zu schreiben",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Von Chaos zu Kontrolle"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ein mittelständischer deutscher ERP-Hersteller mit 30 Jahre alter Codebasis (Visual Basic 6, .NET 3.5, InterSystems Caché) arbeitete ohne Versionskontrolle, ohne automatisierte Tests und ohne individuelle Entwicklungsumgebungen. Alle Entwickler bearbeiteten denselben Quellcode parallel in einem gemeinsamen Verzeichnis auf einem Terminalserver, weil das Management darin einen Schutz vor IP-Diebstahl sah. Es gab mehr als 20 Servicefälle pro Tag, Deployments waren Trial and Error, und Windows-Updates legten die Entwicklungsumgebung regelmäßig lahm."
+        },
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Ironbridge ERP (deutscher ERP-Anbieter für Maschinenhandel und Vermietung)."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Das Produkt funktionierte fachlich und war bei Kunden gefragt, aber die Instabilität brachte Team und Betrieb an die Grenze. Entwickler riefen quer durch das Büro, um denjenigen zu finden, der das System gerade gebrochen hatte. Regressionen waren dauerhaft vorhanden, aber nicht nachvollziehbar. Zwischen Entwicklungs- und Release-Stand lagen tausende ungeklärte Zeilen. Kundenauslieferungen hatten keine reproduzierbaren Installer, Techniker kämpften vor Ort mit Fehlerketten bis das System startete. Danach folgten oft wochenlange Supportspitzen."
+        },
+        {
+          "type": "p",
+          "text": "Auch die Entwicklungsumgebung war fragil: verwaiste ActiveX-Komponenten, undokumentierte interne Bibliotheken und Abhängigkeiten, die niemand reproduzieren konnte. Jedes Windows-Update verursachte Tage aus Neuinstallationen und Fehlersuche. Der Vertriebsleiter, fachlich ohne technischen Hintergrund, steuerte die Softwareentwicklung und blockierte Veränderungen. Langjährige Entwickler lehnten objektorientierte Muster ab. Projekte wurden als isolierter kundenspezifischer Code umgesetzt, ohne wiederverwendbare Abstraktion."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Politisch: Der Vertriebsleiter verdiente an individueller Programmierung und sah in Abstraktion eine Bedrohung für Umsatz und Kontrolle."
+        },
+        {
+          "type": "p",
+          "text": "Kulturell: Legacy-Entwickler lehnten neue Werkzeuge und moderne Praktiken ab, das Management hielt am Terminalserver-Modell als vermeintlichem IP-Schutz fest."
+        },
+        {
+          "type": "p",
+          "text": "Technisch: Eine rund 30 Jahre gewachsene Codebasis, bearbeitet von vielen Personen, ohne Dokumentation zentraler Eigenwerkzeuge wie Generatoren und Protokolle. Das System war auf einem frischen Rechner nicht mehr installierbar."
+        },
+        {
+          "type": "p",
+          "text": "Operativ: Das Team stand unter Extremdruck mit mehr als 20 täglichen Servicefällen, toxischer Stimmung und massivem Kundenfrust."
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Das Chaos kartieren Der Ist-Zustand wurde systematisch dokumentiert: welche Systeme existieren, wie sie zusammenhängen, welche Abhängigkeiten kritisch sind. Diese Landkarte wurde Basis für alle weiteren Schritte."
+        },
+        {
+          "type": "p",
+          "text": "2. Versionskontrolle mit Git einführen Visual Basic-, C#- und Caché-Bestandteile wurden unter Git gestellt. Für den Caché-Backend-Stand wurden tägliche automatisierte Exporte als Snapshots aufgebaut. Damit endete die Jagdkultur nach Schuldigen und Regressionen wurden erstmals nachvollziehbar."
+        },
+        {
+          "type": "p",
+          "text": "3. Branches klar trennen Es wurde eine harte Trennung zwischen instabiler Entwicklung, Test und Release durchgesetzt. Das manuelle Zeilenkopieren in einen kaum erklärbaren Release-Zweig wurde beendet."
+        },
+        {
+          "type": "p",
+          "text": "4. Individuelle Entwicklungsumgebungen aufbauen Das gemeinsame Terminalserver-Modell wurde beendet. Jeder Entwickler erhielt einen eigenen lokalen Arbeitsplatz. Pull Requests und Merges ersetzten chaotische Paralleländerungen im geteilten Verzeichnis. Dafür war intensive Abstimmung mit dem Management nötig, das IP-Diebstahl fürchtete. Vionix zeigte, dass Copy-and-paste den Terminalserver hierfür ohnehin wirkungslos macht."
+        },
+        {
+          "type": "p",
+          "text": "5. Installationen automatisieren und stabilisieren Alle Komponenten inklusive Legacy-ActiveX-Abhängigkeiten wurden in einen skriptbasierten Installer gebündelt. Für die VB6-Anwendung entstand ein vollständiges Manifest mit automatischer Generierung, sodass bei Abhängigkeitsänderungen ein selbstheilendes Verhalten möglich war. Legacy-Komponenten wurden auf modernen Windows-Versionen verlässlich lauffähig gemacht."
+        },
+        {
+          "type": "p",
+          "text": "6. Schritthafte Befähigung des Teams In wiederkehrenden Sessions wurden Git-Workflows, SOLID-Prinzipien, Architekturgrundlagen und Abstraktionstechniken trainiert. Reale Projekte dienten als Lernbeispiele, etwa eine wiederverwendbare CSV-Export-Klasse statt kundenspezifischer Mehrfachimplementierung. Zwischen Umstellungen blieb bewusst Adaptionszeit."
+        },
+        {
+          "type": "p",
+          "text": "7. Teamdynamik neu strukturieren Gemischte Teams wurden aufgebaut: technisch starke Entwickler implementierten abstrahierende Kernbausteine, Legacy-Entwickler nutzten diese in ihrer bestehenden imperativen Arbeitsweise. So blieben vorhandene Fähigkeiten nutzbar, Vertrauen stieg und isolierte Einzelarbeit wurde in Zusammenarbeit überführt."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Versionskontrollierte Codebasis (Git) mit automatisierten täglichen Caché-Snapshots",
+            "Branch-Strategie mit klarer Trennung von instabiler Entwicklung, Test und Release",
+            "Individuelle lokale Entwicklungsumgebungen statt gemeinsamem Terminalserver",
+            "Automatisierter Installer mit Abhängigkeitsauflösung und selbstheilender Manifest-Generierung",
+            "Trainingscurriculum zu Git, Architekturprinzipien und praxisnaher Abstraktion",
+            "Neu strukturierte Teamarbeit zwischen Legacy- und modern aufgestellten Entwicklern"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Bearbeitungszeit für Servicefälle sank von Tagen auf Stunden. Mit Versionskontrolle war direkter Codevergleich möglich statt manueller Archäologie durch tausende Zeilen."
+        },
+        {
+          "type": "p",
+          "text": "Deployment-Stabilität stieg deutlich. Kunden-IT fürchtete Windows-Updates und Versionserhöhungen nicht mehr in gleicher Weise, weil skriptbasierte Installer Trial-and-Error bei Vor-Ort-Einsätzen ablösten."
+        },
+        {
+          "type": "p",
+          "text": "Nachvollziehbarkeit wurde hergestellt: Das Unternehmen konnte belegen, ob ein Problem auf Codeänderung oder Bedienfehler zurückging. Diese Transparenz war zuvor nicht erreichbar und wurde vom Management hoch bewertet."
+        },
+        {
+          "type": "p",
+          "text": "Entwicklermoral verbesserte sich signifikant. Eigene Umgebungen, verständliche Werkzeuge und das Ende unbegründeter Schuldzuweisungen reduzierten den Dauerstress."
+        },
+        {
+          "type": "p",
+          "text": "Die Anzahl der Servicefälle sank nicht sofort stark, aber ihr Charakter änderte sich: Bedienfehler konnten klar identifiziert werden und regressionsgetriebene Fälle waren schneller lösbar."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix kämpfte nicht ideologisch gegen Legacy, sondern stabilisierte zuerst. Versionskontrolle und Umgebungsisolation erzeugten Verantwortung und psychologische Sicherheit, bevor tiefgreifende Methodenänderungen gefordert wurden."
+        },
+        {
+          "type": "p",
+          "text": "Politischer Widerstand wurde mit ökonomischer Logik behandelt. Das Terminalserver-Argument brach zusammen, sobald der fehlende IP-Schutz bei Copy-and-paste sichtbar war. Der Widerstand der Vertriebsseite wurde durch sichtbare Betriebsresultate umgangen, die Management und Kunden unmittelbar als Wert erkannten."
+        },
+        {
+          "type": "p",
+          "text": "Vionix holte Entwickler dort ab, wo sie standen. Statt erzwungener OOP-Umstellung lief die Modernisierung über nutzbare Abstraktionen aus dem Team heraus. Wert wurde praktisch erfahrbar, nicht ideologisch verordnet."
+        },
+        {
+          "type": "p",
+          "text": "Automatisierung entfernte Fragilität. Selbstheilendes Manifest und skriptbasierter Installer beendeten die wiederkehrende Windows-Update-Panik und schufen kognitiven Raum für echte Verbesserung."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Das Engagement lief zwei Jahre mit einem einzelnen eingebetteten Vionix-Berater in aktiver Restrukturierungsrolle. Veränderungen wurden bewusst schrittweise mit Trainingsphasen umgesetzt, damit das Team jeden Wechsel verankern konnte. Das Projekt endete einvernehmlich, als das Unternehmen von einer größeren Organisation übernommen wurde, die den Betrieb eigenständig fortführen konnte."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

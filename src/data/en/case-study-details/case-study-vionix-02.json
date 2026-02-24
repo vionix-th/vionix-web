@@ -1,0 +1,173 @@
+{
+  "pageTitleShort": "POS Failures",
+  "heroTitle": "When the Whole Business Runs Through a Cash Desk: Solving Chronic POS Failures in 80+ Fashion Stores",
+  "backLabel": "Back to all case studies",
+  "breadcrumbs": {
+    "home": "Home",
+    "hub": "Case Studies",
+    "current": "POS Failures"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Snapshot",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Delivery model: Principal-led engagement (Stefan, Founder & Principal Consultant) Client: Nordlicht Retail (German fashion retailer)"
+        },
+        {
+          "type": "p",
+          "text": "A Major German fashion retailer with 80+ outlets faced escalating point-of-sale system failures caused by textile dust - a problem that grew from occasional annoyance to daily crisis as the business scaled. Vionix redesigned the hardware stack, collaborated with interior fitters to integrate ventilated enclosures into sales counters, and established annual deep-cleaning cycles that reduced failures from multiple per week to 1-2 per quarter."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "The Challenge",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Clothing retail generates constant airborne dust from fabric handling, folding, and customer traffic. For years, the retailer off-the-shelf desktop PCs - equipped with barcode scanners, receipt printers, cash drawers, and network cards - sat exposed on or beneath counters. When the chain operated 20 stores, a single failure per month was tolerable. But as the network grew to 80+ locations, failures multiplied linearly with store count, then accelerated as aging hardware compounded dust ingress. By the time Vionix was engaged, multiple terminals were failing daily or weekly across the estate."
+        },
+        {
+          "type": "p",
+          "text": "Each outage forced staff to record transactions by hand - a process that triggered calculation errors, incorrect change, inventory blind spots (no real-time sync to head office), telephone chaos between stores and planners, and mounting frustration among cashiers and customers alike. The POS terminal had become a single point of failure for both revenue and operations."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Constraints",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Environmental: Textile dust is unavoidable in active retail spaces. No amount of hardware hardening can eliminate exposure entirely.",
+            "Operational: Replacing 80+ terminals simultaneously would paralyse the business. Any solution had to roll out incrementally as systems failed.",
+            "Stakeholder buy-in: Interior designers controlled counter layout. Technical changes required negotiation and co-design.",
+            "Realistic expectations: The client needed to accept that zero failures were unachievable. Only minimisation was realistic."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Approach",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Set Realistic Expectations Vionix opened the engagement by explaining that even hardened systems will fail occasionally in dusty environments, and that the goal was to minimise, not eliminate, downtime."
+        },
+        {
+          "type": "p",
+          "text": "2. One-Week Assessment & Planning Conducted a week-long diagnostic of failure modes, dust ingress points, counter layouts, and existing hardware lifecycles."
+        },
+        {
+          "type": "p",
+          "text": "3. Co-Design Ventilated Counter Enclosures Partnered with the retailer interior fitters to redesign sales counters with dedicated, ventilated compartments for PCs. The new layout featured:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Clean cable routing from the enclosed PC bay to external peripherals (scanner, printer, cash drawer)",
+            "Sufficient airflow space around the enclosure to prevent heat buildup",
+            "Mounting points for additional dust filters"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "4. Build Custom Hardened PCs Abandoned off-the-shelf systems in favour of component-level builds optimised for high-dust, high-uptime environments:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Industrial-grade fans for both CPU and case ventilation",
+            "Additional intake and exhaust dust filters",
+            "High-quality motherboards, RAM, and CPUs to reduce component-level failure"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "5. Multi-Day Burn-In Testing Stress-tested every unit for several days under continuous load before deployment to catch infant mortality and confirm stability."
+        },
+        {
+          "type": "p",
+          "text": "6. Incremental Rollout on Failure Deployed new systems progressively as old terminals failed, avoiding business disruption from a forklift upgrade."
+        },
+        {
+          "type": "p",
+          "text": "7. Annual Deep-Cleaning Protocol Established a scheduled maintenance cycle where a technician visits each store once per year to disassemble terminals, deep-clean internals, replace filters, verify cable security, and confirm enclosure integrity. Initially performed by Vionix staff (50/50 split between the lead and a colleague), later transitioned to a trained partner (80%) with Vionix oversight (20%)."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "What Was Delivered",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "80+ custom-built, dust-hardened POS terminals with industrial ventilation and filtration",
+            "Redesigned sales counter specification integrating ventilated PC compartments and structured cabling",
+            "Annual maintenance protocol document and trained execution partner",
+            "Multi-day burn-in test procedure for pre-deployment quality assurance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Results",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Failure rate drop: From multiple failures per week (daily at peak) to 1-2 failures per quarter across the entire estate",
+            "Operational stability: Eliminated manual transaction fallback, calculation errors, incorrect change, and inventory sync blackouts",
+            "Morale improvement: Cashiers became less hostile toward the POS system. Head-office planners regained real-time visibility into stock levels",
+            "Client confidence: The retailer gained trust in Vionix as a partner capable of solving systemic infrastructure problems, not just firefighting incidents"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Why It Worked",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Environmental control beats component specification alone The counter redesign - physically isolating PCs in ventilated, filtered enclosures - proved as important as component selection."
+        },
+        {
+          "type": "p",
+          "text": "Incremental rollout matched business reality Deploying on failure avoided the cost and disruption of a simultaneous fleet replacement."
+        },
+        {
+          "type": "p",
+          "text": "Expectation management prevented disappointment Framing the goal as \"minimal acceptable failure\" rather than \"zero downtime\" aligned the client mental model with physical reality."
+        },
+        {
+          "type": "p",
+          "text": "Burn-in testing front-loaded failure Multi-day stress tests caught weak components before they reached store floors."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "How Vionix Worked",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix led the initial assessment, hardening design, and protocol development, then trained an internal colleague who gradually assumed majority ownership of maintenance execution. The counter redesign required close collaboration with the retailer interior design vendors. Technical constraints (airflow, cable routing, filter access) had to be translated into aesthetic and ergonomic counter layouts. Maintenance was eventually handed to a specialist partner under Vionix supervision, ensuring long-term sustainability without permanent dependency."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Discuss a similar challenge",
+    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
+    "button": "Contact Vionix",
+    "href": "index. html#contact"
+  }
+}

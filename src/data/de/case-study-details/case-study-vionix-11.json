@@ -1,0 +1,127 @@
+{
+  "pageTitleShort": "Wareneingang digitalisieren",
+  "heroTitle": "Brücke zwischen Alt und Neu: Wareneingang auf Legacy-Hardware digitalisieren",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Wareneingang digitalisieren"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Atlas Heavy Industries (deutsche Regionseinheit eines globalen Netzwerks für Schwertechnik). Kontext: In den Zentrallagern wurden hohe Volumina eingehender Ersatzteile verarbeitet. Robuste Windows-CE-Handscanner waren bereits beschafft, aber die notwendige Software-Infrastruktur fehlte."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Die Lagerprozesse basierten auf Papierabläufen. Mitarbeitende erfassten Wareneingänge zunächst auf Klemmbrettern und tippten die Daten später ins ERP, langsam und fehleranfällig durch Übertragungsfehler."
+        },
+        {
+          "type": "p",
+          "text": "Die Hardwarestrategie stand bereits, die Softwareschicht fehlte. Das vorhandene ERP bot keine native mobile Oberfläche und keine geeignete API für Handhelds. Die Aufgabe war, eine tragfähige Brücke zwischen moderner Scan-Hardware und einem starren Back-End-System zu bauen, das dafür nie ausgelegt war."
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Legacy-Betriebssystem: Die Zielgeräte liefen auf Windows CE, was Entwicklung im älteren NET-Compact-Framework in Version 3.5 erforderte.",
+            "Nutzerkompetenz: Das Lagerpersonal war nicht technisch spezialisiert. Die Oberfläche musste radikal einfach bleiben, um Akzeptanz zu sichern und Fehlbedienung zu vermeiden.",
+            "Herstellerwiderstand: Der ERP-Anbieter unterstützte Dritt-Hardware nicht nativ, was Reibung bei der Schnittstellendefinition erzeugte."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Das Projekt ging in drei Monaten von der Konzeptphase in den produktiven Einsatz."
+        },
+        {
+          "type": "ordered",
+          "items": [
+            "Stakeholder-Alignment: Vionix moderierte mit der IT-Leitung des Kunden die Konzeptphase und definierte den Zielablauf. Entscheidend war die frühe Einbindung des ERP-Managements, um die anfängliche Blockade in Support-Einheiten zu umgehen und die Schnittstelle verbindlich festzulegen.",
+            "Robuste Protokollwahl: Vionix setzte auf SOAP. Unter den Rahmenbedingungen des NET-Compact-Frameworks lieferte dies strikte Typisierung und saubere Integration mit dem bestehenden ERP-Technologiestack.",
+            "Gezielte Umsetzung: Vionix entwickelte einen maßgeschneiderten Client in C# auf Basis des NET-Frameworks 3.5, optimiert auf die begrenzten Ressourcen von Windows-CE-Geräten.",
+            "Zero-Training-UX: Die Benutzeroberfläche wurde minimalistisch und linear gestaltet, sodass der Scan-und-Buchen-Ablauf ohne Systemwissen bedienbar blieb."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Individuelle Windows-CE-Anwendung: native App für die konkrete Handheld-Hardware optimiert.",
+            "SOAP-Middleware: stabile Kommunikationsschicht zwischen Handgeräten und ERP.",
+            "Operatives Training: Vor-Ort-Schulung für Lagerpersonal zur Nutzung und für IT-Administratoren zur Gerätekonfiguration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "100 Prozent Digitalisierung: Der papierbasierte Klemmbrett-Prozess wurde unmittelbar nach Go-live vollständig abgelöst.",
+            "Langfristige Stabilität: Das System lief über mehr als fünf Jahre ohne softwarebedingte Supporttickets.",
+            "Resilienz: Im einzigen dokumentierten Störfall mit Ausfall aller Geräte identifizierte die Analyse rasch eine kundenseitige Netzfehlkonfiguration, während die Softwareintegrität intakt blieb."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Einfachheit vor Funktionsfülle Durch radikale Reduktion der mobilen Oberfläche auf den Kernprozess senkte Vionix die Einstiegshürde für Lagerpersonal. Die Anwendung versuchte nicht, das ERP zu replizieren, sondern exponierte nur die benötigte Funktion Wareneingang."
+        },
+        {
+          "type": "p",
+          "text": "Defensive Engineering-Entscheidung Die Wahl von SOAP mit strikter Typisierung machte die Integration bewusst rigide, aber verlässlich. Genau diese Architektur begründete den Silent-Runner-Charakter des Projekts, in dem die Lösung über Jahre ohne nennenswerten Wartungsbedarf lief."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Umgang mit Multi-Vendor-Politik Das Projekt hing von Kooperation mit dem ERP-Anbieter ab, dessen Supportseite Dritt-Hardware anfänglich ablehnte. Durch Eskalation der Architekturgespräche auf Management-Ebene stellte Vionix die notwendige Zusammenarbeit sicher und konnte die Backend-Wartung später vollständig an den Anbieter übergeben."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}

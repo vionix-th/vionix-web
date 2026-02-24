@@ -1,0 +1,182 @@
+{
+  "pageTitleShort": "Wenn Offline nicht optional ist",
+  "heroTitle": "Wenn Offline nicht optional ist: Ein Field-Service-System neu aufbauen, das in Baustellengruben wirklich funktioniert",
+  "backLabel": "Zurück zu allen Fallstudien",
+  "breadcrumbs": {
+    "home": "Startseite",
+    "hub": "Fallstudien",
+    "current": "Wenn Offline nicht optional ist"
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "heading": "Kurzprofil",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ein mittelständischer Baugerätehändler mit Vermietgeschäft setzte rund 74 Servicetechniker ein, die schwere Maschinen an entfernten Einsatzorten in Deutschland betreuten. Die individuell entwickelte Windows-Desktopanwendung für Auftragserfassung und Servicedokumentation vor Ort war wegen eines Architektur-Experiments grundsätzlich unzuverlässig geworden: C#-UI-Codegenerierung, Node.js-Businesslogik und durchgängige Race Conditions."
+        },
+        {
+          "type": "p",
+          "text": "Liefermodell: Principal-geführtes Engagement (Stefan, Gründer und Principal Consultant). Kunde: Rhine Equipment Services (deutscher Baugerätehändler und Serviceanbieter)."
+        }
+      ]
+    },
+    {
+      "id": "the-challenge",
+      "heading": "Die Herausforderung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Der ursprüngliche Entwickler hatte Standardframeworks bewusst vermieden und stattdessen ein Codegenerierungsmodell aus einem MSDN-Beispiel übernommen. UI-Formulare wurden als XML in einer Datenbank gespeichert, zur Laufzeit in DLLs kompiliert und an Node.js-Callback-Handler gebunden. Das Design ignorierte das asynchrone Ausführungsmodell von Node.js vollständig und erzeugte systemweit Race Conditions. Die Kommunikation zwischen GUI und Backend lief über rohe Sockets mit String-Parametern ohne Typsicherheit und ohne Protokollvalidierung."
+        },
+        {
+          "type": "p",
+          "text": "Im Feldeinsatz waren die Folgen gravierend:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Die Anwendung stürzte unvorhersehbar ab, Druckvorgänge schlugen sporadisch fehl, und die UI meldete Speichern erfolgreich, während Node.js intern an unbehandelten Ausnahmen scheiterte",
+            "Offline-Daten lagen in untypisierten, nicht transaktionalen XML-Dateien auf dem Gerät, was zu unvollständigen Übertragungen und Datenkorruption führte",
+            "Techniker konnten Ersatzteile nicht sauber nacherfassen, wenn geplante Artikel beschädigt oder nicht verfügbar waren, und fielen auf Papier und Telefon zurück",
+            "Mitarbeiter suchten in Baustellengruben stundenlang mobilen Empfang, um angeblich offlinefähige Prozesse abschließen zu können",
+            "Remote-Debugging-Sitzungen dauerten oft Stunden über dutzende Laptops, während Techniker warteten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "Rahmenbedingungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Das Unternehmen hatte bereits stark in die ursprüngliche Lösung investiert und war verständlicherweise nicht bereit, einen weiteren unkontrollierten Umbau zu finanzieren, zumal der ursprüngliche Entwickler das Unternehmen bereits verlassen hatte. Die Neuentwicklung musste parallel zum laufenden Servicebetrieb stattfinden. Gleichzeitig musste die neue Lösung die dynamischen und unvorhersehbaren Workflows im Baugeräteservice abbilden, einschließlich kurzfristiger Teileersatzfälle, spontaner Auftragsänderungen und Eskalationen an die Zentrale."
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "heading": "Vorgehen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "1. Codegenerator durch standardisierte WinForms-Architektur in C# ersetzt Vionix migrierte die Applikationslogik vollständig nach C# und entfernte den Node.js-Layer. Ein einmaliges Konvertierungstool extrahierte verwertbare Formdefinitionen aus dem Datenbank-XML und überführte sie in nativen C#-WinForms-Quellcode."
+        },
+        {
+          "type": "p",
+          "text": "2. Abstraktionsschicht für transparenten Online- und Offline-Betrieb entwickelt Die Anwendung arbeitete gegen ein stark typisiertes DataSet, das das zentrale SQL-Server-Schema exakt spiegelte, inklusive Feldtypen, Fremdschlüssel und Constraints. Eine Hintergrundsynchronisation entschied über Online oder Offline. Aus Anwendungssicht blieb der Datenzugriff stabil."
+        },
+        {
+          "type": "p",
+          "text": "3. SQL-Server-Views als verbindlichen Datenvertrag genutzt Statt individueller Extraktionsprogramme von Schema A nach Schema B stellte Vionix serverseitige Views bereit, inklusive berechneter Felder, die exakt den Clientbedarf abbildeten. Administratoren konnten Filter wie nur öffentliche Produktgruppen oder Ausschluss von Großhandelskategorien als SQL-WHERE-Logik steuern."
+        },
+        {
+          "type": "p",
+          "text": "4. Schemaweitergabe automatisiert über SOAP und WSDL Vionix implementierte SOAP-Webservices mit WSDL-Definitionen. Visual Studio generierte daraus automatisch das typisierte Client-DataSet. Manuelles Protokollcoding entfiel. Bei View-Änderungen propagierte das Schema automatisiert."
+        },
+        {
+          "type": "p",
+          "text": "5. Optimistische Nebenläufigkeit mit Audit-Journal eingeführt Die Synchronisationsstrategie folgte last write wins. Beim Dispatch eines Auftrags wurde serverseitig markiert, dass Rückmeldungen aus dem Feld zu erwarten sind. Clients übertrugen nur geänderte Daten. Alle Änderungen wurden journalisiert, sodass Streitfälle schnell über den Audit-Trail geklärt werden konnten."
+        },
+        {
+          "type": "p",
+          "text": "6. Lokale Offline-Speicherung mit Recovery-Schutz umgesetzt Statt einer eingebetteten Datenbank blieb XML als lokaler Speicher, ergänzt um ein Ringpuffer-Muster: Die letzten zehn Speichervorgänge wurden vorgehalten, wodurch Plausibilitätsprüfungen und Wiederherstellung nach Korruption möglich waren. Daten wurden ruhend mit gerätegebundenem Schlüssel verschlüsselt."
+        },
+        {
+          "type": "p",
+          "text": "7. Umfassende Stammdaten auf dem Client bereitgestellt Da das typisierte DataSet das zentrale Schema inklusive Fremdschlüsseln spiegelte, erhielten Techniker offline Zugriff auf vollständigen Artikelkatalog, Produktgruppen, Lieferantenbeziehungen und kundenspezifische Daten. Dadurch wurden Volltextsuche, Ersatzteilsuche und Lieferantenabgleich ohne Netzverbindung möglich."
+        }
+      ]
+    },
+    {
+      "id": "what-was-delivered",
+      "heading": "Lieferumfang",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nach rund zwei Jahren Entwicklung übergab Vionix an das interne Entwicklungsteam des Kunden:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Eine vollständige WinForms-Anwendung in C# ohne Runtime-Codegenerierung",
+            "SOAP-WSDL-Webservices plus automatisch generierte typisierte DataSets",
+            "SQL-Server-Views mit administrierbaren Synchronisationsfiltern",
+            "XML-Ringpuffer-Speicherung mit gerätegebundener Verschlüsselung",
+            "Audit-Journal zur Konfliktauflösung",
+            "Quellcode, automatisierte Unit-Tests und Integrationstests gegen Test-SOAP-Endpunkte"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Die Software ging nach weiterem internen Testing in den Produktivbetrieb."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "Ergebnisse",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Die neu aufgebaute Anwendung veränderte die Arbeitsweise im Außendienst grundlegend:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ersatzteile wurden zum Normalfall: Techniker konnten ungeplante Artikel direkt vor Ort ergänzen statt Papiernotizen mit Verlust- und Vergessensrisiko zu erzeugen",
+            "Self-Service bei Teilefindung: Mit vollem Offline-Katalog wurden Alternativen in Produktgruppen und Lieferantenoptionen ohne Rückruf in die Zentrale gefunden",
+            "Echte Offline-Fähigkeit: Arbeit lief auch an abgelegenen Baustellen ohne Suche nach mobilem Internet stabil weiter",
+            "Keine Notfall-Re-Sync-Rituale mehr: Die früheren Aufforderungen aus der Disposition zum manuellen Neuabgleich entfielen",
+            "Remote-Debugging wurde selten: Früher stundenlange Fernwartungssitzungen über rund 74 Laptops wurden weitgehend eliminiert",
+            "Deutlich höhere Nutzerakzeptanz: Keine Absturzserien, keine irreführenden Statusmeldungen, weniger Doppelerfassung"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Eine kleine Gruppe technisch versierter Techniker wurde früh als Beta-Testgruppe eingebunden. Daraus entstand ein belastbares Feedback-Netzwerk und später ein informelles Multiplikatorenmodell für den Rollout."
+        }
+      ]
+    },
+    {
+      "id": "why-it-worked",
+      "heading": "Warum es funktioniert hat",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Durchgängige starke Typisierung eliminierte eine ganze Fehlerklasse. Weil das Client-DataSet das Serverschema exakt abbildete, wurden Constraint- und Referenzfehler unmittelbar erkannt, bevor Daten das Gerät verließen."
+        },
+        {
+          "type": "p",
+          "text": "SQL-Views als API-Vertrag bedeuteten, dass Schemaänderungen in SQL-Definitionen stattfanden und nicht über verteilte Extraktionsprogramme zerfielen. Administratoren konnten den Sync-Umfang zentral über Filterlogik steuern."
+        },
+        {
+          "type": "p",
+          "text": "Optimistische Nebenläufigkeit passte zur realen Arbeitswelt. Strikte Sperrmodelle oder komplexes Merging wären mit dem spontanen, einsatzgetriebenen Außendienstmodus unvereinbar gewesen. Das Audit-Journal schuf Transparenz für die wenigen strittigen Fälle."
+        },
+        {
+          "type": "p",
+          "text": "Offline-first mit reichhaltigen Stammdaten entsprach der Baustellenrealität. Der vollständige, konsistente Offline-Bestand aus Artikeln, Lieferantenbeziehungen und Fremdschlüsseln machte Techniker vor Ort handlungsfähig statt zu reinen Datenerfassern."
+        }
+      ]
+    },
+    {
+      "id": "how-vionix-worked",
+      "heading": "So hat Vionix gearbeitet",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vionix arbeitete über rund zwei Jahre im Stabilisieren-und-Neuaufbauen-Modell parallel zum laufenden Betrieb des Kunden. Nach Fertigstellung wurden Anwendung, Testsuiten und Betriebswissen an das interne Entwicklungsteam übergeben. Der Kunde erhielt volle Steuerung über Synchronisationsfilter und Administrationsparameter, und das Beta-Programm stellte sicher, dass reale Nutzeranforderungen den finalen Rollout vorab formten."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ähnliche Herausforderung besprechen",
+    "copy": "Teilen Sie Engpass, Drucksituation und aktuellen Stack. Vionix antwortet mit einem fokussierten Vorschlag für den ersten Schritt.",
+    "button": "Vionix kontaktieren",
+    "href": "index.html#contact"
+  }
+}
