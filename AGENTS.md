@@ -29,6 +29,7 @@ Scope:
 - If a critical detail is missing, add: `<!-- MISSING: ... -->` rather than guessing.
 - When behavior regresses, fix the deterministic source of truth (template/data/config)
   before adding runtime mitigation.
+- Never trade factual fidelity for passing checks. Validation scripts confirm structure/contracts, not narrative correctness.
 
 ### Consistency
 - Keep terminology and taxonomy consistent across pages (headings, CTAs, footer lists, filters).
@@ -85,6 +86,13 @@ Accessibility and interaction invariants:
 - Do not build tooling to auto-convert Markdown.
 - If a Markdown source contains client-identifying details (e.g., a real company name), derive an anonymized public label in HTML only if Caesar provides it; otherwise use `<!-- MISSING: ... -->`.
 - For potentially identifying quantities/timelines, prefer ranges unless Caesar explicitly approves exact public values.
+
+Narrative editing safety:
+- Do not use bulk rewrite scripts for narrative content (especially `src/data/*/case-study-details/*.json`) without explicit instruction from Caesar.
+- Do not collapse source narratives into generic bullet summaries. Preserve section intent, factual density, and causal flow from the English source.
+- Do not use external translation tooling (web translators, MT APIs, browser translation features) unless Caesar explicitly approves it for the task.
+- For translation work, use English as canonical source and translate block-by-block while preserving block types and list cardinality.
+- A passing `i18n:validate`/`build`/`test:contracts` run is required but never sufficient to claim translation quality.
 
 ---
 
@@ -157,3 +165,9 @@ Change policy:
 - Do not reintroduce root-level hand-maintained `*.html` sources; edit templates in `src/pages` instead.
 - Treat page-level overrides that reduce inherited assets/config as high-risk changes.
   Any such override requires explicit justification in the commit message.
+
+I18n narrative release gate:
+- For case-study detail localization, completion requires both:
+  - Structural parity (existing validators pass), and
+  - Source-fidelity review (facts/numbers/tools/outcomes match English source; no generic placeholders).
+- If these gates conflict, block release and escalate to Caesar instead of shipping “green but degraded” content.
