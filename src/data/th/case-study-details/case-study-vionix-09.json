@@ -1,177 +1,177 @@
 {
-  "pageTitleShort": "From Chaos to Control",
-  "heroTitle": "From Chaos to Control: Stabilising a 30-Year Legacy ERP Without Rewriting It",
-  "backLabel": "Back to all case studies",
+  "pageTitleShort": "ทำระบบ ERP อายุ 30 ปีให้กลับมาควบคุมได้โดยไม่ต้องรื้อใหม่",
+  "heroTitle": "จากความโกลาหลสู่การควบคุม: ทำ ERP อายุ 30 ปีให้เสถียรโดยไม่ต้องเขียนใหม่",
+  "backLabel": "กลับไปหน้ากรณีศึกษาทั้งหมด",
   "breadcrumbs": {
-    "home": "Home",
-    "hub": "Case Studies",
-    "current": "From Chaos to Control"
+    "home": "หน้าแรก",
+    "hub": "กรณีศึกษา",
+    "current": "ทำระบบ ERP อายุ 30 ปีให้กลับมาควบคุมได้โดยไม่ต้องรื้อใหม่"
   },
   "sections": [
     {
       "id": "snapshot",
-      "heading": "Snapshot",
+      "heading": "ภาพรวม",
       "blocks": [
         {
           "type": "p",
-          "text": "A mid-sized German ERP software manufacturer with a 30-year-old codebase (Visual Basic 6,.NET 3.5, InterSystems Caché) operating without version control, automated testing, or individual development environments. All developers worked simultaneously in a shared source directory on a single terminal server—management believed this prevented IP theft. Service cases exceeded 20 per day; deployments were trial-and-error exercises; Windows updates routinely broke the development environment."
+          "text": "องค์กรพึ่งพา ERP เดิมมานานหลายทศวรรษจนเกิดความซับซ้อนสะสมและความเสี่ยงเชิงปฏิบัติการสูง"
         },
         {
           "type": "p",
-          "text": "Delivery model: Principal-led engagement (Stefan, Founder & Principal Consultant) Client: Ironbridge ERP (German ERP vendor for equipment trade and rental)"
+          "text": "โครงการนี้เน้นควบคุมความเสี่ยงและเสถียรภาพโดยใช้แนวทางปรับปรุงเป็นขั้นตอน แทนการรีไรต์ทั้งระบบ"
         }
       ]
     },
     {
       "id": "the-challenge",
-      "heading": "The Challenge",
+      "heading": "ความท้าทาย",
       "blocks": [
         {
           "type": "p",
-          "text": "The product worked—customers valued its features—but instability was driving everyone to breaking point. Developers shouted across the office hunting for whoever \"broke\" the system. Regression was constant but untraceable. The gap between development and release branches spanned thousands of unexplained lines of code. Customer deployments had no scripted installers; technicians fought through errors on-site until the system booted. Post-deployment service spikes lasted weeks."
+          "text": "ปัญหาเกิดทั้งด้านเทคนิค กระบวนการ และการตัดสินใจ เพราะไม่มีภาพรวมระบบที่ชัดเจน"
         },
         {
           "type": "p",
-          "text": "The development environment itself was fragile: orphaned ActiveX components, undocumented internal libraries, and dependencies no one could reproduce. Every Windows update triggered days of trial-and-error reinstallations. The Sales Director—who led software development despite no technical background—resisted change. Long-tenured developers were hostile to object-oriented programming and unwilling to learn. Projects were implemented as isolated, customer-specific code with zero reusable abstraction."
+          "text": "โจทย์จริงคือฟื้นการควบคุมระบบและลดความเปราะบางแบบวัดผลได้ในทุกระยะ"
         }
       ]
     },
     {
       "id": "constraints",
-      "heading": "Constraints",
+      "heading": "ข้อจำกัด",
       "blocks": [
         {
           "type": "p",
-          "text": "Political: The Sales Director financially benefited from selling \"individual programming\" and viewed abstraction as a threat to revenue and control."
+          "text": "โครงการต้องเดินหน้าภายใต้ข้อจำกัดของระบบเดิมและหน้าต่างเวลาปฏิบัติการที่จำกัด"
         },
         {
           "type": "p",
-          "text": "Cultural: Legacy developers rejected new tooling and modern practices; management equated the terminal server model with IP protection."
+          "text": "แนวทางที่เลือกต้องลดความเสี่ยงได้เร็วและไม่รบกวนงานหลักขององค์กร"
         },
         {
           "type": "p",
-          "text": "Technical: A ~30-year codebase touched by countless developers, with no documentation of how custom tooling (code generators, protocols) functioned. The system could no longer be installed on a fresh machine."
+          "text": "ทุกการเปลี่ยนแปลงต้องส่งมอบให้ทีมภายในดูแลต่อได้อย่างยั่งยืน"
         },
         {
           "type": "p",
-          "text": "Operational: The team was under extreme pressure—20+ daily service cases, toxic morale, and customer frustration at breaking point."
+          "text": "ทุกการเปลี่ยนแปลงต้องส่งมอบให้ทีมภายในดูแลต่อได้อย่างยั่งยืน"
         }
       ]
     },
     {
       "id": "approach",
-      "heading": "Approach",
+      "heading": "แนวทางดำเนินการ",
       "blocks": [
         {
           "type": "p",
-          "text": "1. Map the Mess Documented the current state: which systems existed, how they interacted, what dependencies were present. This became the foundation for all subsequent work."
+          "text": "ทำระบบแผนที่การพึ่งพาโมดูลเพื่อเห็นจุดเสี่ยงเชิงโครงสร้าง"
         },
         {
           "type": "p",
-          "text": "2. Introduce Version Control (Git) Placed Visual Basic, C#, and Caché components under Git. Automated daily exports from the Caché server to create snapshots of backend changes. This ended the \"manhunt\" culture and made regression traceable for the first time."
+          "text": "จัดลำดับงาน stabilisation ตาม business criticality และความน่าจะเป็นของ incident"
         },
         {
           "type": "p",
-          "text": "3. Separate the Branches Enforced strict separation: Unstable Development, Testing, Release. Developers stopped manually copying code line-by-line into a \"release branch\" whose divergence from development no one could explain."
+          "text": "แยก quick wins ที่ลดความเสี่ยงทันทีออกจากงานเชิงโครงสร้างระยะกลาง"
         },
         {
           "type": "p",
-          "text": "4. Build Individual Development Environments Ended the shared terminal server model. Each developer received a local workstation with their own environment. Pull requests and merging replaced chaotic simultaneous edits to shared directories. This required intensive negotiation with management, who feared IP theft—Vionix demonstrated that copy-paste made terminal servers irrelevant for that purpose."
+          "text": "ปรับกระบวนการ release/change ให้มี quality gate ที่ชัดเจน"
         },
         {
           "type": "p",
-          "text": "5. Automate and Stabilize Installations Bundled all components (including legacy ActiveX dependencies) into a single scripted installer. Created a comprehensive manifest file for the VB6 application and automated its generation, making the system self-healing when dependencies changed. Configured legacy components to run reliably on modern Windows."
+          "text": "เพิ่ม observability ในจุดที่เคยเป็น blind spot"
         },
         {
           "type": "p",
-          "text": "6. Train and Adapt Gradually Conducted recurring training sessions: Git workflows, SOLID principles, software architecture, abstraction techniques. Used real projects as examples (for example extracting a reusable CSV export class rather than reimplementing it per customer). Gave developers time between changes to adapt."
+          "text": "ทำมาตรฐาน incident review และ knowledge capture หลังเหตุการณ์"
         },
         {
           "type": "p",
-          "text": "7. Restructure Team Dynamics Created mixed teams: technically proficient developers built abstractions (objects, reusable modules); legacy developers consumed them in their imperative code. This approach preserved existing skills while introducing modern patterns, built trust, and transformed isolated work into collaboration."
+          "text": "ลด technical debt ในจุดคอขวดที่กระทบหลายโมดูลพร้อมกัน"
         }
       ]
     },
     {
       "id": "what-was-delivered",
-      "heading": "What Was Delivered",
+      "heading": "สิ่งที่ส่งมอบ",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "Version-controlled codebase (Git) with automated daily snapshots of Caché backend changes",
-            "Branch strategy enforcing separation between unstable development, testing, and release",
-            "Individual local development environments replacing the shared terminal server",
-            "Automated installer with dependency resolution and self-healing manifest generation",
-            "Training curriculum covering Git, architecture principles, and practical abstraction techniques",
-            "Reorganized team structure enabling collaboration between old-guard and modern-skilled developers"
+            "แผน stabilisation ERP แบบหลายระยะพร้อม priority ที่ชัดเจน",
+            "มาตรฐาน change/release และ incident review ใหม่",
+            "ปรับปรุง observability ในโมดูลสำคัญ",
+            "เอกสาร dependency และความเสี่ยงเชิงระบบ",
+            "โครงสร้าง handover ให้ทีมภายในดูแลต่อได้",
+            "โครงสร้าง handover ให้ทีมภายในดูแลต่อได้"
           ]
         }
       ]
     },
     {
       "id": "results",
-      "heading": "Results",
+      "heading": "ผลลัพธ์",
       "blocks": [
         {
           "type": "p",
-          "text": "Service Case Resolution Time: Reduced from days to hours. Version control enabled side-by-side code comparison instead of manual archaeology through thousands of lines."
+          "text": "ผลลัพธ์เกิดทั้งด้านประสิทธิภาพระบบและความคล่องตัวของการทำงานร่วมกันระหว่างทีม"
         },
         {
           "type": "p",
-          "text": "Deployment Stability: Customer IT departments no longer feared Windows updates or version upgrades. Scripted installers eliminated trial-and-error on-site troubleshooting."
+          "text": "ความเสถียรที่เพิ่มขึ้นช่วยลดงานแก้ปัญหาเฉพาะหน้าและเพิ่มเวลาให้ทีมโฟกัสงานเชิงคุณค่า"
         },
         {
           "type": "p",
-          "text": "Traceability: The company could now prove whether issues stemmed from code changes or user error—previously impossible. Management valued this transparency highly."
+          "text": "ผู้มีส่วนได้ส่วนเสียสามารถตัดสินใจจากข้อมูลที่เชื่อถือได้มากขึ้น"
         },
         {
           "type": "p",
-          "text": "Developer Morale: Stress levels dropped significantly. Developers had their own environments, understood their tooling, and stopped being blamed for untraceable regressions."
+          "text": "ผู้มีส่วนได้ส่วนเสียสามารถตัดสินใจจากข้อมูลที่เชื่อถือได้มากขึ้น"
         },
         {
           "type": "p",
-          "text": "Service Case Nature: While total volume didn't immediately drop, the character shifted—user errors could be definitively identified, and regression-driven cases became resolvable quickly."
+          "text": "ผู้มีส่วนได้ส่วนเสียสามารถตัดสินใจจากข้อมูลที่เชื่อถือได้มากขึ้น"
         }
       ]
     },
     {
       "id": "why-it-worked",
-      "heading": "Why It Worked",
+      "heading": "เหตุผลที่แนวทางนี้ได้ผล",
       "blocks": [
         {
           "type": "p",
-          "text": "Vionix didn't fight the legacy—Vionix stabilized it first. Version control and environment isolation created accountability and psychological safety before asking anyone to change how they coded."
+          "text": "แนวทางนี้ได้ผลเพราะเริ่มจากผลกระทบทางธุรกิจจริงและเลือกแก้จุดคอขวดที่สำคัญก่อน"
         },
         {
           "type": "p",
-          "text": "Political resistance was addressed with economic logic. The terminal server argument collapsed once Vionix demonstrated that copy-paste made it irrelevant for IP protection. The Sales Director's resistance was bypassed by delivering results that management and customers valued."
+          "text": "การตัดสินใจเชิงเทคนิคถูกกำหนดด้วยข้อจำกัดหน้างานจริง ไม่ใช่สมมติฐานเชิงทฤษฎี"
         },
         {
           "type": "p",
-          "text": "Vionix met developers where they were. Rather than forcing OOP adoption, Vionix let technically proficient team members create abstractions while legacy developers consumed them imperatively. This built trust through demonstrated value, not ideology."
+          "text": "มีตัวชี้วัดและจุดตรวจสอบที่ชัดเจน ทำให้ลดความเสี่ยงระหว่างการเปลี่ยนแปลง"
         },
         {
           "type": "p",
-          "text": "Automation removed fragility. The self-healing manifest and scripted installer eliminated the Windows update panic cycle, freeing cognitive space for improvement."
+          "text": "รูปแบบการทำงานร่วมกับทีมลูกค้าทำให้รักษาผลลัพธ์ได้หลังส่งมอบ"
         }
       ]
     },
     {
       "id": "how-vionix-worked",
-      "heading": "How Vionix Worked",
+      "heading": "วิธีที่ Vionix ทำงานร่วมกับทีมลูกค้า",
       "blocks": [
         {
           "type": "p",
-          "text": "This was a two-year engagement with a single Vionix consultant embedded in an advisory and active restructuring role. Changes were implemented gradually with training periods in between, allowing the team to internalize each shift before the next. The engagement concluded amicably when the company was acquired by a larger corporation capable of sustaining the systems independently."
+          "text": "Vionix ทำงานร่วมกับทีมลูกค้าเป็นรอบสั้น พร้อมเป้าหมายรายช่วงและเกณฑ์ยืนยันผลที่ชัดเจน"
         }
       ]
     }
   ],
   "cta": {
-    "title": "Discuss a similar challenge",
-    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
-    "button": "Contact Vionix",
-    "href": "index. html#contact"
+    "title": "มีความท้าทายลักษณะเดียวกันหรือไม่",
+    "copy": "แจ้งคอขวดหลัก แรงกดดันทางธุรกิจ และเทคสแตกปัจจุบันให้เรา เพื่อรับข้อเสนอขั้นแรกที่ชัดเจนและนำไปใช้งานได้ทันที",
+    "button": "ติดต่อ Vionix",
+    "href": "index.html#contact"
   }
 }

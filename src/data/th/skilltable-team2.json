@@ -1,79 +1,117 @@
 {
-  "pageTitle": "Skills & Competencies",
-  "breadcrumbsHome": "Home",
-  "breadcrumbsCurrent": "Skills & Competencies",
-  "headline": "Professional Bio & Competency Profile",
+  "pageTitle": "ทักษะและสมรรถนะ",
+  "breadcrumbsHome": "หน้าแรก",
+  "breadcrumbsCurrent": "ทักษะและสมรรถนะ",
+  "headline": "ประวัติวิชาชีพและโปรไฟล์สมรรถนะ",
   "member": {
     "name": "Ruthairat",
-    "role": "Co-Founder & Director Quality Engineering",
+    "role": "ผู้ร่วมก่อตั้งและผู้อำนวยการวิศวกรรมคุณภาพ",
     "image": "assets/img/team/team-2.jpg",
     "imageAlt": "Portrait of Ruthairat, Co-Founder and Director of Quality Engineering at Vionix"
   },
   "intro": {
-    "lead": "Experienced professional in Supplier Quality Engineering with comprehensive expertise in project management, quality assurance, and supplier relations.",
-    "body": "Passionate about leveraging expertise to optimize supplier performance and enhance product quality. Proven ability to develop and execute comprehensive project plans, manage projects from initiation to completion, and implement best practices. Strong leadership skills in conducting supplier audits and fostering partnerships to support operational excellence."
+    "lead": "ผู้เชี่ยวชาญด้าน Supplier Quality Engineering พร้อมประสบการณ์รอบด้านด้านโครงการ คุณภาพ และความสัมพันธ์ผู้ส่งมอบ",
+    "body": "มีประสบการณ์ขับเคลื่อนคุณภาพผู้ส่งมอบและยกระดับคุณภาพผลิตภัณฑ์ โดยวางแผนและดำเนินโครงการครบวงจร รวมถึงผลักดันแนวปฏิบัติที่เพิ่มประสิทธิภาพเชิงปฏิบัติการ"
   },
   "sections": [
     {
-      "title": "Technical Expertise",
+      "title": "ความเชี่ยวชาญเชิงเทคนิค",
       "columns": [
         {
           "icon": "bi-gear",
-          "title": "Quality Engineering",
-          "items": ["Supplier Quality Management", "Advanced Product Quality Planning (APQP)", "Technical Drawing & Engineering", "IC Component Package Assembly"]
+          "title": "วิศวกรรมคุณภาพ",
+          "items": [
+            "Supplier Quality Management",
+            "Advanced Product Quality Planning (APQP)",
+            "Technical Drawing & Engineering",
+            "IC Component Package Assembly"
+          ]
         },
         {
           "icon": "bi-tools",
-          "title": "Software & Tools",
-          "items": ["SAP, JMP, Microsoft Project", "Microsoft Office Suite", "Collaboration Tools (Teams, WebEx)", "Quality Management Systems"]
+          "title": "ซอฟต์แวร์และเครื่องมือ",
+          "items": [
+            "SAP, JMP, Microsoft Project",
+            "Microsoft Office Suite",
+            "Collaboration Tools (Teams, WebEx)",
+            "Quality Management Systems"
+          ]
         }
       ]
     },
     {
-      "title": "Leadership & Management",
+      "title": "ภาวะผู้นำและการบริหาร",
       "columns": [
         {
           "icon": "bi-people",
-          "title": "Team Leadership",
-          "items": ["Cross-functional Team Management", "Supplier Relationship Management", "Project Leadership", "Process Improvement"]
+          "title": "การนำทีม",
+          "items": [
+            "Cross-functional Team Management",
+            "Supplier Relationship Management",
+            "Project Leadership",
+            "Process Improvement"
+          ]
         },
         {
           "icon": "bi-clipboard-check",
-          "title": "Quality Management",
-          "items": ["Audit Leadership (VDA 6.3, IATF 16949)", "Risk Assessment & Management", "Change Management", "Quality System Implementation"]
+          "title": "การจัดการคุณภาพ",
+          "items": [
+            "Audit Leadership (VDA 6.3, IATF 16949)",
+            "Risk Assessment & Management",
+            "Change Management",
+            "Quality System Implementation"
+          ]
         }
       ]
     },
     {
-      "title": "Core Competencies",
+      "title": "สมรรถนะหลัก",
       "columns": [
         {
           "icon": "bi-diagram-3",
-          "title": "Project Management",
-          "items": ["End-to-End Project Execution", "Resource Management", "Risk Assessment & Mitigation", "Documentation & Reporting"]
+          "title": "การบริหารโครงการ",
+          "items": [
+            "End-to-End Project Execution",
+            "Resource Management",
+            "Risk Assessment & Mitigation",
+            "Documentation & Reporting"
+          ]
         },
         {
           "icon": "bi-graph-up",
-          "title": "Quality Tools & Methods",
-          "items": ["APQP, FMEA, MSA, SPC, PPAP", "8D Problem Solving", "Process Audit Methodologies", "Continuous Improvement"]
+          "title": "เครื่องมือและวิธีการคุณภาพ",
+          "items": [
+            "APQP, FMEA, MSA, SPC, PPAP",
+            "8D Problem Solving",
+            "Process Audit Methodologies",
+            "Continuous Improvement"
+          ]
         }
       ]
     },
     {
-      "title": "Languages & Certifications",
+      "title": "ภาษาและใบรับรอง",
       "columns": [
         {
           "icon": "bi-translate",
-          "title": "Languages",
-          "items": ["Thai: Native", "English: Advanced (C1)"]
+          "title": "ภาษา",
+          "items": [
+            "Thai: Native",
+            "English: Advanced (C1)"
+          ]
         },
         {
           "icon": "bi-award",
-          "title": "Certifications",
-          "items": ["Lead Auditor VDA 6.3", "Lead Auditor IATF 16949:2016", "Automotive Core Tools", "Plastic Injection Operations"]
+          "title": "ใบรับรอง",
+          "items": [
+            "Lead Auditor VDA 6.3",
+            "Lead Auditor IATF 16949:2016",
+            "Automotive Core Tools",
+            "Plastic Injection Operations"
+          ]
         }
       ]
     }
   ],
-  "footer": "This Competency Profile is based on supplied documentation, references, and certifications. For further details or original reference documents, please contact Ruthairat directly."
+  "footer": "โปรไฟล์สมรรถนะนี้จัดทำจากเอกสารอ้างอิงและหลักฐานประกอบ หากต้องการรายละเอียดเพิ่มเติมกรุณาติดต่อ Ruthairat โดยตรง"
 }

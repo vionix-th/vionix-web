@@ -1,98 +1,98 @@
 {
-  "pageTitleShort": "When Offline Isn't Optional",
-  "heroTitle": "When Offline Isn't Optional: Rebuilding a Field Service System That Actually Works in Construction Pits",
-  "backLabel": "Back to all case studies",
+  "pageTitleShort": "สร้างระบบภาคสนามแบบออฟไลน์สำหรับงานก่อสร้างที่สัญญาณไม่แน่นอน",
+  "heroTitle": "เมื่อ Offline คือข้อบังคับ: รีบิวด์ระบบภาคสนามที่ใช้งานได้จริงในไซต์ก่อสร้าง",
+  "backLabel": "กลับไปหน้ากรณีศึกษาทั้งหมด",
   "breadcrumbs": {
-    "home": "Home",
-    "hub": "Case Studies",
-    "current": "When Offline Isn't Optional"
+    "home": "หน้าแรก",
+    "hub": "กรณีศึกษา",
+    "current": "สร้างระบบภาคสนามแบบออฟไลน์สำหรับงานก่อสร้างที่สัญญาณไม่แน่นอน"
   },
   "sections": [
     {
       "id": "snapshot",
-      "heading": "Snapshot",
+      "heading": "ภาพรวม",
       "blocks": [
         {
           "type": "p",
-          "text": "A mid-sized construction equipment dealer and rental provider operated approximately 74 field technicians servicing heavy machinery at remote job sites across Germany. Their custom-built Windows desktop application—intended for on-site order capture and service documentation—had become fundamentally unreliable due to an architectural experiment that mixed C# UI code generation, Node. js business logic, and pervasive race conditions."
+          "text": "บริบทหน้างานก่อสร้างมีข้อจำกัดเครือข่ายสูง ทำให้ระบบที่พึ่งออนไลน์ตลอดใช้งานจริงไม่ได้"
         },
         {
           "type": "p",
-          "text": "Delivery model: Principal-led engagement (Stefan, Founder & Principal Consultant) Client: Rhine Equipment Services (German construction equipment dealer and service provider)"
+          "text": "เป้าหมายคือออกแบบระบบ field service ที่ทำงานได้จริงแบบ offline-first แล้ว sync กลับเมื่อพร้อม"
         }
       ]
     },
     {
       "id": "the-challenge",
-      "heading": "The Challenge",
+      "heading": "ความท้าทาย",
       "blocks": [
         {
           "type": "p",
-          "text": "The original developer had eschewed standard frameworks in favor of a code-generation approach copied verbatim from an MSDN example. UI forms were stored as XML in a database, dynamically compiled into DLLs at runtime, and bound to Node. js callback handlers. The design ignored Node. js's asynchronous execution model entirely, creating race conditions throughout the stack. Communication between the GUI and backend occurred over raw sockets with string-encoded parameters—no type safety, no protocol validation."
+          "text": "ความยากอยู่ที่ทำให้ประสบการณ์หน้างานไม่สะดุด พร้อมคงความถูกต้องของข้อมูลเมื่อกลับมาออนไลน์"
         },
         {
           "type": "p",
-          "text": "In the field, the consequences were severe:"
+          "text": "โซลูชันต้องรักษาความต่อเนื่องของงานหน้างานเป็นหลัก และคุมความเสี่ยงด้านข้อมูลตามมา"
         },
         {
           "type": "list",
           "items": [
-            "The application crashed unpredictably; printing failed intermittently; the UI would report \"save successful\" while Node. js silently crashed on an unhandled exception",
-            "Offline data was stored in untyped, non-transactional XML files on disk, leading to incomplete transfers and data corruption",
-            "Technicians could not process substitute parts when a planned article was damaged or unavailable, forcing them back to paper and phone calls",
-            "Field workers spent hours hunting for mobile internet connections in construction pits to complete supposedly \"offline-capable\" work",
-            "Remote debugging sessions—often lasting hours—were conducted across dozens of laptops while technicians waited"
+            "พื้นที่ทำงานจำนวนมากไม่มีสัญญาณเครือข่ายเสถียร",
+            "ข้อมูลต้องแก้ไขได้หน้างานและต้องไม่สูญหาย",
+            "เกิด conflict ได้ง่ายเมื่อหลายอุปกรณ์ sync กลับพร้อมกัน",
+            "ผู้ใช้งานภาคสนามต้องการ workflow ที่สั้นและชัดเจน",
+            "ระบบเดิมไม่รองรับการทำงานต่อเนื่องแบบออฟไลน์"
           ]
         }
       ]
     },
     {
       "id": "constraints",
-      "heading": "Constraints",
+      "heading": "ข้อจำกัด",
       "blocks": [
         {
           "type": "p",
-          "text": "The company had already invested heavily in the original solution and was understandably frustrated at bearing the cost of a rebuild—particularly since the original developer had left the company and was no longer accountable. Development needed to happen in parallel with ongoing field operations, and any replacement had to support the dynamic, unpredictable workflows common in heavy equipment service (last-minute part substitutions, spontaneous scope changes, emergency calls to central dispatch)."
+          "text": "โครงการต้องเดินหน้าภายใต้ข้อจำกัดของระบบเดิมและหน้าต่างเวลาปฏิบัติการที่จำกัด"
         }
       ]
     },
     {
       "id": "approach",
-      "heading": "Approach",
+      "heading": "แนวทางดำเนินการ",
       "blocks": [
         {
           "type": "p",
-          "text": "1. Replaced the code generator with standard WinForms and C# Vionix migrated the application logic entirely to C# and eliminated the Node. js layer. A one-time conversion utility extracted salvageable form definitions from the database XML and translated them into native C# WinForms source code."
+          "text": "ออกแบบสถาปัตยกรรม offline-first พร้อม local queue และ state ที่เชื่อถือได้"
         },
         {
           "type": "p",
-          "text": "2. Designed an abstraction layer for transparent online/offline operation The application worked against a strongly typed.NET DataSet that mirrored the central SQL Server schema exactly—field types, foreign keys, and constraints were identical. A background synchronization layer handled the online/offline decision; from the application's perspective, it simply worked with data."
+          "text": "แยก command และ sync pipeline เพื่อควบคุมลำดับการส่งข้อมูล"
         },
         {
           "type": "p",
-          "text": "3. Used SQL Server Views as the \"source of truth\" for data contracts Rather than writing custom extraction programs to transform schema A into schema B, Vionix exposed server-side Views (with computed fields where necessary) that represented exactly what the client needed. Administrators could configure filters (for example \"sync only public product groups, exclude wholesale categories\") that were applied as SQL WHERE clauses."
+          "text": "กำหนดกลยุทธ์ conflict resolution ตามกติกาธุรกิจของแต่ละชนิดข้อมูล"
         },
         {
           "type": "p",
-          "text": "4. Propagated schema automatically via SOAP and WSDL Vionix implemented SOAP web services with WSDL schema definitions. Visual Studio's built-in tooling consumed the WSDL and automatically generated the typed DataSet client-side—no manual protocol coding required. When Views changed, the schema update propagated automatically."
+          "text": "เพิ่มกลไก integrity check ก่อนและหลังการ sync"
         },
         {
           "type": "p",
-          "text": "5. Adopted optimistic concurrency with audit logging The sync strategy was \"last write wins.\" When an order was dispatched to a technician, the server flagged it to warn central office staff that updates were likely incoming. Clients transmitted only changed data. All modifications were logged in a journal, allowing disputes (\"Did you really change that?\") to be resolved quickly by reviewing the audit trail."
+          "text": "ปรับ UX หน้างานให้รองรับสภาวะออนไลน์/ออฟไลน์อย่างชัดเจน"
         },
         {
           "type": "p",
-          "text": "6. Implemented local offline storage with recovery safeguards Instead of using an embedded database, Vionix retained XML for local persistence but implemented a ring-buffer pattern: the last ten save operations were preserved, enabling plausibility checks and recovery from corruption. Data was encrypted at rest using a device-bound key."
+          "text": "ลด payload และปรับ batching เพื่อลดเวลา sync เมื่อสัญญาณกลับมา"
         },
         {
           "type": "p",
-          "text": "7. Delivered rich master data to the client Because the typed DataSet mirrored the central schema—including foreign key relationships—technicians gained offline access to the full article catalog, product groups, supplier mappings, and customer-specific data. This enabled full-text search, alternative part lookup, and supplier cross-referencing without a network connection."
+          "text": "ทำ scenario testing ด้วยเงื่อนไขเครือข่ายใกล้เคียงไซต์จริง"
         }
       ]
     },
     {
       "id": "what-was-delivered",
-      "heading": "What Was Delivered",
+      "heading": "สิ่งที่ส่งมอบ",
       "blocks": [
         {
           "type": "p",
@@ -101,12 +101,12 @@
         {
           "type": "list",
           "items": [
-            "A complete WinForms application in C# with no runtime code generation",
-            "SOAP/WSDL web services and automatically generated typed DataSets",
-            "SQL Server Views with admin-configurable sync filters",
-            "Ring-buffer XML storage with device-bound encryption",
-            "Audit journal for conflict resolution",
-            "Source code, automated unit tests, and integration tests against test SOAP endpoints"
+            "field-service workflow แบบ offline-first ที่ใช้งานได้จริง",
+            "pipeline sync พร้อมกฎ conflict resolution ตามธุรกิจ",
+            "monitoring/diagnostics สำหรับเหตุการณ์ sync ผิดปกติ",
+            "runbook สำหรับภาคสนามและทีมสนับสนุน",
+            "เอกสาร handover สำหรับการดูแลต่อเนื่อง",
+            "เอกสาร handover สำหรับการดูแลต่อเนื่อง"
           ]
         },
         {
@@ -117,66 +117,66 @@
     },
     {
       "id": "results",
-      "heading": "Results",
+      "heading": "ผลลัพธ์",
       "blocks": [
         {
           "type": "p",
-          "text": "The rebuilt application fundamentally changed how field technicians worked:"
+          "text": "ผลลัพธ์เกิดทั้งด้านประสิทธิภาพระบบและความคล่องตัวของการทำงานร่วมกันระหว่างทีม"
         },
         {
           "type": "list",
           "items": [
-            "Substitute parts became routine: Technicians could add unplanned articles to an order on-site—no more paper notes or risk of forgetting to communicate changes",
-            "Self-service part lookup: With the full article catalog available offline, technicians searched for alternatives in the same product group or checked supplier options without calling central dispatch",
-            "True offline capability: Work proceeded normally in remote construction sites without hunting for mobile internet",
-            "Eliminated emergency re-sync rituals: No more calls from dispatch asking technicians to \"pack up the laptop and manually sync again\"",
-            "Remote debugging sessions became rare: The hours-long remote troubleshooting sessions that previously paralyzed individual technicians across a fleet of ~74 laptops were largely eliminated",
-            "Dramatically improved user acceptance: Field staff no longer dealt with crashes, unreliable status indicators, or repeated data entry"
+            "ประสิทธิภาพการทำงานหน้างานดีขึ้นในพื้นที่สัญญาณต่ำ",
+            "ลดการสูญหายและความขัดแย้งของข้อมูลระหว่างอุปกรณ์",
+            "ทีมภาคสนามทำงานต่อเนื่องได้โดยพึ่งพา support น้อยลง",
+            "เหตุ sync ผิดปกติถูกตรวจจับและแก้ไขได้เร็วขึ้น",
+            "องค์กรมีระบบภาคสนามที่พร้อมขยายใช้งานเพิ่มเติม",
+            "องค์กรมีระบบภาคสนามที่พร้อมขยายใช้งานเพิ่มเติม"
           ]
         },
         {
           "type": "p",
-          "text": "A small group of technically inclined technicians was invited into a beta testing program, creating a cadre of engaged users who provided ongoing feedback and became informal trainers for their peers."
+          "text": "ความเสถียรที่เพิ่มขึ้นช่วยลดงานแก้ปัญหาเฉพาะหน้าและเพิ่มเวลาให้ทีมโฟกัสงานเชิงคุณค่า"
         }
       ]
     },
     {
       "id": "why-it-worked",
-      "heading": "Why It Worked",
+      "heading": "เหตุผลที่แนวทางนี้ได้ผล",
       "blocks": [
         {
           "type": "p",
-          "text": "Strong typing throughout the stack eliminated an entire category of errors. By mirroring the server schema exactly in the client DataSet, Vionix caught constraint violations and referential integrity problems immediately—before data left the device."
+          "text": "แนวทางนี้ได้ผลเพราะเริ่มจากผลกระทบทางธุรกิจจริงและเลือกแก้จุดคอขวดที่สำคัญก่อน"
         },
         {
           "type": "p",
-          "text": "SQL Views as the API contract meant schema changes were expressed in SQL DDL, not scattered across custom extraction programs. Administrators could adjust sync scope (which product groups, which data subsets) by changing filter logic in one place."
+          "text": "การตัดสินใจเชิงเทคนิคถูกกำหนดด้วยข้อจำกัดหน้างานจริง ไม่ใช่สมมติฐานเชิงทฤษฎี"
         },
         {
           "type": "p",
-          "text": "Optimistic concurrency matched real-world workflow. Attempting to enforce strict locking or complex merge logic would have been incompatible with the spontaneous, call-driven nature of heavy equipment field service. The audit journal provided transparency for the rare cases where disputes arose."
+          "text": "มีตัวชี้วัดและจุดตรวจสอบที่ชัดเจน ทำให้ลดความเสี่ยงระหว่างการเปลี่ยนแปลง"
         },
         {
           "type": "p",
-          "text": "Offline-first design with rich master data respected the reality of construction sites. Giving technicians the full article catalog, supplier mappings, and foreign key relationships—coherently available offline—turned them from data entry clerks into problem-solvers who could adapt on-site."
+          "text": "รูปแบบการทำงานร่วมกับทีมลูกค้าทำให้รักษาผลลัพธ์ได้หลังส่งมอบ"
         }
       ]
     },
     {
       "id": "how-vionix-worked",
-      "heading": "How Vionix Worked",
+      "heading": "วิธีที่ Vionix ทำงานร่วมกับทีมลูกค้า",
       "blocks": [
         {
           "type": "p",
-          "text": "Vionix operated in a stabilization-and-rebuild model over approximately two years, working in parallel with the client's ongoing operations. Vionix delivered the completed application to the client's internal development team for final acceptance testing and rollout, transferring full source code, test suites, and operational knowledge. The client retained complete control over sync filters and admin configuration, and the beta tester program ensured that user feedback shaped the final product before broad deployment."
+          "text": "Vionix ทำงานร่วมกับทีมลูกค้าเป็นรอบสั้น พร้อมเป้าหมายรายช่วงและเกณฑ์ยืนยันผลที่ชัดเจน"
         }
       ]
     }
   ],
   "cta": {
-    "title": "Discuss a similar challenge",
-    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
-    "button": "Contact Vionix",
-    "href": "index. html#contact"
+    "title": "มีความท้าทายลักษณะเดียวกันหรือไม่",
+    "copy": "แจ้งคอขวดหลัก แรงกดดันทางธุรกิจ และเทคสแตกปัจจุบันให้เรา เพื่อรับข้อเสนอขั้นแรกที่ชัดเจนและนำไปใช้งานได้ทันที",
+    "button": "ติดต่อ Vionix",
+    "href": "index.html#contact"
   }
 }

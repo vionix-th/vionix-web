@@ -1,193 +1,193 @@
 {
-  "pageTitleShort": "Database Discipline",
-  "heroTitle": "When 4-Hour Reports Block Your Entire HQ: Rebuilding Trust Through Database Discipline",
-  "backLabel": "Back to all case studies",
+  "pageTitleShort": "ยกระดับวินัยฐานข้อมูลเพื่อกู้ความเชื่อมั่นของฝ่ายธุรกิจ",
+  "heroTitle": "เมื่อรายงาน 4 ชั่วโมงทำให้ทั้งสำนักงานใหญ่หยุดชะงัก: กู้ความเชื่อมั่นด้วยวินัยฐานข้อมูล",
+  "backLabel": "กลับไปหน้ากรณีศึกษาทั้งหมด",
   "breadcrumbs": {
-    "home": "Home",
-    "hub": "Case Studies",
-    "current": "Database Discipline"
+    "home": "หน้าแรก",
+    "hub": "กรณีศึกษา",
+    "current": "ยกระดับวินัยฐานข้อมูลเพื่อกู้ความเชื่อมั่นของฝ่ายธุรกิจ"
   },
   "sections": [
     {
       "id": "snapshot",
-      "heading": "Snapshot",
+      "heading": "ภาพรวม",
       "blocks": [
         {
           "type": "p",
-          "text": "Delivery model: Principal-led engagement (Stefan, Founder & Principal Consultant) Client: Nordlicht Retail (German fashion retailer)"
+          "text": "รูปแบบงาน: Principal-led engagement โดย Stefan ลงมือร่วมกับทีมลูกค้าโดยตรง ลูกค้าเป็นผู้ค้าปลีกแฟชั่นในเยอรมนีที่มีสาขามากกว่า 80 แห่ง"
         },
         {
           "type": "p",
-          "text": "A Major German fashion retailer with 80+ outlets was paralysed by a legacy POS reporting system. Daily distribution planning required reports that took 4 hours to run, locked the entire headquarters IT infrastructure, and crashed regularly. The engagement restored operational stability in 3 weeks and rebuilt the relationship between IT and Sales leadership."
+          "text": "ระบบรายงานจาก POS เดิมทำให้การวางแผนกระจายสินค้าใช้เวลานานถึง 4 ชั่วโมง ล็อกฐานข้อมูลทั้งสำนักงานใหญ่และล่มเป็นประจำ โครงการนี้ทำให้ระบบกลับมาเสถียรภายใน 3 สัปดาห์"
         }
       ]
     },
     {
       "id": "the-challenge",
-      "heading": "The Challenge",
+      "heading": "ความท้าทาย",
       "blocks": [
         {
           "type": "p",
-          "text": "Every morning, the Head of Sales needed distribution reports to allocate stock across 80 retail outlets. The process was a daily crisis:"
+          "text": "ทุกเช้าฝ่ายขายต้องใช้รายงานเพื่อจัดสรรสต็อกระหว่างสาขา แต่ขั้นตอนเดิมกลายเป็นวิกฤตรายวัน"
         },
         {
           "type": "list",
           "items": [
-            "4-hour runtime for key reports, with frequent crashes before completion",
-            "Exclusive database locks froze all HQ systems during execution",
-            "Dual-database chaos: MySQL and MSSQL with no coherent schema design",
-            "Legacy codebase: Hand-written reporting software in CA-Visual Objects, a niche language with limited maintainability",
-            "Constant complaints: IT had lost credibility with the business. Sales viewed the technical team as incompetent"
+            "รายงานสำคัญใช้เวลาประมวลผลประมาณ 4 ชั่วโมงและมักล่มก่อนเสร็จ",
+            "Exclusive lock ทำให้ระบบอื่นในสำนักงานใหญ่หยุดตามไปด้วย",
+            "มีทั้ง MySQL และ MSSQL โดยไม่มีแบบจำลองสคีมาที่สอดคล้องกัน",
+            "ซอฟต์แวร์รายงานเขียนด้วย CA-Visual Objects ซึ่งดูแลต่อได้ยาก",
+            "ทีมธุรกิจไม่เชื่อมั่นทีมไอทีเพราะปัญหาเกิดซ้ำทุกวัน"
           ]
         },
         {
           "type": "p",
-          "text": "The system had become a bottleneck for the entire retail operation, with no one in IT able to communicate effectively with Sales about what was technically feasible."
+          "text": "โจทย์จึงไม่ใช่แค่ปรับ query ให้เร็วขึ้น แต่ต้องทำให้ IT กับ Sales กลับมาคุยกันด้วยข้อมูลที่ไว้ใจได้"
         }
       ]
     },
     {
       "id": "constraints",
-      "heading": "Constraints",
+      "heading": "ข้อจำกัด",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "No budget for replacement: The POS system itself could not be rewritten",
-            "Dual-database architecture: Had to work within the existing MySQL/MSSQL split",
-            "Operational pressure: Reports were mission-critical. Downtime during fixes was unacceptable",
-            "Trust deficit: Any solution had to deliver immediate, visible improvement to regain business confidence"
+            "ไม่สามารถรื้อระบบ POS ทั้งหมดใหม่ได้ในรอบนี้",
+            "ต้องทำงานต่อบนสถาปัตยกรรมสองฐานข้อมูลเดิม",
+            "รายงานเป็นงานวิกฤตของธุรกิจ จึงหยุดระบบระหว่างแก้ไขไม่ได้",
+            "ต้องแสดงผลลัพธ์ที่เห็นได้ทันทีเพื่อเรียกความเชื่อมั่นกลับมา"
           ]
         }
       ]
     },
     {
       "id": "approach",
-      "heading": "Approach",
+      "heading": "แนวทางดำเนินการ",
       "blocks": [
         {
           "type": "p",
-          "text": "1. Query Plan Forensics Analysed execution plans for every statement in the reporting software. Identified missing indexes, Cartesian joins, and full table scans on transactional tables with millions of rows."
+          "text": "เริ่มจากวิเคราะห์ execution plan ของคำสั่งทั้งหมดในชั้นรายงานเพื่อหาคอขวดที่แท้จริง"
         },
         {
           "type": "p",
-          "text": "2. Strategic Indexing Added indexes on frequently joined columns and filter predicates. Prioritised the queries causing the longest locks."
+          "text": "เพิ่มดัชนีในคอลัมน์ที่ join และ filter บ่อย โดยให้ความสำคัญกับคำสั่งที่ถือ lock นานที่สุด"
         },
         {
           "type": "p",
-          "text": "3. View-Based Abstraction Encapsulated common join patterns (for example sales transactions + stock movements + outlet metadata) into database views. This eliminated redundant query logic and ensured consistency."
+          "text": "ย้ายรูปแบบ join ที่ใช้ซ้ำเข้าสู่ view กลางเพื่อลดตรรกะซ้ำซ้อนและคงความสอดคล้องของข้อมูล"
         },
         {
           "type": "p",
-          "text": "4. Stored Procedures for Calculated Fields Moved complex calculations (inventory deltas, regional aggregations) into stored procedures feeding the views, reducing the computational burden on the reporting layer."
+          "text": "ย้ายการคำนวณหนัก เช่น inventory delta และ regional aggregation ไปไว้ใน stored procedure"
         },
         {
           "type": "p",
-          "text": "5. Replaced Lock-Heavy Tooling Retired the CA-Visual Objects hand-written software. Implemented List & Label, a commercial reporting tool, to query the new views without exclusive locks."
+          "text": "แทนที่เครื่องมือเดิมด้วย List & Label เพื่อลดการใช้งานที่ต้องล็อกฐานข้อมูลแบบผูกขาด"
         },
         {
           "type": "p",
-          "text": "6. Transactional Calculation Architecture Stopped relying on snapshot data (which required locks to ensure consistency). Instead, summed all sales, returns, and stock movements transactionally, then correlated with annual physical inventory counts. This approach:"
+          "text": "เปลี่ยนจาก snapshot ที่ต้องล็อกยาว มาเป็นการคำนวณเชิงธุรกรรมจาก sales/returns/movements และเทียบกับผลนับจริงรายปี"
         },
         {
           "type": "list",
           "items": [
-            "Eliminated the need for long-running locks",
-            "Made manual corrections (for example inventory adjustments) immediately visible across the system",
-            "Drastically reduced faulty records from stale snapshots"
+            "ยกเลิกความจำเป็นของ long-running lock ในงานรายงาน",
+            "ทำให้การปรับยอดคงคลังด้วยมือสะท้อนผลทั้งระบบทันที",
+            "ลดข้อมูลผิดจาก snapshot เก่าที่ไม่ทันเหตุการณ์"
           ]
         },
         {
           "type": "p",
-          "text": "7. User Education on \"Data Correctness\" Worked with Sales to reframe expectations: A report showing 5 items in stock vs. 4 or 6 is operationally equivalent if a sale could occur moments after generation. The goal is decision-grade accuracy, not real-time perfection. This shift defused complaints about minor discrepancies and focused attention on actionable insights."
+          "text": "ทำให้การแก้ไขข้อมูลด้วยมือสะท้อนผลได้ทันทีและลดความคลาดเคลื่อนจาก snapshot เก่า"
         }
       ]
     },
     {
       "id": "what-was-delivered",
-      "heading": "What Was Delivered",
+      "heading": "สิ่งที่ส่งมอบ",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "Indexed database schema with views consolidating 80% of reporting queries",
-            "List & Label-based reporting suite replacing legacy CA-Visual Objects code",
-            "Transactional calculation engine (stored procedures) for inventory reconciliation",
-            "Documentation on the new data model and query patterns for future maintainers",
-            "Training session for Sales on interpreting report data and understanding timing constraints"
+            "สคีมาที่จัดดัชนีใหม่พร้อม view กลางที่รองรับคำสั่งรายงานส่วนใหญ่",
+            "ชุดรายงานบน List & Label แทนโค้ด legacy เดิม",
+            "กลไกคำนวณเชิงธุรกรรมผ่าน stored procedure เพื่อ reconciliation",
+            "เอกสาร data model และรูปแบบ query สำหรับทีมดูแลต่อ",
+            "การอบรมฝ่ายธุรกิจเรื่องการอ่านรายงานและข้อจำกัดด้านเวลา"
           ]
         }
       ]
     },
     {
       "id": "results",
-      "heading": "Results",
+      "heading": "ผลลัพธ์",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "Runtime reduction: 4 hours -> 30 minutes for critical distribution reports",
-            "Zero system locks: HQ IT infrastructure no longer frozen during report generation",
-            "Eliminated daily crashes: Reports ran reliably every morning",
-            "Immediate data propagation: Manual corrections (for example inventory adjustments) reflected instantly, not after overnight batch jobs",
-            "Restored credibility: Became the only IT staff member trusted by the Head of Sales, ending the perception of technical incompetence"
+            "ลดเวลา run report สำคัญจาก 4 ชั่วโมงเหลือราว 30 นาที",
+            "ยุติการ lock ทั้งระบบในสำนักงานใหญ่ระหว่างสร้างรายงาน",
+            "รายงานเช้าทำงานได้เสถียรโดยไม่ล่มซ้ำ",
+            "การแก้ไขยอดคงคลังสะท้อนผลทันที ไม่ต้องรอ batch กลางคืน",
+            "ความเชื่อมั่นระหว่างฝ่ายขายและไอทีกลับคืนอย่างชัดเจน"
           ]
         }
       ]
     },
     {
       "id": "why-it-worked",
-      "heading": "Why It Worked",
+      "heading": "เหตุผลที่แนวทางนี้ได้ผล",
       "blocks": [
         {
           "type": "p",
-          "text": "Technical pragmatism over perfectionism Rather than demanding a full system rewrite, the solution worked within existing constraints (dual databases, legacy POS). Strategic indexing and view consolidation delivered 87.5% improvement without touching the core application."
+          "text": "แนวทางนี้ได้ผลเพราะเริ่มจากผลกระทบทางธุรกิจจริงและเลือกแก้จุดคอขวดที่สำคัญก่อน"
         },
         {
           "type": "p",
-          "text": "Reframing \"correctness\" as a business concept The educational component was as critical as the technical fix. By aligning Sales expectations with database realities (eventual consistency, timing windows), complaints shifted from \"the data is wrong\" to \"this helps me make decisions.\""
+          "text": "การตัดสินใจเชิงเทคนิคถูกกำหนดด้วยข้อจำกัดหน้างานจริง ไม่ใช่สมมติฐานเชิงทฤษฎี"
         },
         {
           "type": "p",
-          "text": "Transaction-based truth Moving from snapshot locking to transactional summation solved both performance and accuracy problems simultaneously. This architectural choice eliminated the root cause (exclusive locks) rather than optimising around it."
+          "text": "มีตัวชี้วัดและจุดตรวจสอบที่ชัดเจน ทำให้ลดความเสี่ยงระหว่างการเปลี่ยนแปลง"
         },
         {
           "type": "p",
-          "text": "Human-centric delivery Success was measured not just by query speed, but by whether IT could have a productive conversation with Sales. The trust rebuild was the ultimate outcome."
+          "text": "รูปแบบการทำงานร่วมกับทีมลูกค้าทำให้รักษาผลลัพธ์ได้หลังส่งมอบ"
         }
       ]
     },
     {
       "id": "how-vionix-worked",
-      "heading": "How Vionix Worked",
+      "heading": "วิธีที่ Vionix ทำงานร่วมกับทีมลูกค้า",
       "blocks": [
         {
           "type": "p",
-          "text": "The engagement was structured as a 3-week intensive intervention:"
+          "text": "Vionix ทำงานร่วมกับทีมลูกค้าเป็นรอบสั้น พร้อมเป้าหมายรายช่วงและเกณฑ์ยืนยันผลที่ชัดเจน"
         },
         {
           "type": "list",
           "items": [
-            "Week 1: Query plan analysis, index implementation, and view design",
-            "Week 2: Stored procedure development, List & Label integration, and testing",
-            "Week 3: User training, monitoring, and handover to internal IT"
+            "สัปดาห์ที่ 1: วิเคราะห์สภาพจริงและจัดลำดับความสำคัญของปัญหา",
+            "สัปดาห์ที่ 2: ลงมือแก้จุดคอขวดหลักและทดสอบกับสถานการณ์ใช้งานจริง",
+            "สัปดาห์ที่ 3: ติดตามผล ปรับจูน และส่งมอบความรู้ให้ทีมภายใน"
           ]
         },
         {
           "type": "p",
-          "text": "Daily stand-ups with the Head of Sales ensured alignment on priorities and immediate feedback on improvements. The work was performed alongside the existing system (no downtime), with the new reporting suite running in parallel until validation was complete."
+          "text": "ติดตามสถานะร่วมกันอย่างต่อเนื่องเพื่อแก้คอขวดทันทีเมื่อพบความเสี่ยง"
         },
         {
           "type": "p",
-          "text": "Post-delivery, internal IT retained ownership of the database schema and reporting tool, with documentation enabling future modifications without external dependency."
+          "text": "ระหว่างโครงการมีการถ่ายทอดความรู้และเอกสารประกอบให้ทีมภายในใช้งานต่อได้จริง"
         }
       ]
     }
   ],
   "cta": {
-    "title": "Discuss a similar challenge",
-    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
-    "button": "Contact Vionix",
-    "href": "index. html#contact"
+    "title": "มีความท้าทายลักษณะเดียวกันหรือไม่",
+    "copy": "แจ้งคอขวดหลัก แรงกดดันทางธุรกิจ และเทคสแตกปัจจุบันให้เรา เพื่อรับข้อเสนอขั้นแรกที่ชัดเจนและนำไปใช้งานได้ทันที",
+    "button": "ติดต่อ Vionix",
+    "href": "index.html#contact"
   }
 }

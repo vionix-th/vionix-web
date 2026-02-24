@@ -1,10 +1,15 @@
 {
   "defaultLocale": "en",
-  "supportedLocales": ["en", "de", "th"],
-  "publishLocales": ["de"],
-  "stagedLocales": ["th"],
-  "stagedRequiredApproved": {
-    "th": ["index", "service-details"]
-  },
+  "supportedLocales": [
+    "en",
+    "de",
+    "th"
+  ],
+  "publishLocales": [
+    "de",
+    "th"
+  ],
+  "stagedLocales": [],
+  "stagedRequiredApproved": {},
   "routeMode": "root-default-prefixed-non-default"
 }

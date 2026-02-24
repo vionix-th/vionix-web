@@ -1,87 +1,131 @@
 {
-  "pageTitle": "Skills & Competencies",
-  "breadcrumbsHome": "Home",
-  "breadcrumbsCurrent": "Skills & Competencies",
-  "headline": "Professional Bio & Competency Profile",
+  "pageTitle": "ทักษะและสมรรถนะ",
+  "breadcrumbsHome": "หน้าแรก",
+  "breadcrumbsCurrent": "ทักษะและสมรรถนะ",
+  "headline": "ประวัติวิชาชีพและโปรไฟล์สมรรถนะ",
   "member": {
     "name": "Stefan",
-    "role": "Founder & Principal Consultant",
+    "role": "ผู้ก่อตั้งและที่ปรึกษาหลัก",
     "image": "assets/img/team/team-1.jpg",
     "imageAlt": "Portrait of Stefan, Founder and Principal Consultant at Vionix",
     "github": "https://github.com/vionix-th"
   },
   "intro": {
-    "lead": "Software Engineer with over 20 years of experience in software development, project management, and team leadership.",
-    "body": "Highly experienced Software Engineer with over 20 years in software development, project management, and team leadership. Proficient in multiple programming languages and frameworks, with extensive experience in security, reverse engineering, embedded systems, and API development. Known for transforming chaotic work environments into efficient, well-organized teams, and implementing industry standards that enhance productivity and work quality. Fluent in German and English."
+    "lead": "วิศวกรซอฟต์แวร์ประสบการณ์มากกว่า 20 ปี ครอบคลุมการพัฒนา การบริหารโครงการ และการนำทีม",
+    "body": "ผู้เชี่ยวชาญด้านวิศวกรรมซอฟต์แวร์มากกว่า 20 ปี ครอบคลุมหลายภาษาและเฟรมเวิร์ก พร้อมประสบการณ์ด้านความปลอดภัย การวิเคราะห์ย้อนกลับ ระบบฝังตัว และการพัฒนา API มีผลงานเด่นในการปรับทีมจากสภาพแวดล้อมที่วุ่นวายให้มีระเบียบและส่งมอบได้อย่างมีคุณภาพ"
   },
   "sections": [
     {
-      "title": "Technical Skills",
+      "title": "ทักษะเชิงเทคนิค",
       "columns": [
         {
           "icon": "bi-code-square",
-          "title": "Programming & Development",
-          "items": ["C, C++, C#, Java, JavaScript/Node.js", "VisualBasic6, Caché Object Script", "Python, Perl, PHP, Bash, Pine-script", ".NET, Qt, OpenGL, React Native"]
+          "title": "การพัฒนาโปรแกรม",
+          "items": [
+            "C, C++, C#, Java, JavaScript/Node.js",
+            "VisualBasic6, Caché Object Script",
+            "Python, Perl, PHP, Bash, Pine-script",
+            ".NET, Qt, OpenGL, React Native"
+          ]
         },
         {
           "icon": "bi-gear",
-          "title": "Infrastructure & Tools",
-          "items": ["MySQL, SQL Server, SQLite, Caché", "MacOS, Windows, Linux Administration", "VM-Sphere, VMWare, VirtualBox", "Xcode, Visual Studio, Eclipse, Git"]
+          "title": "โครงสร้างพื้นฐานและเครื่องมือ",
+          "items": [
+            "MySQL, SQL Server, SQLite, Caché",
+            "MacOS, Windows, Linux Administration",
+            "VM-Sphere, VMWare, VirtualBox",
+            "Xcode, Visual Studio, Eclipse, Git"
+          ]
         }
       ]
     },
     {
-      "title": "Specialized Expertise",
+      "title": "ความเชี่ยวชาญเฉพาะทาง",
       "columns": [
         {
           "icon": "bi-shield-check",
-          "title": "Security & Reverse Engineering",
-          "items": ["Boot-loader/kernel development", "Binary reverse engineering", "Penetration testing", "Security tools & configuration"]
+          "title": "ความปลอดภัยและการวิเคราะห์ย้อนกลับ",
+          "items": [
+            "Boot-loader/kernel development",
+            "Binary reverse engineering",
+            "Penetration testing",
+            "Security tools & configuration"
+          ]
         },
         {
           "icon": "bi-cpu",
-          "title": "Embedded & API Development",
-          "items": ["FTDI microcontroller API", "Hardware/firmware consulting", "FTP/IMAP4 protocol implementation", "Telegram/OpenAI API integration"]
+          "title": "ระบบฝังตัวและ API",
+          "items": [
+            "FTDI microcontroller API",
+            "Hardware/firmware consulting",
+            "FTP/IMAP4 protocol implementation",
+            "Telegram/OpenAI API integration"
+          ]
         }
       ]
     },
     {
-      "title": "Core Competencies",
+      "title": "สมรรถนะหลัก",
       "columns": [
         {
           "icon": "bi-diagram-3",
-          "title": "Architecture & Development",
-          "items": ["Full lifecycle development", "Software architecture design", "Legacy system modernization", "Code reviews & quality assurance"]
+          "title": "สถาปัตยกรรมและการพัฒนา",
+          "items": [
+            "Full lifecycle development",
+            "Software architecture design",
+            "Legacy system modernization",
+            "Code reviews & quality assurance"
+          ]
         },
         {
           "icon": "bi-people",
-          "title": "Leadership & Collaboration",
-          "items": ["Team leadership & mentoring", "Process optimization", "Cross-functional collaboration", "Technical training & knowledge sharing"]
+          "title": "ภาวะผู้นำและการทำงานร่วมกัน",
+          "items": [
+            "Team leadership & mentoring",
+            "Process optimization",
+            "Cross-functional collaboration",
+            "Technical training & knowledge sharing"
+          ]
         }
       ]
     },
     {
-      "title": "Languages & International Experience",
+      "title": "ภาษาและประสบการณ์นานาชาติ",
       "columns": [
         {
           "icon": "bi-translate",
-          "title": "Languages",
-          "items": ["German: Native", "English: Fluent", "Thai: Intermediate", "Spanish/Mandarin: Limited"]
+          "title": "ภาษา",
+          "items": [
+            "German: Native",
+            "English: Fluent",
+            "Thai: Intermediate",
+            "Spanish/Mandarin: Limited"
+          ]
         },
         {
           "icon": "bi-globe",
-          "title": "International Experience",
-          "items": ["Dominican Republic", "Bulgaria, Turkey, Greece", "Thailand/Bangkok", "Cross-cultural collaboration"]
+          "title": "ประสบการณ์ระหว่างประเทศ",
+          "items": [
+            "Dominican Republic",
+            "Bulgaria, Turkey, Greece",
+            "Thailand/Bangkok",
+            "Cross-cultural collaboration"
+          ]
         }
       ]
     },
     {
-      "title": "Certifications & References",
+      "title": "ใบรับรองและคำรับรอง",
       "single": {
         "icon": "bi-award",
-        "items": ["Elektor Technical Seminar: High-Frequency Technology", "Consistently recognized for technical expertise and leadership", "Praised for problem-solving and mentoring abilities"]
+        "items": [
+          "Elektor Technical Seminar: High-Frequency Technology",
+          "Consistently recognized for technical expertise and leadership",
+          "Praised for problem-solving and mentoring abilities"
+        ]
       }
     }
   ],
-  "footer": "This Competency Profile is based on supplied documentation, references, and certifications. For further details or original reference documents, please contact Stefan directly."
+  "footer": "โปรไฟล์สมรรถนะนี้จัดทำจากเอกสารอ้างอิงและหลักฐานประกอบ หากต้องการรายละเอียดเพิ่มเติมกรุณาติดต่อ Stefan โดยตรง"
 }

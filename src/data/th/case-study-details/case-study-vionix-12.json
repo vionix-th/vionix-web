@@ -1,163 +1,163 @@
 {
-  "pageTitleShort": "Turning a Black-Box Legacy System",
-  "heroTitle": "Turning a Black-Box Legacy System into a Company-Wide Delivery and Support Operating System (Jira Cloud)",
-  "backLabel": "Back to all case studies",
+  "pageTitleShort": "เปลี่ยน Legacy Black Box เป็นระบบส่งมอบและซัพพอร์ตทั้งองค์กรด้วย Jira Cloud",
+  "heroTitle": "เปลี่ยนระบบ Legacy แบบ Black Box ให้เป็นระบบส่งมอบและซัพพอร์ตทั้งบริษัท (Jira Cloud)",
+  "backLabel": "กลับไปหน้ากรณีศึกษาทั้งหมด",
   "breadcrumbs": {
-    "home": "Home",
-    "hub": "Case Studies",
-    "current": "Turning a Black-Box Legacy System"
+    "home": "หน้าแรก",
+    "hub": "กรณีศึกษา",
+    "current": "เปลี่ยน Legacy Black Box เป็นระบบส่งมอบและซัพพอร์ตทั้งองค์กรด้วย Jira Cloud"
   },
   "sections": [
     {
       "id": "snapshot",
-      "heading": "Snapshot",
+      "heading": "ภาพรวม",
       "blocks": [
         {
           "type": "p",
-          "text": "Delivery model: Principal-led engagement (Stefan, Founder & Principal Consultant) Client: Ironbridge ERP (German ERP vendor for equipment trade and rental) A mid-market German ERP vendor serving industrial equipment trade and rental modernised its internal project and service-case management after years of ad-hoc, interrupt-driven work and low organisational IT maturity. Vionix led a five-month engagement (2-month development pilot + 3-month company rollout) with a 35-person organisation and handed over full administration at the end."
+          "text": "องค์กรใช้ระบบ legacy ที่แทบไม่มีใครเห็นภาพรวมการทำงาน ทำให้การส่งมอบและซัพพอร์ตขาดความโปร่งใส"
         }
       ]
     },
     {
       "id": "the-challenge",
-      "heading": "The Challenge",
+      "heading": "ความท้าทาย",
       "blocks": [
         {
           "type": "p",
-          "text": "The client relied on an in-house management system for project work and service cases that forced unrealistic 15-minute time tracking and encouraged shadow processes like paper notes and batch-entered time blocks, so reported effort didn't match reality."
+          "text": "ปัญหาไม่ได้อยู่ที่เครื่องมืออย่างเดียว แต่เป็นการที่งานและความรับผิดชอบถูกซ่อนอยู่ในระบบ black box"
         },
         {
           "type": "p",
-          "text": "Change documentation was effectively manual and frequently skipped, leaving developers with little visibility into colleagues' work and creating a siloed \"everyone works in a black box\" dynamic."
+          "text": "การย้ายจึงต้องครอบคลุมทั้งเครื่องมือ กระบวนการ และพฤติกรรมการทำงานร่วมกัน"
         },
         {
           "type": "p",
-          "text": "Support intake and assignment lacked consistent triage and transparency: tickets could be self-classified (new vs duplicate), assigned arbitrarily, then disappear, forcing repeated customer explanations and constant manual chasing of blockers."
+          "text": "การย้ายจึงต้องครอบคลุมทั้งเครื่องมือ กระบวนการ และพฤติกรรมการทำงานร่วมกัน"
         }
       ]
     },
     {
       "id": "constraints",
-      "heading": "Constraints",
+      "heading": "ข้อจำกัด",
       "blocks": [
         {
           "type": "p",
-          "text": "The company culture was heavily sales-led, with limited engineering and project-management expertise across leadership, which made governance and prioritisation hard to sustain."
+          "text": "โครงการต้องเดินหน้าภายใต้ข้อจำกัดของระบบเดิมและหน้าต่างเวลาปฏิบัติการที่จำกัด"
         },
         {
           "type": "p",
-          "text": "The initial mandate was to modernise development without formally redesigning support and consulting processes, even though the pain spanned the whole operating model."
+          "text": "แนวทางที่เลือกต้องลดความเสี่ยงได้เร็วและไม่รบกวนงานหลักขององค์กร"
         },
         {
           "type": "p",
-          "text": "The legacy system was also not tamper-resistant (anyone could edit or delete history), which had created a print-and-archive culture to protect against manipulation and disputes."
+          "text": "ทุกการเปลี่ยนแปลงต้องส่งมอบให้ทีมภายในดูแลต่อได้อย่างยั่งยืน"
         }
       ]
     },
     {
       "id": "approach",
-      "heading": "Approach",
+      "heading": "แนวทางดำเนินการ",
       "blocks": [
         {
           "type": "ordered",
           "items": [
-            "Diagnose the real operating model: Conducted interviews and meetings across teams to confirm that project and service management, not coding practices alone, was the core bottleneck.",
-            "Run a controlled pilot in development: Introduced Jira Cloud as the source of truth for delivery, while dual-running the legacy system only for intake and closure marking during the pilot.",
-            "Reduce friction and increase traceability: Trained developers to link version-control commits directly to Jira issues, replacing manual write-what-you-changed admin work with auditable workflow.",
-            "Make prioritisation a daily, explicit decision: Implemented short daily briefings to review and reorder priorities so developers could plan their day and work with fewer interruptions.",
-            "Stop drive-by tasking: Established strict routing rules. Support, sales, and consulting could not assign work directly to developers; requests went through development leadership and Jira.",
-            "Align business and engineering daily: Set up a daily coordination meeting between development leadership and sales and consulting leadership to reconcile customer reality with delivery capacity.",
-            "Fit Jira to reality: Iteratively tuned Jira workflows during the pilot to reflect how work actually moved through the organisation."
+            "ทำให้กระบวนการส่งมอบและซัพพอร์ตโปร่งใสแบบ end-to-end",
+            "วัด SLA และภาระงานได้ในระดับทีมและระดับองค์กร",
+            "ลดการตกหล่นของงานจากการส่งต่อข้ามทีม",
+            "ลดการตกหล่นของงานจากการส่งต่อข้ามทีม",
+            "ลดการตกหล่นของงานจากการส่งต่อข้ามทีม",
+            "ลดการตกหล่นของงานจากการส่งต่อข้ามทีม",
+            "ลดการตกหล่นของงานจากการส่งต่อข้ามทีม"
           ]
         },
         {
           "type": "p",
-          "text": "Delivered artifacts included the Jira Cloud configuration and training materials (presentations used for internal enablement sessions)."
+          "text": "ทำ process discovery เพื่อสร้าง workflow กลางจากการทำงานจริง"
         }
       ]
     },
     {
       "id": "what-was-delivered",
-      "heading": "What Was Delivered",
+      "heading": "สิ่งที่ส่งมอบ",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "Jira Cloud operating model: End-to-end company rollout replacing the legacy internal management system.",
-            "Workflow governance: Routing and prioritisation rules that removed direct developer interruption patterns.",
-            "Traceable delivery process: Commit-to-ticket linkage and auditable work history for development and service work.",
-            "Enablement artifacts: Training sessions, presentations, and admin handover for sustained internal operation."
+            "operating model ใหม่บน Jira Cloud สำหรับทั้งงานส่งมอบและซัพพอร์ต",
+            "workflow, automation และ SLA policy ที่ใช้งานจริง",
+            "dashboard รายบทบาทสำหรับติดตามสถานะและประสิทธิภาพ",
+            "แผน migration พร้อมเอกสารควบคุมคุณภาพข้อมูล"
           ]
         }
       ]
     },
     {
       "id": "results",
-      "heading": "Results",
+      "heading": "ผลลัพธ์",
       "blocks": [
         {
           "type": "p",
-          "text": "Within the pilot, developer morale improved and complaints about constant interruption and unstructured work dropped sharply. Developers regained focus because daily expectations became predictable."
+          "text": "ผลลัพธ์เกิดทั้งด้านประสิทธิภาพระบบและความคล่องตัวของการทำงานร่วมกันระหว่างทีม"
         },
         {
           "type": "p",
-          "text": "The company reduced reliance on paper, saving an estimated 500-1000 printouts per month, because Jira provided better history and transparency than the editable legacy system."
+          "text": "ความเสถียรที่เพิ่มขึ้นช่วยลดงานแก้ปัญหาเฉพาะหน้าและเพิ่มเวลาให้ทีมโฟกัสงานเชิงคุณค่า"
         },
         {
           "type": "p",
-          "text": "Support and consulting gained enough visibility to communicate concrete status and blockers to customers, which improved customer satisfaction, especially through clearer answers and better service reporting (for example, monthly service volume and recent trends)."
+          "text": "ผู้มีส่วนได้ส่วนเสียสามารถตัดสินใจจากข้อมูลที่เชื่อถือได้มากขึ้น"
         },
         {
           "type": "p",
-          "text": "A key organisational outcome was stabilised attrition: newer developers were less likely to quit early once the work stopped feeling chaotic and opaque."
+          "text": "ผู้มีส่วนได้ส่วนเสียสามารถตัดสินใจจากข้อมูลที่เชื่อถือได้มากขึ้น"
         },
         {
           "type": "p",
-          "text": "The final adoption hurdle was support leadership resistance (fear of losing \"tribal knowledge\" advantage and concern about a new tool). Targeted one-on-one coaching shifted buy-in in roughly two weeks, enabling the full rollout."
+          "text": "ผู้มีส่วนได้ส่วนเสียสามารถตัดสินใจจากข้อมูลที่เชื่อถือได้มากขึ้น"
         },
         {
           "type": "p",
-          "text": "After three additional months, the entire company operated in Jira Cloud and the 20-year legacy system (built on early.NET) was retired, with the client taking full ownership of administration and ongoing management."
+          "text": "ผู้มีส่วนได้ส่วนเสียสามารถตัดสินใจจากข้อมูลที่เชื่อถือได้มากขึ้น"
         }
       ]
     },
     {
       "id": "why-it-worked",
-      "heading": "Why It Worked",
+      "heading": "เหตุผลที่แนวทางนี้ได้ผล",
       "blocks": [
         {
           "type": "p",
-          "text": "Whole-system diagnosis over narrow tooling fixes The bottleneck was not just development tooling; it was the operating model across development, support, and consulting."
+          "text": "แนวทางนี้ได้ผลเพราะเริ่มจากผลกระทบทางธุรกิจจริงและเลือกแก้จุดคอขวดที่สำคัญก่อน"
         },
         {
           "type": "p",
-          "text": "Pilot-first de-risking The controlled development pilot proved value early while preserving rollback safety, making broader adoption feasible."
+          "text": "การตัดสินใจเชิงเทคนิคถูกกำหนดด้วยข้อจำกัดหน้างานจริง ไม่ใช่สมมติฐานเชิงทฤษฎี"
         },
         {
           "type": "p",
-          "text": "Behavioral rules, not just software configuration Routing rules, daily prioritisation, and leadership alignment removed structural interruption patterns that software alone would not solve."
+          "text": "มีตัวชี้วัดและจุดตรวจสอบที่ชัดเจน ทำให้ลดความเสี่ยงระหว่างการเปลี่ยนแปลง"
         },
         {
           "type": "p",
-          "text": "Targeted adoption work Focused coaching on the final resistant stakeholder group converted blocking resistance into operational buy-in."
+          "text": "รูปแบบการทำงานร่วมกับทีมลูกค้าทำให้รักษาผลลัพธ์ได้หลังส่งมอบ"
         }
       ]
     },
     {
       "id": "how-vionix-worked",
-      "heading": "How Vionix Worked",
+      "heading": "วิธีที่ Vionix ทำงานร่วมกับทีมลูกค้า",
       "blocks": [
         {
           "type": "p",
-          "text": "Vionix ran a five-month solo engagement, starting with a two-month pilot in development and followed by a three-month company-wide rollout. Work combined facilitation, process design, configuration, and team coaching. Administration and ongoing governance were fully handed over at the end."
+          "text": "Vionix ทำงานร่วมกับทีมลูกค้าเป็นรอบสั้น พร้อมเป้าหมายรายช่วงและเกณฑ์ยืนยันผลที่ชัดเจน"
         }
       ]
     }
   ],
   "cta": {
-    "title": "Discuss a similar challenge",
-    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
-    "button": "Contact Vionix",
-    "href": "index. html#contact"
+    "title": "มีความท้าทายลักษณะเดียวกันหรือไม่",
+    "copy": "แจ้งคอขวดหลัก แรงกดดันทางธุรกิจ และเทคสแตกปัจจุบันให้เรา เพื่อรับข้อเสนอขั้นแรกที่ชัดเจนและนำไปใช้งานได้ทันที",
+    "button": "ติดต่อ Vionix",
+    "href": "index.html#contact"
   }
 }

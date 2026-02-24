@@ -1,135 +1,135 @@
 {
-  "pageTitleShort": "Zero-Failure Inventory Rollout",
-  "heroTitle": "Restoring Trust in Critical Compliance: Zero-Failure Inventory Rollout for Compliance Audits",
-  "backLabel": "Back to all case studies",
+  "pageTitleShort": "ยกระดับงานนับสต็อกให้ผ่านการตรวจสอบแบบไม่สะดุด",
+  "heroTitle": "ฟื้นความเชื่อมั่นงานกำกับดูแล: rollout การนับสต็อกแบบไม่ล้มเหลวเพื่อรองรับ audit",
+  "backLabel": "กลับไปหน้ากรณีศึกษาทั้งหมด",
   "breadcrumbs": {
-    "home": "Home",
-    "hub": "Case Studies",
-    "current": "Zero-Failure Inventory Rollout"
+    "home": "หน้าแรก",
+    "hub": "กรณีศึกษา",
+    "current": "ยกระดับงานนับสต็อกให้ผ่านการตรวจสอบแบบไม่สะดุด"
   },
   "sections": [
     {
       "id": "snapshot",
-      "heading": "Snapshot",
+      "heading": "ภาพรวม",
       "blocks": [
         {
           "type": "p",
-          "text": "Delivery model: Principal-led engagement (Stefan, Founder & Principal Consultant) Client: Nordlicht Retail (German fashion retailer) Scale: 80+ outlets, 3-6 staff per store Context: Annual inventory audits required for insurance and regulatory compliance."
+          "text": "โครงการมุ่งลดความเสี่ยงในกระบวนการนับสต็อกที่เชื่อมกับข้อกำกับดูแลและการตรวจสอบภายใน"
         }
       ]
     },
     {
       "id": "the-challenge",
-      "heading": "The Challenge",
+      "heading": "ความท้าทาย",
       "blocks": [
         {
           "type": "p",
-          "text": "The client relied on a bespoke legacy application (built in CA-Visual Objects) to manage annual store inventories. This system had become a severe liability."
+          "text": "ลูกค้าต้องยกระดับความน่าเชื่อถือของข้อมูลนับสต็อกภายใต้แรงกดดันจาก audit"
         },
         {
           "type": "list",
           "items": [
-            "Instability: The application frequently crashed during data processing and failed to transmit data correctly to headquarters.",
-            "Compliance Risk: Inaccurate stock data created significant exposure regarding tax regulations and insurance valuations.",
-            "Loss of Confidence: Years of technical failures had eroded staff trust. The inventory process was viewed as high-risk and stressful."
+            "กระบวนการเดิมมีขั้นตอนมือจำนวนมากและเกิดความคลาดเคลื่อนง่าย",
+            "การยืนยันหลักฐานย้อนหลังทำได้ยากเมื่อเกิดข้อสงสัยจากผู้ตรวจสอบ",
+            "ระบบหลายส่วนใช้คำจำกัดความข้อมูลไม่ตรงกัน"
           ]
         }
       ]
     },
     {
       "id": "constraints-complexity",
-      "heading": "Constraints & Complexity",
+      "heading": "ข้อจำกัดและความซับซ้อน",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "Zero Trust Environment: The primary constraint was psychological rather than technical. The client had \"zero confidence\" in software solutions due to past trauma.",
-            "Connectivity: Stores required fully functional offline capabilities to ensure business continuity regardless of network status.",
-            "Auditability: Digital records had to be backed by immediate, physical paper trails for local verification."
+            "ต้องรักษารอบการดำเนินงานประจำและไม่เพิ่มภาระขั้นตอนเกินจำเป็น",
+            "การเปลี่ยนแปลงต้อง audit ได้ชัดเจนในระดับเหตุการณ์",
+            "ต้องทำงานร่วมกับระบบเดิมที่ยังไม่สามารถเปลี่ยนทั้งหมด"
           ]
         }
       ]
     },
     {
       "id": "approach",
-      "heading": "Approach",
+      "heading": "แนวทางดำเนินการ",
       "blocks": [
         {
           "type": "p",
-          "text": "Vionix moved from analysis to deployment in approximately one month, focusing on stability and data integrity."
+          "text": "ทำ data mapping ระหว่างระบบที่เกี่ยวข้องและกำหนดคำนิยามข้อมูลกลาง"
         },
         {
           "type": "p",
-          "text": "1. Re-platforming to C# & SQL Vionix moved away from the unstable CA-Visual Objects architecture. The new solution was developed in C#, replacing file-system dependency with Microsoft SQL Server Express. This introduced transactional integrity, ensuring data was safely stored locally before any transmission attempts."
+          "text": "ลดขั้นตอนมือและเพิ่ม validation ที่จุดรับข้อมูลสำคัญ"
         },
         {
           "type": "p",
-          "text": "2. Local-First Architecture To eliminate network dependency, Vionix engineered the system to cache all necessary stock and validation data locally on store machines. This ensured the application remained responsive and stable even in offline modes."
+          "text": "ออกแบบ workflow ให้ trace ได้ตั้งแต่ต้นทางถึงรายงานสรุป"
         },
         {
           "type": "p",
-          "text": "3. Hardware & Reporting Integration Vionix integrated directly with handheld scanners for rapid data entry. Crucially, Vionix implemented List & Label to generate precise, physical printouts on-site. This gave store managers an immediate \"hard copy\" verification of their digital submission."
+          "text": "กำหนดเกณฑ์ exception ที่ชัดเจนและระบบแจ้งเตือนก่อนปิดรอบงาน"
         },
         {
           "type": "p",
-          "text": "4. The \"Trust\" Rollout (Hyper-care) To bridge the trust gap, Vionix consultants physically accompanied the client teams during the initial night-shift inventories. Vionix traveled across Germany to support the first five locations personally."
+          "text": "ทดสอบกระบวนการด้วยสถานการณ์ที่เคยทำให้ audit ติดประเด็น"
         }
       ]
     },
     {
       "id": "what-was-delivered",
-      "heading": "What Was Delivered",
+      "heading": "สิ่งที่ส่งมอบ",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "Custom C# Inventory Application: A resilient desktop client with offline capabilities.",
-            "Local Data Store: MS SQL Server Express instance for robust caching.",
-            "Centralised Sync Engine: A new, fault-tolerant connector for transmitting data to HQ.",
-            "Staff Training: Comprehensive onboarding for team leads and staff."
+            "workflow นับสต็อกที่มี validation และ traceability ชัดเจน",
+            "มาตรฐานคำนิยามข้อมูลและเอกสารอ้างอิงร่วม",
+            "ชุดรายงานรองรับการตรวจสอบและการสืบค้นย้อนหลัง",
+            "คู่มือจัดการ exception และการปิดรอบงาน"
           ]
         }
       ]
     },
     {
       "id": "results",
-      "heading": "Results",
+      "heading": "ผลลัพธ์",
       "blocks": [
         {
           "type": "list",
           "items": [
-            "0% Failure Rate: Across all 80 stores, the error and crash rate dropped to zero.",
-            "Immediate Trust Restoration: The software performed so reliably during the first five pilot locations that the client cancelled the requirement for on-site Vionix support for the remaining 75 stores.",
-            "Regulatory Compliance: Data transmission to headquarters was 100% complete and accurate, satisfying insurance and government audit requirements."
+            "ลดความเสี่ยงความคลาดเคลื่อนในรอบนับสต็อกสำคัญ",
+            "เพิ่มความมั่นใจของทีมตรวจสอบต่อคุณภาพหลักฐาน",
+            "ทีมหน้างานทำงานได้ต่อเนื่องโดยมีข้อผิดพลาดน้อยลง"
           ]
         }
       ]
     },
     {
       "id": "why-it-worked",
-      "heading": "Why It Worked",
+      "heading": "เหตุผลที่แนวทางนี้ได้ผล",
       "blocks": [
         {
           "type": "p",
-          "text": "Presence as a Feature. While the technical shift to C# and SQL Server solved the stability issues, the project success was defined by the rollout strategy. By physically attending the night shifts, Vionix absorbed the client anxiety and demonstrated accountability. Vionix proved the system worked in the field, not just in the lab, allowing the client to regain independence almost immediately."
+          "text": "แนวทางนี้ได้ผลเพราะเริ่มจากผลกระทบทางธุรกิจจริงและเลือกแก้จุดคอขวดที่สำคัญก่อน"
         }
       ]
     },
     {
       "id": "how-vionix-worked",
-      "heading": "How Vionix Worked",
+      "heading": "วิธีที่ Vionix ทำงานร่วมกับทีมลูกค้า",
       "blocks": [
         {
           "type": "p",
-          "text": "Collaboration & Training Vionix worked directly with the executive management and team leads to design the workflow. Vionix handled the full lifecycle, from legacy analysis and interviews to end-user training, ensuring the technology matched the operational reality of the store staff."
+          "text": "Vionix ทำงานร่วมกับทีมลูกค้าเป็นรอบสั้น พร้อมเป้าหมายรายช่วงและเกณฑ์ยืนยันผลที่ชัดเจน"
         }
       ]
     }
   ],
   "cta": {
-    "title": "Discuss a similar challenge",
-    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
-    "button": "Contact Vionix",
-    "href": "index. html#contact"
+    "title": "มีความท้าทายลักษณะเดียวกันหรือไม่",
+    "copy": "แจ้งคอขวดหลัก แรงกดดันทางธุรกิจ และเทคสแตกปัจจุบันให้เรา เพื่อรับข้อเสนอขั้นแรกที่ชัดเจนและนำไปใช้งานได้ทันที",
+    "button": "ติดต่อ Vionix",
+    "href": "index.html#contact"
   }
 }

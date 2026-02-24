@@ -36,6 +36,9 @@ function walk(value, keyPath, filePath) {
   const s = value;
   const add = (msg) => issues.push(`${filePath}:${keyPath} -> ${msg}`);
 
+  if (/(^|\.)(href)$/i.test(keyPath) && /index\.\s+html#contact/i.test(s)) {
+    add("malformed contact href (unexpected whitespace in index.html#contact)");
+  }
   if (/(^|\.)(href|email|github|siteUrl)$/i.test(keyPath)) return;
   if (/^https?:\/\//i.test(s) || s.includes("@")) return;
   const hasTechNotation = /Node\.js|C#|C\+\+|\.NET|VB6|IMAP4|APQP|FMEA|MSA|SPC|PPAP|IATF|VDA|ETL|BI|SQL|FTP|API|\/|\\/.test(

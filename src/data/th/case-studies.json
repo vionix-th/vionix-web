@@ -1,40 +1,226 @@
 {
-  "pageTitle": "Case Studies",
-  "breadcrumbsHome": "Home",
-  "breadcrumbsCurrent": "Case Studies",
-  "heroKicker": "Case Studies",
-  "heroIntro": "Real-world engagements in critical system performance, stabilisation, modernisation, and enablement",
-  "heroBody": "Explore full project stories, including constraints, technical decisions, and outcomes. Start with the cards below and open any study for complete context.",
+  "pageTitle": "กรณีศึกษา",
+  "breadcrumbsHome": "หน้าแรก",
+  "breadcrumbsCurrent": "กรณีศึกษา",
+  "heroKicker": "กรณีศึกษา",
+  "heroIntro": "ตัวอย่างงานจริงด้านประสิทธิภาพ เสถียรภาพ การปรับปรุงระบบ และการยกระดับทีม",
+  "heroBody": "เลือกดูกรณีที่ใกล้เคียงสถานการณ์ของคุณ แต่ละเรื่องแสดงข้อจำกัด แนวทางตัดสินใจ และผลลัพธ์ที่วัดได้อย่างชัดเจน",
   "filters": {
-    "all": "All Studies",
-    "database": "Database & Reporting Performance",
-    "legacy": "Legacy Core Stabilisation",
-    "modernisation": "Incremental System Modernisation",
-    "enablement": "Efficient Team & Workflow Enablement"
+    "all": "ทุกกรณี",
+    "database": "ประสิทธิภาพฐานข้อมูลและรายงาน",
+    "legacy": "ทำแกนระบบเดิมให้เสถียร",
+    "modernisation": "ปรับปรุงระบบแบบค่อยเป็นค่อยไป",
+    "enablement": "ยกระดับทีมและเวิร์กโฟลว์"
   },
   "labels": {
-    "problem": "Problem",
-    "intervention": "Intervention",
-    "outcome": "Outcome"
+    "problem": "ปัญหา",
+    "intervention": "แนวทางแก้ไข",
+    "outcome": "ผลลัพธ์"
   },
   "cards": [
-    {"href":"case-study-vionix-01.html","title":"Database Discipline Under Sales Pressure","context":"Nordlicht Retail - German fashion retailer","filters":["database","legacy"],"primaryTag":"database_reporting_performance","secondaryTags":["legacy_core_stabilisation"],"problem":"Mission-critical reports took four hours, crashed, and locked HQ systems.","intervention":"Query-plan forensics, indexing, view abstraction, and lock-safe reporting redesign.","outcome":"Runtime dropped from 4 hours to 30 minutes, with system locks removed."},
-    {"href":"case-study-vionix-03.html","title":"Zero-Failure Inventory","context":"Nordlicht Retail - German fashion retailer","filters":["legacy","modernisation"],"primaryTag":"legacy_core_stabilisation","secondaryTags":["incremental_system_modernisation"],"problem":"Legacy inventory software instability created tax and insurance compliance risk.","intervention":"Re-platformed to C# and SQL, local-first architecture, and high-touch rollout support.","outcome":"0% failure rate across all 80 stores."},
-    {"href":"case-study-vionix-02.html","title":"Hardening POS Infrastructure","context":"Nordlicht Retail - German fashion retailer","filters":["legacy"],"primaryTag":"legacy_core_stabilisation","secondaryTags":[],"problem":"Dust-driven POS failures disrupted transactions and inventory sync.","intervention":"Ventilated enclosure redesign, hardened hardware builds, and maintenance protocol.","outcome":"Failure rate dropped to 1-2 incidents per quarter across the estate."},
-    {"href":"case-study-vionix-04.html","title":"Monitoring Layer for Distributed Data Reliability","context":"Nordlicht Retail - German fashion retailer","filters":["legacy"],"primaryTag":"legacy_core_stabilisation","secondaryTags":[],"problem":"Overnight store data transfers failed silently and planning teams discovered issues too late.","intervention":"VPN rollout support, heartbeat monitoring, dashboard visibility, and fallback retrieval paths.","outcome":"Real-time issue visibility replaced next-morning failure discovery."},
-    {"href":"case-study-vionix-06.html","title":"Cross-Platform Rebuild for Measurement Software","context":"Helios RF Systems - RF analyzer manufacturer","filters":["modernisation","legacy","enablement"],"primaryTag":"incremental_system_modernisation","secondaryTags":["legacy_core_stabilisation","efficient_team_workflow_enablement"],"problem":"A legacy Windows codebase was unstable, slow to evolve, and hurting market perception.","intervention":"Qt and C++ re-architecture, modular migration, communication layer abstraction, and team enablement.","outcome":"Stable cross-platform product restored software as a market differentiator."},
-    {"href":"case-study-vionix-05.html","title":"From Research Scripts to Deployable Agency Software","context":"Canopy Metrics - forestry analytics venture","filters":["modernisation","enablement"],"primaryTag":"incremental_system_modernisation","secondaryTags":["efficient_team_workflow_enablement"],"problem":"Mathematically strong research scripts were not deployable or maintainable for real users.","intervention":"Full desktop rebuild with structured interfaces, visualization stack, and maintainable workflow.","outcome":"Delivered a production-grade demonstrator with handover-ready codebase."},
-    {"href":"case-study-vionix-07.html","title":"When the Webshop Was Ready-But the Back-End Wasn't","context":"Skyline Access - aerial platform rental network","filters":["legacy","modernisation","enablement"],"primaryTag":"legacy_core_stabilisation","secondaryTags":["incremental_system_modernisation","efficient_team_workflow_enablement"],"problem":"A launch-ready webshop had no integration path to the live rental system.","intervention":"DMZ architecture, CSP Gateway, and a REST API to expose complex availability logic.","outcome":"Webshop launched on schedule after three months of integration work."},
-    {"href":"case-study-vionix-08.html","title":"When Offline Isn't Optional","context":"Rhine Equipment Services - construction equipment dealer and service provider","filters":["modernisation","legacy"],"primaryTag":"incremental_system_modernisation","secondaryTags":["legacy_core_stabilisation"],"problem":"A hybrid Node.js/C# field app crashed, desynced, and failed in offline conditions.","intervention":"Rebuilt to C# WinForms with typed datasets, offline-first sync, and recovery safeguards.","outcome":"True offline work restored and user acceptance improved across the fleet."},
-    {"href":"case-study-vionix-09.html","title":"From Chaos to Control","context":"Ironbridge ERP - ERP vendor for equipment trade and rental","filters":["legacy","modernisation","enablement"],"primaryTag":"legacy_core_stabilisation","secondaryTags":["incremental_system_modernisation","efficient_team_workflow_enablement"],"problem":"A 30-year ERP ran without version control or isolated development environments.","intervention":"Git adoption, branch separation, local environments, and automated installers.","outcome":"Service resolution time dropped from days to hours with stable deployments."},
-    {"href":"case-study-vionix-10.html","title":"When Real-Time Became Possible Again","context":"Ironbridge ERP - ERP vendor for equipment trade and rental","filters":["database","legacy","enablement"],"primaryTag":"database_reporting_performance","secondaryTags":["legacy_core_stabilisation","efficient_team_workflow_enablement"],"problem":"Nightly BI batch processing failed for large customers and broke trust in reporting.","intervention":"Replaced ETL with indexed SQL Views, runtime calculations, and side-by-side validation.","outcome":"Real-time reporting returned without disrupting daily ERP operations."},
-    {"href":"case-study-vionix-11.html","title":"Digitalising Goods Receipt on Legacy Hardware","context":"Atlas Heavy Industries - regional operation in a global equipment group","filters":["legacy","modernisation","enablement"],"primaryTag":"legacy_core_stabilisation","secondaryTags":["incremental_system_modernisation","efficient_team_workflow_enablement"],"problem":"Goods receipts were paper-based and the existing ERP lacked a mobile interface.","intervention":"Built a Windows CE client and SOAP bridge with vendor-aligned interface design.","outcome":"Process became fully digital and ran for five years without software tickets."},
-    {"href":"case-study-vionix-12.html","title":"From Black Box to Operating System (Jira Cloud)","context":"Ironbridge ERP - mid-market ERP organisation","filters":["legacy","modernisation","enablement"],"primaryTag":"incremental_system_modernisation","secondaryTags":["legacy_core_stabilisation","efficient_team_workflow_enablement"],"problem":"Work management was opaque, interrupt-driven, and fragmented across teams.","intervention":"Rolled out Jira Cloud with governance, routing rules, and pilot-led adoption.","outcome":"Company-wide rollout retired the legacy system and improved delivery clarity."}
+    {
+      "href": "case-study-vionix-01.html",
+      "title": "ยกระดับวินัยฐานข้อมูลภายใต้แรงกดดันจากฝ่ายขาย",
+      "context": "Nordlicht Retail - ผู้ค้าปลีกแฟชั่นในเยอรมนี",
+      "filters": [
+        "database",
+        "legacy"
+      ],
+      "primaryTag": "database_reporting_performance",
+      "secondaryTags": [
+        "legacy_core_stabilisation"
+      ],
+      "problem": "รายงานสำคัญใช้เวลานานและทำให้ระบบส่วนกลางหยุดชะงัก",
+      "intervention": "วิเคราะห์แผนคิวรี ปรับดัชนี และออกแบบรายงานแบบลดการล็อก",
+      "outcome": "เวลารันลดจาก 4 ชั่วโมงเหลือ 30 นาที พร้อมลดการล็อกระบบ"
+    },
+    {
+      "href": "case-study-vionix-03.html",
+      "title": "ตรวจนับสินค้าคงคลังแบบไร้ความผิดพลาด",
+      "context": "Nordlicht Retail - ผู้ค้าปลีกแฟชั่นในเยอรมนี",
+      "filters": [
+        "legacy",
+        "modernisation"
+      ],
+      "primaryTag": "legacy_core_stabilisation",
+      "secondaryTags": [
+        "incremental_system_modernisation"
+      ],
+      "problem": "ระบบเดิมไม่เสถียรและเสี่ยงด้านการตรวจสอบ",
+      "intervention": "ย้ายสู่ C# และ SQL พร้อมสถาปัตยกรรม offline-first",
+      "outcome": "อัตราความล้มเหลวเป็นศูนย์ใน 80 สาขา"
+    },
+    {
+      "href": "case-study-vionix-02.html",
+      "title": "เสริมความทนทานระบบ POS ในสาขาจำนวนมาก",
+      "context": "Nordlicht Retail - ผู้ค้าปลีกแฟชั่นในเยอรมนี",
+      "filters": [
+        "legacy"
+      ],
+      "primaryTag": "legacy_core_stabilisation",
+      "secondaryTags": [],
+      "problem": "เครื่อง POS ล่มบ่อยจากฝุ่นและสภาพแวดล้อมจริง",
+      "intervention": "ออกแบบฮาร์ดแวร์ใหม่ ปรับช่องระบายอากาศ และวางแผนบำรุงรักษา",
+      "outcome": "ลดเหตุขัดข้องเหลือ 1-2 ครั้งต่อไตรมาส"
+    },
+    {
+      "href": "case-study-vionix-04.html",
+      "title": "ชั้นเฝ้าระวังเพื่อความเชื่อถือได้ของข้อมูลสาขา",
+      "context": "Nordlicht Retail - ผู้ค้าปลีกแฟชั่นในเยอรมนี",
+      "filters": [
+        "legacy"
+      ],
+      "primaryTag": "legacy_core_stabilisation",
+      "secondaryTags": [],
+      "problem": "ข้อมูลจากสาขาเข้าไม่ครบและตรวจพบช้าเกินไป",
+      "intervention": "เพิ่มการมองเห็นแบบเรียลไทม์และช่องทางดึงข้อมูลสำรอง",
+      "outcome": "ทีมส่วนกลางรู้ปัญหาทันทีและตอบสนองได้เร็วขึ้น"
+    },
+    {
+      "href": "case-study-vionix-06.html",
+      "title": "รีบิวด์ซอฟต์แวร์วิเคราะห์สัญญาณแบบข้ามแพลตฟอร์ม",
+      "context": "Helios RF Systems - ผู้ผลิตอุปกรณ์ RF",
+      "filters": [
+        "modernisation",
+        "legacy",
+        "enablement"
+      ],
+      "primaryTag": "incremental_system_modernisation",
+      "secondaryTags": [
+        "legacy_core_stabilisation",
+        "efficient_team_workflow_enablement"
+      ],
+      "problem": "ซอฟต์แวร์เดิมไม่เสถียรและขยายต่อยาก",
+      "intervention": "ออกแบบใหม่ด้วย Qt/C++ แบบแยกโมดูลและโค้ชชิ่งทีม",
+      "outcome": "ได้ผลิตภัณฑ์ที่เสถียรและดูแลต่อได้ระยะยาว"
+    },
+    {
+      "href": "case-study-vionix-05.html",
+      "title": "ยกระดับสคริปต์วิจัยสู่ซอฟต์แวร์พร้อมใช้งาน",
+      "context": "Canopy Metrics - ธุรกิจวิเคราะห์งานป่าไม้",
+      "filters": [
+        "modernisation",
+        "enablement"
+      ],
+      "primaryTag": "incremental_system_modernisation",
+      "secondaryTags": [
+        "efficient_team_workflow_enablement"
+      ],
+      "problem": "ต้นแบบวิจัยใช้งานจริงและส่งต่อทีมไม่ได้",
+      "intervention": "สร้างแอปเดสก์ท็อปใหม่พร้อมโครงสร้างที่ดูแลได้",
+      "outcome": "ได้ซอฟต์แวร์พร้อมสาธิตและโค้ดเบสที่ส่งต่อได้"
+    },
+    {
+      "href": "case-study-vionix-07.html",
+      "title": "Webshop พร้อม แต่ Back-End ยังไม่พร้อม",
+      "context": "Skyline Access - เครือข่ายให้เช่ารถกระเช้า",
+      "filters": [
+        "legacy",
+        "modernisation",
+        "enablement"
+      ],
+      "primaryTag": "legacy_core_stabilisation",
+      "secondaryTags": [
+        "incremental_system_modernisation",
+        "efficient_team_workflow_enablement"
+      ],
+      "problem": "ร้านค้าออนไลน์ไม่มีชั้นเชื่อมกับระบบเช่าจริง",
+      "intervention": "สร้างสถาปัตยกรรม DMZ และ API สำหรับตรรกะคงคลังจริง",
+      "outcome": "เปิดใช้งานได้ตามกำหนดโดยยังคงความปลอดภัย"
+    },
+    {
+      "href": "case-study-vionix-08.html",
+      "title": "เมื่อการทำงานออฟไลน์คือข้อบังคับ",
+      "context": "Rhine Equipment Services - ผู้จำหน่ายและบริการเครื่องจักร",
+      "filters": [
+        "modernisation",
+        "legacy"
+      ],
+      "primaryTag": "incremental_system_modernisation",
+      "secondaryTags": [
+        "legacy_core_stabilisation"
+      ],
+      "problem": "ระบบภาคสนามล่มและซิงค์ข้อมูลไม่เสถียร",
+      "intervention": "รีบิวด์เป็น C# WinForms แบบ offline-first",
+      "outcome": "งานหน้างานกลับมาเสถียรและผู้ใช้ยอมรับสูงขึ้น"
+    },
+    {
+      "href": "case-study-vionix-09.html",
+      "title": "จากความวุ่นวายสู่การควบคุม",
+      "context": "Ironbridge ERP - ผู้ให้บริการ ERP สายเครื่องจักร",
+      "filters": [
+        "legacy",
+        "modernisation",
+        "enablement"
+      ],
+      "primaryTag": "legacy_core_stabilisation",
+      "secondaryTags": [
+        "incremental_system_modernisation",
+        "efficient_team_workflow_enablement"
+      ],
+      "problem": "ERP อายุ 30 ปีไร้ระบบควบคุมเวอร์ชันและสภาพแวดล้อมที่แยกขาด",
+      "intervention": "นำ Git แยก branch และทำการติดตั้งอัตโนมัติ",
+      "outcome": "ระยะเวลาแก้ปัญหาลดลงจากวันเหลือชั่วโมง"
+    },
+    {
+      "href": "case-study-vionix-10.html",
+      "title": "เมื่อรายงานแบบเรียลไทม์กลับมาเป็นจริง",
+      "context": "Ironbridge ERP - ผู้ให้บริการ ERP สายเครื่องจักร",
+      "filters": [
+        "database",
+        "legacy",
+        "enablement"
+      ],
+      "primaryTag": "database_reporting_performance",
+      "secondaryTags": [
+        "legacy_core_stabilisation",
+        "efficient_team_workflow_enablement"
+      ],
+      "problem": "ETL กลางคืนไม่ทันโหลดข้อมูลลูกค้าขนาดใหญ่",
+      "intervention": "แทน ETL ด้วย SQL Views และการปรับดัชนี",
+      "outcome": "ได้รายงานเรียลไทม์โดยไม่กระทบการทำงานรายวัน"
+    },
+    {
+      "href": "case-study-vionix-11.html",
+      "title": "ดิจิทัลกระบวนการรับสินค้าเข้าคลังบนฮาร์ดแวร์เดิม",
+      "context": "Atlas Heavy Industries - หน่วยงานภูมิภาคของกลุ่มอุตสาหกรรม",
+      "filters": [
+        "legacy",
+        "modernisation",
+        "enablement"
+      ],
+      "primaryTag": "legacy_core_stabilisation",
+      "secondaryTags": [
+        "incremental_system_modernisation",
+        "efficient_team_workflow_enablement"
+      ],
+      "problem": "รับสินค้าแบบกระดาษและระบบ ERP ไม่มีอินเทอร์เฟซมือถือ",
+      "intervention": "สร้างแอป Windows CE และ middleware แบบ SOAP",
+      "outcome": "กระบวนการเป็นดิจิทัลเต็มรูปแบบและเสถียรระยะยาว"
+    },
+    {
+      "href": "case-study-vionix-12.html",
+      "title": "เปลี่ยนระบบ Legacy แบบ Black Box สู่ระบบปฏิบัติการงานทั้งองค์กร",
+      "context": "Ironbridge ERP - องค์กร ERP ขนาดกลาง",
+      "filters": [
+        "legacy",
+        "modernisation",
+        "enablement"
+      ],
+      "primaryTag": "incremental_system_modernisation",
+      "secondaryTags": [
+        "legacy_core_stabilisation",
+        "efficient_team_workflow_enablement"
+      ],
+      "problem": "การจัดการงานไม่โปร่งใสและขาดการจัดลำดับที่ชัดเจน",
+      "intervention": "ย้ายสู่ Jira Cloud พร้อมกติกาการทำงานและ rollout แบบ pilot",
+      "outcome": "ปลดระบบเดิมและเพิ่มความชัดเจนในการส่งมอบทั้งองค์กร"
+    }
   ],
   "cta": {
-    "title": "Discuss a similar challenge",
-    "copy": "Share the system bottleneck, business pressure, and current stack. Vionix responds with a focused first-step proposal.",
-    "button": "Contact Vionix",
+    "title": "มีโจทย์คล้ายกันหรือไม่",
+    "copy": "ส่งข้อมูลคอขวด แรงกดดันทางธุรกิจ และเทคสแตกปัจจุบันให้เรา แล้ว Vionix จะตอบกลับด้วยข้อเสนอขั้นแรกที่ชัดเจน",
+    "button": "ติดต่อ Vionix",
     "href": "index.html#contact"
   }
 }
